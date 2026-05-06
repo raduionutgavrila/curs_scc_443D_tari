@@ -3,7 +3,7 @@
 Am incercat sa facem un template pentru partea de WEB ca sa aveti toti cam acelasi site.
 
 app>lib>
-- `biblioteca_tara` - modifica fiecare pt tara lui
+- `biblioteca_tari` - modifica fiecare pt tara lui
 - `biblioteca_header` - NU SE MODIFICA
 
 static>
@@ -77,9 +77,9 @@ Pull files from github(cloud) to local:
 git pull
 ```
 
-Push commits to the github repo(cloud) from loca:
+Push commits to the github repo(cloud) from local:
 ```bash
-git push -u origin main
+git push
 ```
 
 Connect to online repository
