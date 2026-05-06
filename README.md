@@ -3,7 +3,7 @@
 Am incercat sa facem un template pentru partea de WEB ca sa aveti toti cam acelasi site.
 
 app>lib>
-- biblioteca_tara - modifica fiecare pt tara lui
+- biblioteca_tari - modifica fiecare pt tara lui
 - biblioteca_header - NU SE MODIFICA
 
 static>
