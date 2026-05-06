@@ -1,6 +1,6 @@
+# PROIECT SCC - INFORMATII TEMPLATE WEB
 
-
-# PROIECT SCC - INFORMATII TEMPLATE
+Am incercat sa facem un template pentru partea de WEB ca sa aveti toti cam acelasi site.
 
 app>lib>
 - biblioteca_tara - modifica fiecare pt tara lui
@@ -15,11 +15,27 @@ templates> - fisiere html pentru interfata grafica
 - home.html - se adauga tara fiecaruia pe  modelul din cod
 - pagina.html - NU SE MODIFICA
 - steag.html - NU SE MODIFICA
-g
+
 tests>
 - fiecare isi face ce teste vrea
 
 - tari.py - NU SE MODIFICA
+
+## Pasi pentru incepere proiect
+
+### pentru a face rost de template
+1. git clone https://github.com/raduionutgavrila/curs_scc_443D_tari.git
+2. git status
+3. git checkout dev-template
+4. git branch dev-nume-prenume
+
+### initiere repo local pentru a incarca date in cloud ulterior
+1. git remote add origin https://github.com/raduionutgavrila/curs_scc_443D_tari.git
+
+### pentru a incarca date in cloud
+1. git add .
+2. git commit -m "<nume branch> - mesaj de commit"
+3. git push
 
 
 ## Comenzi GIT
