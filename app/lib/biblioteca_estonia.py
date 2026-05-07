@@ -1,14 +1,14 @@
-def descriere_tara()->str:
-    return "Regatul Belgiei este un stat federal suveran situat în Europa de Vest, caracterizat printr-o structură administrativă tripartită și un model de guvernanță multilingv, exercitând rolul de hub geopolitic major prin găzduirea principalelor instituții ale Uniunii Europene și ale NATO."
+def descriere_tara()->str:      
+    return "Estonia se află la Marea Baltică, având câmpii joase, păduri dense, mii de lacuri, întinse zone umede și o coastă cu peste două mii de insule glaciale."
 
 def descriere_limbi()-> str:
-    return "Neerlandeza, Franceza, Germana"
+    return "Estona"
 
 def descriere_populatie()->str:
-    return "11.5 milioane de locuitori"
+    return "1.36 milioane de locuitori"
 
 def descriere_capitala()->str:
-    return "Bruxelles"
+    return "Tallinn"
 
 def descriere_steag()->str:
-    return """<img src="/static/steag_belgia.png" alt="Drapel Belgia">"""
+    return """<img src="/static/steag_estonia.png" alt="Drapel Estonia">"""
