@@ -3,12 +3,20 @@ pipeline {
     stages {
         stage('Instalare Dependente') {
             steps {
-                sh 'pip install -r requirements.txt'
+                sh '''
+                chmod +x activeaza_venv.sh activeaza_venv_jenkins || true
+                
+                bash activeaza_venv.sh
+                '''
             }
         }
         stage('Testare') {
             steps {
-                sh 'pytest tests/'
+                sh '''
+                . .venv/bin/activate
+                
+                pytest app/tests
+                '''
             }
         }
     }
