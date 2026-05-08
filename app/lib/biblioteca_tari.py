@@ -1,21 +1,19 @@
 # Configuratie globala a proiectului
 
 #from app.lib import biblioteca_<tara_mea> as prescurtare_tara_mea 
-from app.lib import biblioteca_belgia as belg
+from app.lib import biblioteca_romania as rou
 
 TARI = {
-    'belgia': {
-        'nume': 'Belgia',
-    },
-    #adauga  'tara_mea': { 'nume': 'Nume Tara Mea'}
-
+    'romania': {
+        'nume': 'România',
+    }
 }
 
 
 # Mapare tara -> biblioteca
 
 BIBLIOTECI = {
-    'belgia': belg,
+    'romania': rou,
      #adauga 'tara_mea': prescurtare_tara_mea
 }
 
