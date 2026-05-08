@@ -2,9 +2,9 @@ FROM python:3.10-alpine
 
 ENV FLASK_APP=tari.py
 
-RUN adduser -D razvan
+RUN adduser -D tari
 
-WORKDIR /home/razvan/
+WORKDIR /home/tari/
 
 COPY app app
 COPY static static
@@ -17,9 +17,9 @@ COPY tari.py tari.py
 RUN python3 -m venv .venv
 RUN .venv/bin/pip install --no-cache-dir -r quickrequirements.txt
 
-RUN chown -R razvan:razvan /home/razvan
+RUN chown -R tari:tari /home/tari
 
-USER razvan
+USER tari
 
 EXPOSE 5011
 
