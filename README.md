@@ -13,43 +13,42 @@ Am implementat logica pentru afișarea informațiilor despre România. Aceasta i
 
 ## 3. Stadiul Implementării
 - [x] Cod funcționalitate adăugat
-- [x] Rute Flask configurate
-- [x] Interfață grafică (Templates HTML) actualizată
 
 ## 4. Testare
 ### Testare Manuală
-Aplicația a fost verificată local rulând `python tari.py` și accesând `http://localhost:5011/tari/romania`.
+Aplicația a fost verificată local rulând `./ruleaza_aplicatia` și accesând `http://localhost:5011`.
 
 ### Testare Automatizată (Jenkins)
-Am configurat un Pipeline în Jenkins care rulează automat testele la fiecare push pe branch-ul de dezvoltare. Toate testele din `app/tests/` au trecut cu succes (PASS).
+Am configurat un Pipeline în Jenkins care rulează automat testele. Testul din `app/tests/` a trecut cu succes (PASS).
 
 **Dovada Build Jenkins:**
-![Status Build Jenkins](screenshots/nume_poza_jenkins_1.png)
-![Console Output Pytest](screenshots/nume_poza_jenkins_2.png)
+![Status Build Jenkins](screenshots/tests_passed_1.png)
+![Console Output Pytest](screenshots/tests_passed_2.png)
 
 ## 5. Containerizare (Docker)
-Aplicația a fost containerizată folosind o imagine de Python 3.12-slim. Containerul expune portul 5000 (sau 5011, după cum ai setat final).
+Aplicația a fost containerizată folosind o imagine de Python 3.12-slim. Containerul expune portul 5011.
 
 **Dovezi Containerizare:**
 
 *1. Imaginea Docker creată:*
-![Docker Images](screenshots/docker_image.png)
+![Docker Images](screenshots/docker_images.png)
 
 *2. Containerul rulând activ:*
 ![Docker PS](screenshots/docker_ps.png)
 
 *3. Accesare aplicație din container (Browser):*
-![Browser Docker](screenshots/browser_docker.png)
+![Browser Docker](screenshots/running_browser.png)
 
 *4. Log-uri consolă (interacțiune browser-container):*
-![Docker Logs](screenshots/docker_logs.png)
+![Docker Logs](screenshots/running_console.png)
 
 ## 6. Integrare și Review
-- **Branch dezvoltare:** `dev_gheorghe_razvan`
-- **Pull Request (PR) către main personal:** Creat, atașat screenshot-uri teste.
+- **Branch dezvoltare: `dev_gheorghe_razvan`**
+- **Pull Request (PR) către `main_gheorghe_razvan`:** 
+Creat
 - **Review-uri:**
-    - Am făcut review pentru colegul: [Nume Coleg / ID PR]
-    - Am primit review de la: [Nume Coleg / ID PR]
+    - [ ] Am făcut review pentru colegul: [Nume Coleg / ID PR]
+    - [ ] Am primit review de la: [Nume Coleg / ID PR]
 
 ## 7. Ce mai este de făcut
 - [ ] Integrarea finală în branch-ul `main` al grupei după aprobarea tuturor review-urilor.
