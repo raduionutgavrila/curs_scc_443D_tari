@@ -4,9 +4,9 @@ pipeline {
         stage('Instalare Dependente') {
             steps {
                 sh '''
-                chmod +x activeaza_venv.sh activeaza_venv_jenkins || true
+                chmod +x activeaza_venv activeaza_venv_jenkins || true
                 
-                bash activeaza_venv.sh
+                bash activeaza_venv
                 '''
             }
         }
