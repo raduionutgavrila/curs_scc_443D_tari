@@ -56,7 +56,7 @@ pipeline {
                     docker rm -f container_brazilia || true
                     
                     # Pornim aplicația pe portul 8020
-                    docker run -d --name container_brazilia -p 8020:5000 tara_brazilia:v${BUILD_NUMBER}
+                    docker run -d --name container_brazilia -p 8020:5011 tara_brazilia:v${BUILD_NUMBER}
                 '''
             }
         }
