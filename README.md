@@ -48,7 +48,7 @@ Aplicația a fost containerizată folosind o imagine de Python 3.12-slim. Contai
 Creat
 - **Review-uri:**
     - [ ] Am făcut review pentru colegul: [Nume Coleg / ID PR]
-    - [ ] Am primit review de la: [Nume Coleg / ID PR]
+    - [x] Am primit review de la: Zidu Cristian / PR ID: #6
 
 ## 7. Ce mai este de făcut
 - [ ] Integrarea finală în branch-ul `main` al grupei după aprobarea tuturor review-urilor.
