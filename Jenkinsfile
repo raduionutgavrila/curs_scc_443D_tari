@@ -43,7 +43,7 @@ pipeline {
                 sh '''
                     docker build -t canada_app:v${BUILD_NUMBER} .
                     docker rm -f tari_container_${BUILD_NUMBER} || true
-                    docker create --name tari_container_${BUILD_NUMBER} -p 8020:5011 sua_app:v${BUILD_NUMBER}
+                    docker create --name tari_container_${BUILD_NUMBER} -p 8020:5011 canada_app:v${BUILD_NUMBER}
                 '''
             }
         }
