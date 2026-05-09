@@ -24,7 +24,7 @@
 # Descriere aplicatie
 [cuprins](#cuprins)
 
-Aplicatia **Brazilia** gestioneaza si afiseaza informatii detaliate despre geografia, demografia si cultura Braziliei intr-o interfata web intuitiva.
+Elementul **Brazilia** din aplicația tari gestioneaza si afiseaza informatii detaliate despre geografia, demografia si cultura Braziliei intr-o interfata web intuitiva.
 Sistemul de operare tinta este Linux, aplicatia fiind dezvoltata si testata pe distributia `Ubuntu 24.04`.
 Componenta WEB a proiectului utilizeaza framework-ul `Flask`.
 
