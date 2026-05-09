@@ -1,153 +1,206 @@
-# PROIECT SCC - TEMPLATE WEB PENTRU PROIECT DE GRUPA
+`Proiect SCC - Țări - Brazilia`
+===================================
 
-Acest branch este template-ul de proiect pentru grupa. Scopul este ca fiecare student sa foloseasca aceeasi structura a site-ului si sa modifice ce este necesar pentru tara proprie. 
+# Cuprins
 
-## Ce se modifica in /app/lib/
+1. [Dezvoltator](#dezvoltator)
+1. [Descriere aplicatie](#descriere-aplicatie)
+1. [Descriere versiune](#descriere-versiune)
+1. [Configurare](#configurare)
+1. [Exemple pagina web](#exemple-pagina-web)
+1. [Testare cu pytest](#testare-cu-pytest)
+1. [Verificare statica. pylint - calitate cod](#verificare-statica-cu-pylint)
+1. [Docker](#docker)
+1. [DevOps](#devops-ci)
+   1. [Pipeline Jenkins](#exemplu-executie-pipeline-jenkins)
+1. [Bibliografie](#bibliografie)
 
-In acest director, trebuie modificat:
+# Dezvoltator
+[cuprins](#cuprins)
+- **Nume:** Balaban Răzvan-Marian
+- **Grupă:** 443D
+- **Țară alocată:** Brazilia
 
-- `app/lib/biblioteca_belgia.py`
-- `app/lib/biblioteca_tari.py`
+# Descriere aplicatie
+[cuprins](#cuprins)
+
+Elementul **Brazilia** din aplicația tari gestioneaza si afiseaza informatii detaliate despre geografia, demografia si cultura Braziliei intr-o interfata web intuitiva.
+Sistemul de operare tinta este Linux, aplicatia fiind dezvoltata si testata pe distributia `Ubuntu 24.04`.
+Componenta WEB a proiectului utilizeaza framework-ul `Flask`.
+
+Arhitectura este una modulara: datele sunt procesate si extrase prin functii dedicate localizate in pachetul app/lib/, fiind ulterior preluate si returnate cu ajutorul functiilor view (localizate in `tari.py`) catre client sub forma de pagini HTML.
+
+Pentru o experienta de utilizare facila, interfata include un sistem de navigare intre pagini:
+
+* Pagina principala: Contine link-uri/butoane catre tarile alocate fiecarui student.
+* Pagina specifica tarii: Odata selectata tara, se afiseaza o descriere scurta a acesteia si un meniu cu inca 3 butoane:
+
+    * Capitala: Afiseaza capitala.
+    * Steag: Afiseaza o imagine drapelului oficial
+    * Populatie: Afiseaza numarul actualizat de locuitori.
+
+* Sistemul de retur: Fiecare pagina contine link-uri de navigare inapoi pentru a asigura fluiditatea navigarii.
+
+Aplicatia include suport pentru containerizare in fisierul `Dockerfile` din directorul principal al aplicatiei.
+
+Din punct de vedere al verificarii calitatii, aplicatia include:
+
+*    Unit testing: Realizat cu pytest pentru functiile din app/lib/, testele fiind organizate in directorul app/tests/.
+
+*    Analiza statica: Verificarea conformitatii codului utilizand pylint.
+
+`DevOps CI`.
+Pipeline-ul pentru Jenkins este definint in fisierul `Jenkinsfile`.
+Acesta asigura parcurgerea automata a etapelor de Build (creare venv), Linter (verificare calitate), Testare (pytest) si Deploy (lansarea containerului Docker pe portul 8020).
+
+# Descriere versiune
+[cuprins](#cuprins)
+
+## v1.0 - Implementare structură ierarhică și integrare Docker/Jenkins.
+*   Afișare date despre Brazilia
+*   Adăugare link-uri între pagini
+*   Configurare mapare porturi pentru acces prin container.
+
+### Rute aplicație WEB:
+*   **Ruta standard**  `/` - URL: `http://127.0.0.1:5011`
+*   **Rute specifice Brazilia**:
+    *   Pagina principală țară: `/brazilia` - URL: `http://127.0.0.1:5011/brazilia`
+    *   Capitală:          `/brazilia/capitala` - URL: `http://127.0.0.1:5011/brazilia/capitala`
+    *   Steag:             `/brazilia/steag` - URL: `http://127.0.0.1:5011/brazilia/steag`
+    *   Populație:         `/brazilia/populatie` - URL: `http://127.0.0.1:5011/brazilia/populatie`
+
+# Configurare
+[cuprins](#cuprins)
+
+Configurare .venv si instalare pachete
+
+In directorul radacina `curs_scc_443D_tari` rulati comenzile:
+
+1) **activeaza_venv**: Incearca sa activeze venv-ul. 
+                   Daca nu poate, configureaza venv-ul in directorul .venv si apoi instaleaza flask si flask-bootstrap.
+                   La urmatoarea rulare, va activa doar venv-ul.
+                
+2) **ruleaza_aplicatia**: De rulat doar dupa activarea venv-ului. 
+                      Va porni serverul pe IP: 127.0.0.1 si port: 5011.
+                      Acces server din browser: http://127.0.0.1:5011
+
+# Exemplu activare venv si rulare
+
+    razvan@razvan-VirtualBox:~/Desktop/proiect/curs_scc_443D_tari$ . ./activeaza_venv
+    SUCCESS: venv was activated.
+    (.venv) razvan@razvan-VirtualBox:~/Desktop/proiect/curs_scc_443D_tari$ ./ruleaza_aplicatia 
+    Proiect SCC - Tari
+    * Serving Flask app 'tari'
+    * Debug mode: off
+    WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+    * Running on http://127.0.0.1:5011
+    Press CTRL+C to quit
+    * Restarting with stat
+    Proiect SCC - Tari
+
+![image](static/activare_venv_ss.png)
+
+# Exemple pagina web
+[cuprins](#cuprins)
+
+## Pagina principala
+![image](static/pagina_principala_ss.png)
+
+## Pagina specifica tarii
+![image](static/pagina_tara_ss.png)
+
+## Pagina - Capitala
+![image](static/capitala_ss.png)
+
+## Pagina - Steag
+![image](static/steag_ss.png)
+
+## Pagina - Populatie
+![image](static/populatie_ss.png)
 
 
 
-Redenumeste fisierul `app/lib/biblioteca_belgia.py` cu numele tarii alese `app/lib/biblioteca_<tara_mea>.py` (de exemplu `biblioteca_romania.py`).
-  
-- In `biblioteca_<tara_mea>.py`, adauga continut corespuzator tarii alease in functiile:
-  - `descriere_tara()`
-  - `descriere_limbi()`
-  - `descriere_populatie()`
-  - `descriere_capitala()`
-  - `descriere_steag()`
-    
-Trebuie adaugat importul bibliotecii tarii la inceputul fisierului 'biblioteca_tari.py', dupa modelul prezentat.
+# Testare cu pytest
+[cuprins](#cuprins)
 
-Apoi trebuie adaugata:
+Funcțiile din biblioteca aplicației, localizate în directorul `app/lib/` (fișierul `biblioteca_brazilia.py`), au teste de tip 'unit-test' asociate. Acestea apelează funcția și compară valoarea obținută cu cea așteptată, returnând **PASS** dacă valorile coincid și **FAIL** în caz contrar.
 
-1. o pereche in `TARI` pentru numele tarii
-2. o intrare in `BIBLIOTECI` pentru biblioteca tarii alese 
+Pentru testare s-a folosit pachetul **pytest** din Python. Acesta este instalat în mediul virtual prin scriptul de configurare.
 
-Obs: Eliminati intrarile cu Belgia; sunt doar de exemplu !
-
-### Exemplu de actualizare in `app/lib/biblioteca_tari.py`
-
-```python
-from app.lib import biblioteca_tara_mea as prescurtare_biblioteca_tara_mea
-
-TARI = {
-    'tara_mea': {
-        'nume': 'Numele complet al tarii mele',
-    },
-}
-
-BIBLIOTECI = {
-    'tara_mea': prescurtare_biblioteca_tara_mea,
-}
-```
-## Ce se modifica in /app/tests
-
-
-Fisierul test_lib_belgia.py este un test automatizat care verifică funcțiile din biblioteca țării . 
-El importă funcțiile principale (descriere_tara, descriere_capitala, descriere_limbi, descriere_populatie), definește valori așteptate pentru fiecare și folosește assert result == expected_result pentru a confirma că rezultatul funcțiilor corespunde exact cu ce trebuie. 
-
-1. Redenumeste `app/tests/test_lib_belgia.py` cu numele tarii alese `app/tests/test_lib_<tara_mea>.py` (de exemplu `test_romania.py`).
-2. Schimbă importul din `biblioteca_belgia` în `biblioteca_<tara_mea>` (asa cum este mentionat si comentariu)
-3. Actualizează fiecare `expected_result` cu valoarea aleasa pentru țara ta
-
-
-
-
-
-## Ce se adauga in `static/`
-
-- Adauga poza cu steagul tarii tale in format `png` in directorul `static/` ( sterge apoi poza steag_belgia.png).
-- Adauga locatia pozei in functia desriere_steag() din  `biblioteca_<tara_mea>.py`, sub formatul '/static/<steag_tara>.png'.
-
-## Ce NU se modifica
-
-- `tari.py` - NU SE MODIFICA
-- `app/lib/biblioteca_header.py` - NU SE MODIFICA
-- `templates/base.html` - NU SE MODIFICA
-- `templates/pagina.html` - NU SE MODIFICA
-- `templates/steag.html` - NU SE MODIFICA
-- `templates/tara.html` - NU SE MODIFICA (este template generic pentru pagina de tara)
-
-
-## Structura de baza
-
-`app/lib/`
-- `biblioteca_tari.py` - fisier in care vor fi agregate numele si bibliotecile de la toate tarile din proiect ( agregarea se va face la final, cand se va face Pull Request in branch-ul main)
-- `biblioteca_<tara_mea>.py` - fisierul individual cu functiile pentru tara aleasa
-- `biblioteca_header.py` - header comun, nu se modifica
-
-`static/`
-- aici se pune poza steagului in format `png`
-
-`templates/`
-- `base.html` - scheletul proiectului - contine structura html + css statica
-- `home.html` - pagina de pornire unde sunt listate tarile
-- `tara.html` - template generic pentru pagina fiecarei tari, unde este afisat rezultatul functiei descriere_tara()
-- `pagina.html` - pagina folosita pentru a afisa rezultatul funtiilor descriere_capitala() / descriere_populatie() / descriere_limbi()
-- `steag.html` - pagina folosita pentru a afisa rezultatul functiei descriere_steag()
-  
-`tari.py` - fișierul principal al aplicației Flask care gestionează rutele web și afișează informații despre țări. Este intermediar între cererile web și bibliotecile fiecărei țări, oferind utilizatorului informații formatate despre acestea.
-
-
-
-## Scripturi de activare si rulare
-
-### `activeaza_venv`
-
-Acest script activeaza mediul virtual Python din `.venv`. Comanda:  `. ./activeaza_venv`
-
-
-### `ruleaza_aplicatia`
-
-Acest script porneste aplicatia Flask local. Comanda: `./ruleaza_aplicatia`
-
-
-### `dockerstart.sh`
-
-Acest script face acelasi lucru, dar cu optiuni suplimentare. Este apelat in fisierul Dockerfile
-
-## Permisiuni de executie
-
-Pentru a rula scripturile, trebuie acordate permisiuni de executie:
+Execuția testelor se face din directorul rădăcină al aplicației (`curs_scc_443D_tari`) folosind comanda:
 
 ```bash
-chmod 764 activeaza_venv ruleaza_aplicatia dockerstart.sh
+(.venv) razvan@razvan-VirtualBox:~/Desktop/proiect/curs_scc_443D_tari$ pytest app/tests/test_lib_brazilia.py -v
+```
+Testele au fost rulate local cu succes folosind pytest:
+![image](static/pytest_ss.png)
+
+# Verificare statica cu pylint
+[cuprins](#cuprins)
+
+Pentru verificarea calității codului sursă se utilizează pachetul **pylint**. Acesta analizează conformitatea codului cu standardele Python (verifică spații, convenții de numire a variabilelor, variabile neutilizate etc.).
+
+În cadrul acestui proiect, problemele raportate de **pylint** sunt doar afișate pentru monitorizare, nu sunt considerate erori.
+
+```bash
+(.venv) razvan@razvan-VirtualBox:~/Desktop/proiect/curs_scc_443D_tari$ pylint --exit-zero app/lib/*.py
+(.venv) razvan@razvan-VirtualBox:~/Desktop/proiect/curs_scc_443D_tari$ pylint --exit-zero app/tests/*.py
+(.venv) razvan@razvan-VirtualBox:~/Desktop/proiect/curs_scc_443D_tari$ pylint --exit-zero tari.py
 ```
 
-## Testare cu Pytest
+# Docker
+[cuprins](#cuprins)
 
-Pentru a rula testele, mergeți în directorul principal al proiectului și folosiți comanda:
+Aplicația a fost containerizată folosind o imagine de Python 3.10-alpine. Containerul este configurat să ruleze procesul Flask pe portul intern **5011**.
 
-`pytest app/tests/*.py -v`
+## Creare imagine
+![image](static/docker_build_ss.png)
 
-Aceasta verifica fiecare funcție din fișier și arata ce teste trec sau ce teste eșuează. Asigurati-va ca aveti venv-ul pornit.
+## Rulare container si vizualizare
+![image](static/docker_run_ss.png)
 
+## Docker logs
+![image](static/docker_logs_ss.png)
 
+## Accesare aplicație din browser:
+Aplicația poate fi accesată local la adresa http://localhost:8020 sau direct prin IP-ul intern alocat de Docker http://172.17.0.2:5011.
+![image](static/docker_aplicatie_ss.png)
 
-# Pasi recomandati pentru proiect
+Pentru oprirea și eliminarea containerului, se utilizează următoarele comenzi:
+ * **Oprire**: `docker stop test-brazilia`
+ * **Ștergere**: `docker rm test-brazilia`
 
-1. `git clone https://github.com/raduionutgavrila/curs_scc_443D_tari.git` - pentru a copia local repository-ul
-2. `git checkout dev-template` - pentru a selecta ramura de dezvolatare cu template-ul
-3. `git checkout -b dev-nume-prenume` - pentru a crea o noua ramura de dezvoltare pornind de la template
-4. modifica `app/lib/biblioteca_tari.py`
-5. redenumeste `app/lib/biblioteca_belgia.py` in `app/lib/biblioteca_<tara_mea>.py` si modifica continutul functiilor
-6. adauga poza cu steagul in `static/` si adauga link catre acesta in functia din 'biblioteca_<tara_mea>.py'
-7. ruleaza cu `. ./activeaza_venv` si `./ruleaza_aplicatia`
-8. testeaza cu `pytest app/tests/test_lib_<tara_mea>.py -v`
+# DevOps CI
+[cuprins](#cuprins)
 
+- **CI** = Continuous Integration (Integrare Continuă)
 
-# Ce mai trebuie adaugat
+Proiectul utilizează un flux de automatizare definit în `Jenkinsfile`, care asigură validarea codului și livrarea aplicației.
 
-- Creare Dockerfile
-- Creare Jenkinsfile
+## Exemplu executie pipeline Jenkins
 
-## Observatie finala
+Pentru a se putea executa cu succes ultimul pas din pipeline-ul de Jenkins (crearea și lansarea containerului Docker), este necesar ca utilizatorul `jenkins` să aibă permisiuni de rulare a comenzilor Docker fără `sudo`.
 
-Scripturile din aceasta aplicatie sunt introduse dupa modelul aplicatiei `chrchende/sysinfo:simplu_main`.
+Puteti gasi pasii de configurare pe [docs.docker.com - linux-postinstall](https://docs.docker.com/engine/install/linux-postinstall/).
+Daca folositi masina virtuala linux, restartati masina dupa ce faceti configuratia.
 
+**Etapele Pipeline-ului:**
+1. **Build**: Crearea mediului virtual și instalarea dependințelor.
+2. **Linter**: Verificarea stilului codului cu `pylint`.
+3. **Unit Tests**: Rularea testelor cu `pytest`.
+4. **Deploy**: Construirea imaginii Docker și pornirea containerului pe portul **8020**.
 
-  
+![image](static/jenkins_ss1.png)
+![image](static/jenkins_ss2.png)
+
+Aplicația poate fi accesată după finalizarea pipeline-ului la adresa: `http://localhost:8020/`
+
+# Bibliografie:
+[cuprins](#cuprins)
+
+https://github.com/crchende/sysinfo.git
+
+https://github.com/crchende/jenkinsdemo
+
+https://www.jenkins.io/doc/book/installing/linux/
+
