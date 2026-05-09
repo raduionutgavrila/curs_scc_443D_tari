@@ -1,4 +1,11 @@
-# Proiect SCC - Țări - Canada
+# Proiect SCC - Țări 
+## Table of Contents
+* [Canada](#Canada - Roseanu Vlad-George)
+* ["Coreea de Sud"](#Coreea de Sud - Toaca Cristiana)
+* [Usage](#usage)
+
+## Canada - Roseanu Vlad-George
+
 
 ## Dezvoltator
 - **Nume:** Roșeanu Vlad-George
@@ -122,7 +129,7 @@ docker start -ai <nume_cont>
 
 
 
-# Proiect SCC - Țări
+# Coreea de Sud - Toaca Cristiana
 
 ## 1. Identificator Dezvoltator
 - **Nume:** Toacă Cristiana
