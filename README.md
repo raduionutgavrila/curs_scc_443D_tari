@@ -16,7 +16,7 @@ Am implementat logica pentru afișarea informațiilor despre România. Aceasta i
 
 ## 4. Testare
 ### Testare Manuală
-Aplicația a fost verificată local rulând `./ruleaza_aplicatia` și accesând `http://localhost:5011`.
+Aplicația a fost verificată local rulând `python3 tari.py` și accesând `http://localhost:5000`.
 ![Test local](screenshots/ss-local.png)
 
 ### Testare Automatizată (Jenkins) [ ]
