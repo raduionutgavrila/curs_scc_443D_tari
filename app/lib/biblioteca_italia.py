@@ -15,4 +15,4 @@ def descriere_limbi():
 
 
 def descriere_steag():
-    return '<img src="https://upload.wikimedia.org/wikipedia/en/0/03/Flag_of_Italy.svg" alt="Steagul Italiei" style="max-width:300px;"><br>Steagul Italiei este un tricolor cu trei fasii verticale egale: verde, alb si rosu, adoptat oficial pe 1 ianuarie 1948.'
+    return '<img src="/static/steag_italia.png" alt="Steagul Italiei" style="max-width:300px;"><br>Steagul Italiei este un tricolor cu trei fasii verticale egale: verde, alb si rosu, adoptat oficial pe 1 ianuarie 1948.'
