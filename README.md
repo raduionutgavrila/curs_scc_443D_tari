@@ -1,6 +1,6 @@
 # Proiect SCC - Tari
 
-## 1. Identificator Dezvoltator
+## 1. Dezvoltator
 - **Nume:** Esterabadeyan Hadi
 - **Grupa:** 443D
 - **Tara alocata:** Statele Unite
@@ -23,7 +23,10 @@ Am implementat funcționalitatea pentru Statele Unite ale Americii, incluzând:
  - Configurare Jenkins: Creat Jenkinsfile cu etapele: Build, Linting, Unit Testing și Docker.
  - Status Jenkins: PASS.
 
+**Test manual - Pytest**
 ![Test manual - Pytest](screenshots/pytest_manual.png)
+
+**Status Build Jenkins**
 ![Status Build Jenkins](screenshots/pipeline.png)
 
 
@@ -32,21 +35,23 @@ Aplicația a fost containerizată folosind un Dockerfile bazat pe Python Alpine.
 
 **Dovezi Containerizare:**
 
-*1. Imaginea Docker creata
+1. Imaginea Docker creata
  - Imaginea creata manual este sua-app:latest
  - Imaginea creata automat de Jenkins este sua_app:v3
 ![Docker Images](screenshots/docker_images.png)
 
-*2. Containerul creat pe baza imaginii
+2. Containerul creat pe baza imaginii
  - Containerul creat manual este docker_app
  - Containerul creat manual este tari_container_3
 ![Docker containers](screenshots/docker_containers.png)
 
-*3 Accesarea aplicatiei din container
+3 Accesarea aplicatiei din container
+ - Rularea containerului
 ![Rularea containerului](screenshots/docker_terminal.png)
+ - Accesarea aplicatiei web
 ![Accesarea aplicatiei web](screenshots/docker_app)
 
-*4 Log-uri consola docker
+4 Log-uri consola docker
 ![Docker Logs](screenshots/docker_log.png)
 
 
