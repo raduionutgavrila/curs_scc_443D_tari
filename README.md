@@ -75,19 +75,16 @@ pytest app/tests/test_lib_statele_unite.py -v
 
   - Construirea imaginii:
 ```bash
-# Generic
 docker build -t <nume_img> <locatia_fisierului_dockerfile>
 ```
 
  - Creare si construire container:
  ```bash
-# Generic
 docker run -it --name <nume_cont> -p <port_local>:<port_intern> <imagine>
 ```
 
  - Repornirea containerului existent in mod interactiv:
  ```bash
-# Generic
 docker start -ai <nume_cont>
 ```
 
