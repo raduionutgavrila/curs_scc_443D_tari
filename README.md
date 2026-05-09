@@ -52,6 +52,8 @@ De asemenea, descrierea menționează berării populare din Bavaria, precum:
 - [x] Jenkinsfile adăugat
 - [x] Aplicația a fost rulată local
 - [x] Testele au fost rulate local cu succes
+- [x] Aplicația a fost rulată în container Docker
+- [x] Pipeline-ul Jenkins a fost rulat cu succes
 
 ---
 
@@ -75,6 +77,12 @@ De asemenea, descrierea menționează berării populare din Bavaria, precum:
 ├── quickrequirements.txt
 ├── README.md
 ├── ruleaza_aplicatia
+├── screenshots
+│   ├── docker_browser_germania.png
+│   ├── docker_build.png
+│   ├── jenkins_build_pass.png
+│   ├── jenkins_console_output.png
+│   └── pytest_germania.png
 ├── static
 │   └── steag_germania.png
 ├── tari.py
@@ -125,6 +133,10 @@ Folosit pentru containerizarea aplicației. Fișierul a fost adăugat după mode
 ### `Jenkinsfile`
 
 Folosit pentru rularea pipeline-ului Jenkins. Fișierul a fost adăugat după modelul existent în branch-ul `dev_gavrila_radu`.
+
+### `screenshots/`
+
+Conține dovezi pentru rularea testelor, Docker și Jenkins.
 
 ---
 
@@ -195,6 +207,10 @@ Rezultat obținut local:
 4 passed
 ```
 
+Dovadă rulare teste:
+
+![Teste Pytest Germania](screenshots/pytest_germania.png)
+
 ---
 
 ## 8. Jenkins
@@ -218,6 +234,14 @@ Testarea automată cu Jenkins rulează testele din folderul:
 app/tests/
 ```
 
+Job-ul Jenkins pentru proiectul Germania a fost rulat cu succes.
+
+![Jenkins Build Pass](screenshots/jenkins_build_pass.png)
+
+În Console Output se observă rularea pipeline-ului Jenkins și finalizarea cu succes.
+
+![Jenkins Console Output](screenshots/jenkins_console_output.png)
+
 ---
 
 ## 9. Containerizare Docker
@@ -233,13 +257,17 @@ Aplicația poate fi containerizată folosind Docker.
 Construirea imaginii Docker:
 
 ```bash
-docker build -t germania-app .
+sudo docker build -t germania-app .
 ```
+
+Dovadă construire imagine Docker:
+
+![Docker Build](screenshots/docker_build.png)
 
 Rularea containerului:
 
 ```bash
-docker run -p 8020:5011 germania-app
+sudo docker run --rm -p 8020:5011 germania-app
 ```
 
 După rularea containerului, aplicația poate fi accesată la:
@@ -247,6 +275,10 @@ După rularea containerului, aplicația poate fi accesată la:
 ```text
 http://127.0.0.1:8020/germania
 ```
+
+Dovadă rulare aplicație în container:
+
+![Aplicație Germania în Docker](screenshots/docker_browser_germania.png)
 
 ---
 
@@ -279,9 +311,6 @@ Review-uri:
 
 ## 11. Ce mai este de făcut
 
-- [ ] Crearea Pull Request-ului din `dev_colan_bianca` către `main_colan_bianca`
-- [ ] Review din partea unui coleg
-- [ ] Merge în `main_colan_bianca`
 - [ ] Integrarea finală în branch-ul principal al grupei, dacă este cerută de cadrul didactic
 
 ---
@@ -297,4 +326,5 @@ Au fost adăugate:
 - steagul Germaniei;
 - Dockerfile;
 - Jenkinsfile;
+- screenshots cu dovezi de rulare;
 - documentația în README.
