@@ -295,3 +295,14 @@ Au fost adăugate:
 - Dockerfile;
 - Jenkinsfile;
 - documentația în README.
+
+
+![Teste Pytest Germania](screenshots/pytest_germania.png)
+
+![Docker Build](screenshots/docker_build.png)
+
+![Aplicație Germania în Docker](screenshots/docker_browser_germania.png)
+
+![Jenkins Build Pass](screenshots/jenkins_build_pass.png)
+
+![Jenkins Console Output](screenshots/jenkins_console_output.png)
