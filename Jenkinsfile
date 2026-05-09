@@ -1,48 +1,63 @@
+/*Jenkins*/
 pipeline {
     agent any
 
     stages {
         stage('Build') {
+            agent any
             steps {
-                echo 'Pregatire mediu...'
+                echo 'Building...'
                 sh '''
-                    pwd
-                    ls -l
-                    rm -rf .venv
-                    python3 -m venv .venv
-                    . .venv/bin/activate
-                    pip install --upgrade pip
-                    pip install -r quickrequirements.txt
-                '''
+                    pwd;
+                    ls -l;
+                    . ./activeaza_venv;
+                    '''
             }
         }
-
+        
+        /*stage('Testare') {
+            problema rulare in paralel, al doilea stage nu mai poate porni venv-ul
+            parallel {
+         */
         stage('pylint - calitate cod') {
+            agent any
             steps {
-                echo 'Verificare cod cu pylint...'
                 sh '''
-                    . .venv/bin/activate
-                    pylint --exit-zero app/lib/*.py
-                    pylint --exit-zero app/tests/*.py
-                    pylint --exit-zero tari.py
+                    . ./activeaza_venv;
+                    echo '\n\nVerificare app/lib/*.py cu pylint\n';
+                    pylint --exit-zero app/lib/*.py;
+
+                    echo '\n\nVerificare app/tests/*.py cu pylint';
+                    pylint --exit-zero app/tests/*.py;
+
+                    echo '\n\nVerificare tari.py cu pylint';
+                    pylint --exit-zero tari.py;
                 '''
             }
         }
 
         stage('Unit Testing cu pytest') {
+            agent any
             steps {
                 echo 'Unit testing with Pytest...'
                 sh '''
-                    . .venv/bin/activate
+                    . ./activeaza_venv;
                     pytest app/tests/*.py -v
+
+                    
                 '''
             }
         }
-
+        
         stage('Deploy') {
+            agent any
             steps {
-                echo "Deploy/containerizare facuta separat cu Dockerfile."
                 echo "Build ID: ${BUILD_NUMBER}"
+                echo "Creare imagine docker"
+                sh '''
+                    docker build -t tari:v${BUILD_NUMBER} .
+                    docker create --name tari${BUILD_NUMBER} -p 8020:5011 tari:v${BUILD_NUMBER}
+                '''
             }
         }
     }
