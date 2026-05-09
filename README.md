@@ -16,6 +16,7 @@ Am adăugat funcționalitate referitoare la **Italia** în fișierul `app/lib/bi
 - **descriere_tara()** – Returnează o descriere generală a Italiei
 - **descriere_capitala()** – Returnează informații despre capitala Roma
 - **descriere_populatie()** – Returnează informații despre populația Italiei
+- **descriere_limbi()** – Returnează limbile oficiale ale Italiei
 - **descriere_steag()** – Returnează descrierea și imaginea steagului Italiei
 
 ### Rute disponibile
@@ -31,7 +32,7 @@ Am adăugat funcționalitate referitoare la **Italia** în fișierul `app/lib/bi
 ### Fișiere modificate/adăugate
 - `app/lib/biblioteca_italia.py` – **NOU** – biblioteca cu funcțiile pentru Italia
 - `app/lib/biblioteca_tari.py` – **MODIFICAT** – adăugat import și înregistrare Italia în TARI și BIBLIOTECI
-- `test/test_italia.py` – **NOU** – teste unitare pentru Italia
+- `app/tests/test_lib_italia.py` – **NOU** – teste unitare pentru Italia
 - `Jenkinsfile` – **NOU** – pipeline declarativ pentru Jenkins
 - `Dockerfile` – **NOU** – containerizarea aplicației
 
@@ -41,7 +42,7 @@ Am adăugat funcționalitate referitoare la **Italia** în fișierul `app/lib/bi
 
 - [x] Cod funcționalitate adăugat (`app/lib/biblioteca_italia.py`)
 - [x] Italia înregistrată în `biblioteca_tari.py` (TARI + BIBLIOTECI)
-- [x] Teste unitare scrise (`test/test_italia.py`)
+- [x] Teste unitare scrise (`app/tests/test_lib_italia.py`)
 - [x] Jenkinsfile configurat
 - [x] Dockerfile creat
 - [x] README.md completat
@@ -51,36 +52,23 @@ Am adăugat funcționalitate referitoare la **Italia** în fișierul `app/lib/bi
 ## Testare
 
 ### Testare manuală
-Aplicația a fost testată manual prin rularea:
-```bash
-python tari.py
-```
-Apoi s-a accesat fiecare rută din browser la adresa `http://localhost:5000`.
+Aplicația a fost verificată local rulând `./ruleaza_aplicatia` și accesând `http://localhost:5011`.
 
 ### Testare cu Jenkins
 - Fișierul `Jenkinsfile` este configurat cu un pipeline declarativ
-- Pipeline-ul conține etapele: Clone, Install Dependencies, Test
+- Pipeline-ul conține etapele: Build, Verificare calitate cod (pylint), Teste unitare (pytest)
 - Testele unitare se execută cu `pytest`
 - **Rezultat:** PASS
 
-### Teste unitare (17/17 PASS)
-- `test_descriere_tara_returneaza_string` – PASS
-- `test_descriere_tara_contine_italia` – PASS
-- `test_descriere_tara_nu_e_gol` – PASS
-- `test_descriere_capitala_returneaza_string` – PASS
-- `test_descriere_capitala_contine_roma` – PASS
-- `test_descriere_populatie_returneaza_string` – PASS
-- `test_descriere_populatie_contine_milioane` – PASS
-- `test_descriere_steag_returneaza_string` – PASS
-- `test_descriere_steag_contine_tricolor` – PASS
-- `test_ruta_index` – PASS
-- `test_ruta_index_contine_italia` – PASS
-- `test_ruta_italia` – PASS
-- `test_ruta_italia_capitala` – PASS
-- `test_ruta_italia_populatie` – PASS
-- `test_ruta_italia_steag` – PASS
-- `test_ruta_capitala_contine_roma` – PASS
-- `test_ruta_inexistenta_404` – PASS
+**Dovada Build Jenkins:**
+![Jenkins OK](screenshots/jenkinsok.png)
+![Jenkins Success](screenshots/jsuccess.png)
+
+### Teste unitare (4/4 PASS)
+- `test_functie_descriere_tara` – PASS
+- `test_functie_populatie` – PASS
+- `test_functie_capitala` – PASS
+- `test_functie_limbi` – PASS
 
 ---
 
@@ -93,18 +81,19 @@ docker build -t scc_tari_italia .
 
 ### Creare și rulare container
 ```bash
-docker run -d -p 5000:5000 --name tari_italia scc_tari_italia
+docker run -d -p 5011:5011 --name tari_italia scc_tari_italia
 ```
 
 ### Accesare aplicație din browser
-Aplicația poate fi accesată la: `http://localhost:5000/italia`
+Aplicația poate fi accesată la: `http://localhost:5011/italia`
 
 ### Capturi de ecran
-*(Adăugați aici capturile de ecran conform cerințelor:)*
-- [ ] Imaginea de container creată (`docker images`)
-- [ ] Containerul creat (`docker ps`)
-- [ ] Browserul accesând aplicația
-- [ ] Mesajele din consolă care atestă accesarea aplicației
+
+*Terminal - docker images, docker ps, docker logs:*
+![Docker Terminal](screenshots/dockerterm.png)
+
+*Browser - accesare aplicație din container:*
+![Docker Browser](screenshots/dockerbrowser.png)
 
 ---
 
@@ -127,7 +116,6 @@ Aplicația poate fi accesată la: `http://localhost:5000/italia`
 
 ## Ce mai este de făcut
 
-- [ ] Adăugare capturi de ecran containerizare
 - [ ] Obținere review de la un coleg
 - [ ] Integrare README.md în branch-ul main
 - [ ] Review la PR-ul unui coleg
