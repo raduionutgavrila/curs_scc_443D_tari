@@ -9,10 +9,10 @@
 Am implementat logica pentru afișarea informațiilor despre Coreea de Sud. Aceasta include:
 
 - **descriere_tara()** – Returnează o descriere generală a Canadei
-- **descriere_capitala()** – Returnează capitala Canadei
-- **descriere_populatie()** – Returnează populația Canadei
-- **descriere_limbi()** – Returnează limbile oficiale ale Canadei
-- **descriere_steag()** – Returnează imaginea steagului Canadei
+- **descriere_capitala()** – Returnează capitala Coreei de Sud
+- **descriere_populatie()** – Returnează populația Coreei de Sud
+- **descriere_limbi()** – Returnează limbile oficiale ale Coreei de Sud
+- **descriere_steag()** – Returnează imaginea steagului Coreei de Sud
 
 ### Rute accesibile
 
@@ -35,7 +35,7 @@ Aplicația a fost verificată local rulând `.\ruleaza_aplicatia` și accesând 
 
 ![Console Output Start App](screenshots/coreea-terminal-local.png)
 
-**Apliactia Accesata la `http://127.0.0.1:5011/`:**
+**Aplicatia Accesata la `http://127.0.0.1:5011/`:**
 
 ![Test local](screenshots/coreea-local.png)
 
