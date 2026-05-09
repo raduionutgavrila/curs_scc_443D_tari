@@ -168,6 +168,29 @@ Finished: SUCCESS
 
 Prin acest test am verificat ca functionalitatea pentru Japonia este testata automat cu Jenkins si ca toate testele trec cu succes.
 
+### Vizualizare pipeline in Jenkins Stages
+
+Pe langa Console Output, am verificat rularea pipeline-ului si in pagina de Stages din Jenkins.
+
+In aceasta pagina se vad etapele pipeline-ului:
+
+- Build
+- pylint - calitate cod
+- Unit Testing cu pytest
+- Deploy
+
+Toate etapele au rulat cu succes, iar pipeline-ul a avut status final SUCCESS.
+
+![Jenkins stages](docs/screenshots/jenkins_stages.png)
+
+### Vizualizare pipeline in Blue Ocean
+
+Pentru o vizualizare mai clara a pipeline-ului, am folosit si interfata Blue Ocean din Jenkins.
+
+In Blue Ocean se poate observa executia etapelor pipeline-ului si faptul ca acestea au fost finalizate cu succes.
+
+![Blue Ocean Jenkins](docs/screenshots/blue_ocean_jenkins.png)
+
 ---
 
 ## Git si GitHub
