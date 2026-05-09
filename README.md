@@ -33,18 +33,18 @@ Aplicația a fost verificată local rulând `.\ruleaza_aplicatia` și accesând 
 
 **Output Consola Locala:**
 
-![Console Output Start App](screenshots/ss-terminal-local.png)
+![Console Output Start App](screenshots/coreea-terminal-local.png)
 
 **Apliactia Accesata la `http://127.0.0.1:5011/`:**
 
-![Test local](screenshots/ss-local.png)
+![Test local](screenshots/coreea-local.png)
 
 ### Testare Locala Folosind Pytest
 Mai intai am verificat ca testele functioneaza local.
 
 **Testare Locala cu Pytest:**
 
-![Console Output Pytest](screenshots/ss-teste.png)
+![Console Output Pytest](screenshots/coreea-teste.png)
 
 
 ### Testare Automata folosind Jenkins
@@ -53,11 +53,11 @@ Am configurat un Pipeline în Jenkins care rulează automat testele. Testul din 
 
 **Dovada Build Jenkins:**
 
-![Status Build Jenkins](screenshots/ss-jenkins.png)
+![Status Build Jenkins](screenshots/coreea-jenkins.png)
 
 **Dovada Teste Pytest in Jenkins:**
 
-![Output Tests Jenkins](screenshots/ss-jenkins-teste.png)
+![Output Tests Jenkins](screenshots/coreea-jenkins-teste.png)
 
 ## 5. Containerizare (Docker)
 Aplicația a fost containerizată folosind o imagine de Python 3.10-alpine. Containerul expune portul 5011 si poate fi accesat la `http://172.17.0.2:5011/`.
@@ -66,25 +66,25 @@ Aplicația a fost containerizată folosind o imagine de Python 3.10-alpine. Cont
 
 *1. Creare imagine Docker:*
 
-![Docker build](screenshots/ss-docker-build.jpeg)
+![Docker build](screenshots/coreea-docker-build.jpeg)
 
 *2. Start container creat:*
 
-![Docker run](screenshots/ss-docker-run.png)
+![Docker run](screenshots/coreea-docker-run.png)
 
 *3. Verificare a rularii containerului:*
 
-![Docker ps](screenshots/ss-docker-ps.png)
+![Docker ps](screenshots/coreea-docker-ps.png)
 
 *4. Accesare aplicație din container (Browser):*
 
 Aplicatia va putea fi accesata la: `http://172.17.0.2:5011/`
 
-![Browser-Docker](screenshots/ss-docker-page.png)
+![Browser-Docker](screenshots/coreea-docker-page.png)
 
 *5. Log-uri consolă (interacțiune browser-container):*
 
-![Docker Logs](screenshots/ss-docker-interaction.png)
+![Docker Logs](screenshots/coreea-docker-interaction.png)
 
 ## 6. Integrare și Review
 - **Branch dezvoltare: `dev_toaca_cristiana`**
