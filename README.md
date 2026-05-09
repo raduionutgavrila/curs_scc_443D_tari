@@ -192,3 +192,80 @@ PASSED                                                                          
 
 ====================================== 4 passed in 0.04s =======================================
 
+# Containerizare Docker
+
+Pentru containerizarea aplicației a fost creat fișierul `Dockerfile`, care îi spune Dockerului cum sa construiasca mediul in care va rula aplicatia. 
+
+Acesta:
+- utilizează imaginea `python:3.10-slim`
+- copiază proiectul în container
+- instalează dependențele din `quickrequirements.txt`
+- pornește aplicația Flask
+
+## Construirea imaginii Docker
+
+Comanda utilizată:
+
+```bash
+sudo docker build -t finlanda-app .
+```
+
+Imaginea creată poate fi verificată folosind:
+
+```bash
+sudo docker images
+```
+
+## Rularea containerului
+
+Comanda utilizată:
+
+```bash
+sudo docker run -p 5011:5011 finlanda-app
+```
+
+Aplicația a fost accesată în browser la adresa:
+
+```text
+http://127.0.0.1:5011/finlanda
+```
+
+## Verificare funcționalitate
+
+Containerul Docker rulează aplicația Flask corespunzătoare funcționalității Finlanda, iar rutele aplicației pot fi accesate din browser.
+
+### Imagine Docker construită cu succes
+
+Comanda utilizată:
+
+```bash
+sudo docker images
+```
+
+Rezultat:
+
+```text
+REPOSITORY     TAG           IMAGE ID       CREATED         SIZE
+finlanda-app   latest        3b753abdfd24   9 minutes ago   190MB
+python         3.10-slim     db7a1753878f   19 hours ago    122MB
+sysinfo        v01           ba761bdd48d9   7 weeks ago     301MB
+python         3.10-alpine   2deaf338e4f4   2 months ago    51.6MB
+```
+### Container Docker pornit
+
+Comanda utilizată:
+
+```bash
+sudo docker run -p 5011:5011 finlanda-app
+```
+
+Rezultat:
+
+```text
+Proiect SCC - Tari
+ * Serving Flask app 'tari'
+ * Debug mode: off
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5011
+ * Running on http://172.17.0.2:5011
+```
