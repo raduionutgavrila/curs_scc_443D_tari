@@ -1,153 +1,135 @@
-# PROIECT SCC - TEMPLATE WEB PENTRU PROIECT DE GRUPA
+# Proiect SCC - Țări - Franța
 
-Acest branch este template-ul de proiect pentru grupa. Scopul este ca fiecare student sa foloseasca aceeasi structura a site-ului si sa modifice ce este necesar pentru tara proprie. 
+## Dezvoltator
+- **Nume:** Tuturluță Costi-Giani-Fabian
+- **Grupa:** 443D
+- **Tema:** Țări
+- **Element:** Franța
+- **Branch de dezvoltare:** `dev_tuturluta_fabian`
 
-## Ce se modifica in /app/lib/
+---
 
-In acest director, trebuie modificat:
+## Funcționalitate adăugată
 
-- `app/lib/biblioteca_belgia.py`
-- `app/lib/biblioteca_tari.py`
+Am adăugat funcționalitate referitoare la **Franța** în fișierul `app/lib/biblioteca_franta.py`:
 
+- **descriere_tara()** – Returnează o descriere generală a Franței
+- **descriere_capitala()** – Returnează informații despre capitala Paris
+- **descriere_populatie()** – Returnează informații despre populația Franței
+- **descriere_limbi()** – Returnează limbile oficiale ale Franței
+- **descriere_steag()** – Returnează descrierea și imaginea steagului Franței
 
+### Rute disponibile
 
-Redenumeste fisierul `app/lib/biblioteca_belgia.py` cu numele tarii alese `app/lib/biblioteca_<tara_mea>.py` (de exemplu `biblioteca_romania.py`).
-  
-- In `biblioteca_<tara_mea>.py`, adauga continut corespuzator tarii alease in functiile:
-  - `descriere_tara()`
-  - `descriere_limbi()`
-  - `descriere_populatie()`
-  - `descriere_capitala()`
-  - `descriere_steag()`
-    
-Trebuie adaugat importul bibliotecii tarii la inceputul fisierului 'biblioteca_tari.py', dupa modelul prezentat.
+| Ruta | Descriere |
+|------|-----------|
+| `/` | Pagina principală – lista tuturor țărilor |
+| `/franta` | Informații generale despre Franța |
+| `/franta/capitala` | Capitala Franței – Paris |
+| `/franta/populatie` | Populația Franței |
+| `/franta/steag` | Steagul Franței |
 
-Apoi trebuie adaugata:
+### Fișiere modificate/adăugate
+- `app/lib/biblioteca_franta.py` – **NOU** – biblioteca cu funcțiile pentru Franța
+- `app/lib/biblioteca_tari.py` – **MODIFICAT** – adăugat import și înregistrare Franța în TARI și BIBLIOTECI
+- `app/tests/test_lib_franta.py` – **NOU** – teste unitare pentru Franța
+- `Jenkinsfile` – **NOU** – pipeline declarativ pentru Jenkins
+- `Dockerfile` – **NOU** – containerizarea aplicației
 
-1. o pereche in `TARI` pentru numele tarii
-2. o intrare in `BIBLIOTECI` pentru biblioteca tarii alese 
+---
 
-Obs: Eliminati intrarile cu Belgia; sunt doar de exemplu !
+## Stadiul implementării
 
-### Exemplu de actualizare in `app/lib/biblioteca_tari.py`
+- [x] Cod funcționalitate adăugat (`app/lib/biblioteca_franta.py`)
+- [x] Franța înregistrată în `biblioteca_tari.py` (TARI + BIBLIOTECI)
+- [x] Teste unitare scrise (`app/tests/test_lib_franta.py`)
+- [x] Jenkinsfile configurat
+- [x] Dockerfile creat
+- [x] README.md completat
 
-```python
-from app.lib import biblioteca_tara_mea as prescurtare_biblioteca_tara_mea
+---
 
-TARI = {
-    'tara_mea': {
-        'nume': 'Numele complet al tarii mele',
-    },
-}
+## Github 
+Pentru a stoca și pentru a eficientiza modalitatea de migrare și lucrul în echipă, am folosit GitHub. 
+Pentru a respecta bunele practici de colaborare și pentru a evita conflictele, am utilizat branch-uri dedicate (ramura `main` a grupului și ramurile `dev` personale). 
 
-BIBLIOTECI = {
-    'tara_mea': prescurtare_biblioteca_tara_mea,
-}
+## Github Local Configurare + Pull Request 
+Proiectul a fost descărcat de pe GitHub folosind comanda: `git clone https://github.com/raduionutgavrila/curs_scc_443D_tari.git` 
+Dezvoltarea s-a realizat pe branch-ul personal `dev_tuturluta_fabian`. 
+Pentru a rezolva problemele de autentificare (GitHub nu mai acceptă parolele clasice în terminal), am utilizat un **Personal Access Token (PAT)** generat din setările contului, folosit ca parolă la operațiunile de `push`. Comenzile utilizate pentru salvarea muncii: 
+```bash 
+git add . 
+git commit -m "Mesaj sugestiv despre modificari" 
+git push origin dev_tuturluta_fabian
 ```
-## Ce se modifica in /app/tests
 
+## Testare
 
-Fisierul test_lib_belgia.py este un test automatizat care verifică funcțiile din biblioteca țării . 
-El importă funcțiile principale (descriere_tara, descriere_capitala, descriere_limbi, descriere_populatie), definește valori așteptate pentru fiecare și folosește assert result == expected_result pentru a confirma că rezultatul funcțiilor corespunde exact cu ce trebuie. 
+### Testare manuală
+Aplicația a fost verificată local rulând `./ruleaza_aplicatia` și accesând `http://localhost:5011`.
 
-1. Redenumeste `app/tests/test_lib_belgia.py` cu numele tarii alese `app/tests/test_lib_<tara_mea>.py` (de exemplu `test_romania.py`).
-2. Schimbă importul din `biblioteca_belgia` în `biblioteca_<tara_mea>` (asa cum este mentionat si comentariu)
-3. Actualizează fiecare `expected_result` cu valoarea aleasa pentru țara ta
+### Testare cu Jenkins
+- Fișierul `Jenkinsfile` este configurat cu un pipeline declarativ
+- Pipeline-ul conține etapele: Build, Verificare calitate cod (pylint), Teste unitare (pytest)
+- Testele unitare se execută cu `pytest`
+- **Rezultat:** PASS
 
+**Dovada Build Jenkins:**
+![Jenkins OK](screenshots/jenkinsok.png)
+![Jenkins Success](screenshots/jsuccess.png)
 
+### Teste unitare (4/4 PASS)
+- `test_functie_descriere_tara` – PASS
+- `test_functie_populatie` – PASS
+- `test_functie_capitala` – PASS
+- `test_functie_limbi` – PASS
 
+---
 
+## Containerizare
 
-## Ce se adauga in `static/`
-
-- Adauga poza cu steagul tarii tale in format `png` in directorul `static/` ( sterge apoi poza steag_belgia.png).
-- Adauga locatia pozei in functia desriere_steag() din  `biblioteca_<tara_mea>.py`, sub formatul '/static/<steag_tara>.png'.
-
-## Ce NU se modifica
-
-- `tari.py` - NU SE MODIFICA
-- `app/lib/biblioteca_header.py` - NU SE MODIFICA
-- `templates/base.html` - NU SE MODIFICA
-- `templates/pagina.html` - NU SE MODIFICA
-- `templates/steag.html` - NU SE MODIFICA
-- `templates/tara.html` - NU SE MODIFICA (este template generic pentru pagina de tara)
-
-
-## Structura de baza
-
-`app/lib/`
-- `biblioteca_tari.py` - fisier in care vor fi agregate numele si bibliotecile de la toate tarile din proiect ( agregarea se va face la final, cand se va face Pull Request in branch-ul main)
-- `biblioteca_<tara_mea>.py` - fisierul individual cu functiile pentru tara aleasa
-- `biblioteca_header.py` - header comun, nu se modifica
-
-`static/`
-- aici se pune poza steagului in format `png`
-
-`templates/`
-- `base.html` - scheletul proiectului - contine structura html + css statica
-- `home.html` - pagina de pornire unde sunt listate tarile
-- `tara.html` - template generic pentru pagina fiecarei tari, unde este afisat rezultatul functiei descriere_tara()
-- `pagina.html` - pagina folosita pentru a afisa rezultatul funtiilor descriere_capitala() / descriere_populatie() / descriere_limbi()
-- `steag.html` - pagina folosita pentru a afisa rezultatul functiei descriere_steag()
-  
-`tari.py` - fișierul principal al aplicației Flask care gestionează rutele web și afișează informații despre țări. Este intermediar între cererile web și bibliotecile fiecărei țări, oferind utilizatorului informații formatate despre acestea.
-
-
-
-## Scripturi de activare si rulare
-
-### `activeaza_venv`
-
-Acest script activeaza mediul virtual Python din `.venv`. Comanda:  `. ./activeaza_venv`
-
-
-### `ruleaza_aplicatia`
-
-Acest script porneste aplicatia Flask local. Comanda: `./ruleaza_aplicatia`
-
-
-### `dockerstart.sh`
-
-Acest script face acelasi lucru, dar cu optiuni suplimentare. Este apelat in fisierul Dockerfile
-
-## Permisiuni de executie
-
-Pentru a rula scripturile, trebuie acordate permisiuni de executie:
-
+### Construire imagine Docker
 ```bash
-chmod 764 activeaza_venv ruleaza_aplicatia dockerstart.sh
+docker build -t app_franta .
 ```
 
-## Testare cu Pytest
+### Creare și rulare container
+```bash
+docker run -d -p 5011:5011 --name tari_franta app-franta
+```
 
-Pentru a rula testele, mergeți în directorul principal al proiectului și folosiți comanda:
+### Accesare aplicație din browser
+Aplicația poate fi accesată la: `http://localhost:5011/franta`
 
-`pytest app/tests/*.py -v`
+### Capturi de ecran
 
-Aceasta verifica fiecare funcție din fișier și arata ce teste trec sau ce teste eșuează. Asigurati-va ca aveti venv-ul pornit.
+*Terminal - docker images, docker ps, docker logs:*
+![Docker Terminal](screenshots/dockerterm.png)
 
+*Browser - accesare aplicație din container:*
+![Docker Browser](screenshots/dockerbrowser.png)
 
+---
 
-# Pasi recomandati pentru proiect
+## Integrare (Pull Request)
 
-1. `git clone https://github.com/raduionutgavrila/curs_scc_443D_tari.git` - pentru a copia local repository-ul
-2. `git checkout dev-template` - pentru a selecta ramura de dezvolatare cu template-ul
-3. `git checkout -b dev-nume-prenume` - pentru a crea o noua ramura de dezvoltare pornind de la template
-4. modifica `app/lib/biblioteca_tari.py`
-5. redenumeste `app/lib/biblioteca_belgia.py` in `app/lib/biblioteca_<tara_mea>.py` si modifica continutul functiilor
-6. adauga poza cu steagul in `static/` si adauga link catre acesta in functia din 'biblioteca_<tara_mea>.py'
-7. ruleaza cu `. ./activeaza_venv` si `./ruleaza_aplicatia`
-8. testeaza cu `pytest app/tests/test_lib_<tara_mea>.py -v`
+- Branch sursă: `dev_tuturluta_fabian`
+- Branch destinație: `main_tuturluta_fabian`
+- Status: *(de completat)*
+- Review de la: *(de completat cu numele colegului)*
 
+---
 
-# Ce mai trebuie adaugat
+## Pull Request-uri la care am făcut review
 
-- Creare Dockerfile
-- Creare Jenkinsfile
+| PR ID | Autor | Descriere |
+|-------|-------|-----------|
+| *(de completat)* | *(de completat)* | *(de completat)* |
 
-## Observatie finala
+---
 
-Scripturile din aceasta aplicatie sunt introduse dupa modelul aplicatiei `chrchende/sysinfo:simplu_main`.
+## Ce mai este de făcut
 
-
-  
+- [ ] Obținere review de la un coleg
+- [ ] Integrare README.md în branch-ul main
+- [ ] Review la PR-ul unui coleg# Proiect SCC - Țări - Franța
