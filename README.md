@@ -1,153 +1,300 @@
-# PROIECT SCC - TEMPLATE WEB PENTRU PROIECT DE GRUPA
+# Proiect SCC - Germania
 
-Acest branch este template-ul de proiect pentru grupa. Scopul este ca fiecare student sa foloseasca aceeasi structura a site-ului si sa modifice ce este necesar pentru tara proprie. 
+## 1. Identificator Dezvoltator
 
-## Ce se modifica in /app/lib/
+**Nume:** Bianca Colan  
+**Grupă:** 443D  
+**Țară alocată:** Germania  
 
-In acest director, trebuie modificat:
+---
 
-- `app/lib/biblioteca_belgia.py`
-- `app/lib/biblioteca_tari.py`
+## 2. Funcționalitate Adăugată
 
+Am implementat logica pentru afișarea informațiilor despre Germania în aplicația web Flask.
 
+Funcționalitatea include:
 
-Redenumeste fisierul `app/lib/biblioteca_belgia.py` cu numele tarii alese `app/lib/biblioteca_<tara_mea>.py` (de exemplu `biblioteca_romania.py`).
-  
-- In `biblioteca_<tara_mea>.py`, adauga continut corespuzator tarii alease in functiile:
-  - `descriere_tara()`
-  - `descriere_limbi()`
-  - `descriere_populatie()`
-  - `descriere_capitala()`
-  - `descriere_steag()`
-    
-Trebuie adaugat importul bibliotecii tarii la inceputul fisierului 'biblioteca_tari.py', dupa modelul prezentat.
+- crearea fișierului `app/lib/biblioteca_germania.py`;
+- modificarea fișierului `app/lib/biblioteca_tari.py` pentru integrarea Germaniei în aplicație;
+- adăugarea testelor automate în `app/tests/test_lib_germania.py`;
+- adăugarea steagului Germaniei în folderul `static/`;
+- adăugarea fișierelor `Dockerfile` și `Jenkinsfile`.
 
-Apoi trebuie adaugata:
+Descrierea Germaniei include informații generale despre țară și atracții turistice reprezentative.
 
-1. o pereche in `TARI` pentru numele tarii
-2. o intrare in `BIBLIOTECI` pentru biblioteca tarii alese 
+Au fost incluse atracții precum:
 
-Obs: Eliminati intrarile cu Belgia; sunt doar de exemplu !
+- BMW Museum din München;
+- Mercedes-Benz Museum din Stuttgart;
+- Porsche Museum din Stuttgart-Zuffenhausen;
+- Poarta Brandenburg din Berlin;
+- Castelul Neuschwanstein din Bavaria;
+- Catedrala din Köln;
+- Pădurea Neagră;
+- Zidul Berlinului;
+- Marienplatz din München;
+- Valea Rinului.
 
-### Exemplu de actualizare in `app/lib/biblioteca_tari.py`
+De asemenea, descrierea menționează berării populare din Bavaria, precum:
 
-```python
-from app.lib import biblioteca_tara_mea as prescurtare_biblioteca_tara_mea
+- Hofbräuhaus München;
+- Augustiner Bräustuben;
+- Paulaner Bräuhaus.
 
-TARI = {
-    'tara_mea': {
-        'nume': 'Numele complet al tarii mele',
-    },
-}
+---
 
-BIBLIOTECI = {
-    'tara_mea': prescurtare_biblioteca_tara_mea,
-}
+## 3. Stadiul Implementării
+
+- [x] Cod funcționalitate adăugat
+- [x] Teste automate adăugate
+- [x] Steag Germania adăugat
+- [x] Dockerfile adăugat
+- [x] Jenkinsfile adăugat
+- [x] Aplicația a fost rulată local
+- [x] Testele au fost rulate local cu succes
+
+---
+
+## 4. Structura Proiectului
+
+```text
+.
+├── activeaza_venv
+├── activeaza_venv_jenkins
+├── app
+│   ├── lib
+│   │   ├── biblioteca_germania.py
+│   │   ├── biblioteca_header.py
+│   │   └── biblioteca_tari.py
+│   └── tests
+│       └── test_lib_germania.py
+├── dockerstart.sh
+├── Dockerfile
+├── Jenkinsfile
+├── pytest.ini
+├── quickrequirements.txt
+├── README.md
+├── ruleaza_aplicatia
+├── static
+│   └── steag_germania.png
+├── tari.py
+└── templates
+    ├── base.html
+    ├── home.html
+    ├── pagina.html
+    ├── steag.html
+    └── tara.html
 ```
-## Ce se modifica in /app/tests
 
+---
 
-Fisierul test_lib_belgia.py este un test automatizat care verifică funcțiile din biblioteca țării . 
-El importă funcțiile principale (descriere_tara, descriere_capitala, descriere_limbi, descriere_populatie), definește valori așteptate pentru fiecare și folosește assert result == expected_result pentru a confirma că rezultatul funcțiilor corespunde exact cu ce trebuie. 
+## 5. Fișiere Modificate / Adăugate
 
-1. Redenumeste `app/tests/test_lib_belgia.py` cu numele tarii alese `app/tests/test_lib_<tara_mea>.py` (de exemplu `test_romania.py`).
-2. Schimbă importul din `biblioteca_belgia` în `biblioteca_<tara_mea>` (asa cum este mentionat si comentariu)
-3. Actualizează fiecare `expected_result` cu valoarea aleasa pentru țara ta
+### `app/lib/biblioteca_germania.py`
 
+Conține funcțiile pentru afișarea informațiilor despre Germania:
 
+- `descriere_tara()`
+- `descriere_limbi()`
+- `descriere_populatie()`
+- `descriere_capitala()`
+- `descriere_steag()`
 
+Funcția `descriere_tara()` prezintă Germania într-un mod general și include atracții importante, începând cu muzeele auto BMW, Mercedes-Benz și Porsche.
 
+### `app/lib/biblioteca_tari.py`
 
-## Ce se adauga in `static/`
+A fost modificat pentru:
 
-- Adauga poza cu steagul tarii tale in format `png` in directorul `static/` ( sterge apoi poza steag_belgia.png).
-- Adauga locatia pozei in functia desriere_steag() din  `biblioteca_<tara_mea>.py`, sub formatul '/static/<steag_tara>.png'.
+- importarea bibliotecii Germaniei;
+- adăugarea țării în dicționarul `TARI`;
+- maparea bibliotecii în dicționarul `BIBLIOTECI`.
 
-## Ce NU se modifica
+### `app/tests/test_lib_germania.py`
 
-- `tari.py` - NU SE MODIFICA
-- `app/lib/biblioteca_header.py` - NU SE MODIFICA
-- `templates/base.html` - NU SE MODIFICA
-- `templates/pagina.html` - NU SE MODIFICA
-- `templates/steag.html` - NU SE MODIFICA
-- `templates/tara.html` - NU SE MODIFICA (este template generic pentru pagina de tara)
+Conține testele automate pentru funcțiile implementate în biblioteca Germaniei.
 
+### `static/steag_germania.png`
 
-## Structura de baza
+Conține imaginea steagului Germaniei.
 
-`app/lib/`
-- `biblioteca_tari.py` - fisier in care vor fi agregate numele si bibliotecile de la toate tarile din proiect ( agregarea se va face la final, cand se va face Pull Request in branch-ul main)
-- `biblioteca_<tara_mea>.py` - fisierul individual cu functiile pentru tara aleasa
-- `biblioteca_header.py` - header comun, nu se modifica
+### `Dockerfile`
 
-`static/`
-- aici se pune poza steagului in format `png`
+Folosit pentru containerizarea aplicației. Fișierul a fost adăugat după modelul existent în branch-ul `dev_gavrila_radu`.
 
-`templates/`
-- `base.html` - scheletul proiectului - contine structura html + css statica
-- `home.html` - pagina de pornire unde sunt listate tarile
-- `tara.html` - template generic pentru pagina fiecarei tari, unde este afisat rezultatul functiei descriere_tara()
-- `pagina.html` - pagina folosita pentru a afisa rezultatul funtiilor descriere_capitala() / descriere_populatie() / descriere_limbi()
-- `steag.html` - pagina folosita pentru a afisa rezultatul functiei descriere_steag()
-  
-`tari.py` - fișierul principal al aplicației Flask care gestionează rutele web și afișează informații despre țări. Este intermediar între cererile web și bibliotecile fiecărei țări, oferind utilizatorului informații formatate despre acestea.
+### `Jenkinsfile`
 
+Folosit pentru rularea pipeline-ului Jenkins. Fișierul a fost adăugat după modelul existent în branch-ul `dev_gavrila_radu`.
 
+---
 
-## Scripturi de activare si rulare
+## 6. Rute Disponibile
 
-### `activeaza_venv`
+| Rută | Descriere |
+|---|---|
+| `/` | Pagina principală |
+| `/germania` | Pagina principală pentru Germania |
+| `/germania/capitala` | Afișează capitala Germaniei |
+| `/germania/populatie` | Afișează populația Germaniei |
+| `/germania/limbi` | Afișează limba principală |
+| `/germania/steag` | Afișează steagul Germaniei |
 
-Acest script activeaza mediul virtual Python din `.venv`. Comanda:  `. ./activeaza_venv`
+---
 
+## 7. Testare
 
-### `ruleaza_aplicatia`
+### Testare Manuală
 
-Acest script porneste aplicatia Flask local. Comanda: `./ruleaza_aplicatia`
-
-
-### `dockerstart.sh`
-
-Acest script face acelasi lucru, dar cu optiuni suplimentare. Este apelat in fisierul Dockerfile
-
-## Permisiuni de executie
-
-Pentru a rula scripturile, trebuie acordate permisiuni de executie:
+Aplicația a fost verificată local rulând:
 
 ```bash
-chmod 764 activeaza_venv ruleaza_aplicatia dockerstart.sh
+. ./activeaza_venv
+./ruleaza_aplicatia
 ```
 
-## Testare cu Pytest
+Aplicația a fost accesată în browser la:
 
-Pentru a rula testele, mergeți în directorul principal al proiectului și folosiți comanda:
+```text
+http://127.0.0.1:5011
+```
 
-`pytest app/tests/*.py -v`
+Rute verificate manual:
 
-Aceasta verifica fiecare funcție din fișier și arata ce teste trec sau ce teste eșuează. Asigurati-va ca aveti venv-ul pornit.
+```text
+http://127.0.0.1:5011/germania
+http://127.0.0.1:5011/germania/capitala
+http://127.0.0.1:5011/germania/populatie
+http://127.0.0.1:5011/germania/limbi
+http://127.0.0.1:5011/germania/steag
+```
 
+### Testare Automată
 
+Testele se află în:
 
-# Pasi recomandati pentru proiect
+```text
+app/tests/test_lib_germania.py
+```
 
-1. `git clone https://github.com/raduionutgavrila/curs_scc_443D_tari.git` - pentru a copia local repository-ul
-2. `git checkout dev-template` - pentru a selecta ramura de dezvolatare cu template-ul
-3. `git checkout -b dev-nume-prenume` - pentru a crea o noua ramura de dezvoltare pornind de la template
-4. modifica `app/lib/biblioteca_tari.py`
-5. redenumeste `app/lib/biblioteca_belgia.py` in `app/lib/biblioteca_<tara_mea>.py` si modifica continutul functiilor
-6. adauga poza cu steagul in `static/` si adauga link catre acesta in functia din 'biblioteca_<tara_mea>.py'
-7. ruleaza cu `. ./activeaza_venv` si `./ruleaza_aplicatia`
-8. testeaza cu `pytest app/tests/test_lib_<tara_mea>.py -v`
+Funcții testate:
 
+- `descriere_tara()`
+- `descriere_populatie()`
+- `descriere_capitala()`
+- `descriere_limbi()`
 
-# Ce mai trebuie adaugat
+Comanda utilizată pentru rularea testelor:
 
-- Creare Dockerfile
-- Creare Jenkinsfile
+```bash
+pytest app/tests/test_lib_germania.py -v
+```
 
-## Observatie finala
+Rezultat obținut local:
 
-Scripturile din aceasta aplicatie sunt introduse dupa modelul aplicatiei `chrchende/sysinfo:simplu_main`.
+```text
+4 passed
+```
 
+---
 
-  
+## 8. Jenkins
+
+A fost adăugat fișierul:
+
+```text
+Jenkinsfile
+```
+
+Pipeline-ul Jenkins include etape pentru:
+
+- build;
+- verificarea calității codului cu `pylint`;
+- rularea testelor automate cu `pytest`;
+- creare imagine Docker.
+
+Testarea automată cu Jenkins rulează testele din folderul:
+
+```text
+app/tests/
+```
+
+---
+
+## 9. Containerizare Docker
+
+A fost adăugat fișierul:
+
+```text
+Dockerfile
+```
+
+Aplicația poate fi containerizată folosind Docker.
+
+Construirea imaginii Docker:
+
+```bash
+docker build -t germania-app .
+```
+
+Rularea containerului:
+
+```bash
+docker run -p 8020:5011 germania-app
+```
+
+După rularea containerului, aplicația poate fi accesată la:
+
+```text
+http://127.0.0.1:8020/germania
+```
+
+---
+
+## 10. Integrare și Review
+
+Branch dezvoltare:
+
+```text
+dev_colan_bianca
+```
+
+Branch main personal:
+
+```text
+main_colan_bianca
+```
+
+Pull Request:
+
+```text
+dev_colan_bianca -> main_colan_bianca
+```
+
+Review-uri:
+
+- [ ] Am făcut review pentru colegul: ................................
+- [ ] Am primit review de la: ................................
+
+---
+
+## 11. Ce mai este de făcut
+
+- [ ] Crearea Pull Request-ului din `dev_colan_bianca` către `main_colan_bianca`
+- [ ] Review din partea unui coleg
+- [ ] Merge în `main_colan_bianca`
+- [ ] Integrarea finală în branch-ul principal al grupei, dacă este cerută de cadrul didactic
+
+---
+
+## 12. Concluzie
+
+Proiectul implementează țara Germania în structura aplicației existente, respectând template-ul primit.
+
+Au fost adăugate:
+
+- biblioteca pentru Germania;
+- testele automate;
+- steagul Germaniei;
+- Dockerfile;
+- Jenkinsfile;
+- documentația în README.
