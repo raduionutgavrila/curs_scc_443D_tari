@@ -218,6 +218,11 @@ Testarea automată cu Jenkins rulează testele din folderul:
 app/tests/
 ```
 
+
+
+![Jenkins Build Pass](screenshots/jenkins_build_pass.png)
+
+![Jenkins Console Output](screenshots/jenkins_console_output.png)
 ---
 
 ## 9. Containerizare Docker
@@ -247,6 +252,14 @@ După rularea containerului, aplicația poate fi accesată la:
 ```text
 http://127.0.0.1:8020/germania
 ```
+
+
+![Teste Pytest Germania](screenshots/pytest_germania.png)
+
+![Docker Build](screenshots/docker_build.png)
+
+![Aplicație Germania în Docker](screenshots/docker_browser_germania.png)
+
 
 ---
 
@@ -297,12 +310,3 @@ Au fost adăugate:
 - documentația în README.
 
 
-![Teste Pytest Germania](screenshots/pytest_germania.png)
-
-![Docker Build](screenshots/docker_build.png)
-
-![Aplicație Germania în Docker](screenshots/docker_browser_germania.png)
-
-![Jenkins Build Pass](screenshots/jenkins_build_pass.png)
-
-![Jenkins Console Output](screenshots/jenkins_console_output.png)
