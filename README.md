@@ -20,16 +20,20 @@ Am adaugat funcționalitatea pentru **Canada** în fișierul `app/lib/biblioteca
 |------|-----------|
 | `/` | Pagina principală – lista tuturor țărilor |
 | `/canada` | Informații generale despre Canada |
-| `/canada/capitala` | Capitala Italiei – Ottawa |
+| `/canada/capitala` | Capitala Canadei– Ottawa |
 | `/canada/populatie` | Populația Canada |
 | `/canada/steag` | Steagul Canada |
 
 ## Modificări
 
 🇨🇦 `app/lib/biblioteca_canada.py` – biblioteca cu funcțiile pentru Canada
+
 🔗 `app/lib/biblioteca_tari.py` – adăugat import și înregistrare Canada în TARI și BIBLIOTECI
+
 🛠️ `app/tests/test_lib_canada.py` – teste unitare pentru Canada
+
 ⚙️ `Jenkinsfile` – pipeline declarativ pentru Jenkins
+
 🐳 `Dockerfile` – containerizarea aplicației
 
 ## Testare Manuală
@@ -98,9 +102,9 @@ docker start -ai <nume_cont>
 
 🎯 Branch destinatie: `main_roseanu_vlad`
 
-📊 Status: *(de completat)*
+📊 Status: *Verificat*
 
-👀 Review: *(de completat cu numele colegului)*
+👀 Review: *Esterabadeyan Hadi*
 
 ## Pull Request-uri la care am făcut review
 
