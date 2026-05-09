@@ -49,7 +49,7 @@ Aplicația a fost containerizată folosind un Dockerfile bazat pe Python Alpine.
  - Rularea containerului
 ![Rularea containerului](screenshots/docker_terminal.png)
  - Accesarea aplicatiei web
-![Accesarea aplicatiei web](screenshots/docker_app)
+![Accesarea aplicatiei web](screenshots/docker_app.png)
 
 4 Log-uri consola docker
 ![Docker Logs](screenshots/docker_log.png)
