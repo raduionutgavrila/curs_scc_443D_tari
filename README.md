@@ -1,153 +1,185 @@
-# PROIECT SCC - TEMPLATE WEB PENTRU PROIECT DE GRUPA
+# Proiect SCC - Finlanda
 
-Acest branch este template-ul de proiect pentru grupa. Scopul este ca fiecare student sa foloseasca aceeasi structura a site-ului si sa modifice ce este necesar pentru tara proprie. 
+## Student
+Mihaela Grigore
 
-## Ce se modifica in /app/lib/
+## Descrierea si scopul proiectului
 
-In acest director, trebuie modificat:
+Scopul acestui proiect este dezvoltarea unei aplicații software colaborative în cadrul grupei de laborator, în care fiecare student implementează propria funcționalitate asociată unei țări alese.
 
-- `app/lib/biblioteca_belgia.py`
-- `app/lib/biblioteca_tari.py`
+Proiectul urmărește utilizarea unor concepte și tehnologii specifice dezvoltării moderne de aplicații software, precum:
+- dezvoltarea colaborativă folosind Git și GitHub;
+- gestionarea branch-urilor de dezvoltare individuale;
+- integrarea modificărilor prin Pull Request-uri;
+- testarea automată a funcționalităților utilizând Pytest și Jenkins;
+- verificarea și analiza codului adăugat de ceilalți membri ai echipei;
+- pregătirea aplicației pentru livrare și rulare în containere folosind Docker.
 
+Tema aleasa pentru acest proiect este reprezentarea tarii Finlanda prin intermediul unor rute web care afiseaza informatii generale despre tara, populatie, limbi oficiale, capitala si steag.
 
+Aplicatia utilizeaza:
+- Python
+- Flask
+- Pytest
+- Git/GitHub
+- mediu virtual Python (venv)
 
-Redenumeste fisierul `app/lib/biblioteca_belgia.py` cu numele tarii alese `app/lib/biblioteca_<tara_mea>.py` (de exemplu `biblioteca_romania.py`).
-  
-- In `biblioteca_<tara_mea>.py`, adauga continut corespuzator tarii alease in functiile:
-  - `descriere_tara()`
-  - `descriere_limbi()`
-  - `descriere_populatie()`
-  - `descriere_capitala()`
-  - `descriere_steag()`
-    
-Trebuie adaugat importul bibliotecii tarii la inceputul fisierului 'biblioteca_tari.py', dupa modelul prezentat.
+---
 
-Apoi trebuie adaugata:
+# Structura proiectului
 
-1. o pereche in `TARI` pentru numele tarii
-2. o intrare in `BIBLIOTECI` pentru biblioteca tarii alese 
+.
+├── activeaza_venv
+├── activeaza_venv_jenkins
+├── app
+│   ├── lib
+│   │   ├── biblioteca_finlanda.py
+│   │   ├── biblioteca_header.py
+│   │   └── biblioteca_tari.py
+│   └── tests
+│       └── test_lib_finlanda.py
+├── dockerstart.sh
+├── LICENSE
+├── pytest.ini
+├── quickrequirements.txt
+├── README.md
+├── ruleaza_aplicatia
+├── static
+│   └── steag_finlanda.png
+├── tari.py
+└── templates
+    ├── base.html
+    ├── home.html
+    ├── pagina.html
+    ├── steag.html
+    └── tara.html
 
-Obs: Eliminati intrarile cu Belgia; sunt doar de exemplu !
+## Directoare importante
 
-### Exemplu de actualizare in `app/lib/biblioteca_tari.py`
+### `app/lib/`
 
-```python
-from app.lib import biblioteca_tara_mea as prescurtare_biblioteca_tara_mea
+Contine bibliotecile Python utilizate pentru gestionarea informatiilor despre tari.
 
-TARI = {
-    'tara_mea': {
-        'nume': 'Numele complet al tarii mele',
-    },
-}
+Fisiere modificate:
+- `biblioteca_finlanda.py`
+- `biblioteca_tari.py`
 
-BIBLIOTECI = {
-    'tara_mea': prescurtare_biblioteca_tara_mea,
-}
-```
-## Ce se modifica in /app/tests
+### `app/tests/`
 
+Contine testele automate realizate cu Pytest.
 
-Fisierul test_lib_belgia.py este un test automatizat care verifică funcțiile din biblioteca țării . 
-El importă funcțiile principale (descriere_tara, descriere_capitala, descriere_limbi, descriere_populatie), definește valori așteptate pentru fiecare și folosește assert result == expected_result pentru a confirma că rezultatul funcțiilor corespunde exact cu ce trebuie. 
+Fisier adaugat:
+- `test_lib_finlanda.py`
 
-1. Redenumeste `app/tests/test_lib_belgia.py` cu numele tarii alese `app/tests/test_lib_<tara_mea>.py` (de exemplu `test_romania.py`).
-2. Schimbă importul din `biblioteca_belgia` în `biblioteca_<tara_mea>` (asa cum este mentionat si comentariu)
-3. Actualizează fiecare `expected_result` cu valoarea aleasa pentru țara ta
+### `static/`
 
+Contine fisiere statice utilizate de aplicatie.
 
+Fisier adaugat:
+- `steag_finlanda.png`
 
+### `templates/`
 
+Contine paginile HTML utilizate de Flask pentru afisarea informatiei in browser.
 
-## Ce se adauga in `static/`
+Aceste fisiere NU au fost modificate conform cerintei proiectului.
 
-- Adauga poza cu steagul tarii tale in format `png` in directorul `static/` ( sterge apoi poza steag_belgia.png).
-- Adauga locatia pozei in functia desriere_steag() din  `biblioteca_<tara_mea>.py`, sub formatul '/static/<steag_tara>.png'.
+---
 
-## Ce NU se modifica
+# Functionalitati implementate
 
-- `tari.py` - NU SE MODIFICA
-- `app/lib/biblioteca_header.py` - NU SE MODIFICA
-- `templates/base.html` - NU SE MODIFICA
-- `templates/pagina.html` - NU SE MODIFICA
-- `templates/steag.html` - NU SE MODIFICA
-- `templates/tara.html` - NU SE MODIFICA (este template generic pentru pagina de tara)
+In fisierul `app/lib/biblioteca_finlanda.py` au fost implementate urmatoarele functii:
 
+## `descriere_tara()`
 
-## Structura de baza
+Returneaza o descriere generala a Finlandei.
 
-`app/lib/`
-- `biblioteca_tari.py` - fisier in care vor fi agregate numele si bibliotecile de la toate tarile din proiect ( agregarea se va face la final, cand se va face Pull Request in branch-ul main)
-- `biblioteca_<tara_mea>.py` - fisierul individual cu functiile pentru tara aleasa
-- `biblioteca_header.py` - header comun, nu se modifica
+## `descriere_limbi()`
 
-`static/`
-- aici se pune poza steagului in format `png`
+Returneaza limbile oficiale vorbite in Finlanda.
 
-`templates/`
-- `base.html` - scheletul proiectului - contine structura html + css statica
-- `home.html` - pagina de pornire unde sunt listate tarile
-- `tara.html` - template generic pentru pagina fiecarei tari, unde este afisat rezultatul functiei descriere_tara()
-- `pagina.html` - pagina folosita pentru a afisa rezultatul funtiilor descriere_capitala() / descriere_populatie() / descriere_limbi()
-- `steag.html` - pagina folosita pentru a afisa rezultatul functiei descriere_steag()
-  
-`tari.py` - fișierul principal al aplicației Flask care gestionează rutele web și afișează informații despre țări. Este intermediar între cererile web și bibliotecile fiecărei țări, oferind utilizatorului informații formatate despre acestea.
+## `descriere_populatie()`
 
+Returneaza populatia aproximativa a Finlandei.
 
+## `descriere_capitala()`
 
-## Scripturi de activare si rulare
+Returneaza capitala Finlandei.
 
-### `activeaza_venv`
+## `descriere_steag()`
 
-Acest script activeaza mediul virtual Python din `.venv`. Comanda:  `. ./activeaza_venv`
+Afiseaza imaginea steagului Finlandei utilizand fisierul:
+`/static/steag_finlanda.png`
 
+---
 
-### `ruleaza_aplicatia`
+# Configurarea bibliotecii tarii
 
-Acest script porneste aplicatia Flask local. Comanda: `./ruleaza_aplicatia`
+Fisierul `app/lib/biblioteca_tari.py` a fost modificat pentru:
+- importarea bibliotecii Finlandei
+- adaugarea tarii in dictionarul `TARI`
+- maparea bibliotecii in dictionarul `BIBLIOTECI`
 
+Configuratia finala permite accesarea automata a rutelor pentru Finlanda din aplicatia Flask.
 
-### `dockerstart.sh`
+---
 
-Acest script face acelasi lucru, dar cu optiuni suplimentare. Este apelat in fisierul Dockerfile
+# Rute disponibile
 
-## Permisiuni de executie
+Aplicatia ofera urmatoarele rute web:
 
-Pentru a rula scripturile, trebuie acordate permisiuni de executie:
+| Ruta | Descriere |
+|---|---|
+| `/finlanda` | Pagina principala pentru Finlanda |
+| `/finlanda/capitala` | Afiseaza capitala Finlandei |
+| `/finlanda/populatie` | Afiseaza populatia Finlandei |
+| `/finlanda/limbi` | Afiseaza limbile oficiale |
+| `/finlanda/steag` | Afiseaza steagul Finlandei |
+
+---
+
+# Testare automata
+
+Fisier de test:
+- `app/tests/test_lib_finlanda.py`
+
+## Functii testate
+
+- `descriere_tara()`
+- `descriere_populatie()`
+- `descriere_capitala()`
+- `descriere_limbi()`
+
+Testele verifica daca valorile returnate de functii sunt identice cu valorile asteptate.
+
+## Comanda utilizata pentru testare
 
 ```bash
-chmod 764 activeaza_venv ruleaza_aplicatia dockerstart.sh
-```
-
-## Testare cu Pytest
-
-Pentru a rula testele, mergeți în directorul principal al proiectului și folosiți comanda:
-
-`pytest app/tests/test_lib_<tara_mea>.py -v`
-
-Aceasta verifica fiecare funcție din fișier și arata ce teste trec sau ce teste eșuează. Asigurati-va ca aveti venv-ul pornit.
+python3 -m pytest app/tests/test_lib_finlanda.py
 
 
+===================================== test session starts ======================================
+platform linux -- Python 3.10.12, pytest-9.0.3, pluggy-1.6.0
+rootdir: /home/miki/curs_scc_443D_tari
+configfile: pytest.ini
+collected 4 items                                                                              
 
-# Pasi recomandati pentru proiect
+app/tests/test_lib_finlanda.py::test_functie_descriere_tara 
+---------------------------------------- live log call -----------------------------------------
+2026-05-09 08:37:08 [INFO    ] (test_lib_finlanda.py:11) Merge functia descriere_tara
+PASSED                                                                                   [ 25%]
+app/tests/test_lib_finlanda.py::test_functie_populatie 
+---------------------------------------- live log call -----------------------------------------
+2026-05-09 08:37:08 [INFO    ] (test_lib_finlanda.py:18) Merge functia descriere_populatie
+PASSED                                                                                   [ 50%]
+app/tests/test_lib_finlanda.py::test_functie_capitala 
+---------------------------------------- live log call -----------------------------------------
+2026-05-09 08:37:08 [INFO    ] (test_lib_finlanda.py:25) Merge functia descriere_capitala
+PASSED                                                                                   [ 75%]
+app/tests/test_lib_finlanda.py::test_functie_limbi 
+---------------------------------------- live log call -----------------------------------------
+2026-05-09 08:37:08 [INFO    ] (test_lib_finlanda.py:32) Merge functia descriere_limbi
+PASSED                                                                                   [100%]
 
-1. `git clone https://github.com/raduionutgavrila/curs_scc_443D_tari.git` - pentru a copia local repository-ul
-2. `git checkout dev-template` - pentru a selecta ramura de dezvolatare cu template-ul
-3. `git checkout -b dev-nume-prenume` - pentru a crea o noua ramura de dezvoltare pornind de la template
-4. modifica `app/lib/biblioteca_tari.py`
-5. redenumeste `app/lib/biblioteca_belgia.py` in `app/lib/biblioteca_<tara_mea>.py` si modifica continutul functiilor
-6. adauga poza cu steagul in `static/` si adauga link catre acesta in functia din 'biblioteca_<tara_mea>.py'
-7. ruleaza cu `. ./activeaza_venv` si `./ruleaza_aplicatia`
-8. testeaza cu `pytest app/tests/test_lib_<tara_mea>.py -v`
+====================================== 4 passed in 0.04s =======================================
 
-
-# Ce mai trebuie adaugat
-
-- Creare Dockerfile
-- Creare Jenkinsfile
-
-## Observatie finala
-
-Scripturile din aceasta aplicatie sunt introduse dupa modelul aplicatiei `chrchende/sysinfo:simplu_main`.
-
-
-  
