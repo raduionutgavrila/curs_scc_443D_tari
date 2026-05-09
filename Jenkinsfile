@@ -8,7 +8,7 @@ pipeline {
                 sh '''
                     pwd
                     ls -l
-                    . ./activeaza_venv
+                    . ./activeaza_venv_jenkins
                     python --version
                     pip --version
                 '''
@@ -19,7 +19,7 @@ pipeline {
             steps {
                 echo 'Verificare calitate cod pentru fisierele proiectului Elvetia'
                 sh '''
-                    . ./activeaza_venv
+                    . .venv/bin/activate
                     export PYTHONPATH=$WORKSPACE
 
                     echo "\\nVerificare biblioteca_elvetia.py"
@@ -41,7 +41,7 @@ pipeline {
             steps {
                 echo 'Rulare teste unitare pentru Elvetia'
                 sh '''
-                    . ./activeaza_venv
+                    . .venv/bin/activate
                     export PYTHONPATH=$WORKSPACE
 
                     pytest app/tests/test_lib_elvetia.py -v
