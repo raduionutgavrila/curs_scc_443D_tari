@@ -95,8 +95,11 @@ docker start -ai <nume_cont>
 
 ## 7. Integrare și Review
 🌿 Branch sursa: `dev_roseanu_vlad`
+
 🎯 Branch destinatie: `main_roseanu_vlad`
+
 📊 Status: *(de completat)*
+
 👀 Review: *(de completat cu numele colegului)*
 
 ## Pull Request-uri la care am făcut review
