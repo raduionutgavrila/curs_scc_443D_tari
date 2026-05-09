@@ -151,7 +151,46 @@ Scripturile din aceasta aplicatie sunt introduse dupa modelul aplicatiei `chrche
 
 
 
+# Documentatie proiect - Japonia
 
+## Student
+
+Nume: Andrei Ciobanu  
+Branch dezvoltare: dev_ciobanu_andrei  
+Tema: Tari  
+Tara aleasa: Japonia  
+
+## Functionalitate adaugata
+
+Am adaugat functionalitatea pentru tara Japonia.
+
+Au fost modificate/adaugate urmatoarele fisiere:
+
+- app/lib/biblioteca_japonia.py
+- app/lib/biblioteca_tari.py
+- app/tests/test_lib_japonia.py
+- static/steag_japonia.png
+- Dockerfile
+- Jenkinsfile
+
+## Descriere functionalitate
+
+Pentru Japonia au fost implementate urmatoarele functii:
+
+- descriere_tara()
+- descriere_limbi()
+- descriere_populatie()
+- descriere_capitala()
+- descriere_steag()
+
+Aceste functii returneaza informatii despre tara, limba, populatie, capitala si steagul Japoniei.
+
+## Testare locala cu Pytest
+
+Testele au fost rulate local cu comanda:
+
+```bash
+pytest app/tests/test_lib_japonia.py -v
 
 
 ## Containerizare cu Docker
