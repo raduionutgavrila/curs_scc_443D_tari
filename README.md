@@ -67,7 +67,37 @@ Aplicația a fost containerizată folosind un Dockerfile bazat pe Python Alpine.
 |-------|-------|-----------|
 | *(de completat)* | *(de completat)* | *(de completat)* |
 
-## 7. Ce mai este de făcut
+## 7. Comenzi necesare
+ - Testare manuala cu pytest:
+ ```bash
+pytest app/tests/test_lib_statele_unite.py -v
+ ```
+
+  - Construirea imaginii:
+```bash
+# Generic
+docker build -t <nume_img> <locatia_fisierului_dockerfile>
+# Concret pentru proiect
+docker build -t sua_app:v1 .
+```
+
+ - Creare si construire container:
+ ```bash
+# Generic
+docker run -it --name <nume_cont> -p <port_local>:<port_intern> <imagine>
+# Concret pentru SUA
+docker run -it --name tari_container_sua -p 8020:5011 sua_app:v1
+```
+
+ - Repornirea containerului existent in mod interactiv:
+ ```bash
+# Generic
+docker start -ai <nume_cont>
+# Concret pentru SUA
+docker start -ai tari_container_sua
+```
+
+## 8. Ce mai este de făcut
 
 [x] Finalizare cod și teste manuale.
 [x] Aplicație containerizată și accesibilă.
