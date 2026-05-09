@@ -1,185 +1,121 @@
-# Proiect SCC - Finlanda
+# Proiect SCC - Țări - Italia
 
-## Student
-Mihaela Grigore
-
-## Descrierea si scopul proiectului
-
-Scopul acestui proiect este dezvoltarea unei aplicații software colaborative în cadrul grupei de laborator, în care fiecare student implementează propria funcționalitate asociată unei țări alese.
-
-Proiectul urmărește utilizarea unor concepte și tehnologii specifice dezvoltării moderne de aplicații software, precum:
-- dezvoltarea colaborativă folosind Git și GitHub;
-- gestionarea branch-urilor de dezvoltare individuale;
-- integrarea modificărilor prin Pull Request-uri;
-- testarea automată a funcționalităților utilizând Pytest și Jenkins;
-- verificarea și analiza codului adăugat de ceilalți membri ai echipei;
-- pregătirea aplicației pentru livrare și rulare în containere folosind Docker.
-
-Tema aleasa pentru acest proiect este reprezentarea tarii Finlanda prin intermediul unor rute web care afiseaza informatii generale despre tara, populatie, limbi oficiale, capitala si steag.
-
-Aplicatia utilizeaza:
-- Python
-- Flask
-- Pytest
-- Git/GitHub
-- mediu virtual Python (venv)
+## Dezvoltator
+- **Nume:** Dumitrache Alexandru
+- **Grupa:** 443D
+- **Tema:** Țări
+- **Element:** Italia
+- **Branch de dezvoltare:** `dev_dumitrache_alexandru`
 
 ---
 
-# Structura proiectului
+## Funcționalitate adăugată
 
-.
-├── activeaza_venv
-├── activeaza_venv_jenkins
-├── app
-│   ├── lib
-│   │   ├── biblioteca_finlanda.py
-│   │   ├── biblioteca_header.py
-│   │   └── biblioteca_tari.py
-│   └── tests
-│       └── test_lib_finlanda.py
-├── dockerstart.sh
-├── LICENSE
-├── pytest.ini
-├── quickrequirements.txt
-├── README.md
-├── ruleaza_aplicatia
-├── static
-│   └── steag_finlanda.png
-├── tari.py
-└── templates
-    ├── base.html
-    ├── home.html
-    ├── pagina.html
-    ├── steag.html
-    └── tara.html
+Am adăugat funcționalitate referitoare la **Italia** în fișierul `app/lib/biblioteca_italia.py`:
 
-## Directoare importante
+- **descriere_tara()** – Returnează o descriere generală a Italiei
+- **descriere_capitala()** – Returnează informații despre capitala Roma
+- **descriere_populatie()** – Returnează informații despre populația Italiei
+- **descriere_limbi()** – Returnează limbile oficiale ale Italiei
+- **descriere_steag()** – Returnează descrierea și imaginea steagului Italiei
 
-### `app/lib/`
-
-Contine bibliotecile Python utilizate pentru gestionarea informatiilor despre tari.
-
-Fisiere modificate:
-- `biblioteca_finlanda.py`
-- `biblioteca_tari.py`
-
-### `app/tests/`
-
-Contine testele automate realizate cu Pytest.
-
-Fisier adaugat:
-- `test_lib_finlanda.py`
-
-### `static/`
-
-Contine fisiere statice utilizate de aplicatie.
-
-Fisier adaugat:
-- `steag_finlanda.png`
-
-### `templates/`
-
-Contine paginile HTML utilizate de Flask pentru afisarea informatiei in browser.
-
-Aceste fisiere NU au fost modificate conform cerintei proiectului.
-
----
-
-# Functionalitati implementate
-
-In fisierul `app/lib/biblioteca_finlanda.py` au fost implementate urmatoarele functii:
-
-## `descriere_tara()`
-
-Returneaza o descriere generala a Finlandei.
-
-## `descriere_limbi()`
-
-Returneaza limbile oficiale vorbite in Finlanda.
-
-## `descriere_populatie()`
-
-Returneaza populatia aproximativa a Finlandei.
-
-## `descriere_capitala()`
-
-Returneaza capitala Finlandei.
-
-## `descriere_steag()`
-
-Afiseaza imaginea steagului Finlandei utilizand fisierul:
-`/static/steag_finlanda.png`
-
----
-
-# Configurarea bibliotecii tarii
-
-Fisierul `app/lib/biblioteca_tari.py` a fost modificat pentru:
-- importarea bibliotecii Finlandei
-- adaugarea tarii in dictionarul `TARI`
-- maparea bibliotecii in dictionarul `BIBLIOTECI`
-
-Configuratia finala permite accesarea automata a rutelor pentru Finlanda din aplicatia Flask.
-
----
-
-# Rute disponibile
-
-Aplicatia ofera urmatoarele rute web:
+### Rute disponibile
 
 | Ruta | Descriere |
-|---|---|
-| `/finlanda` | Pagina principala pentru Finlanda |
-| `/finlanda/capitala` | Afiseaza capitala Finlandei |
-| `/finlanda/populatie` | Afiseaza populatia Finlandei |
-| `/finlanda/limbi` | Afiseaza limbile oficiale |
-| `/finlanda/steag` | Afiseaza steagul Finlandei |
+|------|-----------|
+| `/` | Pagina principală – lista tuturor țărilor |
+| `/italia` | Informații generale despre Italia |
+| `/italia/capitala` | Capitala Italiei – Roma |
+| `/italia/populatie` | Populația Italiei |
+| `/italia/steag` | Steagul Italiei |
+
+### Fișiere modificate/adăugate
+- `app/lib/biblioteca_italia.py` – **NOU** – biblioteca cu funcțiile pentru Italia
+- `app/lib/biblioteca_tari.py` – **MODIFICAT** – adăugat import și înregistrare Italia în TARI și BIBLIOTECI
+- `app/tests/test_lib_italia.py` – **NOU** – teste unitare pentru Italia
+- `Jenkinsfile` – **NOU** – pipeline declarativ pentru Jenkins
+- `Dockerfile` – **NOU** – containerizarea aplicației
 
 ---
 
-# Testare automata
+## Stadiul implementării
 
-Fisier de test:
-- `app/tests/test_lib_finlanda.py`
+- [x] Cod funcționalitate adăugat (`app/lib/biblioteca_italia.py`)
+- [x] Italia înregistrată în `biblioteca_tari.py` (TARI + BIBLIOTECI)
+- [x] Teste unitare scrise (`app/tests/test_lib_italia.py`)
+- [x] Jenkinsfile configurat
+- [x] Dockerfile creat
+- [x] README.md completat
 
-## Functii testate
+---
 
-- `descriere_tara()`
-- `descriere_populatie()`
-- `descriere_capitala()`
-- `descriere_limbi()`
+## Testare
 
-Testele verifica daca valorile returnate de functii sunt identice cu valorile asteptate.
+### Testare manuală
+Aplicația a fost verificată local rulând `./ruleaza_aplicatia` și accesând `http://localhost:5011`.
 
-## Comanda utilizata pentru testare
+### Testare cu Jenkins
+- Fișierul `Jenkinsfile` este configurat cu un pipeline declarativ
+- Pipeline-ul conține etapele: Build, Verificare calitate cod (pylint), Teste unitare (pytest)
+- Testele unitare se execută cu `pytest`
+- **Rezultat:** PASS
 
+**Dovada Build Jenkins:**
+![Jenkins OK](screenshots/jenkinsok.png)
+![Jenkins Success](screenshots/jsuccess.png)
+
+### Teste unitare (4/4 PASS)
+- `test_functie_descriere_tara` – PASS
+- `test_functie_populatie` – PASS
+- `test_functie_capitala` – PASS
+- `test_functie_limbi` – PASS
+
+---
+
+## Containerizare
+
+### Construire imagine Docker
 ```bash
-python3 -m pytest app/tests/test_lib_finlanda.py
+docker build -t scc_tari_italia .
+```
 
+### Creare și rulare container
+```bash
+docker run -d -p 5011:5011 --name tari_italia scc_tari_italia
+```
 
-===================================== test session starts ======================================
-platform linux -- Python 3.10.12, pytest-9.0.3, pluggy-1.6.0
-rootdir: /home/miki/curs_scc_443D_tari
-configfile: pytest.ini
-collected 4 items                                                                              
+### Accesare aplicație din browser
+Aplicația poate fi accesată la: `http://localhost:5011/italia`
 
-app/tests/test_lib_finlanda.py::test_functie_descriere_tara 
----------------------------------------- live log call -----------------------------------------
-2026-05-09 08:37:08 [INFO    ] (test_lib_finlanda.py:11) Merge functia descriere_tara
-PASSED                                                                                   [ 25%]
-app/tests/test_lib_finlanda.py::test_functie_populatie 
----------------------------------------- live log call -----------------------------------------
-2026-05-09 08:37:08 [INFO    ] (test_lib_finlanda.py:18) Merge functia descriere_populatie
-PASSED                                                                                   [ 50%]
-app/tests/test_lib_finlanda.py::test_functie_capitala 
----------------------------------------- live log call -----------------------------------------
-2026-05-09 08:37:08 [INFO    ] (test_lib_finlanda.py:25) Merge functia descriere_capitala
-PASSED                                                                                   [ 75%]
-app/tests/test_lib_finlanda.py::test_functie_limbi 
----------------------------------------- live log call -----------------------------------------
-2026-05-09 08:37:08 [INFO    ] (test_lib_finlanda.py:32) Merge functia descriere_limbi
-PASSED                                                                                   [100%]
+### Capturi de ecran
 
-====================================== 4 passed in 0.04s =======================================
+*Terminal - docker images, docker ps, docker logs:*
+![Docker Terminal](screenshots/dockerterm.png)
 
+*Browser - accesare aplicație din container:*
+![Docker Browser](screenshots/dockerbrowser.png)
+
+---
+
+## Integrare (Pull Request)
+
+- Branch sursă: `dev_dumitrache_alexandru`
+- Branch destinație: `main_dumitrache_alexandru`
+- Status: *(de completat)*
+- Review de la: *(de completat cu numele colegului)*
+
+---
+
+## Pull Request-uri la care am făcut review
+
+| PR ID | Autor | Descriere |
+|-------|-------|-----------|
+| *(de completat)* | *(de completat)* | *(de completat)* |
+
+---
+
+## Ce mai este de făcut
+
+- [ ] Obținere review de la un coleg
+- [ ] Integrare README.md în branch-ul main
+- [ ] Review la PR-ul unui coleg
