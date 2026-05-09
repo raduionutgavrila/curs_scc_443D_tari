@@ -150,4 +150,81 @@ Aceasta verifica fiecare funcție din fișier și arata ce teste trec sau ce tes
 Scripturile din aceasta aplicatie sunt introduse dupa modelul aplicatiei `chrchende/sysinfo:simplu_main`.
 
 
+
+
+
+
+## Containerizare cu Docker
+
+Pentru containerizarea aplicatiei am creat fisierul `Dockerfile` in branch-ul personal de dezvoltare `dev_ciobanu_andrei`.
+
+Dockerfile-ul porneste de la imaginea `python:3.12-slim`, copiaza fisierele proiectului, instaleaza dependintele din `quickrequirements.txt`, acorda permisiuni scripturilor si porneste aplicatia Flask folosind scriptul `dockerstart.sh`.
+
+Imaginea Docker a fost construita cu urmatoarea comanda:
+
+`sudo docker build -t proiect-scc-japonia .`
+
+Imaginea a fost creata cu succes si apare in lista de imagini Docker:
+
+![Docker images](docs/screenshots/docker_images.png)
+
+Containerul a fost pornit cu urmatoarea comanda:
+
+`sudo docker run --rm -p 5011:5011 proiect-scc-japonia`
+
+Containerul pornit poate fi vazut cu `docker ps`:
+
+![Docker ps](docs/screenshots/docker_ps.png)
+
+In consola de rulare a containerului se observa ca aplicatia Flask porneste corect si ca browserul acceseaza rutele aplicatiei. Apar request-uri cu status `200` pentru paginile Japoniei:
+
+![Docker run](docs/screenshots/docker_run.png)
+
+Aplicatia rulata in container a fost accesata din browser la adresa:
+
+`http://127.0.0.1:5011/japonia`
+
+![Docker site](docs/screenshots/docker_site.png)
+
+Prin acest test am verificat ca aplicatia a fost containerizata corect si ca functionalitatea pentru Japonia poate fi accesata din browser din container.
+
+---
+
+## Testare automata cu Jenkins
+
+Pentru testarea automata am creat fisierul `Jenkinsfile` in branch-ul personal de dezvoltare `dev_ciobanu_andrei`.
+
+A fost creat un job Jenkins de tip Pipeline cu numele:
+
+`proiect-scc-japonia`
+
+Job-ul este configurat sa ia codul din repository-ul GitHub, de pe branch-ul `dev_ciobanu_andrei`, si sa ruleze fisierul `Jenkinsfile`.
+
+Configurarea folosita:
+
+- Definition: `Pipeline script from SCM`
+- SCM: `Git`
+- Repository URL: `https://github.com/raduionutgavrila/curs_scc_443D_tari.git`
+- Branch Specifier: `*/dev_ciobanu_andrei`
+- Script Path: `Jenkinsfile`
+
+Job-ul Jenkins a rulat cu succes, avand status verde:
+
+![Jenkins job](docs/screenshots/jenkins_job.png)
+
+Pipeline-ul Jenkins pregateste mediul Python, instaleaza dependintele si ruleaza testele unitare cu pytest:
+
+`pytest app/tests/test_lib_japonia.py -v`
+
+Rezultatul rularii testelor in Jenkins a fost:
+
+`4 passed`
+
+La finalul executiei, Jenkins a afisat:
+
+`Finished: SUCCESS`
+
+![Jenkins test success](docs/screenshots/jenkins_test_success.png)
+
+Prin acest test am verificat ca functionalitatea pentru Japonia este testata automat cu Jenkins si ca toate testele trec cu succes.
   
