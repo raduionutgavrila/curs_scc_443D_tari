@@ -27,7 +27,7 @@ Aplicatia utilizeaza:
 ---
 
 # Structura proiectului
-
+```text
 .
 ├── activeaza_venv
 ├── activeaza_venv_jenkins
@@ -53,6 +53,7 @@ Aplicatia utilizeaza:
     ├── pagina.html
     ├── steag.html
     └── tara.html
+```
 
 ## Directoare importante
 
