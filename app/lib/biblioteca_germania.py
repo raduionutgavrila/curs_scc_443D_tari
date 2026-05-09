@@ -1,5 +1,29 @@
 def descriere_tara() -> str:
-    return "Germania este o țară din Europa Centrală, cunoscută pentru capitala Berlin, economia puternică și industria auto. Pentru acest proiect, accentul este pus pe muzeele auto și pe restaurantele/berăriile tradiționale. Printre muzeele auto cunoscute se află BMW Museum din München, Mercedes-Benz Museum și Porsche Museum din Stuttgart, Audi Forum din Ingolstadt și Autostadt Volkswagen din Wolfsburg. La partea de restaurante și bere, Germania este cunoscută pentru Hofbräuhaus, Augustiner, Paulaner și alte berării tradiționale."
+    return (
+        "Germania este o țară situată în Europa Centrală, recunoscută pentru istoria sa bogată, "
+
+        "economia puternică, orașele moderne și peisajele variate. Țara combină tradiția cu inovația, "
+
+        "având atât castele medievale, sate pitorești și zone montane, cât și centre urbane importante "
+
+        "precum Berlin, München, Hamburg, Frankfurt și Köln. "
+
+        "Printre atracțiile importante din Germania se află muzeele auto dedicate unor mărci celebre: "
+
+        "BMW Museum din München, Mercedes-Benz Museum din Stuttgart și Porsche Museum din Stuttgart-Zuffenhausen. "
+
+        "Acestea prezintă istoria industriei auto germane, modele clasice, mașini de competiție și evoluția tehnologiei. "
+
+        "Alte atracții turistice cunoscute sunt Poarta Brandenburg din Berlin, Castelul Neuschwanstein din Bavaria, "
+
+        "Catedrala din Köln, Pădurea Neagră, Zidul Berlinului, Marienplatz din München și Valea Rinului. "
+
+        "Germania este cunoscută și pentru festivalurile tradiționale, piețele de Crăciun, cultura locală "
+
+        "și berăriile populare din regiunea Bavaria, precum Hofbräuhaus München, Augustiner Bräustuben "
+
+        "și Paulaner Bräuhaus."
+    )
 
 
 def descriere_limbi() -> str:
