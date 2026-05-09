@@ -10,7 +10,7 @@ pipeline {
 
         stage('Run tests') {
             steps {
-                sh 'pytest app/tests/test_lib_irlanda.py -v'
+                sh 'python3 -m pytest app/tests/test_lib_irlanda.py -v'
             }
         }
 
