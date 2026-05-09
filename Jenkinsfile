@@ -44,15 +44,17 @@ pipeline {
         }
 
         stage('Deploy') {
-            agent any
-            steps {
-                echo "Build ID: ${BUILD_NUMBER}"
-                echo "Creare imagine docker"
-                sh '''
-                    docker build -t tari:v${BUILD_NUMBER} .
-                    docker create --name tari${BUILD_NUMBER} -p 8020:5011 tari:v${BUILD_NUMBER}
-                '''
-            }
-        }
+    agent any
+    steps {
+        echo "Build ID: ${BUILD_NUMBER}"
+        echo "Creare imagine docker si pornire container"
+        sh '''
+            docker build -t proiect-scc-japonia .
+            docker rm -f proiect_scc_japonia || true
+            docker run -d --name proiect_scc_japonia -p 5011:5011 proiect-scc-japonia
+            docker ps
+        '''
     }
+    }
+}
 }
