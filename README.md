@@ -1,17 +1,25 @@
-`Brazilia-App`
+`Proiect SCC - Țări - Brazilia`
 ===================================
 
 # Cuprins
 
+1. [Dezvoltator](#dezvoltator)
 1. [Descriere aplicatie](#descriere-aplicatie)
 1. [Descriere versiune](#descriere-versiune)
 1. [Configurare](#configurare)
 1. [Exemple pagina web](#exemple-pagina-web)
 1. [Testare cu pytest](#testare-cu-pytest)
 1. [Verificare statica. pylint - calitate cod](#verificare-statica-cu-pylint)
+1. [Docker](#docker)
 1. [DevOps](#devops-ci)
    1. [Pipeline Jenkins](#exemplu-executie-pipeline-jenkins)
 1. [Bibliografie](#bibliografie)
+
+# Dezvoltator
+[cuprins](#cuprins)
+- **Nume:** Balaban Răzvan-Marian
+- **Grupă:** 443D
+- **Țară alocată:** Brazilia
 
 # Descriere aplicatie
 [cuprins](#cuprins)
@@ -124,6 +132,8 @@ Execuția testelor se face din directorul rădăcină al aplicației (`curs_scc_
 ```bash
 (.venv) razvan@razvan-VirtualBox:~/Desktop/proiect/curs_scc_443D_tari$ pytest app/tests/test_lib_brazilia.py -v
 ```
+Testele au fost rulate local cu succes folosind pytest:
+![image](static/pytest_ss.png)
 
 # Verificare statica cu pylint
 [cuprins](#cuprins)
@@ -138,12 +148,36 @@ Pentru verificarea calității codului sursă se utilizează pachetul **pylint**
 (.venv) razvan@razvan-VirtualBox:~/Desktop/proiect/curs_scc_443D_tari$ pylint --exit-zero tari.py
 ```
 
+# Docker
+[cuprins](#cuprins)
+
+Aplicația a fost containerizată folosind o imagine de Python 3.10-alpine. Containerul este configurat să ruleze procesul Flask pe portul intern **5011**.
+
+## Creare imagine
+![image](static/docker_build_ss.png)
+
+## Rulare container si vizualizare
+![image](static/docker_run_ss.png)
+
+## Docker logs
+![image](static/docker_logs_ss.png)
+
+## Accesare aplicație din browser:
+Aplicația poate fi accesată local la adresa http://localhost:8020 sau direct prin IP-ul intern alocat de Docker http://172.17.0.2:5011.
+![image](static/docker_aplicatie_ss.png)
+
+Pentru oprirea și eliminarea containerului, se utilizează următoarele comenzi:
+ * **Oprire**: `docker stop test-brazilia`
+ * **Ștergere**: `docker rm test-brazilia`
+
 # DevOps CI
 [cuprins](#cuprins)
 
 - **CI** = Continuous Integration (Integrare Continuă)
 
-## Exemplu execuție pipeline Jenkins
+Proiectul utilizează un flux de automatizare definit în `Jenkinsfile`, care asigură validarea codului și livrarea aplicației.
+
+## Exemplu executie pipeline Jenkins
 
 Pentru a se putea executa cu succes ultimul pas din pipeline-ul de Jenkins (crearea și lansarea containerului Docker), este necesar ca utilizatorul `jenkins` să aibă permisiuni de rulare a comenzilor Docker fără `sudo`.
 
