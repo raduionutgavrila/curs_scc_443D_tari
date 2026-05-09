@@ -90,8 +90,8 @@ docker start -ai <nume_cont>
 
 ## 8. Ce mai este de făcut
 
-[x] Finalizare cod și teste manuale.
-[x] Aplicație containerizată și accesibilă.
-[x] Succes Pipeline Jenkins.
-[ ] Obținerea aprobării de la colegi pentru PR-ul final.
-[ ] Integrarea finală în branch-ul main.
+ - [x] Finalizare cod și teste manuale.
+ - [x] Aplicație containerizată și accesibilă.
+ - [x] Succes Pipeline Jenkins.
+ - [ ] Obținerea aprobării de la colegi pentru PR-ul final.
+ - [ ] Integrarea finală în branch-ul main.
