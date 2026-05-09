@@ -44,15 +44,15 @@ pipeline {
         }
 
         stage('Deploy') {
-    agent any
-    steps {
-        echo "Build ID: ${BUILD_NUMBER}"
-        echo "Creare imagine docker si pornire container"
-        sh '''
-            docker build -t tari:v${BUILD_NUMBER} .
-            docker rm -f tari${BUILD_NUMBER} || true
-            docker run -d --name tari${BUILD_NUMBER} -p 8020:5011 tari:v${BUILD_NUMBER}
-            docker ps | grep tari${BUILD_NUMBER}
-        '''
-    }
+            agent any
+            steps {
+                echo "Build ID: ${BUILD_NUMBER}"
+                echo "Creare imagine docker si pornire container"
+                sh '''
+                    docker build -t tari:v${BUILD_NUMBER} .
+                    docker rm -f tari${BUILD_NUMBER} || true
+                    docker run -d --name tari${BUILD_NUMBER} -p 8020:5011 tari:v${BUILD_NUMBER}
+                    docker ps | grep tari${BUILD_NUMBER}
+                '''
+            }
 }
