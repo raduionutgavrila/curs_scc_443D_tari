@@ -5,7 +5,7 @@ def descriere_limbi()-> str:
     return "Coreeana"
 
 def descriere_populatie()->str:
-    return "51,106,229 de locuitori"
+    return "51.1 milioane de locuitori"
 
 def descriere_capitala()->str:
     return "Seul"
