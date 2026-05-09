@@ -7,9 +7,22 @@
 
 ## 2. Funcționalitate Adăugată
 Am implementat logica pentru afișarea informațiilor despre Coreea de Sud. Aceasta include:
-- Definirea rutelor în `app/lib/biblioteca_coreea.py`.
-- Adăugarea datelor specifice (descrierea tarii, limbi vorbite, populație, capitală) în dicționarul, `biblioteca_coreea` de țări.
-- Integrarea steagului în folderul `static/`.
+
+- **descriere_tara()** – Returnează o descriere generală a Canadei
+- **descriere_capitala()** – Returnează capitala Canadei
+- **descriere_populatie()** – Returnează populația Canadei
+- **descriere_limbi()** – Returnează limbile oficiale ale Canadei
+- **descriere_steag()** – Returnează imaginea steagului Canadei
+
+### Rute accesibile
+
+| Ruta | Descriere |
+|------|-----------|
+| `/` | Pagina principală – lista tuturor țărilor |
+| `/coreea` | Informații generale despre Coreea de Sud |
+| `/coreea/capitala` | Capitala Coreei de Sud |
+| `/coreea/populatie` | Populația Coreea de Sud |
+| `/coreea/steag` | Steagul Coreei de Sud |
 
 ## 3. Stadiul Implementării
 - [x] Cod funcționalitate adăugat
@@ -18,20 +31,33 @@ Am implementat logica pentru afișarea informațiilor despre Coreea de Sud. Acea
 ### Testare Manuală
 Aplicația a fost verificată local rulând `.\ruleaza_aplicatia` și accesând `http://127.0.0.1:5011/`.
 
+**Output Consola Locala:**
+
+![Console Output Start App](screenshots/ss-terminal-local.png)
+
+**Apliactia Accesata la `http://127.0.0.1:5011/`:**
+
 ![Test local](screenshots/ss-local.png)
 
-### Testare folosind Pytest
+### Testare Locala Folosind Pytest
 Mai intai am verificat ca testele functioneaza local.
 
-**Testare locala cu pytest:**
+**Testare Locala cu Pytest:**
+
 ![Console Output Pytest](screenshots/ss-teste.png)
 
 
 ### Testare Automata folosind Jenkins
 
 Am configurat un Pipeline în Jenkins care rulează automat testele. Testul din `app/tests/` a trecut cu succes (PASS).
+
 **Dovada Build Jenkins:**
-![Status Build Jenkins](screenshots/tests_passed_1.png)
+
+![Status Build Jenkins](screenshots/ss-jenkins.png)
+
+**Dovada Teste Pytest in Jenkins:**
+
+![Output Tests Jenkins](screenshots/ss-jenkins-teste.png)
 
 ## 5. Containerizare (Docker)
 Aplicația a fost containerizată folosind o imagine de Python 3.10-alpine. Containerul expune portul 5011 si poate fi accesat la `http://172.17.0.2:5011/`.
@@ -53,6 +79,7 @@ Aplicația a fost containerizată folosind o imagine de Python 3.10-alpine. Cont
 *4. Accesare aplicație din container (Browser):*
 
 Aplicatia va putea fi accesata la: `http://172.17.0.2:5011/`
+
 ![Browser-Docker](screenshots/ss-docker-page.png)
 
 *5. Log-uri consolă (interacțiune browser-container):*
@@ -63,5 +90,14 @@ Aplicatia va putea fi accesata la: `http://172.17.0.2:5011/`
 - **Branch dezvoltare: `dev_toaca_cristiana`**
 - **Pull Request (PR) către `main_toaca_cristiana`:** 
 
-## 7. Ce mai este de făcut
-- [ ] Integrarea finală în branch-ul `main` al grupei după aprobarea tuturor review-urilor.
+## 7. Review-uri:
+
+- [ ] Am făcut review pentru colegul: [Nume Coleg (username github) / ID PR]
+- [x] Am primit review de la: [ Gavrila Radu (raduionutgavrila) / #20]
+
+## 8. De facut
+ - [x] Finalizare cod și teste manuale.
+ - [x] Aplicație containerizată și accesibilă.
+ - [x] Succes Pipeline Jenkins.
+ - [ ] Obținerea aprobării de la colegi pentru PR-ul final, in main.
+ - [ ] Integrarea finală în branch-ul main.
