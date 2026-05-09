@@ -17,7 +17,6 @@ Am implementat logica pentru afișarea informațiilor despre Canada. Aceasta inc
 ## 4. Testare
 ### Testare Manuală
 Aplicația a fost verificată local rulând `python3 tari.py` și accesând `http://localhost:5000`.
-![Test local]
 (<img width="822" height="579" alt="image" src="https://github.com/user-attachments/assets/9bbce803-4a0f-4430-b57d-1c57de086974" />)
 (<img width="1858" height="861" alt="image" src="https://github.com/user-attachments/assets/5778be5b-fd8b-49f7-862c-a38b6a4a6925" />)
 
