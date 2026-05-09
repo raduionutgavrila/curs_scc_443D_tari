@@ -28,18 +28,25 @@ Aplicatia utilizeaza:
 
 # Structura proiectului
 ```text
-.
 ├── activeaza_venv
 ├── activeaza_venv_jenkins
 ├── app
 │   ├── lib
 │   │   ├── biblioteca_finlanda.py
 │   │   ├── biblioteca_header.py
-│   │   └── biblioteca_tari.py
+│   │   ├── biblioteca_tari.py
+│   │   └── __pycache__
+│   │       ├── biblioteca_finlanda.cpython-310.pyc
+│   │       ├── biblioteca_header.cpython-310.pyc
+│   │       └── biblioteca_tari.cpython-310.pyc
 │   └── tests
+│       ├── __pycache__
+│       │   └── test_lib_finlanda.cpython-310-pytest-9.0.3.pyc
 │       └── test_lib_finlanda.py
 ├── dockerstart.sh
 ├── LICENSE
+├── __pycache__
+│   └── tari.cpython-310.pyc
 ├── pytest.ini
 ├── quickrequirements.txt
 ├── README.md
@@ -53,6 +60,7 @@ Aplicatia utilizeaza:
     ├── pagina.html
     ├── steag.html
     └── tara.html
+
 ```
 
 ## Directoare importante
