@@ -77,24 +77,18 @@ pytest app/tests/test_lib_statele_unite.py -v
 ```bash
 # Generic
 docker build -t <nume_img> <locatia_fisierului_dockerfile>
-# Concret pentru proiect
-docker build -t sua_app:v1 .
 ```
 
  - Creare si construire container:
  ```bash
 # Generic
 docker run -it --name <nume_cont> -p <port_local>:<port_intern> <imagine>
-# Concret pentru SUA
-docker run -it --name tari_container_sua -p 8020:5011 sua_app:v1
 ```
 
  - Repornirea containerului existent in mod interactiv:
  ```bash
 # Generic
 docker start -ai <nume_cont>
-# Concret pentru SUA
-docker start -ai tari_container_sua
 ```
 
 ## 8. Ce mai este de făcut
