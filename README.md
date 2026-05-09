@@ -1,8 +1,8 @@
 # Proiect SCC - Țări 
-## Table of Contents
-* [Canada](#Canada - Roseanu Vlad-George)
-* ["Coreea de Sud"](#Coreea de Sud - Toaca Cristiana)
-* [Usage](#usage)
+1. [Canada - Roseanu Vlad-George](#canada-roseanu)
+1. [Coreea de Sud - Toaca Cristiana](#coreea-de-sud-toaca)
+
+
 
 ## Canada - Roseanu Vlad-George
 
