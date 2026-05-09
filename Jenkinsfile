@@ -16,7 +16,7 @@ pipeline {
 
         stage('Build Docker image') {
             steps {
-                sh 'sudo docker build -t proiect-irlanda .'
+                sh 'docker build -t proiect-irlanda .'
             }
         }
     }
