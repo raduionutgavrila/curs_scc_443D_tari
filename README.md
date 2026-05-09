@@ -98,9 +98,9 @@ docker start -ai <nume_cont>
 
 🎯 Branch destinatie: `main_roseanu_vlad`
 
-📊 Status: *(de completat)*
+📊 Status: *Verificat*
 
-👀 Review: *(de completat cu numele colegului)*
+👀 Review: *Esterabadeyan Hadi*
 
 ## Pull Request-uri la care am făcut review
 
