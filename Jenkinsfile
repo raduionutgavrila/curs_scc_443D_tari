@@ -1,59 +1,60 @@
-/*Jenkins*/
+/* Jenkins*/
 pipeline {
     agent any
 
     stages {
-        stage('Build') {
+        stage('Build & Prep') {
             steps {
-                echo 'Building...'
+                echo 'Pregatire mediu: Creare .venv si instalare dependinte...'
                 sh '''
-                    pwd
-                    ls -l
-                    . ./activeaza_venv
+                    chmod +x activeaza_venv_jenkins activeaza_venv ruleaza_aplicatia dockerstart.sh
+                    ./activeaza_venv_jenkins
                 '''
             }
         }
-        
-        stage('Testare') {
-            parallel {
-                stage('Pylint - calitate cod') {
-                    steps {
-                        sh '''
-                            . ./activeaza_venv
-                            
-                            echo "\n\nVerificare app/lib/*.py cu pylint\n"
-                            pylint --exit-zero app/lib/*.py
 
-                            echo "\n\nVerificare app/tests/*.py cu pylint"
-                            pylint --exit-zero app/tests/*.py
-
-                            echo "\n\nVerificare tari.py cu pylint"
-                            pylint --exit-zero tari.py
-                        '''
-                    }
-                }
-
-                stage('Unit Testing cu pytest') {
-                    steps {
-                        echo 'Unit testing with Pytest...'
-                        sh '''
-                            . ./activeaza_venv
-                            pytest app/tests/*.py -v
-                        '''
-                    }
-                }
-            }
-        }
-        
-        stage('Deploy') {
+        stage('Calitate Cod (Pylint)') {
             steps {
-                echo "Build ID: ${BUILD_NUMBER}"
-                echo "Creare imagine docker..."
+                echo 'Analiza statica a codului...'
                 sh '''
-                    docker build -t tari:v${BUILD_NUMBER} .
-                    docker create --name tari${BUILD_NUMBER} -p 8020:5011 tari:v${BUILD_NUMBER}
+                    . .venv/bin/activate
+                    echo 'Verificare biblioteca Canada...'
+                    pylint --exit-zero app/lib/biblioteca_canada.py
+                    echo 'Verificare teste Canada...'
+                    pylint --exit-zero app/tests/test_lib_canada.py
                 '''
             }
+        }
+
+        stage('Unit Testing (Pytest)') {
+            steps {
+                echo 'Executie teste unitare automate...'
+                sh '''
+                    . .venv/bin/activate
+                    pytest app/tests/test_lib_canada.py -v
+                '''
+            }
+        }
+
+        stage('Docker (Livrare)') {
+            steps {
+                echo "Numar Build: ${BUILD_NUMBER}"
+                echo "Generare imagine si container Docker"
+                sh '''
+                    docker build -t canada_app:v${BUILD_NUMBER} .
+                    docker rm -f tari_container_${BUILD_NUMBER} || true
+                    docker create --name tari_container_${BUILD_NUMBER} -p 8020:5011 sua_app:v${BUILD_NUMBER}
+                '''
+            }
+        }
+    }
+
+    post {
+        success {
+            echo 'Pipeline finalizat cu succes (PASS)! '
+        }
+        failure {
+            echo 'Eroare in pipeline. Verifica log-urile de consola.'
         }
     }
 }
