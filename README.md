@@ -20,7 +20,7 @@ Am adaugat funcționalitatea pentru **Canada** în fișierul `app/lib/biblioteca
 |------|-----------|
 | `/` | Pagina principală – lista tuturor țărilor |
 | `/canada` | Informații generale despre Canada |
-| `/canada/capitala` | Capitala Italiei – Ottawa |
+| `/canada/capitala` | Capitala Canadei – Ottawa |
 | `/canada/populatie` | Populația Canada |
 | `/canada/steag` | Steagul Canada |
 
