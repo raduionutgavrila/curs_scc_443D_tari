@@ -10,7 +10,7 @@ pipeline {
                 sh '''
                     pwd;
                     ls -l;
-                    . ./activeaza_venv;
+                    . ./activeaza_venv_jenkins;
                 '''
             }
         }
@@ -20,7 +20,7 @@ pipeline {
             steps {
                 echo 'Analiza statica a codului cu pylint...'
                 sh '''
-                    . ./activeaza_venv;
+                    . .venv/bin/activate;
                     echo '\n\nVerificare biblioteca_italia.py cu pylint\n';
                     pylint --exit-zero app/lib/biblioteca_italia.py;
 
@@ -38,7 +38,7 @@ pipeline {
             steps {
                 echo 'Rulare teste unitare pentru Italia...'
                 sh '''
-                    . ./activeaza_venv;
+                    . .venv/bin/activate;
                     pytest app/tests/test_lib_italia.py -v
                 '''
             }
