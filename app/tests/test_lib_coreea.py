@@ -1,5 +1,5 @@
 import logging
-from app.lib.biblioteca_belgia import descriere_tara, descriere_capitala, descriere_limbi, descriere_populatie
+from app.lib.biblioteca_coreea import descriere_tara, descriere_capitala, descriere_limbi, descriere_populatie
 
 #from app.lib.biblioteca_<tara_mea> import descriere_tara, descriere_capitala, descriere_limbi, descriere_populatie
 
