@@ -55,4 +55,4 @@ pipeline {
                     docker ps | grep tari${BUILD_NUMBER}
                 '''
             }
-}
+    }
