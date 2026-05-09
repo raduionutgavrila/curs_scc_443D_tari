@@ -27,9 +27,13 @@ Am adaugat funcționalitatea pentru **Canada** în fișierul `app/lib/biblioteca
 ## Modificări
 
 🇨🇦 `app/lib/biblioteca_canada.py` – biblioteca cu funcțiile pentru Canada
+
 🔗 `app/lib/biblioteca_tari.py` – adăugat import și înregistrare Canada în TARI și BIBLIOTECI
+
 🛠️ `app/tests/test_lib_canada.py` – teste unitare pentru Canada
+
 ⚙️ `Jenkinsfile` – pipeline declarativ pentru Jenkins
+
 🐳 `Dockerfile` – containerizarea aplicației
 
 ## Testare Manuală
