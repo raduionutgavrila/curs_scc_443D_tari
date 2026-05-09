@@ -279,9 +279,6 @@ Review-uri:
 
 ## 11. Ce mai este de făcut
 
-- [ ] Crearea Pull Request-ului din `dev_colan_bianca` către `main_colan_bianca`
-- [ ] Review din partea unui coleg
-- [ ] Merge în `main_colan_bianca`
 - [ ] Integrarea finală în branch-ul principal al grupei, dacă este cerută de cadrul didactic
 
 ---
