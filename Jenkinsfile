@@ -44,11 +44,14 @@ pipeline {
         }
 
         stage('Deploy') {
+            agent any
             steps {
                 echo "Build ID: ${BUILD_NUMBER}"
-                echo "Deploy/containerizare verificata separat prin Dockerfile."
-                echo "Imaginea Docker a fost construita manual cu: sudo docker build -t proiect-scc-japonia ."
-                echo "Containerul a fost rulat manual cu: sudo docker run --rm -p 5011:5011 proiect-scc-japonia"
+                echo "Creare imagine docker"
+                sh '''
+                    docker build -t tari:v${BUILD_NUMBER} .
+                    docker create --name tari${BUILD_NUMBER} -p 8020:5011 tari:v${BUILD_NUMBER}
+                '''
             }
         }
     }
