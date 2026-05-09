@@ -1,153 +1,228 @@
-# PROIECT SCC - TEMPLATE WEB PENTRU PROIECT DE GRUPA
+# Documentatie proiect - Japonia
 
-Acest branch este template-ul de proiect pentru grupa. Scopul este ca fiecare student sa foloseasca aceeasi structura a site-ului si sa modifice ce este necesar pentru tara proprie. 
+## Student
 
-## Ce se modifica in /app/lib/
+Nume: Andrei Ciobanu  
+Branch dezvoltare: dev_ciobanu_andrei  
+Tema: Tari  
+Tara aleasa: Japonia  
 
-In acest director, trebuie modificat:
+## Functionalitate adaugata
 
-- `app/lib/biblioteca_belgia.py`
+Am adaugat functionalitatea pentru tara Japonia.
+
+Au fost modificate/adaugate urmatoarele fisiere:
+
+- `app/lib/biblioteca_japonia.py`
 - `app/lib/biblioteca_tari.py`
+- `app/tests/test_lib_japonia.py`
+- `static/steag_japonia.png`
+- `Dockerfile`
+- `Jenkinsfile`
 
+## Descriere functionalitate
 
+Pentru Japonia au fost implementate urmatoarele functii:
 
-Redenumeste fisierul `app/lib/biblioteca_belgia.py` cu numele tarii alese `app/lib/biblioteca_<tara_mea>.py` (de exemplu `biblioteca_romania.py`).
-  
-- In `biblioteca_<tara_mea>.py`, adauga continut corespuzator tarii alease in functiile:
-  - `descriere_tara()`
-  - `descriere_limbi()`
-  - `descriere_populatie()`
-  - `descriere_capitala()`
-  - `descriere_steag()`
-    
-Trebuie adaugat importul bibliotecii tarii la inceputul fisierului 'biblioteca_tari.py', dupa modelul prezentat.
+- `descriere_tara()`
+- `descriere_limbi()`
+- `descriere_populatie()`
+- `descriere_capitala()`
+- `descriere_steag()`
 
-Apoi trebuie adaugata:
+Aceste functii returneaza informatii despre tara, limba, populatie, capitala si steagul Japoniei.
 
-1. o pereche in `TARI` pentru numele tarii
-2. o intrare in `BIBLIOTECI` pentru biblioteca tarii alese 
+## Testare locala cu Pytest
 
-Obs: Eliminati intrarile cu Belgia; sunt doar de exemplu !
-
-### Exemplu de actualizare in `app/lib/biblioteca_tari.py`
-
-```python
-from app.lib import biblioteca_tara_mea as prescurtare_biblioteca_tara_mea
-
-TARI = {
-    'tara_mea': {
-        'nume': 'Numele complet al tarii mele',
-    },
-}
-
-BIBLIOTECI = {
-    'tara_mea': prescurtare_biblioteca_tara_mea,
-}
-```
-## Ce se modifica in /app/tests
-
-
-Fisierul test_lib_belgia.py este un test automatizat care verifică funcțiile din biblioteca țării . 
-El importă funcțiile principale (descriere_tara, descriere_capitala, descriere_limbi, descriere_populatie), definește valori așteptate pentru fiecare și folosește assert result == expected_result pentru a confirma că rezultatul funcțiilor corespunde exact cu ce trebuie. 
-
-1. Redenumeste `app/tests/test_lib_belgia.py` cu numele tarii alese `app/tests/test_lib_<tara_mea>.py` (de exemplu `test_romania.py`).
-2. Schimbă importul din `biblioteca_belgia` în `biblioteca_<tara_mea>` (asa cum este mentionat si comentariu)
-3. Actualizează fiecare `expected_result` cu valoarea aleasa pentru țara ta
-
-
-
-
-
-## Ce se adauga in `static/`
-
-- Adauga poza cu steagul tarii tale in format `png` in directorul `static/` ( sterge apoi poza steag_belgia.png).
-- Adauga locatia pozei in functia desriere_steag() din  `biblioteca_<tara_mea>.py`, sub formatul '/static/<steag_tara>.png'.
-
-## Ce NU se modifica
-
-- `tari.py` - NU SE MODIFICA
-- `app/lib/biblioteca_header.py` - NU SE MODIFICA
-- `templates/base.html` - NU SE MODIFICA
-- `templates/pagina.html` - NU SE MODIFICA
-- `templates/steag.html` - NU SE MODIFICA
-- `templates/tara.html` - NU SE MODIFICA (este template generic pentru pagina de tara)
-
-
-## Structura de baza
-
-`app/lib/`
-- `biblioteca_tari.py` - fisier in care vor fi agregate numele si bibliotecile de la toate tarile din proiect ( agregarea se va face la final, cand se va face Pull Request in branch-ul main)
-- `biblioteca_<tara_mea>.py` - fisierul individual cu functiile pentru tara aleasa
-- `biblioteca_header.py` - header comun, nu se modifica
-
-`static/`
-- aici se pune poza steagului in format `png`
-
-`templates/`
-- `base.html` - scheletul proiectului - contine structura html + css statica
-- `home.html` - pagina de pornire unde sunt listate tarile
-- `tara.html` - template generic pentru pagina fiecarei tari, unde este afisat rezultatul functiei descriere_tara()
-- `pagina.html` - pagina folosita pentru a afisa rezultatul funtiilor descriere_capitala() / descriere_populatie() / descriere_limbi()
-- `steag.html` - pagina folosita pentru a afisa rezultatul functiei descriere_steag()
-  
-`tari.py` - fișierul principal al aplicației Flask care gestionează rutele web și afișează informații despre țări. Este intermediar între cererile web și bibliotecile fiecărei țări, oferind utilizatorului informații formatate despre acestea.
-
-
-
-## Scripturi de activare si rulare
-
-### `activeaza_venv`
-
-Acest script activeaza mediul virtual Python din `.venv`. Comanda:  `. ./activeaza_venv`
-
-
-### `ruleaza_aplicatia`
-
-Acest script porneste aplicatia Flask local. Comanda: `./ruleaza_aplicatia`
-
-
-### `dockerstart.sh`
-
-Acest script face acelasi lucru, dar cu optiuni suplimentare. Este apelat in fisierul Dockerfile
-
-## Permisiuni de executie
-
-Pentru a rula scripturile, trebuie acordate permisiuni de executie:
+Testele au fost rulate local cu comanda:
 
 ```bash
-chmod 764 activeaza_venv ruleaza_aplicatia dockerstart.sh
+pytest app/tests/test_lib_japonia.py -v
 ```
 
-## Testare cu Pytest
+Rezultat obtinut:
 
-Pentru a rula testele, mergeți în directorul principal al proiectului și folosiți comanda:
+```text
+4 passed
+```
 
-`pytest app/tests/*.py -v`
+Au fost rulate si toate testele proiectului cu:
 
-Aceasta verifica fiecare funcție din fișier și arata ce teste trec sau ce teste eșuează. Asigurati-va ca aveti venv-ul pornit.
+```bash
+pytest app/tests/*.py -v
+```
 
+Rezultat obtinut:
 
+```text
+4 passed
+```
 
-# Pasi recomandati pentru proiect
+## Testare manuala Flask
 
-1. `git clone https://github.com/raduionutgavrila/curs_scc_443D_tari.git` - pentru a copia local repository-ul
-2. `git checkout dev-template` - pentru a selecta ramura de dezvolatare cu template-ul
-3. `git checkout -b dev-nume-prenume` - pentru a crea o noua ramura de dezvoltare pornind de la template
-4. modifica `app/lib/biblioteca_tari.py`
-5. redenumeste `app/lib/biblioteca_belgia.py` in `app/lib/biblioteca_<tara_mea>.py` si modifica continutul functiilor
-6. adauga poza cu steagul in `static/` si adauga link catre acesta in functia din 'biblioteca_<tara_mea>.py'
-7. ruleaza cu `. ./activeaza_venv` si `./ruleaza_aplicatia`
-8. testeaza cu `pytest app/tests/test_lib_<tara_mea>.py -v`
+Aplicatia a fost pornita local cu:
 
+```bash
+./ruleaza_aplicatia
+```
 
-# Ce mai trebuie adaugat
+Au fost verificate in browser urmatoarele pagini:
 
-- Creare Dockerfile
-- Creare Jenkinsfile
+```text
+http://127.0.0.1:5011
+http://127.0.0.1:5011/japonia
+http://127.0.0.1:5011/japonia/steag
+http://127.0.0.1:5011/japonia/populatie
+http://127.0.0.1:5011/japonia/capitala
+```
 
-## Observatie finala
+Functionalitatea pentru Japonia a fost accesibila din browser.
 
-Scripturile din aceasta aplicatie sunt introduse dupa modelul aplicatiei `chrchende/sysinfo:simplu_main`.
+---
 
+## Containerizare cu Docker
 
-  
+Pentru containerizarea aplicatiei am creat fisierul `Dockerfile` in branch-ul personal de dezvoltare `dev_ciobanu_andrei`.
+
+Dockerfile-ul porneste de la imaginea `python:3.12-slim`, copiaza fisierele proiectului, instaleaza dependintele din `quickrequirements.txt`, acorda permisiuni scripturilor si porneste aplicatia Flask folosind scriptul `dockerstart.sh`.
+
+Imaginea Docker a fost construita cu urmatoarea comanda:
+
+```bash
+sudo docker build -t proiect-scc-japonia .
+```
+
+Imaginea a fost creata cu succes si apare in lista de imagini Docker:
+
+![Docker images](docs/screenshots/docker_images.png)
+
+Containerul a fost pornit cu urmatoarea comanda:
+
+```bash
+sudo docker run --rm -p 5011:5011 proiect-scc-japonia
+```
+
+Containerul pornit poate fi vazut cu `docker ps`:
+
+![Docker ps](docs/screenshots/docker_ps.png)
+
+In consola de rulare a containerului se observa ca aplicatia Flask porneste corect si ca browserul acceseaza rutele aplicatiei. Apar request-uri cu status `200` pentru paginile Japoniei:
+
+![Docker run](docs/screenshots/docker_run.png)
+
+Aplicatia rulata in container a fost accesata din browser la adresa:
+
+```text
+http://127.0.0.1:5011/japonia
+```
+
+![Docker site](docs/screenshots/docker_site.png)
+
+Prin acest test am verificat ca aplicatia a fost containerizata corect si ca functionalitatea pentru Japonia poate fi accesata din browser din container.
+
+---
+
+## Testare automata cu Jenkins
+
+Pentru testarea automata am creat fisierul `Jenkinsfile` in branch-ul personal de dezvoltare `dev_ciobanu_andrei`.
+
+A fost creat un job Jenkins de tip Pipeline cu numele:
+
+```text
+proiect-scc-japonia
+```
+
+Job-ul este configurat sa ia codul din repository-ul GitHub, de pe branch-ul `dev_ciobanu_andrei`, si sa ruleze fisierul `Jenkinsfile`.
+
+Configurarea folosita:
+
+- Definition: `Pipeline script from SCM`
+- SCM: `Git`
+- Repository URL: `https://github.com/raduionutgavrila/curs_scc_443D_tari.git`
+- Branch Specifier: `*/dev_ciobanu_andrei`
+- Script Path: `Jenkinsfile`
+
+Job-ul Jenkins a rulat cu succes, avand status verde:
+
+![Jenkins job](docs/screenshots/jenkins_job.png)
+
+Pipeline-ul Jenkins pregateste mediul Python, instaleaza dependintele si ruleaza testele unitare cu pytest:
+
+```bash
+pytest app/tests/test_lib_japonia.py -v
+```
+
+Rezultatul rularii testelor in Jenkins a fost:
+
+```text
+4 passed
+```
+
+La finalul executiei, Jenkins a afisat:
+
+```text
+Finished: SUCCESS
+```
+
+![Jenkins test success](docs/screenshots/jenkins_test_success.png)
+
+Prin acest test am verificat ca functionalitatea pentru Japonia este testata automat cu Jenkins si ca toate testele trec cu succes.
+
+### Vizualizare pipeline in Jenkins Stages
+
+Pe langa Console Output, am verificat rularea pipeline-ului si in pagina de Stages din Jenkins.
+
+In aceasta pagina se vad etapele pipeline-ului:
+
+- Build
+- pylint - calitate cod
+- Unit Testing cu pytest
+- Deploy
+
+Toate etapele au rulat cu succes, iar pipeline-ul a avut status final SUCCESS.
+
+![Jenkins stages](docs/screenshots/jenkins_stages.png)
+
+### Vizualizare pipeline in Blue Ocean
+
+Pentru o vizualizare mai clara a pipeline-ului, am folosit si interfata Blue Ocean din Jenkins.
+
+In Blue Ocean se poate observa executia etapelor pipeline-ului si faptul ca acestea au fost finalizate cu succes.
+
+![Blue Ocean Jenkins](docs/screenshots/blue_ocean_jenkins.png)
+
+---
+
+## Git si GitHub
+
+Modificarile au fost adaugate in branch-ul personal:
+
+```text
+dev_ciobanu_andrei
+```
+
+Comenzi folosite pentru salvarea modificarilor:
+
+```bash
+git add .
+git commit -m "Actualizeaza documentatia proiectului"
+git push
+```
+
+## Pull Request
+
+Urmeaza crearea unui Pull Request din branch-ul:
+
+```text
+dev_ciobanu_andrei
+```
+
+catre branch-ul indicat pentru integrare.
+
+PR-ul trebuie sa primeasca review de la cel putin un coleg.
+
+## Ce mai este de facut
+
+- creare Pull Request;
+- obtinere review de la un coleg;
+- integrare in branch-ul stabilit de grupa.
