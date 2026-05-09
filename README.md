@@ -1,153 +1,117 @@
-# PROIECT SCC - TEMPLATE WEB PENTRU PROIECT DE GRUPA
+# Proiect SCC - Țări - Canada
 
-Acest branch este template-ul de proiect pentru grupa. Scopul este ca fiecare student sa foloseasca aceeasi structura a site-ului si sa modifice ce este necesar pentru tara proprie. 
+## Dezvoltator
+- **Nume:** Roșeanu Vlad-George
+- **Grupă:** 443D
+- **Țară alocată:** Canada 🇨🇦
+- **Branch de dezvoltare:** `dev_roseanu_vlad`
 
-## Ce se modifica in /app/lib/
+## Funcționalitate Adăugată
+Am adaugat funcționalitatea pentru **Canada** în fișierul `app/lib/biblioteca_canada.py`:
+- **descriere_tara()** – Returnează o descriere generală a Canadei
+- **descriere_capitala()** – Returnează capitala Canadei
+- **descriere_populatie()** – Returnează populația Canadei
+- **descriere_limbi()** – Returnează limbile oficiale ale Canadei
+- **descriere_steag()** – Returnează imaginea steagului Canadei
 
-In acest director, trebuie modificat:
+## Rute accesibile
 
-- `app/lib/biblioteca_belgia.py`
-- `app/lib/biblioteca_tari.py`
+| Ruta | Descriere |
+|------|-----------|
+| `/` | Pagina principală – lista tuturor țărilor |
+| `/canada` | Informații generale despre Canada |
+| `/canada/capitala` | Capitala Italiei – Ottawa |
+| `/canada/populatie` | Populația Canada |
+| `/canada/steag` | Steagul Canada |
 
+## Modificări
 
+🇨🇦 `app/lib/biblioteca_canada.py` – biblioteca cu funcțiile pentru Canada
+🔗 `app/lib/biblioteca_tari.py` – adăugat import și înregistrare Canada în TARI și BIBLIOTECI
+🛠️ `app/tests/test_lib_canada.py` – teste unitare pentru Canada
+⚙️ `Jenkinsfile` – pipeline declarativ pentru Jenkins
+🐳 `Dockerfile` – containerizarea aplicației
 
-Redenumeste fisierul `app/lib/biblioteca_belgia.py` cu numele tarii alese `app/lib/biblioteca_<tara_mea>.py` (de exemplu `biblioteca_romania.py`).
-  
-- In `biblioteca_<tara_mea>.py`, adauga continut corespuzator tarii alease in functiile:
-  - `descriere_tara()`
-  - `descriere_limbi()`
-  - `descriere_populatie()`
-  - `descriere_capitala()`
-  - `descriere_steag()`
-    
-Trebuie adaugat importul bibliotecii tarii la inceputul fisierului 'biblioteca_tari.py', dupa modelul prezentat.
-
-Apoi trebuie adaugata:
-
-1. o pereche in `TARI` pentru numele tarii
-2. o intrare in `BIBLIOTECI` pentru biblioteca tarii alese 
-
-Obs: Eliminati intrarile cu Belgia; sunt doar de exemplu !
-
-### Exemplu de actualizare in `app/lib/biblioteca_tari.py`
-
-```python
-from app.lib import biblioteca_tara_mea as prescurtare_biblioteca_tara_mea
-
-TARI = {
-    'tara_mea': {
-        'nume': 'Numele complet al tarii mele',
-    },
-}
-
-BIBLIOTECI = {
-    'tara_mea': prescurtare_biblioteca_tara_mea,
-}
-```
-## Ce se modifica in /app/tests
-
-
-Fisierul test_lib_belgia.py este un test automatizat care verifică funcțiile din biblioteca țării . 
-El importă funcțiile principale (descriere_tara, descriere_capitala, descriere_limbi, descriere_populatie), definește valori așteptate pentru fiecare și folosește assert result == expected_result pentru a confirma că rezultatul funcțiilor corespunde exact cu ce trebuie. 
-
-1. Redenumeste `app/tests/test_lib_belgia.py` cu numele tarii alese `app/tests/test_lib_<tara_mea>.py` (de exemplu `test_romania.py`).
-2. Schimbă importul din `biblioteca_belgia` în `biblioteca_<tara_mea>` (asa cum este mentionat si comentariu)
-3. Actualizează fiecare `expected_result` cu valoarea aleasa pentru țara ta
-
-
-
-
-
-## Ce se adauga in `static/`
-
-- Adauga poza cu steagul tarii tale in format `png` in directorul `static/` ( sterge apoi poza steag_belgia.png).
-- Adauga locatia pozei in functia desriere_steag() din  `biblioteca_<tara_mea>.py`, sub formatul '/static/<steag_tara>.png'.
-
-## Ce NU se modifica
-
-- `tari.py` - NU SE MODIFICA
-- `app/lib/biblioteca_header.py` - NU SE MODIFICA
-- `templates/base.html` - NU SE MODIFICA
-- `templates/pagina.html` - NU SE MODIFICA
-- `templates/steag.html` - NU SE MODIFICA
-- `templates/tara.html` - NU SE MODIFICA (este template generic pentru pagina de tara)
-
-
-## Structura de baza
-
-`app/lib/`
-- `biblioteca_tari.py` - fisier in care vor fi agregate numele si bibliotecile de la toate tarile din proiect ( agregarea se va face la final, cand se va face Pull Request in branch-ul main)
-- `biblioteca_<tara_mea>.py` - fisierul individual cu functiile pentru tara aleasa
-- `biblioteca_header.py` - header comun, nu se modifica
-
-`static/`
-- aici se pune poza steagului in format `png`
-
-`templates/`
-- `base.html` - scheletul proiectului - contine structura html + css statica
-- `home.html` - pagina de pornire unde sunt listate tarile
-- `tara.html` - template generic pentru pagina fiecarei tari, unde este afisat rezultatul functiei descriere_tara()
-- `pagina.html` - pagina folosita pentru a afisa rezultatul funtiilor descriere_capitala() / descriere_populatie() / descriere_limbi()
-- `steag.html` - pagina folosita pentru a afisa rezultatul functiei descriere_steag()
-  
-`tari.py` - fișierul principal al aplicației Flask care gestionează rutele web și afișează informații despre țări. Este intermediar între cererile web și bibliotecile fiecărei țări, oferind utilizatorului informații formatate despre acestea.
-
-
-
-## Scripturi de activare si rulare
-
-### `activeaza_venv`
-
-Acest script activeaza mediul virtual Python din `.venv`. Comanda:  `. ./activeaza_venv`
-
-
-### `ruleaza_aplicatia`
-
-Acest script porneste aplicatia Flask local. Comanda: `./ruleaza_aplicatia`
-
-
-### `dockerstart.sh`
-
-Acest script face acelasi lucru, dar cu optiuni suplimentare. Este apelat in fisierul Dockerfile
-
-## Permisiuni de executie
-
-Pentru a rula scripturile, trebuie acordate permisiuni de executie:
+## Testare Manuală
+Aplicația a fost verificată local rulând:
 
 ```bash
-chmod 764 activeaza_venv ruleaza_aplicatia dockerstart.sh
+python3 tari.py
 ```
 
-## Testare cu Pytest
+și accesând:
 
-Pentru a rula testele, mergeți în directorul principal al proiectului și folosiți comanda:
+```text
+http://localhost:5000
+```
+![Rulare script](screenshots/rulare_script.png)
+![Test local](screenshots/accesare_rulare.png)
 
-`pytest app/tests/*.py -v`
+## Testare Automatizată (Jenkins)
+Am configurat un Pipeline în Jenkins care rulează automat testele. Testul din `app/tests/` a trecut cu succes (PASS).
 
-Aceasta verifica fiecare funcție din fișier și arata ce teste trec sau ce teste eșuează. Asigurati-va ca aveti venv-ul pornit.
+**Dovada Build Jenkins:**
+![Status Build Jenkins](screenshots/pipeline_jenkins.png)
+![Console Output Pytest](screenshots/pytest_jenkins.png)
+
+## Containerizare (Docker)
+Aplicația a fost containerizată folosind o imagine de Python 3.10-alpine. Containerul expune portul 5011.
+
+**Dovezi Containerizare:**
+
+*1. Imaginea Docker creată:*
+![Docker Images](screenshots/imagine_docker.png)
+
+*2. Toate containerele Docker:*
+![Docker Images](screenshots/containere_docker.png)
+
+*3. Containerul rulând activ:*
+![Docker PS](screenshots/rulare_docker_terminal.png)
+
+*4. Accesare aplicație din container (Browser):*
+![Browser Docker](screenshots/docker_app.png)
+
+*4. Log-uri consolă (interacțiune browser-container):*
+![Docker Logs](screenshots/docker_log.png)
+
+## 6. Comenzi folosite:
+🧪 Rulare manuala pytest:
+```bash
+pytest app/tests/test_lib_canada.py -v
+```
+🐳 Construirea imaginii:
+```bash
+docker build -t <nume_img> <locatia_fisierului_dockerfile>
+```
+🚀 Crearea și construirea:
+```bash
+docker run -it --name <nume_cont> -p <port_local>:<port_intern> <imagine>
+```
+🔄 Repornirea containerului in mod interactiv:
+```bash
+docker start -ai <nume_cont>
+```
 
 
+## 7. Integrare și Review
+🌿 Branch sursa: `dev_roseanu_vlad`
 
-# Pasi recomandati pentru proiect
+🎯 Branch destinatie: `main_roseanu_vlad`
 
-1. `git clone https://github.com/raduionutgavrila/curs_scc_443D_tari.git` - pentru a copia local repository-ul
-2. `git checkout dev-template` - pentru a selecta ramura de dezvolatare cu template-ul
-3. `git checkout -b dev-nume-prenume` - pentru a crea o noua ramura de dezvoltare pornind de la template
-4. modifica `app/lib/biblioteca_tari.py`
-5. redenumeste `app/lib/biblioteca_belgia.py` in `app/lib/biblioteca_<tara_mea>.py` si modifica continutul functiilor
-6. adauga poza cu steagul in `static/` si adauga link catre acesta in functia din 'biblioteca_<tara_mea>.py'
-7. ruleaza cu `. ./activeaza_venv` si `./ruleaza_aplicatia`
-8. testeaza cu `pytest app/tests/test_lib_<tara_mea>.py -v`
+📊 Status: *(de completat)*
 
+👀 Review: *(de completat cu numele colegului)*
 
-# Ce mai trebuie adaugat
+## Pull Request-uri la care am făcut review
 
-- Creare Dockerfile
-- Creare Jenkinsfile
+| 🆔 PR ID | 👤 Autor | 📝 Descriere |
+| :---: | :--- | :--- |
+| *(de completat)* | *(de completat)* | *(de completat)* |
 
-## Observatie finala
+## 8. Ce mai este de făcut
 
-Scripturile din aceasta aplicatie sunt introduse dupa modelul aplicatiei `chrchende/sysinfo:simplu_main`.
-
-
-  
+ - [x] Finalizare cod și teste manuale.
+ - [x] Aplicație containerizată și accesibilă.
+ - [x] Succes Pipeline Jenkins.
+ - [ ] Obținerea aprobării de la colegi pentru PR-ul final.
+ - [ ] Integrarea finală în branch-ul main.
