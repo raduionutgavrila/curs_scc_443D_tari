@@ -4,47 +4,44 @@ pipeline {
 
     stages {
         stage('Build') {
-            agent any
             steps {
                 echo 'Building...'
                 sh '''
-                    pwd;
-                    ls -l;
-                    . ./activeaza_venv;
-                    '''
+                    pwd
+                    ls -l
+                    python3 -m venv .venv
+                    . .venv/bin/activate
+                    pip install --upgrade pip
+                    pip install -r quickrequirements.txt
+                '''
             }
         }
 
         stage('pylint - calitate cod') {
-            agent any
             steps {
                 sh '''
-                    . ./activeaza_venv;
-                    echo '\n\nVerificare app/lib/*.py cu pylint\n';
-                    pylint --exit-zero app/lib/*.py;
-
-                    echo '\n\nVerificare app/tests/*.py cu pylint';
-                    pylint --exit-zero app/tests/*.py;
-
-                    echo '\n\nVerificare tari.py cu pylint';
-                    pylint --exit-zero tari.py;
+                    . .venv/bin/activate
+                    echo "Verificare app/lib/*.py cu pylint"
+                    pylint --exit-zero app/lib/*.py
+                    echo "Verificare app/tests/*.py cu pylint"
+                    pylint --exit-zero app/tests/*.py
+                    echo "Verificare tari.py cu pylint"
+                    pylint --exit-zero tari.py
                 '''
             }
         }
 
         stage('Unit Testing cu pytest') {
-            agent any
             steps {
                 echo 'Unit testing with Pytest...'
                 sh '''
-                    . ./activeaza_venv;
+                    . .venv/bin/activate
                     pytest app/tests/*.py -v
                 '''
             }
         }
 
         stage('Deploy') {
-            agent any
             steps {
                 echo "Build ID: ${BUILD_NUMBER}"
                 echo "Creare imagine docker"
