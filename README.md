@@ -76,7 +76,7 @@ pytest app/tests/test_lib_elvetia.py -v
 
 **Status Pytest:** PASS
 
-![Testare - Pytest](static/elvetia1_pytest.png)
+![Testare - Pytest](screenshots/elvetia1_pytest.png)
 
 ### 4.3 Testare cu Jenkins
 
@@ -92,9 +92,9 @@ A fost creat fisierul `Jenkinsfile`, care automatizeaza urmatoarele etape:
 
 **Status Jenkins Pipeline:** SUCCESS
 
-![Testare - Build Jenkins](static/elvetia2_jenkins1.png)
+![Testare - Build Jenkins](screenshots/elvetia2_jenkins1.png)
 
-![Testare - Build Jenkins](static/elvetia3_jenkins2.png)
+![Testare - Build Jenkins](screenshots/elvetia3_jenkins2.png)
 
 ---
 
@@ -134,7 +134,7 @@ Verificarea imaginilor Docker:
 docker images
 ```
 
-![Testare - Build Jenkins](static/elvetia4_docker.png)
+![Testare - Build Jenkins](screenshots/elvetia4_docker.png)
 
 ### 5.2 Container Docker
 
@@ -146,7 +146,7 @@ docker run -d --name tari-elvetia-tecsan-calin -p 8020:5011 tari-elvetia-tecsan-
 
 Aplicatia ruleaza in container pe portul intern `5011`, iar pe masina locala este accesibila prin portul `8020`.
 
-![Testare - Build Jenkins](static/elvetia6_rulare.png)
+![Testare - Build Jenkins](screenshots/elvetia6_rulare.png)
 
 Acces aplicatie:
 
@@ -154,7 +154,7 @@ Acces aplicatie:
 http://localhost:8020
 ```
 
-![Testare - Build Jenkins](static/elvetia7_pagina.png)
+![Testare - Build Jenkins](screenshots/elvetia7_pagina.png)
 
 Verificarea containerelor Docker:
 
@@ -162,7 +162,7 @@ Verificarea containerelor Docker:
 docker ps -a
 ```
 
-![Testare - Build Jenkins](static/elvetia5_containere.png)
+![Testare - Build Jenkins](screenshots/elvetia5_containere.png)
 
 ---
 
@@ -172,7 +172,7 @@ docker ps -a
 **Branch destinatie:** `main_tecsan_calin`  
 
 **Status integrare:** Pull Request creat din `dev_tecsan_calin` catre `main_tecsan_calin`.   
-**Review:** aprobat de colegul `etuzorr`.
+**Review:** aprobat de colegul `etuzorr` (PR ID 50).
 
 ### Pull Request-uri la care am facut review
 
@@ -271,6 +271,6 @@ docker logs tari-elvetia-tecsan-calin
 
 ---
 
-## 8. Concluzie
+## 9. Concluzie
 
 Functionalitatea pentru Elvetia a fost implementata in aplicatia web Flask a proiectului SCC - Tari. Codul a fost testat local cu Pytest, verificat prin pipeline Jenkins si containerizat folosind Docker. Aplicatia poate fi rulata local sau in container si poate fi accesata din browser.
