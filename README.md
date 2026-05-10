@@ -92,12 +92,12 @@ Aplicatia va putea fi accesata la: `http://172.17.0.2:5011/`
 
 ## 7. Review-uri:
 
-- [ ] Am făcut review pentru colegul: [Nume Coleg (username github) / ID PR]
-- [ ] Am primit review de la: [  ]
+- [x] Am făcut review pentru colegul: [ Dumitrache Alexandru (Dumitian) / ]
+- [x] Am primit review de la: [ Dumitrache Alexandru (Dumitian) / ]
 
 ## 8. De facut
  - [x] Finalizare cod și teste manuale.
  - [x] Aplicație containerizată și accesibilă.
  - [x] Succes Pipeline Jenkins.
- - [ ] Obținerea aprobării de la colegi pentru PR-ul final, in main.
- - [ ] Integrarea finală în branch-ul main.
+ - [x] Obținerea aprobării de la colegi pentru PR-ul final, in main.
+ - [x] Integrarea finală în branch-ul main.
