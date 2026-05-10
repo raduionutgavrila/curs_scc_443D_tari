@@ -65,7 +65,7 @@ Aplicația a fost containerizată folosind un Dockerfile bazat pe Python Alpine.
 
 | PR ID | Autor | Descriere |
 |-------|-------|-----------|
-| *(de completat)* | *(de completat)* | *(de completat)* |
+| 21 | Roseanu Vlad George (Vlad54689) | arata bine |
 
 ## 7. Comenzi necesare
  - Testare manuala cu pytest:
