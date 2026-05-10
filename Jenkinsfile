@@ -1,64 +1,66 @@
-/*Jenkins*/
+/* Jenkins Pipeline Declarativ - Grupa 443D - Subiect: Norvegia */
 pipeline {
     agent any
 
     stages {
-        stage('Build') {
-            agent any
+        stage('Build & Prep') {
             steps {
-                echo 'Building...'
+                echo 'Pregatire mediu: Creare .venv si instalare dependinte...'
                 sh '''
-                    pwd;
-                    ls -l;
-                    . ./activeaza_venv;
-                    '''
-            }
-        }
-        
-        /*stage('Testare') {
-            problema rulare in paralel, al doilea stage nu mai poate porni venv-ul
-            parallel {
-         */
-        stage('pylint - calitate cod') {
-            agent any
-            steps {
-                sh '''
-                    . ./activeaza_venv;
-                    echo '\n\nVerificare app/lib/*.py cu pylint\n';
-                    pylint --exit-zero app/lib/*.py;
-
-                    echo '\n\nVerificare app/tests/*.py cu pylint';
-                    pylint --exit-zero app/tests/*.py;
-
-                    echo '\n\nVerificare tari.py cu pylint';
-                    pylint --exit-zero tari.py;
+                    chmod +x activeaza_venv_jenkins activeaza_venv ruleaza_aplicatia dockerstart.sh
+                    ./activeaza_venv_jenkins
                 '''
             }
         }
 
-        stage('Unit Testing cu pytest') {
-            agent any
+        stage('Calitate Cod (Pylint)') {
             steps {
-                echo 'Unit testing with Pytest...'
+                echo 'Analiza statica a codului...'
                 sh '''
-                    . ./activeaza_venv;
-                    pytest app/tests/*.py -v
-
+                    . .venv/bin/activate
+                    echo 'Verificare biblioteca Norvegia:'
+                    pylint --exit-zero app/lib/biblioteca_norvegia.py
                     
+                    echo 'Verificare teste Norvegia:'
+                    pylint --exit-zero app/tests/test_lib_norvegia.py
                 '''
             }
         }
-        
-        stage('Deploy') {
-            agent any
+
+        stage('Unit Testing (Pytest)') {
             steps {
-                echo "Build ID: ${BUILD_NUMBER}"
-                echo "Creare imagine docker"
+                echo 'Executie teste unitare automate...'
                 sh '''
-                    docker build -t tari:v${BUILD_NUMBER} .
-                    docker create --name tari${BUILD_NUMBER} -p 8020:5011 tari:v${BUILD_NUMBER}
+                    . .venv/bin/activate
+                    pytest app/tests/test_lib_norvegia.py -v
                 '''
             }
+        }
+
+        stage('Docker (Livrare)') {
+            steps {
+                echo "Numar Build: ${BUILD_NUMBER}"
+                echo "Generare imagine si container Docker"
+                sh '''
+                    # Construim imaginea folosind Dockerfile-ul creat anterior
+                    docker build -t nvg_app:v${BUILD_NUMBER} .
+                    
+                    # Optional: Curatam containerele vechi cu acelasi nume pentru a evita erorile
+                    docker rm -f tari_container_${BUILD_NUMBER} || true
+                    
+                    # Cream containerul
+                    docker create --name tari_container_${BUILD_NUMBER} -p 8020:5011 nvg_app:v${BUILD_NUMBER}
+                '''
+            }
+        }
+    }
+
+    post {
+        success {
+            echo 'Pipeline finalizat cu succes (PASS)! '
+        }
+        failure {
+            echo 'Eroare in pipeline. Verifica log-urile de consola.'
         }
     }
 }
