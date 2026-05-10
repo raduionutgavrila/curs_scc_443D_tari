@@ -30,7 +30,7 @@
 1. [Belgia - Gavrilă Radu-Ionuț](#belgia---gavrila-radu-ionut)
 2. [Coreea de Sud - Toaca Cristiana](#coreea-de-sud---toaca-cristiana)
 
-=======
+
 # Belgia - Gavrilă Radu-Ionuț
 
 ## Dezvoltator
