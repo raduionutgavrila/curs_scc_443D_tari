@@ -46,7 +46,6 @@ Mai întâi am verificat că testele funcționează local.
 
 ![Console Output Pytest](screenshots/norvegia-teste.png)
 
-
 ### Testare Automată folosind Jenkins
 
 Am configurat un Pipeline în Jenkins care rulează automat testele. Testul din `app/tests/` a trecut cu succes (PASS).
