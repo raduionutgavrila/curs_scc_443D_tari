@@ -66,7 +66,7 @@ Aplicația a fost containerizată folosind o imagine de Python 3.10-alpine. Cont
 
 *1. Creare imagine Docker:*
 
-![Docker build](screenshots/china-docker-build.jpeg)
+![Docker build](screenshots/china-docker-build.png)
 
 *2. Start container creat:*
 
