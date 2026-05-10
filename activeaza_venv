@@ -1,5 +1,9 @@
 # venv-ul se gaseste in directorul parinte: .venv
+<<<<<<< HEAD
 source ../.venv/bin/activate
+=======
+# source ../.venv/bin/activate
+>>>>>>> origin/main_pirjol_mara
 . .venv/bin/activate
 
 # daca comanda de mai sus esueaza, creaza .venv si instaleaza dependintele

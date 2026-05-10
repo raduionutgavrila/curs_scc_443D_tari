@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 FROM python:3.10-alpine
 
 ENV FLASK_APP tari
@@ -30,3 +31,18 @@ RUN .venv/bin/pip install -r quickrequirements.txt
 EXPOSE 5011
 ENTRYPOINT ["./dockerstart.sh"]
 #CMD sh
+=======
+FROM python:3.8-slim
+
+WORKDIR /app
+
+COPY . .
+
+RUN pip install -r quickrequirements.txt
+
+RUN chmod +x dockerstart.sh
+
+EXPOSE 5011
+
+CMD ["./dockerstart.sh"]
+>>>>>>> origin/main_pirjol_mara
