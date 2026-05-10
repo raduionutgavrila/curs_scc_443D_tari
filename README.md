@@ -14,14 +14,16 @@
 - [Validare cod cu pylint](#validare-cod-cu-pylint)
 - [Testare cu Docker](#testare-cu-docker)
 - [DevOps CI](#devops-ci)
+  - [Exemplu executie pipeline Jenkins](#exemplu-executie-pipeline-jenkins)
 - [Concluzii](#concluzii)
+- [Bibliografie](#bibliografie)
 
 ## Descriere generală
 [cuprins](#cuprins)
 
 Acest proiect se înscrie în tema comună a grupei 443D, „Țări”, scopul modulului fiind dezvoltarea și integrarea unui set de funcționalități dedicate țării **Belgia**.
  
-Aplicația la bază este implementată utilizând framework-ul web Flask, fiind proiectată pentru a furniza date esențiale și formatate despre țara accesată. În vederea respectării practicilor moderne de inginerie software (DevOps), soluția a fost supusă testării automate (Pytest), validată static (Pylint), containerizată prin intermediul Docker și orchestrată într-un pipeline de integrare continuă (CI/CD) folosind Jenkins.
+Aplicația la bază este implementată utilizând framework-ul web Flask, fiind proiectată pentru a furniza date esențiale și formatate despre țara accesata. În vederea respectării practicilor moderne de inginerie software (DevOps), soluția a fost supusă testării automate (Pytest), validată static (Pylint), containerizată prin intermediul Docker și orchestrată într-un pipeline de integrare continuă (CI/CD) folosind Jenkins.
 
 ## Funcționalitate implementată
 [cuprins](#cuprins)
@@ -197,3 +199,8 @@ Acest proiect atinge cu succes atât obiectivele funcționale, cât și pe cele 
 - **Portabilitate:** Containerizarea prin Docker a asigurat un mediu de rulare izolată, rapidă și consistentă pe diverse platforme.
 - **Automatizare (CI/CD):** Pipeline-ul configurat în Jenkins a optimizat procesul de dezvoltare prin integrare și livrare continuă.
 - **Asigurarea calității:** Testarea automată cu `pytest` și analiza statică a codului cu `pylint` au garantat stabilitatea aplicației la fiecare modificare a codului sursă.
+
+## Bibliografie
+[cuprins](#cuprins)
+
+https://github.com/crchende/sysinfo.git
