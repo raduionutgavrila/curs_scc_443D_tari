@@ -1,15 +1,7 @@
 echo "Trying to create the venv in the folder: .venv"
 python3 -m venv .venv
 echo "Activating virtual environment"
-<<<<<<< HEAD
-<<<<<<< HEAD
-source ../venv/bin/activate
-=======
 # source ../venv/bin/activate
->>>>>>> origin/main_pirjol_mara
-=======
-# source ../venv/bin/activate
->>>>>>> origin/main_ivan_luca
 . .venv/bin/activate
 echo "Installing the dependencies"
 
@@ -45,8 +37,4 @@ pip install -r quickrequirements.txt
 #  pip freeze
 # si analiza ouput in comparatie cu quickrequirements.txt
 # pentru a se vedea pachetele extra.
-<<<<<<< HEAD
 # 
-=======
-# 
->>>>>>> origin/main_ivan_luca
