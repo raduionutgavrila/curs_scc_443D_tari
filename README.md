@@ -209,7 +209,7 @@ Rezultat obținut local:
 
 Dovadă rulare teste:
 
-![Teste Pytest Germania](screenshots/pytest_germania.png)
+![Teste Pytest Germania](screenshots/germania_pytest.png)
 
 ---
 
@@ -236,11 +236,11 @@ app/tests/
 
 Job-ul Jenkins pentru proiectul Germania a fost rulat cu succes.
 
-![Jenkins Build Pass](screenshots/jenkins_build_pass.png)
+![Jenkins Build Pass](screenshots/germania_jenkins_build_pass.png)
 
 În Console Output se observă rularea pipeline-ului Jenkins și finalizarea cu succes.
 
-![Jenkins Console Output](screenshots/jenkins_console_output.png)
+![Jenkins Console Output](screenshots/germania_jenkins_console_output.png)
 
 ---
 
@@ -262,7 +262,7 @@ sudo docker build -t germania-app .
 
 Dovadă construire imagine Docker:
 
-![Docker Build](screenshots/docker_build.png)
+![Docker Build](screenshots/germania_docker_build.png)
 
 Rularea containerului:
 
@@ -278,7 +278,7 @@ http://127.0.0.1:8020/germania
 
 Dovadă rulare aplicație în container:
 
-![Aplicație Germania în Docker](screenshots/docker_browser_germania.png)
+![Aplicație Germania în Docker](screenshots/germania_docker_browser.png)
 
 ---
 
