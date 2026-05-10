@@ -80,7 +80,7 @@ pytest app/tests/test_lib_mexic.py -v
 ### Docker
 ```bash
 # Build imagine
-docker build -t <imagine> .
+docker build -t <imagine> <locatie_fisier_dockerfile>
 
 # Rulare container
 docker run -d -p 5011:5011 --name <nume_container> <imagine>
