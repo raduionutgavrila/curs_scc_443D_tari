@@ -106,6 +106,11 @@ docker start -ai <nume_cont>
 
 👀 Review: *Esterabadeyan Hadi*
 
+## Pull Request-uri la care am făcut review
+
+| PR ID | Autor | Descriere |
+| :---: | :---: | :---: |
+| #44 | Esterabadeyan Hadi - Etuzrorr | Am verificat schimbarea numelor de poze din screenshots/ |
 
 ## Ce mai este de făcut
 
