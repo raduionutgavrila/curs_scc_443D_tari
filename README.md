@@ -49,7 +49,7 @@ Mai întâi am verificat că testele funcționează local.
 
 ### Testare Automată folosind Jenkins
 Am configurat un Pipeline în Jenkins care rulează automat testele. Testul din `app/tests/` a trecut cu succes.
-
+![Status Build Jenkins](screenshot/irlanda_jenkins.jpeg)
 
 ## 5. Containerizare (Docker)
 Aplicația a fost containerizată folosind Docker. Containerul expune portul 5011.
