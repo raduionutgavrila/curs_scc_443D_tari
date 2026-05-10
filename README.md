@@ -1,9 +1,11 @@
 # Proiect SCC - Finlanda
 
-## Student
-Mihaela Grigore
+# 1. Dezvoltator
+Nume: Mihaela Grigore
+Grupă: 443D 
+Țară alocată: Finlanda
 
-## Descrierea si scopul proiectului
+# 2. Descrierea si scopul proiectului
 
 Scopul acestui proiect este dezvoltarea unei aplicații software colaborative în cadrul grupei de laborator, în care fiecare student implementează propria funcționalitate asociată unei țări alese.
 
@@ -26,7 +28,7 @@ Aplicatia utilizeaza:
 
 ---
 
-# Structura proiectului
+# 3. Structura proiectului
 ```text
 ├── activeaza_venv
 ├── activeaza_venv_jenkins
@@ -62,78 +64,24 @@ Aplicatia utilizeaza:
     └── tara.html
 
 ```
-
-## Directoare importante
-
-### `app/lib/`
-
-Contine bibliotecile Python utilizate pentru gestionarea informatiilor despre tari.
-
-Fisiere modificate:
-- `biblioteca_finlanda.py`
-- `biblioteca_tari.py`
-
-### `app/tests/`
-
-Contine testele automate realizate cu Pytest.
-
-Fisier adaugat:
-- `test_lib_finlanda.py`
-
-### `static/`
-
-Contine fisiere statice utilizate de aplicatie.
-
-Fisier adaugat:
-- `steag_finlanda.png`
-
-### `templates/`
-
-Contine paginile HTML utilizate de Flask pentru afisarea informatiei in browser.
-
-Aceste fisiere NU au fost modificate conform cerintei proiectului.
-
----
-
-# Functionalitati implementate
+# 4. Functionalitati implementate
 
 In fisierul `app/lib/biblioteca_finlanda.py` au fost implementate urmatoarele functii:
 
-## `descriere_tara()`
+## `descriere_tara()` - returneaza o descriere generala a Finlandei.
 
-Returneaza o descriere generala a Finlandei.
+## `descriere_limbi()` - returneaza limbile oficiale vorbite in Finlanda.
 
-## `descriere_limbi()`
+## `descriere_populatie()` - returneaza populatia aproximativa a Finlandei.
 
-Returneaza limbile oficiale vorbite in Finlanda.
+## `descriere_capitala()` - returneaza capitala Finlandei.
 
-## `descriere_populatie()`
-
-Returneaza populatia aproximativa a Finlandei.
-
-## `descriere_capitala()`
-
-Returneaza capitala Finlandei.
-
-## `descriere_steag()`
-
-Afiseaza imaginea steagului Finlandei utilizand fisierul:
-`/static/steag_finlanda.png`
+## `descriere_steag()` - afiseaza imaginea steagului Finlandei. 
 
 ---
 
-# Configurarea bibliotecii tarii
 
-Fisierul `app/lib/biblioteca_tari.py` a fost modificat pentru:
-- importarea bibliotecii Finlandei
-- adaugarea tarii in dictionarul `TARI`
-- maparea bibliotecii in dictionarul `BIBLIOTECI`
-
-Configuratia finala permite accesarea automata a rutelor pentru Finlanda din aplicatia Flask.
-
----
-
-# Rute disponibile
+# 5. Rute disponibile
 
 Aplicatia ofera urmatoarele rute web:
 
@@ -147,7 +95,16 @@ Aplicatia ofera urmatoarele rute web:
 
 ---
 
-# Testare automata
+# 6. Stadiul Implementării
+
+- [x] Cod funcționalitate adăugat
+- [x] Testare locală realizată
+- [x] Containerizare Docker realizată
+- [x] Pull Request creat și integrat
+
+---
+
+# 7. Testare
 
 Fisier de test:
 - `app/tests/test_lib_finlanda.py`
@@ -192,7 +149,8 @@ PASSED                                                                          
 
 ====================================== 4 passed in 0.04s =======================================
 
-# Containerizare Docker
+
+# 8. Containerizare Docker
 
 Pentru containerizarea aplicației a fost creat fișierul `Dockerfile`, care îi spune Dockerului cum sa construiasca mediul in care va rula aplicatia. 
 
@@ -230,7 +188,7 @@ Aplicația a fost accesată în browser la adresa:
 http://127.0.0.1:5011/finlanda
 ```
 
-## Verificare funcționalitate
+# 9. Verificare funcționalitate
 
 Containerul Docker rulează aplicația Flask corespunzătoare funcționalității Finlanda, iar rutele aplicației pot fi accesate din browser.
 
@@ -269,3 +227,21 @@ Proiect SCC - Tari
  * Running on http://127.0.0.1:5011
  * Running on http://172.17.0.2:5011
 ```
+# 10. Integrare și Review
+
+Branch dezvoltare:
+- `dev_grigore_mihaela`
+
+Branch principal:
+- `main_grigore_mihaela`
+
+Pull Request:
+- creat
+- aprobat
+- merge-uit cu succes
+
+# 11. Capturi de ecran
+
+Capturile aferente proiectului se găsesc în directorul:
+
+`screenshots/`
