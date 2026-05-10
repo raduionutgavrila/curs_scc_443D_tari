@@ -22,8 +22,8 @@ Aplicația a fost verificată local rulând `./ruleaza_aplicatia` și accesând 
 Am configurat un Pipeline în Jenkins care rulează automat testele. Testul din `app/tests/` a trecut cu succes (PASS).
 
 **Dovada Build Jenkins:**
-![Status Build Jenkins](screenshots/tests_passed_1.png)
-![Console Output Pytest](screenshots/tests_passed_2.png)
+![Status Build Jenkins](screenshots/romania/tests_passed_1.png)
+![Console Output Pytest](screenshots/romania/tests_passed_2.png)
 
 ## 5. Containerizare (Docker)
 Aplicația a fost containerizată folosind o imagine de Python 3.12-slim. Containerul expune portul 5011.
@@ -31,16 +31,16 @@ Aplicația a fost containerizată folosind o imagine de Python 3.12-slim. Contai
 **Dovezi Containerizare:**
 
 *1. Imaginea Docker creată:*
-![Docker Images](screenshots/docker_images.png)
+![Docker Images](screenshots/romania/docker_images.png)
 
 *2. Containerul rulând activ:*
-![Docker PS](screenshots/docker_ps.png)
+![Docker PS](screenshots/romania/docker_ps.png)
 
 *3. Accesare aplicație din container (Browser):*
-![Browser Docker](screenshots/running_browser.png)
+![Browser Docker](screenshots/romania/running_browser.png)
 
 *4. Log-uri consolă (interacțiune browser-container):*
-![Docker Logs](screenshots/running_console.png)
+![Docker Logs](screenshots/romania/running_console.png)
 
 ## 6. Integrare și Review
 - **Branch dezvoltare: `dev_gheorghe_razvan`**
