@@ -47,8 +47,8 @@ Aplicația a fost containerizată folosind o imagine de Python 3.12-slim. Contai
 - **Pull Request (PR) către `main_serban_albert`:** 
 Creat
 - **Review-uri:**
-    - [ ] Am făcut review pentru colegul: [Nume Coleg / ID PR]
-    - [x] Am primit review de la: Dumitrache Alexandru-Roberto / PR ID: #6
+    - [x] Am făcut review pentru colegul: [Gheorghe Costin-Razvan / PR ID: #73]
+    - [x] Am primit review de la: Gheorghe Costin-Razvan / PR ID: #72
 
 ## 7. Ce mai este de făcut
 - [ ] Integrarea finală în branch-ul `main` al grupei după aprobarea tuturor review-urilor.
