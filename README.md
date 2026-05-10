@@ -156,32 +156,6 @@ Conține dovezi pentru rularea testelor, Docker și Jenkins.
 ---
 
 ## 7. Testare
-
-### Testare Manuală
-
-Aplicația a fost verificată local rulând:
-
-```bash
-. ./activeaza_venv
-./ruleaza_aplicatia
-```
-
-Aplicația a fost accesată în browser la:
-
-```text
-http://127.0.0.1:5011
-```
-
-Rute verificate manual:
-
-```text
-http://127.0.0.1:5011/rusia
-http://127.0.0.1:5011/rusia/capitala
-http://127.0.0.1:5011/rusia/populatie
-http://127.0.0.1:5011/rusia/limbi
-http://127.0.0.1:5011/rusia/steag
-```
-
 ### Testare Automată
 
 Testele se află în:
@@ -281,7 +255,6 @@ http://127.0.0.1:8020/rusia
 Dovadă rulare aplicație în container:
 
 ![Aplicație Rusia în Docker](screenshots/rusia_docker_browser.png)
-
 ---
 
 ## 10. Integrare și Review
