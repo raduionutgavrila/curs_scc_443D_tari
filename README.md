@@ -36,9 +36,10 @@
 6. [Japonia - Ciobanu Andrei](#japonia---ciobanu-andrei)
 7. [Germania - Colan Bianca](#germania---colan-bianca)
 8. [Italia - Dumitrache Alexandru](#italia---dumitrache-alexandru)
-9. [Estonia - Zidu Cristian](#estonia---zidu-cristian)
-10. [Franța - Tuturluță Costi-Giani-Fabian](#franta---tuturluta-costi-giani-fabian)
-11. [Finlanda - Grigore Mihaela](#finlanda---grigore-mihaela)
+9. [Statele Unite - Esterabadeyan Hadi](#statele-unite---esterabadeyan-hadi)
+10. [Estonia - Zidu Cristian](#estonia---zidu-cristian)
+11. [Franța - Tuturluță Costi-Giani-Fabian](#franta---tuturluta-costi-giani-fabian)
+12. [Finlanda - Grigore Mihaela](#finlanda---grigore-mihaela)
 
 
 # Belgia - Gavrilă Radu-Ionuț
