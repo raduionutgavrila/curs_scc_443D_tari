@@ -37,7 +37,7 @@
 7. [Germania - Colan Bianca](#germania---colan-bianca)
 8. [Italia - Dumitrache Alexandru](#italia---dumitrache-alexandru)
 9. [Estonia - Zidu Cristian](#estonia---zidu-cristian)
-
+10. [Franța - Tuturluță Costi-Giani-Fabian](#franta---tuturluta-costi-giani-fabian)
 
 
 
@@ -1598,7 +1598,7 @@ Acesta asigura parcurgerea automata a etapelor de Build (creare venv), Linter (v
     *   Steag:             `/estonia/steag` - URL: `http://127.0.0.1:5011/estonia/steag`
     *   Populație:         `/estonia/populatie` - URL: `http://127.0.0.1:5011/estonia/populatie`
 
-## Configurare
+### Configurare
 [cuprins](#cuprins)
 
 Configurare .venv si instalare pachete
@@ -1613,7 +1613,7 @@ In directorul radacina `curs_scc_443D_tari` rulati comenzile:
                       Va porni serverul pe IP: 127.0.0.1 si port: 5011.
                       Acces server din browser: http://127.0.0.1:5011
 
-## Exemplu activare venv si rulare
+### Exemplu activare venv si rulare
 
     dawall@dawall-VirtualBox:~/Desktop/proiect/curs_scc_443D_tari$ . ./activeaza_venv
     SUCCESS: venv was activated.
@@ -1629,28 +1629,28 @@ In directorul radacina `curs_scc_443D_tari` rulati comenzile:
 
 ![image](static/estonia_venv.png)
 
-# Exemple pagina web
+## Exemple pagina web
 [cuprins](#cuprins)
 
-## Pagina principala
+### Pagina principala
 ![image](static/estonia_principala.png)
 
-## Pagina specifica tarii
+### Pagina specifica tarii
 ![image](static/estonia_tara.png)
 
-## Pagina - Capitala
+### Pagina - Capitala
 ![image](static/estonia_capitala.png)
 
-## Pagina - Steag
+### Pagina - Steag
 
 ![image](static/estonia_steag.png)
 
-## Pagina - Populatie
+### Pagina - Populatie
 ![image](static/estonia_populatie.png)
 
 
 
-# Testare cu pytest
+## Testare cu pytest
 [cuprins](#cuprins)
 
 Funcțiile din biblioteca aplicației, localizate în directorul `app/lib/` (fișierul `biblioteca_estonia.py`), au teste de tip 'unit-test' asociate. Acestea apelează funcția și compară >
@@ -1665,7 +1665,7 @@ Execuția testelor se face din directorul rădăcină al aplicației (`curs_scc_
 Testele au fost rulate local cu succes folosind pytest:
 ![image](static/estonia_pytest.png)
 
-# Verificare statica cu pylint
+## Verificare statica cu pylint
 [cuprins](#cuprins)
 
 Pentru verificarea calității codului sursă se utilizează pachetul **pylint**. Acesta analizează conformitatea codului cu standardele Python (verifică spații, convenții de numire a var>
@@ -1678,21 +1678,21 @@ Pentru verificarea calității codului sursă se utilizează pachetul **pylint**
 (.venv) dawall@dawall-VirtualBox:~/Desktop/proiect/curs_scc_443D_tari$ pylint --exit-zero tari.py
 ```
 
-# Docker
+## Docker
 [cuprins](#cuprins)
 
 Aplicația a fost containerizată folosind o imagine de Python 3.10-alpine. Containerul este configurat să ruleze procesul Flask pe portul intern *5011*.
 
-## Creare imagine
+### Creare imagine
 ![image](static/estonia_imagine.png)
 
-## Rulare container si vizualizare
+### Rulare container si vizualizare
 ![image](static/estonia_container.png)
 
-## Docker logs
+### Docker logs
 ![image](static/estonia_logs.png)
 
-## Accesare aplicație din browser:
+### Accesare aplicație din browser:
 Aplicația poate fi accesată local la adresa http://localhost:8020 sau direct prin IP-ul intern alocat de Docker http://172.17.0.2:5011.
 ![image](static/estonia_browser.png)
 
@@ -1700,14 +1700,14 @@ Pentru oprirea și eliminarea containerului, se utilizează următoarele comenzi
  * *Oprire*: docker stop test-estonia
  * *Ștergere*: docker rm test-estonia
 
-# DevOps CI
+## DevOps CI
 [cuprins](#cuprins)
 
 - *CI* = Continuous Integration (Integrare Continuă)
 
 Proiectul utilizează un flux de automatizare definit în Jenkinsfile, care asigură validarea codului și livrarea aplicației.
 
-## Exemplu executie pipeline Jenkins
+### Exemplu executie pipeline Jenkins
 
 Pentru a se putea executa cu succes ultimul pas din pipeline-ul de Jenkins (crearea și lansarea containerului Docker), este necesar ca utilizatorul jenkins să aibă permisiuni de rul>
 
@@ -1725,7 +1725,7 @@ Daca folositi masina virtuala linux, restartati masina dupa ce faceti configurat
 
 Aplicația poate fi accesată după finalizarea pipeline-ului la adresa: `http://localhost:8020/`
 
-# Bibliografie:
+## Bibliografie:
 [cuprins](#cuprins)
 
 https://github.com/crchende/sysinfo.git
@@ -1733,3 +1733,144 @@ https://github.com/crchende/sysinfo.git
 https://github.com/crchende/jenkinsdemo
 
 https://www.jenkins.io/doc/book/installing/linux/
+
+
+
+# Franța - Tuturluță Costi-Giani-Fabian
+[Tari Proiect](#index-țări)
+
+## Dezvoltator
+- **Nume:** Tuturluță Costi-Giani-Fabian
+- **Grupa:** 443D
+- **Tema:** Țări
+- **Element:** Franța
+- **Branch de dezvoltare:** `dev_tuturluta_fabian`
+
+---
+
+## Funcționalitate adăugată
+
+Am adăugat funcționalitate referitoare la **Franța** în fișierul `app/lib/biblioteca_franta.py`:
+
+- **descriere_tara()** – Returnează o descriere generală a Franței
+- **descriere_capitala()** – Returnează informații despre capitala Paris
+- **descriere_populatie()** – Returnează informații despre populația Franței
+- **descriere_limbi()** – Returnează limbile oficiale ale Franței
+- **descriere_steag()** – Returnează descrierea și imaginea steagului Franței
+
+### Rute disponibile
+
+| Ruta | Descriere |
+|------|-----------|
+| `/` | Pagina principală – lista tuturor țărilor |
+| `/franta` | Informații generale despre Franța |
+| `/franta/capitala` | Capitala Franței – Paris |
+| `/franta/populatie` | Populația Franței |
+| `/franta/steag` | Steagul Franței |
+
+### Fișiere modificate/adăugate
+- `app/lib/biblioteca_franta.py` – biblioteca cu funcțiile pentru Franța
+- `app/lib/biblioteca_tari.py`  – adăugat import și înregistrare Franța în TARI și BIBLIOTECI
+- `app/tests/test_lib_franta.py` –  – teste unitare pentru Franța
+- `Jenkinsfile` – pipeline declarativ pentru Jenkins
+- `Dockerfile` – containerizarea aplicației
+
+---
+
+## Stadiul implementării
+
+- [x] Cod funcționalitate adăugat (`app/lib/biblioteca_franta.py`)
+- [x] Franța înregistrată în `biblioteca_tari.py` (TARI + BIBLIOTECI)
+- [x] Teste unitare scrise (`app/tests/test_lib_franta.py`)
+- [x] Jenkinsfile configurat
+- [x] Dockerfile creat
+- [x] README.md completat
+
+---
+
+## Github 
+Pentru a stoca și pentru a eficientiza modalitatea de migrare și lucrul în echipă, am folosit GitHub. 
+Pentru a respecta bunele practici de colaborare și pentru a evita conflictele, am utilizat branch-uri dedicate (ramura `main` a grupului și ramurile `dev` personale). 
+
+## Github Local Configurare + Pull Request 
+Proiectul a fost descărcat de pe GitHub folosind comanda: `git clone https://github.com/raduionutgavrila/curs_scc_443D_tari.git` 
+Dezvoltarea s-a realizat pe branch-ul personal `dev_tuturluta_fabian`. 
+Pentru a rezolva problemele de autentificare (GitHub nu mai acceptă parolele clasice în terminal), am utilizat un **Personal Access Token (PAT)** generat din setările contului, folosit ca parolă la operațiunile de `push`. Comenzile utilizate pentru salvarea muncii: 
+```bash 
+git add . 
+git commit -m "Mesaj sugestiv despre modificari" 
+git push origin dev_tuturluta_fabian
+```
+
+## Testare
+
+### Testare manuală
+Aplicația a fost verificată local rulând `. ./activeaza_venv`, urmat de `./ruleaza_aplicatia` și accesând `http://127.0.0.1:5011`.
+![Rulare local](screenshots/franta_localrulare.png)
+![Test local](screenshots/franta_testlocal.png)
+
+### Testare cu Jenkins
+- Fișierul `Jenkinsfile` este configurat cu un pipeline declarativ
+- Pipeline-ul conține etapele: Build, Verificare calitate cod (pylint), Teste unitare (pytest)
+- Testele unitare se execută cu `pytest`
+- **Rezultat:** PASS
+
+**Dovada Build Jenkins:**
+![Jenkins OK](screenshots/franta_jenkinsok.png)
+![Jenkins Success](screenshots/franta_jsuccess.png)
+
+### Teste unitare (4/4 PASS)
+- `test_functie_descriere_tara` – PASS
+- `test_functie_populatie` – PASS
+- `test_functie_capitala` – PASS
+- `test_functie_limbi` – PASS
+
+---
+
+## Containerizare
+
+### Construire imagine Docker
+```bash
+docker build -t app_franta .
+```
+
+### Creare și rulare container
+```bash
+docker run -d -p 5011:5011 --name tari_franta app-franta
+```
+
+### Accesare aplicație din browser
+Aplicația poate fi accesată la: `http://localhost:5011/franta`
+
+### Capturi de ecran
+
+*Terminal - docker images, docker ps, docker logs:*
+![Docker Terminal](screenshots/franta_dockerterm.png)
+
+*Browser - accesare aplicație din container:*
+![Docker Browser](screenshots/franta_dockerbrowser.png)
+
+---
+
+## Integrare (Pull Request)
+
+- Branch sursă: `dev_tuturluta_fabian`
+- Branch destinație: `main_tuturluta_fabian`
+- Status: *Verificat*
+- Review de la: Toaca Cristiana
+
+---
+
+## Pull Request-uri la care am făcut review
+
+| PR ID | Autor | Descriere |
+|-------|-------|-----------|
+| *#38* | *Toaca Cristiana* | *Finalizare Proiect Coreea de Sud* |
+
+---
+
+## Ce mai este de făcut
+
+- [x] Obținere review de la un coleg
+- [ ] Integrare README.md în branch-ul main
+- [x] Review la PR-ul unui coleg# Proiect SCC - Țări - Franța

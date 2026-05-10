@@ -2,6 +2,7 @@ FROM python:3.10-alpine
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ENV FLASK_APP tari
 =======
 ENV FLASK_APP tari
@@ -43,6 +44,15 @@ COPY dockerstart.sh dockerstart.sh
 RUN python3 -m venv .venv
 RUN .venv/bin/pip install --no-cache-dir -r quickrequirements.txt
 =======
+=======
+ENV FLASK_APP tari.py
+
+RUN adduser -D franta
+
+USER franta
+
+WORKDIR /home/franta
+>>>>>>> origin/main_tuturluta_fabian
 
 COPY app app
 COPY dockerstart.sh dockerstart.sh
@@ -53,6 +63,7 @@ COPY static static
 COPY tari.py tari.py
 
 RUN python3 -m venv .venv
+<<<<<<< HEAD
 RUN .venv/bin/pip install -r quickrequirements.txt
 
 #WORKDIR /home/tari/app
@@ -73,3 +84,10 @@ ENTRYPOINT ["./dockerstart.sh"]
 =======
 #CMD sh
 >>>>>>> origin/main_zidu_cristian
+=======
+RUN .venv/bin/pip install --no-cache-dir -r quickrequirements.txt
+
+EXPOSE 5000
+
+ENTRYPOINT ["./dockerstart.sh"]
+>>>>>>> origin/main_tuturluta_fabian

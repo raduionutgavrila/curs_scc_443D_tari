@@ -2,6 +2,7 @@
 
 #from app.lib import biblioteca_<tara_mea> as prescurtare_tara_mea 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 from app.lib import biblioteca_belgia as belg
 from app.lib import biblioteca_coreea as sk
@@ -12,6 +13,9 @@ from app.lib import biblioteca_japonia as jp
 from app.lib import biblioteca_germania as germ
 from app.lib import biblioteca_italia as ita
 from app.lib import biblioteca_statele_unite as sua
+from app.lib import biblioteca_estonia as esto
+from app.lib import biblioteca_franta as franta
+
 
 TARI = {
     'norvegia': {
@@ -34,13 +38,11 @@ TARI = {
 
     'sua': {
         'nume': 'Statele Unite ale Americii',
-=======
-from app.lib import biblioteca_estonia as esto
 
-TARI = {
     'estonia': {
         'nume': 'Estonia',
->>>>>>> origin/main_zidu_cristian
+    'franta': {
+        'nume': 'Republica Franceza',
     },
     
 
@@ -49,7 +51,6 @@ TARI = {
 
 
 BIBLIOTECI = {
-<<<<<<< HEAD
     'belgia': belg,
     'coreea': sk,
     'norvegia': nvg,
@@ -59,8 +60,7 @@ BIBLIOTECI = {
     'italia': ita,
     'germania': germ,
     'sua': sua,
-=======
     'estonia': esto,
->>>>>>> origin/main_zidu_cristian
+    'franta': franta,
      #adauga 'tara_mea': prescurtare_tara_mea
 }

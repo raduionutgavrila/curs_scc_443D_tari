@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 /*Jenkins*/
 
@@ -9,10 +10,13 @@
 =======
 /Jenkins/
 >>>>>>> origin/main_zidu_cristian
+=======
+>>>>>>> origin/main_tuturluta_fabian
 pipeline {
     agent any
 
     stages {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -52,19 +56,25 @@ pipeline {
                     pylint --exit-zero tari.py;
 <<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/main_tuturluta_fabian
         stage('Build & Prep') {
             steps {
                 echo 'Pregatire mediu: Creare .venv si instalare dependinte...'
                 sh '''
                     chmod +x activeaza_venv_jenkins activeaza_venv ruleaza_aplicatia dockerstart.sh
                     ./activeaza_venv_jenkins
+<<<<<<< HEAD
 >>>>>>> origin/main_esterabadeyan_hadi
 =======
 >>>>>>> origin/main_zidu_cristian
+=======
+>>>>>>> origin/main_tuturluta_fabian
                 '''
             }
         }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -106,16 +116,25 @@ pipeline {
                     pytest app/tests/test_lib_italia.py -v
 >>>>>>> origin/main_dumitrache_alexandru
 =======
+=======
+>>>>>>> origin/main_tuturluta_fabian
         stage('Calitate Cod (Pylint)') {
             steps {
                 echo 'Analiza statica a codului...'
                 sh '''
                     . .venv/bin/activate
+<<<<<<< HEAD
                     echo 'Verificare biblioteca Statele Unite...'
                     pylint --exit-zero app/lib/biblioteca_statele_unite.py
                     
                     echo 'Verificare teste Statele Unite...'
                     pylint --exit-zero app/tests/test_lib_statele_unite.py
+=======
+                    echo 'Verificare biblioteca Franta...'
+                    pylint --exit-zero app/lib/biblioteca_franta.py
+                    echo 'Verificare teste Franta...'
+                    pylint --exit-zero app/tests/test_lib_franta.py
+>>>>>>> origin/main_tuturluta_fabian
                 '''
             }
         }
@@ -125,7 +144,11 @@ pipeline {
                 echo 'Executie teste unitare automate...'
                 sh '''
                     . .venv/bin/activate
+<<<<<<< HEAD
                     pytest app/tests/test_lib_statele_unite.py -v
+=======
+                    pytest app/tests/test_lib_franta.py -v
+>>>>>>> origin/main_tuturluta_fabian
                 '''
             }
         }
@@ -135,6 +158,7 @@ pipeline {
                 echo "Numar Build: ${BUILD_NUMBER}"
                 echo "Generare imagine si container Docker"
                 sh '''
+<<<<<<< HEAD
                     # Construim imaginea folosind Dockerfile-ul creat anterior
                     docker build -t sua_app:v${BUILD_NUMBER} .
                     
@@ -146,10 +170,16 @@ pipeline {
 >>>>>>> origin/main_esterabadeyan_hadi
 =======
 >>>>>>> origin/main_zidu_cristian
+=======
+                    docker build -t franta_app:v${BUILD_NUMBER} .
+                    docker rm -f tari_container_franta_${BUILD_NUMBER} || true
+                    docker create --name tari_container_franta_${BUILD_NUMBER} -p 8020:5011 franta_app:v${BUILD_NUMBER}
+>>>>>>> origin/main_tuturluta_fabian
                 '''
             }
         }
     }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -158,6 +188,8 @@ pipeline {
 }
 >>>>>>> origin/main_dumitrache_alexandru
 =======
+=======
+>>>>>>> origin/main_tuturluta_fabian
 
     post {
         success {
@@ -168,7 +200,10 @@ pipeline {
         }
     }
 }
+<<<<<<< HEAD
 >>>>>>> origin/main_esterabadeyan_hadi
 =======
 }
 >>>>>>> origin/main_zidu_cristian
+=======
+>>>>>>> origin/main_tuturluta_fabian
