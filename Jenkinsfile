@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 /*Jenkins*/
 =======
 /* Jenkins Pipeline testare si deployare aplicatie proiect SCC, Tara: Irlanda */
@@ -15,10 +16,14 @@
 =======
 /*Jenkins*/
 >>>>>>> origin/main_teodorescu_matei
+=======
+/* Jenkins Pipeline - Tudor Iulian - Mexic */
+>>>>>>> origin/main_tudor_iulian
 pipeline {
     agent any
 
     stages {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -72,11 +77,14 @@ pipeline {
                     pip --version
 >>>>>>> origin/main_tecsan_calin
 =======
+=======
+>>>>>>> origin/main_tudor_iulian
         stage('Build & Prep') {
             steps {
                 echo 'Pregatire mediu: Creare .venv si instalare dependinte...'
                 sh '''
                     chmod +x activeaza_venv_jenkins activeaza_venv ruleaza_aplicatia dockerstart.sh
+<<<<<<< HEAD
                     ./activeaza_venv_jenkins
 >>>>>>> origin/main_roseanu_vlad
 =======
@@ -90,10 +98,14 @@ pipeline {
                     . .venv/bin/activate
                     pip install --upgrade pip
                     pip install -r quickrequirements.txt
+=======
+                    . ./activeaza_venv_jenkins
+>>>>>>> origin/main_tudor_iulian
                 '''
             }
         }
 
+<<<<<<< HEAD
         stage('pylint - calitate cod') {
             steps {
                 sh '''
@@ -179,20 +191,30 @@ pipeline {
                     pylint --exit-zero tari.py
 >>>>>>> origin/main_tecsan_calin
 =======
+=======
+>>>>>>> origin/main_tudor_iulian
         stage('Calitate Cod (Pylint)') {
             steps {
                 echo 'Analiza statica a codului...'
                 sh '''
                     . .venv/bin/activate
+<<<<<<< HEAD
                     echo 'Verificare biblioteca Canada...'
                     pylint --exit-zero app/lib/biblioteca_canada.py
                     echo 'Verificare teste Canada...'
                     pylint --exit-zero app/tests/test_lib_canada.py
 >>>>>>> origin/main_roseanu_vlad
+=======
+                    echo 'Verificare biblioteca Mexic...'
+                    pylint --exit-zero app/lib/biblioteca_mexic.py
+                    echo 'Verificare teste Mexic...'
+                    pylint --exit-zero app/tests/test_lib_mexic.py
+>>>>>>> origin/main_tudor_iulian
                 '''
             }
         }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
         stage('Testare Unitare (Pytest)') {
@@ -212,17 +234,24 @@ pipeline {
                     pytest app/tests/test_lib_elvetia.py -v
 >>>>>>> origin/main_tecsan_calin
 =======
+=======
+>>>>>>> origin/main_tudor_iulian
         stage('Unit Testing (Pytest)') {
             steps {
                 echo 'Executie teste unitare automate...'
                 sh '''
                     . .venv/bin/activate
+<<<<<<< HEAD
                     pytest app/tests/test_lib_canada.py -v
 >>>>>>> origin/main_roseanu_vlad
+=======
+                    pytest app/tests/test_lib_mexic.py -v
+>>>>>>> origin/main_tudor_iulian
                 '''
             }
         }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
         stage('Lansare Aplicatie in Docker') {
@@ -253,11 +282,14 @@ pipeline {
                     docker ps | grep tari-elvetia-tecsan-calin
 >>>>>>> origin/main_tecsan_calin
 =======
+=======
+>>>>>>> origin/main_tudor_iulian
         stage('Docker (Livrare)') {
             steps {
                 echo "Numar Build: ${BUILD_NUMBER}"
                 echo "Generare imagine si container Docker"
                 sh '''
+<<<<<<< HEAD
                     docker build -t canada_app:v${BUILD_NUMBER} .
                     docker rm -f tari_container_${BUILD_NUMBER} || true
                     docker create --name tari_container_${BUILD_NUMBER} -p 5011:5011 canada_app:v${BUILD_NUMBER}
@@ -267,10 +299,16 @@ pipeline {
                     docker build -t tari:v${BUILD_NUMBER} .
                     docker create --name tari${BUILD_NUMBER} -p 8020:5011 tari:v${BUILD_NUMBER}
 >>>>>>> origin/main_teodorescu_matei
+=======
+                    docker build -t mexic_app:v${BUILD_NUMBER} .
+                    docker rm -f tari_container_${BUILD_NUMBER} || true
+                    docker create --name tari_container_${BUILD_NUMBER} -p 5011:5011 mexic_app:v${BUILD_NUMBER}
+>>>>>>> origin/main_tudor_iulian
                 '''
             }
         }
     }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -297,13 +335,23 @@ pipeline {
     post {
         success {
             echo 'Pipeline finalizat cu succes (PASS)! '
+=======
+
+    post {
+        success {
+            echo 'Pipeline finalizat cu succes (PASS)!'
+>>>>>>> origin/main_tudor_iulian
         }
         failure {
             echo 'Eroare in pipeline. Verifica log-urile de consola.'
         }
     }
+<<<<<<< HEAD
 }
 >>>>>>> origin/main_roseanu_vlad
 =======
 }
 >>>>>>> origin/main_teodorescu_matei
+=======
+}
+>>>>>>> origin/main_tudor_iulian

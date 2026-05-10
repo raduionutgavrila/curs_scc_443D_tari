@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 FROM python:3.10-alpine
 
 ENV FLASK_APP tari
@@ -39,6 +40,20 @@ WORKDIR /home/canada
 =======
 >>>>>>> origin/main_teodorescu_matei
 
+=======
+FROM python:3.10-alpine
+
+ENV FLASK_APP tari
+
+# Cream un utilizator nou pentru a nu rula aplicatia ca root (securitate)
+RUN adduser -D mexic
+
+USER mexic
+
+WORKDIR /home/mexic
+
+# Copiem folderele si fisierele necesare pe rand
+>>>>>>> origin/main_tudor_iulian
 COPY app app
 COPY dockerstart.sh dockerstart.sh
 COPY pytest.ini pytest.ini
@@ -47,6 +62,7 @@ COPY templates templates
 COPY static static
 COPY tari.py tari.py
 
+<<<<<<< HEAD
 RUN python3 -m venv .venv
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -115,3 +131,13 @@ RUN .venv/bin/pip install -r quickrequirements.txt
 EXPOSE 5011
 ENTRYPOINT ["./dockerstart.sh"]
 >>>>>>> origin/main_teodorescu_matei
+=======
+# Cream mediul virtual in interiorul containerului si instalam dependintele
+RUN python3 -m venv .venv
+RUN .venv/bin/pip install --no-cache-dir -r quickrequirements.txt
+
+
+EXPOSE 5011
+
+ENTRYPOINT ["./dockerstart.sh"]
+>>>>>>> origin/main_tudor_iulian
