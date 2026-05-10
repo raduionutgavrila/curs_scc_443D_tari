@@ -45,6 +45,8 @@
 15. [Canada - Roșeanu Vlad-George](#canada---roșeanu-vlad-george)
 16. [China - Teodorescu-Colciu Matei](#china---teodorescu-colciu-matei)
 17. [Mexic - Tudor Iulian](#mexic---tudor-iulian)
+18. [Spania - Serban Albert](#spania---serban-albert)
+
 
 
 
@@ -2851,3 +2853,59 @@ docker start -ai <nume_container>
 | PR ID | Autor | Descriere |
 | :--- | :--- | :--- |
 | #51 | Tecsan Calin (calinn24) | Verificare README |
+
+
+# Spania - Serban Albert
+
+## 1. Identificator Dezvoltator
+- **Nume:** Serban Albert
+- **Grupă:** 443D
+- **Țară alocată:** Spania
+
+## 2. Funcționalitate Adăugată
+Am implementat logica pentru afișarea informațiilor despre Spania. Aceasta include:
+- Definirea rutelor în `app/lib/biblioteca_spania.py`.
+- Adăugarea datelor specifice (populație, capitală, vecini) în dicționarul de țări.
+- Integrarea steagului în folderul `static/`.
+
+## 3. Stadiul Implementării
+- [x] Cod funcționalitate adăugat
+
+## 4. Testare
+### Testare Manuală
+Aplicația a fost verificată local rulând `./ruleaza_aplicatia` și accesând `http://localhost:5011`.
+
+### Testare Automatizată (Jenkins)
+Am configurat un Pipeline în Jenkins care rulează automat testele. Testul din `app/tests/` a trecut cu succes (PASS).
+
+**Dovada Build Jenkins:**
+![Status Build Jenkins](screenshots/spania_tests_passed_1.png)
+![Console Output Pytest](screenshots/spania_tests_passed_2.png)
+
+## 5. Containerizare (Docker)
+Aplicația a fost containerizată folosind o imagine de Python 3.12-slim. Containerul expune portul 5011.
+
+**Dovezi Containerizare:**
+
+*1. Imaginea Docker creată:*
+![Docker Images](screenshots/spania_docker_images.png)
+
+*2. Containerul rulând activ:*
+![Docker PS](screenshots/spania_docker_ps.png)
+
+*3. Accesare aplicație din container (Browser):*
+![Browser Docker](screenshots/spania_running_browser.png)
+
+*4. Log-uri consolă (interacțiune browser-container):*
+![Docker Logs](screenshots/spania_running_console.png)
+
+## 6. Integrare și Review
+- **Branch dezvoltare: `dev_serban_albert`**
+- **Pull Request (PR) către `main_serban_albert`:** 
+Creat
+- **Review-uri:**
+    - [x] Am făcut review pentru colegul: [Gheorghe Costin-Razvan / PR ID: #73]
+    - [x] Am primit review de la: Gheorghe Costin-Razvan / PR ID: #72
+
+## 7. Ce mai este de făcut
+- [ ] Integrarea finală în branch-ul `main` al grupei după aprobarea tuturor review-urilor.

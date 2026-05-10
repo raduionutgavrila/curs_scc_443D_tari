@@ -3,6 +3,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 /*Jenkins*/
 =======
 /* Jenkins Pipeline testare si deployare aplicatie proiect SCC, Tara: Irlanda */
@@ -19,10 +20,13 @@
 =======
 /* Jenkins Pipeline - Tudor Iulian - Mexic */
 >>>>>>> origin/main_tudor_iulian
+=======
+>>>>>>> origin/main_serban_albert
 pipeline {
     agent any
 
     stages {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -101,10 +105,20 @@ pipeline {
 =======
                     . ./activeaza_venv_jenkins
 >>>>>>> origin/main_tudor_iulian
+=======
+        stage('Install dependencies') {
+            steps {
+                sh '''
+                rm -rf .venv
+                python3 -m venv .venv
+                . .venv/bin/activate
+                pip install -r quickrequirements.txt
+>>>>>>> origin/main_serban_albert
                 '''
             }
         }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
         stage('pylint - calitate cod') {
             steps {
@@ -117,10 +131,18 @@ pipeline {
                     echo "Verificare tari.py cu pylint"
                     pylint --exit-zero tari.py
 >>>>>>> origin/main_teodorescu_matei
+=======
+        stage('Run tests') {
+            steps {
+                sh '''
+                . .venv/bin/activate
+                pytest app/tests/test_lib_spania.py -v
+>>>>>>> origin/main_serban_albert
                 '''
             }
         }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -355,3 +377,12 @@ pipeline {
 =======
 }
 >>>>>>> origin/main_tudor_iulian
+=======
+        stage('Docker build') {
+            steps {
+                sh 'docker build -t proiect-spania .'
+            }
+        }
+    }
+}
+>>>>>>> origin/main_serban_albert

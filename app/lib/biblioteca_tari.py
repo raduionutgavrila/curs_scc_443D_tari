@@ -18,6 +18,7 @@ from app.lib import biblioteca_elvetia as elv
 from app.lib import biblioteca_canada as cana
 from app.lib import biblioteca_china as china
 from app.lib import biblioteca_mexic as mex
+from app.lib import biblioteca_spania as spania
 
 
 TARI = {
@@ -27,11 +28,12 @@ TARI = {
     'coreea': {
         'nume': 'Coreea de Sud',
     },
-
     'belgia': {
         'nume': 'Belgia',
+    }
     'canada': {
         'nume': 'Canada',
+    }
 
     'brazilia': {
         'nume': 'Brazilia',
@@ -40,14 +42,15 @@ TARI = {
     "japonia": {
         "nume": "Japonia",
     },
-        
     'italia': {
         'nume': 'Italia',
+    }
     'China': {
         'nume': 'China',
     },
     'sua': {
         'nume': 'Statele Unite ale Americii',
+    }
 
     'estonia': {
         'nume': 'Estonia',
@@ -68,8 +71,12 @@ TARI = {
      'mexic': {
         'nume': 'Mexic',
     },
+    'spania': {
+        'nume': 'Spania',
+    },
 
     
+    }
 
 
 BIBLIOTECI = {
@@ -90,4 +97,6 @@ BIBLIOTECI = {
     'canada': cana,
     'China': china,
     'mexic': mex,
+    'spania': spania
+
 }
