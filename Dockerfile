@@ -1,6 +1,10 @@
 FROM python:3.10-alpine
 
 ENV FLASK_APP tari
+#ENV FLASK_CONFIG = docker
+
+#3.8 booster
+#RUN useradd -rm -d /home/site -s /bin/bash -g root -G sudo -u 1001 site
 
 #3.8 alpine
 RUN adduser -D tari
@@ -10,21 +14,19 @@ USER tari
 WORKDIR /home/tari
 
 COPY app app
-COPY templates templates
-COPY static static
-
-COPY tari.py tari.py
+COPY dockerstart.sh dockerstart.sh
 COPY pytest.ini pytest.ini
 COPY quickrequirements.txt quickrequirements.txt
-COPY dockerstart.sh dockerstart.sh
-
-#RUN mkdir static
-#RUN mkdir static/imagini
-#RUN chmod -R 777 static
+COPY templates templates
+COPY static static
+COPY tari.py tari.py
 
 RUN python3 -m venv .venv
-RUN .venv/bin/pip install --no-cache-dir -r quickrequirements.txt
+RUN .venv/bin/pip install -r quickrequirements.txt
+
+#WORKDIR /home/tari/app
 
 # runtime configuration
 EXPOSE 5011
 ENTRYPOINT ["./dockerstart.sh"]
+#CMD sh

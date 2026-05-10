@@ -1,6 +1,4 @@
-
 /*Jenkins*/
-
 pipeline {
     agent any
 
