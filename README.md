@@ -171,14 +171,14 @@ docker ps -a
 **Branch sursa:** `dev_tecsan_calin`  
 **Branch destinatie:** `main_tecsan_calin`  
 
-**Status integrare:** de completat dupa Pull Request  
-**Review:** de completat dupa review-ul primit de la coleg  
+**Status integrare:** Pull Request creat din `dev_tecsan_calin` catre `main_tecsan_calin`.   
+**Review:** aprobat de colegul `etuzorr`.
 
 ### Pull Request-uri la care am facut review
 
 | PR ID | Autor | Descriere |
 |---|---|---|
-| de completat | de completat | de completat |
+| 45 | etuzorr | Review pentru modificarile adaugate in proiectul SCC - Tari. |
 
 ---
 
