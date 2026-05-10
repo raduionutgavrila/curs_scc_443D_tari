@@ -99,8 +99,8 @@ Aplicația accesată din container:
 
 ## Review
 
-- [] Am făcut review pentru colegul: [Cucui Petrut-Gabriel (PetrutG)]
-- [] Am primit review de la: [Cucui Petrut-Gabriel (PetrutG)]
+- [] Am făcut review pentru colegul: [Cucui Petruț-Gabriel (PetrutG)]
+- [] Am primit review de la: [Cucui Petruț-Gabriel (PetrutG)]
 
 
 ## De făcut
