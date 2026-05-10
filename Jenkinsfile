@@ -8,6 +8,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 /*Jenkins*/
 =======
 /* Jenkins Pipeline testare si deployare aplicatie proiect SCC, Tara: Irlanda */
@@ -32,6 +33,9 @@
 =======
 /*Jenkins*/
 >>>>>>> origin/main_ghenciu_corina
+=======
+
+>>>>>>> origin/main_cucui_petrut
 pipeline {
     agent any
 
@@ -44,15 +48,19 @@ pipeline {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/main_ghica_antonio
 =======
 >>>>>>> origin/main_ghenciu_corina
+=======
+>>>>>>> origin/main_cucui_petrut
         stage('Build') {
             agent any
             steps {
                 echo 'Building...'
                 sh '''
+<<<<<<< HEAD
                     pwd;
                     ls -l;
 <<<<<<< HEAD
@@ -64,23 +72,36 @@ pipeline {
 =======
                     . ./activeaza_venv_jenkins;
 >>>>>>> origin/main_ghenciu_corina
+=======
+                    python3 -m venv .venv
+                    . ./activeaza_venv;
+                    pip install -r quickrequirements.txt
+>>>>>>> origin/main_cucui_petrut
                     '''
             }
         }
         
+<<<<<<< HEAD
         /*stage('Testare') {
             problema rulare in paralel, al doilea stage nu mai poate porni venv-ul
             parallel {
          */
+=======
+      
+>>>>>>> origin/main_cucui_petrut
         stage('pylint - calitate cod') {
             agent any
             steps {
                 sh '''
 <<<<<<< HEAD
+<<<<<<< HEAD
                     . ./activeaza_venv;
 =======
                     . ./activeaza_venv_jenkins;
 >>>>>>> origin/main_ghenciu_corina
+=======
+                    . ./activeaza_venv;
+>>>>>>> origin/main_cucui_petrut
                     echo '\n\nVerificare app/lib/*.py cu pylint\n';
                     pylint --exit-zero app/lib/*.py;
 
@@ -89,6 +110,7 @@ pipeline {
 
                     echo '\n\nVerificare tari.py cu pylint';
                     pylint --exit-zero tari.py;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -148,10 +170,13 @@ pipeline {
 >>>>>>> origin/main_ghica_antonio
 =======
 >>>>>>> origin/main_ghenciu_corina
+=======
+>>>>>>> origin/main_cucui_petrut
                 '''
             }
         }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -187,16 +212,22 @@ pipeline {
 >>>>>>> origin/main_ghica_antonio
 =======
 >>>>>>> origin/main_ghenciu_corina
+=======
+>>>>>>> origin/main_cucui_petrut
         stage('Unit Testing cu pytest') {
             agent any
             steps {
                 echo 'Unit testing with Pytest...'
                 sh '''
 <<<<<<< HEAD
+<<<<<<< HEAD
                     . ./activeaza_venv;
 =======
                     . ./activeaza_venv_jenkins;
 >>>>>>> origin/main_ghenciu_corina
+=======
+                    . ./activeaza_venv;
+>>>>>>> origin/main_cucui_petrut
                     pytest app/tests/*.py -v
 
                     
@@ -206,6 +237,7 @@ pipeline {
         
         stage('Deploy') {
             agent any
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -225,10 +257,13 @@ pipeline {
 >>>>>>> origin/main_ghica_antonio
 =======
 >>>>>>> origin/main_ghenciu_corina
+=======
+>>>>>>> origin/main_cucui_petrut
             steps {
                 echo "Build ID: ${BUILD_NUMBER}"
                 echo "Creare imagine docker"
                 sh '''
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -427,10 +462,15 @@ pipeline {
                     docker build -t tari:v${BUILD_NUMBER} .
                     docker create --name tari${BUILD_NUMBER} -p 8020:5011 tari:v${BUILD_NUMBER}
 >>>>>>> origin/main_ghenciu_corina
+=======
+                    docker build -t tari:v${BUILD_NUMBER} .
+                    docker create --name tari${BUILD_NUMBER} -p 8020:5011 tari:v${BUILD_NUMBER}
+>>>>>>> origin/main_cucui_petrut
                 '''
             }
         }
     }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -516,3 +556,8 @@ pipeline {
 =======
 }
 >>>>>>> origin/main_ghenciu_corina
+=======
+
+ }
+
+>>>>>>> origin/main_cucui_petrut

@@ -1,4 +1,3 @@
-# Configuratie globala a proiectului
 
 
 from app.lib import biblioteca_belgia as belg
@@ -23,6 +22,8 @@ from app.lib import biblioteca_namibia as namb
 from app.lib import biblioteca_danemarca as dan
 from app.lib import biblioteca_scotia as prescurtare_biblioteca_scotia
 from app.lib import biblioteca_rusia as rus
+from app.lib import biblioteca_nepal as nepa
+
 
 
 
@@ -39,6 +40,10 @@ TARI = {
     },
     'canada': {
         'nume': 'Canada',
+    },
+ 
+    'nepal': {
+        'nume': 'Nepal',
     },
 
     'brazilia': {
@@ -122,5 +127,6 @@ BIBLIOTECI = {
     'danemarca': dan,
     'scotia': prescurtare_biblioteca_scotia,
     'rusia': rus,
+    'nepal': nepa, 
 }
 

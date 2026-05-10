@@ -8,6 +8,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 FROM python:3.10-alpine
 
 ENV FLASK_APP tari
@@ -26,12 +27,18 @@ FROM python:3.10-alpine
 
 ENV FLASK_APP tari
 >>>>>>> origin/main_ghenciu_corina
+=======
+FROM python:3.10-alpine
+
+ENV FLASK_APP tari
+>>>>>>> origin/main_cucui_petrut
 #ENV FLASK_CONFIG = docker
 
 #3.8 booster
 #RUN useradd -rm -d /home/site -s /bin/bash -g root -G sudo -u 1001 site
 
 #3.8 alpine
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -45,11 +52,14 @@ ENV FLASK_APP=tari
 >>>>>>> origin/main_ghica_antonio
 =======
 >>>>>>> origin/main_ghenciu_corina
+=======
+>>>>>>> origin/main_cucui_petrut
 RUN adduser -D tari
 
 USER tari
 
 WORKDIR /home/tari
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -83,6 +93,9 @@ WORKDIR /home/mexic
 =======
 
 >>>>>>> origin/main_ghenciu_corina
+=======
+
+>>>>>>> origin/main_cucui_petrut
 COPY app app
 COPY dockerstart.sh dockerstart.sh
 COPY pytest.ini pytest.ini
@@ -91,6 +104,7 @@ COPY templates templates
 COPY static static
 COPY tari.py tari.py
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -108,18 +122,24 @@ RUN .venv/bin/pip install --no-cache-dir -r quickrequirements.txt
 =======
 =======
 >>>>>>> origin/main_ghenciu_corina
+=======
+>>>>>>> origin/main_cucui_petrut
 RUN python3 -m venv .venv
 RUN .venv/bin/pip install -r quickrequirements.txt
 
 #WORKDIR /home/tari/app
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> origin/main_ghica_antonio
 =======
 >>>>>>> origin/main_ghenciu_corina
+=======
+>>>>>>> origin/main_cucui_petrut
 
 # runtime configuration
 EXPOSE 5011
 ENTRYPOINT ["./dockerstart.sh"]
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 #CMD sh
@@ -245,3 +265,6 @@ CMD ["./dockerstart.sh"]
 =======
 #CMD sh
 >>>>>>> origin/main_ghenciu_corina
+=======
+#CMD sh
+>>>>>>> origin/main_cucui_petrut
