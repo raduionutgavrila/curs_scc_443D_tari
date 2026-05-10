@@ -22,7 +22,6 @@ TARI = {
 
 
 BIBLIOTECI = {
-<<<<<<< HEAD
     'belgia': belg,
     'coreea': sk
     'norvegia': nvg,
