@@ -99,14 +99,14 @@ Aplicația accesată din container:
 
 ## Review
 
-- [] Am făcut review pentru colegul: [Cucui Petruț-Gabriel (PetrutG)]
-- [] Am primit review de la: [Cucui Petruț-Gabriel (PetrutG)]
+- Am făcut review pentru colegul: [Cucui Petruț-Gabriel (PetrutG)]
+- Am primit review de la: [Cucui Petruț-Gabriel (PetrutG)]
 
 
 ## De făcut
  - [x] Finalizare cod și teste manuale.
- - [x] Aplicație containerizată și accesibilă.
- - [x] Succes Pipeline Jenkins.
+ - [x] Aplicație containerizată.
+ - [x] Creare Pipeline Jenkins cu succes.  
  - [ ] Obținerea aprobării de la colegi pentru PR-ul final, în main.
  - [ ] Integrarea finală în branch-ul main.
 
