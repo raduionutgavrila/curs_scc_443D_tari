@@ -8,9 +8,9 @@ pipeline {
             steps {
                 echo 'Building...'
                 sh '''
-                    pwd;
-                    ls -l;
+                    python3 -m venv .venv
                     . ./activeaza_venv;
+                    pip install -r quickrequirements.txt       
                     '''
             }
         }
