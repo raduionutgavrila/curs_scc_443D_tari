@@ -31,7 +31,7 @@
 1. [Belgia - Gavrilă Radu-Ionuț](#belgia---gavrilă-radu-ionuț)
 2. [Coreea de Sud - Toacă Cristiana](#coreea-de-sud---toacă-cristiana)
 3. [Norvegia - Enache Bogdan-Gabriel](#norvegia---enache-bogdan-gabriel)
-3. [România - Gheorghe Răzvan](#romania---gheorghe-razvan)
+4. [România - Gheorghe Răzvan](#românia---gheorghe-răzvan)
 =======
 
 # Belgia - Gavrilă Radu-Ionuț
@@ -465,6 +465,7 @@ Aplicația va putea fi accesată la: `http://172.17.0.2:5011/`
 =======
 
 # România - Gheorghe Răzvan
+[Tari Proiect](#index-țări)
 
 ## 1. Identificator Dezvoltator
 - **Nume:** Gheorghe Răzvan
