@@ -40,7 +40,7 @@ Aplicația la bază este implementată utilizând framework-ul web Flask, fiind 
 - Integrarea în fișierul de configurare globală `app/lib/biblioteca_tari.py`:
   - Declararea țării în dicționarul global `TARI`.
   - Maparea modulului aferent în dicționarul `BIBLIOTECI`.
-  - Această configurare permite fișierului principal de rutare (`tari.py`) să expună dinamic următoarele endpoint-uri pentru Belgia, respectând tiparul arhitectural al proiectului:
+  - Această configurare permite fișierului principal de rutare (`tari.py`) să expună dinamic următoarele endpoint-uri pentru Namibia, respectând tiparul arhitectural al proiectului:
     - `/namibia` – pagina principală a țării.
     - `/namibia/capitala` – date despre capitală.
     - `/namibia/populatie` – date demografice.
@@ -94,10 +94,10 @@ http://127.0.0.1:5011/
 
 
 De asemenea, se pot verifica următoarele rute:
-- `/belgia`
-- `/belgia/capitala`
-- `/belgia/populatie`
-- `/belgia/steag`
+- `/namibia`
+- `/namibia/capitala`
+- `/namibia/populatie`
+- `/namibia/steag`
 
 <img width="1852" height="670" alt="Screenshot 2026-05-10 143213" src="https://github.com/user-attachments/assets/7f5cbf6e-79b7-4b1d-b3b4-7cd3499ae1dd" />
 
