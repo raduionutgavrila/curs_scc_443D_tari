@@ -23,6 +23,7 @@ from app.lib import biblioteca_danemarca as dan
 from app.lib import biblioteca_scotia as prescurtare_biblioteca_scotia
 from app.lib import biblioteca_rusia as rus
 from app.lib import biblioteca_nepal as nepa
+from app.lib import biblioteca_laos as lao
 
 
 
@@ -45,6 +46,11 @@ TARI = {
     'nepal': {
         'nume': 'Nepal',
     },
+
+    'laos': {
+        'nume': 'Laos',
+    },
+    
 
     'brazilia': {
         'nume': 'Brazilia',
@@ -128,5 +134,7 @@ BIBLIOTECI = {
     'scotia': prescurtare_biblioteca_scotia,
     'rusia': rus,
     'nepal': nepa, 
+    'laos': lao,
+     
 }
 

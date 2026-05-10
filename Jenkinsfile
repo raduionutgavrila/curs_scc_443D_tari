@@ -9,6 +9,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 /*Jenkins*/
 =======
 /* Jenkins Pipeline testare si deployare aplicatie proiect SCC, Tara: Irlanda */
@@ -36,10 +37,14 @@
 =======
 
 >>>>>>> origin/main_cucui_petrut
+=======
+/*Jenkins*/
+>>>>>>> origin/main_cucui_mihai
 pipeline {
     agent any
 
     stages {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -55,11 +60,14 @@ pipeline {
 >>>>>>> origin/main_ghenciu_corina
 =======
 >>>>>>> origin/main_cucui_petrut
+=======
+>>>>>>> origin/main_cucui_mihai
         stage('Build') {
             agent any
             steps {
                 echo 'Building...'
                 sh '''
+<<<<<<< HEAD
 <<<<<<< HEAD
                     pwd;
                     ls -l;
@@ -77,22 +85,34 @@ pipeline {
                     . ./activeaza_venv;
                     pip install -r quickrequirements.txt
 >>>>>>> origin/main_cucui_petrut
+=======
+                    python3 -m venv .venv
+                    . ./activeaza_venv;
+                    pip install -r quickrequirements.txt       
+>>>>>>> origin/main_cucui_mihai
                     '''
             }
         }
         
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/main_cucui_mihai
         /*stage('Testare') {
             problema rulare in paralel, al doilea stage nu mai poate porni venv-ul
             parallel {
          */
+<<<<<<< HEAD
 =======
       
 >>>>>>> origin/main_cucui_petrut
+=======
+>>>>>>> origin/main_cucui_mihai
         stage('pylint - calitate cod') {
             agent any
             steps {
                 sh '''
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                     . ./activeaza_venv;
@@ -102,6 +122,9 @@ pipeline {
 =======
                     . ./activeaza_venv;
 >>>>>>> origin/main_cucui_petrut
+=======
+                    . ./activeaza_venv;
+>>>>>>> origin/main_cucui_mihai
                     echo '\n\nVerificare app/lib/*.py cu pylint\n';
                     pylint --exit-zero app/lib/*.py;
 
@@ -110,6 +133,7 @@ pipeline {
 
                     echo '\n\nVerificare tari.py cu pylint';
                     pylint --exit-zero tari.py;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -172,10 +196,13 @@ pipeline {
 >>>>>>> origin/main_ghenciu_corina
 =======
 >>>>>>> origin/main_cucui_petrut
+=======
+>>>>>>> origin/main_cucui_mihai
                 '''
             }
         }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -214,11 +241,14 @@ pipeline {
 >>>>>>> origin/main_ghenciu_corina
 =======
 >>>>>>> origin/main_cucui_petrut
+=======
+>>>>>>> origin/main_cucui_mihai
         stage('Unit Testing cu pytest') {
             agent any
             steps {
                 echo 'Unit testing with Pytest...'
                 sh '''
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                     . ./activeaza_venv;
@@ -228,6 +258,9 @@ pipeline {
 =======
                     . ./activeaza_venv;
 >>>>>>> origin/main_cucui_petrut
+=======
+                    . ./activeaza_venv;
+>>>>>>> origin/main_cucui_mihai
                     pytest app/tests/*.py -v
 
                     
@@ -237,6 +270,7 @@ pipeline {
         
         stage('Deploy') {
             agent any
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -259,10 +293,13 @@ pipeline {
 >>>>>>> origin/main_ghenciu_corina
 =======
 >>>>>>> origin/main_cucui_petrut
+=======
+>>>>>>> origin/main_cucui_mihai
             steps {
                 echo "Build ID: ${BUILD_NUMBER}"
                 echo "Creare imagine docker"
                 sh '''
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -466,10 +503,15 @@ pipeline {
                     docker build -t tari:v${BUILD_NUMBER} .
                     docker create --name tari${BUILD_NUMBER} -p 8020:5011 tari:v${BUILD_NUMBER}
 >>>>>>> origin/main_cucui_petrut
+=======
+                    docker build -t tari:v${BUILD_NUMBER} .
+                    docker create --name tari${BUILD_NUMBER} -p 8020:5011 tari:v${BUILD_NUMBER}
+>>>>>>> origin/main_cucui_mihai
                 '''
             }
         }
     }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -561,3 +603,6 @@ pipeline {
  }
 
 >>>>>>> origin/main_cucui_petrut
+=======
+}
+>>>>>>> origin/main_cucui_mihai
