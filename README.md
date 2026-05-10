@@ -68,8 +68,8 @@ git push origin dev_tuturluta_fabian
 
 ### Testare manuală
 Aplicația a fost verificată local rulând `. ./activeaza_venv`, urmat de `./ruleaza_aplicatia` și accesând `http://127.0.0.1:5011`.
-![Rulare local](screenshots/localrulare.png)
-![Test local](screenshots/testlocal.png)
+![Rulare local](screenshots/franta_localrulare.png)
+![Test local](screenshots/franta_testlocal.png)
 
 ### Testare cu Jenkins
 - Fișierul `Jenkinsfile` este configurat cu un pipeline declarativ
@@ -78,8 +78,8 @@ Aplicația a fost verificată local rulând `. ./activeaza_venv`, urmat de `./ru
 - **Rezultat:** PASS
 
 **Dovada Build Jenkins:**
-![Jenkins OK](screenshots/jenkinsok.png)
-![Jenkins Success](screenshots/jsuccess.png)
+![Jenkins OK](screenshots/franta_jenkinsok.png)
+![Jenkins Success](screenshots/franta_jsuccess.png)
 
 ### Teste unitare (4/4 PASS)
 - `test_functie_descriere_tara` – PASS
@@ -107,10 +107,10 @@ Aplicația poate fi accesată la: `http://localhost:5011/franta`
 ### Capturi de ecran
 
 *Terminal - docker images, docker ps, docker logs:*
-![Docker Terminal](screenshots/dockerterm.png)
+![Docker Terminal](screenshots/franta_dockerterm.png)
 
 *Browser - accesare aplicație din container:*
-![Docker Browser](screenshots/dockerbrowser.png)
+![Docker Browser](screenshots/franta_dockerbrowser.png)
 
 ---
 
@@ -118,8 +118,8 @@ Aplicația poate fi accesată la: `http://localhost:5011/franta`
 
 - Branch sursă: `dev_tuturluta_fabian`
 - Branch destinație: `main_tuturluta_fabian`
-- Status: *(de completat)*
-- Review de la: *(de completat cu numele colegului)*
+- Status: *Verificat*
+- Review de la: Toaca Cristiana
 
 ---
 
@@ -127,12 +127,12 @@ Aplicația poate fi accesată la: `http://localhost:5011/franta`
 
 | PR ID | Autor | Descriere |
 |-------|-------|-----------|
-| *(de completat)* | *(de completat)* | *(de completat)* |
+| *#38* | *Toaca Cristiana* | *Finalizare Proiect Coreea de Sud* |
 
 ---
 
 ## Ce mai este de făcut
 
-- [ ] Obținere review de la un coleg
+- [x] Obținere review de la un coleg
 - [ ] Integrare README.md în branch-ul main
-- [ ] Review la PR-ul unui coleg# Proiect SCC - Țări - Franța
+- [x] Review la PR-ul unui coleg# Proiect SCC - Țări - Franța
