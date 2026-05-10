@@ -10,7 +10,7 @@ pipeline {
                 sh '''
                     pwd;
                     ls -l;
-                    . ./activeaza_venv;
+                    . ./activeaza_venv_jenkins;
                     '''
             }
         }
@@ -41,7 +41,7 @@ pipeline {
             steps {
                 echo 'Unit testing with Pytest...'
                 sh '''
-                    . ./activeaza_venv;
+                    . ./activeaza_venv_jenkins;
                     pytest app/tests/*.py -v
 
                     
