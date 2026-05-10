@@ -21,8 +21,8 @@ Am adaugat funcționalitatea pentru **Canada** în fișierul `app/lib/biblioteca
 | `/` | Pagina principală – lista tuturor țărilor |
 | `/canada` | Informații generale despre Canada |
 | `/canada/capitala` | Capitala Canadei – Ottawa |
-| `/canada/populatie` | Populația Canada |
-| `/canada/steag` | Steagul Canada |
+| `/canada/populatie` | Populația Canadei |
+| `/canada/steag` | Steagul Canadei |
 
 ## Modificări
 
@@ -75,10 +75,10 @@ Aplicația a fost containerizată folosind o imagine de Python 3.10-alpine. Cont
 *4. Accesare aplicație din container (Browser):*
 ![Browser Docker](screenshots/canada_docker_app.png)
 
-*4. Log-uri consolă (interacțiune browser-container):*
+*5. Log-uri consolă (interacțiune browser-container):*
 ![Docker Logs](screenshots/canada_docker_log.png)
 
-## 6. Comenzi folosite:
+## Comenzi folosite:
 🧪 Rulare manuala pytest:
 ```bash
 pytest app/tests/test_lib_canada.py -v
@@ -97,7 +97,7 @@ docker start -ai <nume_cont>
 ```
 
 
-## 7. Integrare și Review
+## Integrare și Review
 🌿 Branch sursa: `dev_roseanu_vlad`
 
 🎯 Branch destinatie: `main_roseanu_vlad`
@@ -106,7 +106,8 @@ docker start -ai <nume_cont>
 
 👀 Review: *Esterabadeyan Hadi*
 
-## 8. Ce mai este de făcut
+
+## Ce mai este de făcut
 
  - [x] Finalizare cod și teste manuale.
  - [x] Aplicație containerizată și accesibilă.
