@@ -191,8 +191,8 @@ Daca folositi masina virtuala linux, restartati masina dupa ce faceti configurat
 3. *Unit Tests*: Rularea testelor cu pytest
 4. **Deploy**: Construirea imaginii Docker și pornirea containerului pe portul **8020**.
 
-![image](estonia_pipeline_1.png)
-![image](estonia_pipeline_2.png)
+![image](static/estonia_pipeline_1.png)
+![image](static/estonia_pipeline_2.png)
 
 Aplicația poate fi accesată după finalizarea pipeline-ului la adresa: `http://localhost:8020/`
 
