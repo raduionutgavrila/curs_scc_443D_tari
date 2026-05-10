@@ -76,6 +76,8 @@ pytest app/tests/test_lib_elvetia.py -v
 
 **Status Pytest:** PASS
 
+![Testare - Pytest](static/elvetia1_pytest.png)
+
 ### 4.3 Testare cu Jenkins
 
 A fost creat fisierul `Jenkinsfile`, care automatizeaza urmatoarele etape:
@@ -89,6 +91,10 @@ A fost creat fisierul `Jenkinsfile`, care automatizeaza urmatoarele etape:
 - pornirea containerului Docker.
 
 **Status Jenkins Pipeline:** SUCCESS
+
+![Testare - Build Jenkins](static/elvetia2_jenkins1.png)
+
+![Testare - Build Jenkins](static/elvetia3_jenkins2.png)
 
 ---
 
@@ -128,6 +134,8 @@ Verificarea imaginilor Docker:
 docker images
 ```
 
+![Testare - Build Jenkins](static/elvetia4_docker.png)
+
 ### 5.2 Container Docker
 
 Containerul a fost creat si pornit folosind comanda:
@@ -138,11 +146,15 @@ docker run -d --name tari-elvetia-tecsan-calin -p 8020:5011 tari-elvetia-tecsan-
 
 Aplicatia ruleaza in container pe portul intern `5011`, iar pe masina locala este accesibila prin portul `8020`.
 
+![Testare - Build Jenkins](static/elvetia6_rulare.png)
+
 Acces aplicatie:
 
 ```text
 http://localhost:8020
 ```
+
+![Testare - Build Jenkins](static/elvetia7_pagina.png)
 
 Verificarea containerelor Docker:
 
@@ -150,17 +162,7 @@ Verificarea containerelor Docker:
 docker ps -a
 ```
 
-Verificarea containerelor active:
-
-```bash
-docker ps
-```
-
-Afisarea logurilor containerului:
-
-```bash
-docker logs tari-elvetia-tecsan-calin
-```
+![Testare - Build Jenkins](static/elvetia5_containere.png)
 
 ---
 
