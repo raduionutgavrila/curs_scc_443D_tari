@@ -104,8 +104,8 @@ docker start -ai <nume_container>
 ## 7. Status Integrare
 - **Branch Sursa:** `dev_tudor_iulian`
 - **Branch Destinatie:** `main_tudor_iulian`
-- **Status:** Merged
-- **Review realizat de:** *(De completat)*
+- **Status:** Merged , Verificat
+- **Review realizat de:** Dumitrache Alexandru
 
 ### Review-uri oferite de mine
 | PR ID | Autor | Descriere |
