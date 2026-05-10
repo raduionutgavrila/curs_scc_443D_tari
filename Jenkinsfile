@@ -38,6 +38,7 @@ pipeline {
             }
         }
 
+<<<<<<< HEAD
         stage('Unit Testing cu pytest') {
             agent any
             steps {
@@ -59,8 +60,21 @@ pipeline {
                 sh '''
                     docker build -t tari:v${BUILD_NUMBER} .
                     docker create --name tari${BUILD_NUMBER} -p 8020:5011 tari:v${BUILD_NUMBER}
+=======
+        stage('Teste unitare - pytest') {
+            agent any
+            steps {
+                echo 'Rulare teste unitare pentru Italia...'
+                sh '''
+                    . .venv/bin/activate;
+                    pytest app/tests/test_lib_italia.py -v
+>>>>>>> origin/main_dumitrache_alexandru
                 '''
             }
         }
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> origin/main_dumitrache_alexandru
