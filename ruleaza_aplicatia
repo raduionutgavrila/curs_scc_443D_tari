@@ -5,16 +5,4 @@ export FLASK_APP=tari
 #WINDOWS
 #set FLASK_APP=tari
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 flask run -p 5011 --reload
-=======
-flask run -p 5011 --reload
->>>>>>> origin/main_pirjol_mara
-=======
-flask run -p 5011 --reload
->>>>>>> origin/main_ivan_luca
-=======
-flask run -p 5011 --reload
->>>>>>> origin/main_voicu_ioan_andrei
