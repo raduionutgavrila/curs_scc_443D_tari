@@ -91,11 +91,11 @@ Aplicația va putea fi accesată la: `http://172.17.0.2:5011/`
 
 ## 7. Review-uri:
 
-- [ ] Am primit review de la: []
+- [x] Am primit review de la: [Toacă Cristiana (cr1stiaaana) #58]
 
 ## 8. De făcut
  - [x] Finalizare cod și teste manuale.
  - [x] Aplicație containerizată și accesibilă.
  - [x] Succes Pipeline Jenkins.
- - [ ] Obținerea aprobării de la colegi pentru PR-ul final, în main.
- - [ ] Integrarea finală în branch-ul main.
+ - [x] Obținerea aprobării de la colegi pentru PR-ul final, în main.
+ - [x] Integrarea finală în branch-ul main.
