@@ -80,14 +80,14 @@ jenkins
 <img src="screenshots/nepal-jenkins-pipeline.png" width="1200">
 <img src="screenshots/nepal-jenkins-tests-passed.png" width="1200">
 
-# Integrare
+## Integrare
 **- Branch-ul de dezvoltare: dev_cucui_petrut**  
-# Review
+## Review
 **- Am primit review de la colegul: Cucui Mihai Cătălin (MihaiC03)**
 
 **- Am facut review pentru colegul: Cucui Mihai Cătălin (MihaiC03)**
 
-# Rămas de făcut
+## Rămas de făcut
 **- [x] Implementarea codului și validarea testelor local.**
 
 **- [x] Containerizarea aplicației și rulare.**
