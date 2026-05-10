@@ -62,7 +62,7 @@ Pornirea containerului si vizualizarea procesului activ.
 
 **4. Interfata Web (Browser):**
 Accesarea aplicatiei containerizate la adresa `http://localhost:5011/mexic`.
-![App in Browser](screenshots/mexic_docker_app.png)
+![App in Browser](screenshots/Mexic_docker_app.png)
 
 **5. Jurnal de Log-uri:**
 Interactiunea dintre utilizator si aplicatie capturata in log-urile Docker.
