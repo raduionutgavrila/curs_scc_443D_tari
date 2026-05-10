@@ -101,8 +101,8 @@ Aplicația poate fi accesată la: `http://localhost:5011/italia`
 
 - Branch sursă: `dev_dumitrache_alexandru`
 - Branch destinație: `main_dumitrache_alexandru`
-- Status: COMPLETAT
-- Review de la: `Teodorescu-Colciu Matei`
+- Status: COMPLETAT (PR #37)
+- Review de la: `Teodorescu-Colciu Matei (Doewsb [])`
 
 ---
 
@@ -110,12 +110,12 @@ Aplicația poate fi accesată la: `http://localhost:5011/italia`
 
 | PR ID | Autor | Descriere |
 |-------|-------|-----------|
-| *(de completat)* | *(de completat)* | *(de completat)* |
+| #39 | Doewsb [] | Update README.md |
 
 ---
 
 ## Ce mai este de făcut
 
 - [x] Obținere review de la un coleg
+- [x] Review la PR-ul unui coleg
 - [ ] Integrare README.md în branch-ul main
-- [ ] Review la PR-ul unui coleg
