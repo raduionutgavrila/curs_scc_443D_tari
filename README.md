@@ -34,7 +34,7 @@ Funcționalitatea include:
     ├── screenshots
     │   ├── danemarca_1_build.jpeg
     │   ├── danemarca_2_run.jpeg
-    │   ├── danemarca_3_browser.jpeg
+    │   ├── danemarca_3_browser.png
     │   ├── danemarca_4_ps.jpeg
     │   └── danemarca_5_test.jpeg
     ├── Dockerfile
@@ -103,7 +103,7 @@ A fost adăugat fișierul `Dockerfile` pentru containerizarea aplicației.
 ![Rulare Container](screenshots/danemarca_2_run.jpeg)
 
 **Accesarea aplicației din container:**
-![Browser App](screenshots/danemarca_3_browser.jpeg)
+![Browser App](screenshots/danemarca_3_browser.png)
 
 **Verificare container activ:**
 `docker ps`
