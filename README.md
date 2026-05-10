@@ -464,15 +464,15 @@ Aplicația va putea fi accesată la: `http://172.17.0.2:5011/`
 
 ## 7. Review-uri:
 
-- [ ] Am primit review de la: []
+- [x] Am primit review de la: [Toacă Cristiana (cr1stiaaana) #58]
 
 ## 8. De făcut
 
  - [x] Finalizare cod și teste manuale.
  - [x] Aplicație containerizată și accesibilă.
  - [x] Succes Pipeline Jenkins.
- - [ ] Obținerea aprobării de la colegi pentru PR-ul final, în main.
- - [ ] Integrarea finală în branch-ul main.
+ - [x] Obținerea aprobării de la colegi pentru PR-ul final, în main.
+ - [x] Integrarea finală în branch-ul main.
 
 =======
 
@@ -527,11 +527,11 @@ Aplicația a fost containerizată folosind o imagine de Python 3.12-slim. Contai
 - **Pull Request (PR) către `main_gheorghe_razvan`:** 
 Creat
 - **Review-uri:**
-    - [ ] Am făcut review pentru colegul: [Nume Coleg / ID PR]
+    - [x] Am făcut review pentru colegul: Serban Albert / PR ID #72
     - [x] Am primit review de la: Zidu Cristian / PR ID: #6
 
 ## 7. Ce mai este de făcut
-- [ ] Integrarea finală în branch-ul `main` al grupei după aprobarea tuturor review-urilor.
+- [x] Integrarea finală în branch-ul `main` al grupei după aprobarea tuturor review-urilor.
 
 
 
@@ -2003,7 +2003,6 @@ Testele verifica daca valorile returnate de functii sunt identice cu valorile as
 python3 -m pytest app/tests/test_lib_finlanda.py
 
 
-===================================== test session starts ======================================
 platform linux -- Python 3.10.12, pytest-9.0.3, pluggy-1.6.0
 rootdir: /home/miki/curs_scc_443D_tari
 configfile: pytest.ini
@@ -2026,7 +2025,6 @@ app/tests/test_lib_finlanda.py::test_functie_limbi
 2026-05-09 08:37:08 [INFO    ] (test_lib_finlanda.py:32) Merge functia descriere_limbi
 PASSED                                                                                   [100%]
 
-====================================== 4 passed in 0.04s =======================================
 ```
 
 ## 8. Containerizare Docker
@@ -2152,6 +2150,7 @@ Pull Request:
 Capturile aferente proiectului se găsesc în directorul:
 
 `screenshots/`
+<<<<<<< HEAD
 
 # Irlanda - Pirjol Mara
 [Tari Proiect](#index-țări)
@@ -2223,3 +2222,6 @@ Aplicația a fost containerizată folosind Docker. Containerul expune portul 501
 *3. Accesare aplicație din container în browser:*
 
 ![Browser Docker](screenshots/irlanda_docker_page.jpeg)
+=======
+- [x] Integrarea finală în branch-ul `main` al grupei după aprobarea tuturor review-urilor.
+>>>>>>> 848735f0f1b7498f6758c47340b11e07e2b9e2b3
