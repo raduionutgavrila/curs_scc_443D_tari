@@ -24,10 +24,10 @@ Am implementat funcționalitatea pentru Statele Unite ale Americii, incluzând:
  - Status Jenkins: PASS.
 
 **Test manual - Pytest**
-![Test manual - Pytest](screenshots/pytest_manual.png)
+![Test manual - Pytest](screenshots/sua_pytest_manual.png)
 
 **Status Build Jenkins**
-![Status Build Jenkins](screenshots/pipeline.png)
+![Status Build Jenkins](screenshots/sua_pipeline.png)
 
 
 ## 5. Containerizare (Docker)
@@ -38,21 +38,21 @@ Aplicația a fost containerizată folosind un Dockerfile bazat pe Python Alpine.
 1. Imaginea Docker creata
  - Imaginea creata manual este sua-app:latest
  - Imaginea creata automat de Jenkins este sua_app:v3
-![Docker Images](screenshots/docker_images.png)
+![Docker Images](screenshots/sua_docker_images.png)
 
 2. Containerul creat pe baza imaginii
  - Containerul creat manual este docker_app
  - Containerul creat manual este tari_container_3
-![Docker containers](screenshots/docker_containers.png)
+![Docker containers](screenshots/sua_docker_containers.png)
 
 3 Accesarea aplicatiei din container
  - Rularea containerului
-![Rularea containerului](screenshots/docker_terminal.png)
+![Rularea containerului](screenshots/sua_docker_terminal.png)
  - Accesarea aplicatiei web
-![Accesarea aplicatiei web](screenshots/docker_app.png)
+![Accesarea aplicatiei web](screenshots/sua_docker_app.png)
 
 4 Log-uri consola docker
-![Docker Logs](screenshots/docker_log.png)
+![Docker Logs](screenshots/sua_docker_log.png)
 
 
 ## 6. Integrare și Review
