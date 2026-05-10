@@ -63,7 +63,7 @@ Acesta asigura parcurgerea automata a etapelor de Build (creare venv), Linter (v
 
 ### Rute aplicație WEB:
 *   **Ruta standard**  `/` - URL: `http://127.0.0.1:5011`
-*   **Rute specifice Brazilia**:
+*   **Rute specifice Estonia**:
     *   Pagina principală țară: `/estonia` - URL: `http://127.0.0.1:5011/estonia`
     *   Capitală:          `/estonia/capitala` - URL: `http://127.0.0.1:5011/estonia/capitala`
     *   Steag:             `/estonia/steag` - URL: `http://127.0.0.1:5011/estonia/steag`
