@@ -1,153 +1,274 @@
-# PROIECT SCC - TEMPLATE WEB PENTRU PROIECT DE GRUPA
+# Proiect SCC - Tari
 
-Acest branch este template-ul de proiect pentru grupa. Scopul este ca fiecare student sa foloseasca aceeasi structura a site-ului si sa modifice ce este necesar pentru tara proprie. 
+## 1. Dezvoltator
 
-## Ce se modifica in /app/lib/
+**Nume:** Tecșan Călin  
+**Grupa:** 443D  
+**Tara aleasa:** Elveția  
 
-In acest director, trebuie modificat:
+---
 
-- `app/lib/biblioteca_belgia.py`
-- `app/lib/biblioteca_tari.py`
+## 2. Functionalitate adaugata
 
+In cadrul proiectului am implementat functionalitatea pentru tara **Elvetia**.
 
+Au fost adaugate/modificate urmatoarele componente:
 
-Redenumeste fisierul `app/lib/biblioteca_belgia.py` cu numele tarii alese `app/lib/biblioteca_<tara_mea>.py` (de exemplu `biblioteca_romania.py`).
-  
-- In `biblioteca_<tara_mea>.py`, adauga continut corespuzator tarii alease in functiile:
-  - `descriere_tara()`
-  - `descriere_limbi()`
-  - `descriere_populatie()`
-  - `descriere_capitala()`
-  - `descriere_steag()`
-    
-Trebuie adaugat importul bibliotecii tarii la inceputul fisierului 'biblioteca_tari.py', dupa modelul prezentat.
+- biblioteca individuala pentru tara: `app/lib/biblioteca_elvetia.py`;
+- actualizarea fisierului `app/lib/biblioteca_tari.py` pentru includerea tarii Elvetia in aplicatie;
+- test automat pentru biblioteca tarii: `app/tests/test_lib_elvetia.py`;
+- imaginea steagului Elvetiei in directorul `static/`;
+- fisier `Dockerfile` pentru containerizarea aplicatiei;
+- fisier `Jenkinsfile` pentru automatizarea etapelor de testare si build.
 
-Apoi trebuie adaugata:
+Functionalitatile disponibile pentru Elvetia sunt:
 
-1. o pereche in `TARI` pentru numele tarii
-2. o intrare in `BIBLIOTECI` pentru biblioteca tarii alese 
+- descrierea tarii;
+- capitala;
+- populatia;
+- limbile oficiale;
+- afisarea steagului.
 
-Obs: Eliminati intrarile cu Belgia; sunt doar de exemplu !
+---
 
-### Exemplu de actualizare in `app/lib/biblioteca_tari.py`
+## 3. Stadiul implementarii
 
-```python
-from app.lib import biblioteca_tara_mea as prescurtare_biblioteca_tara_mea
-
-TARI = {
-    'tara_mea': {
-        'nume': 'Numele complet al tarii mele',
-    },
-}
-
-BIBLIOTECI = {
-    'tara_mea': prescurtare_biblioteca_tara_mea,
-}
-```
-## Ce se modifica in /app/tests
+**Cod aplicatie:** finalizat pentru tara Elvetia.  
+**Integrare in biblioteca generala:** realizata in `biblioteca_tari.py`.  
+**Rute web:** accesibile prin browser la portul 5011  
+**Resurse statice:** steagul Elvetiei a fost adaugat in `static/steag_elvetia.png`.  
+**Testare locala:** realizata cu Pytest.  
+**Containerizare:** imaginea Docker a fost construita, iar containerul a fost pornit cu succes.
+**Pipeline Jenkins:** creat si rulat cu succes.  
 
 
-Fisierul test_lib_belgia.py este un test automatizat care verifică funcțiile din biblioteca țării . 
-El importă funcțiile principale (descriere_tara, descriere_capitala, descriere_limbi, descriere_populatie), definește valori așteptate pentru fiecare și folosește assert result == expected_result pentru a confirma că rezultatul funcțiilor corespunde exact cu ce trebuie. 
+---
 
-1. Redenumeste `app/tests/test_lib_belgia.py` cu numele tarii alese `app/tests/test_lib_<tara_mea>.py` (de exemplu `test_romania.py`).
-2. Schimbă importul din `biblioteca_belgia` în `biblioteca_<tara_mea>` (asa cum este mentionat si comentariu)
-3. Actualizează fiecare `expected_result` cu valoarea aleasa pentru țara ta
+## 4. Testare
 
+### 4.1 Testare manuala
 
+Aplicatia a fost pornita local si au fost verificate paginile corespunzatoare tarii Elvetia in browser.
 
+Au fost testate manual urmatoarele informatii:
 
+- descrierea tarii;
+- capitala;
+- populatia;
+- limbile oficiale;
+- steagul.
 
-## Ce se adauga in `static/`
+**Status testare manuala:** OK
 
-- Adauga poza cu steagul tarii tale in format `png` in directorul `static/` ( sterge apoi poza steag_belgia.png).
-- Adauga locatia pozei in functia desriere_steag() din  `biblioteca_<tara_mea>.py`, sub formatul '/static/<steag_tara>.png'.
+### 4.2 Testare unitara cu Pytest
 
-## Ce NU se modifica
-
-- `tari.py` - NU SE MODIFICA
-- `app/lib/biblioteca_header.py` - NU SE MODIFICA
-- `templates/base.html` - NU SE MODIFICA
-- `templates/pagina.html` - NU SE MODIFICA
-- `templates/steag.html` - NU SE MODIFICA
-- `templates/tara.html` - NU SE MODIFICA (este template generic pentru pagina de tara)
-
-
-## Structura de baza
-
-`app/lib/`
-- `biblioteca_tari.py` - fisier in care vor fi agregate numele si bibliotecile de la toate tarile din proiect ( agregarea se va face la final, cand se va face Pull Request in branch-ul main)
-- `biblioteca_<tara_mea>.py` - fisierul individual cu functiile pentru tara aleasa
-- `biblioteca_header.py` - header comun, nu se modifica
-
-`static/`
-- aici se pune poza steagului in format `png`
-
-`templates/`
-- `base.html` - scheletul proiectului - contine structura html + css statica
-- `home.html` - pagina de pornire unde sunt listate tarile
-- `tara.html` - template generic pentru pagina fiecarei tari, unde este afisat rezultatul functiei descriere_tara()
-- `pagina.html` - pagina folosita pentru a afisa rezultatul funtiilor descriere_capitala() / descriere_populatie() / descriere_limbi()
-- `steag.html` - pagina folosita pentru a afisa rezultatul functiei descriere_steag()
-  
-`tari.py` - fișierul principal al aplicației Flask care gestionează rutele web și afișează informații despre țări. Este intermediar între cererile web și bibliotecile fiecărei țări, oferind utilizatorului informații formatate despre acestea.
-
-
-
-## Scripturi de activare si rulare
-
-### `activeaza_venv`
-
-Acest script activeaza mediul virtual Python din `.venv`. Comanda:  `. ./activeaza_venv`
-
-
-### `ruleaza_aplicatia`
-
-Acest script porneste aplicatia Flask local. Comanda: `./ruleaza_aplicatia`
-
-
-### `dockerstart.sh`
-
-Acest script face acelasi lucru, dar cu optiuni suplimentare. Este apelat in fisierul Dockerfile
-
-## Permisiuni de executie
-
-Pentru a rula scripturile, trebuie acordate permisiuni de executie:
+Testele unitare au fost definite in fisierul:
 
 ```bash
-chmod 764 activeaza_venv ruleaza_aplicatia dockerstart.sh
+app/tests/test_lib_elvetia.py
 ```
 
-## Testare cu Pytest
+Comanda folosita pentru rularea testelor:
 
-Pentru a rula testele, mergeți în directorul principal al proiectului și folosiți comanda:
+```bash
+pytest app/tests/test_lib_elvetia.py -v
+```
 
-`pytest app/tests/*.py -v`
+**Status Pytest:** PASS
 
-Aceasta verifica fiecare funcție din fișier și arata ce teste trec sau ce teste eșuează. Asigurati-va ca aveti venv-ul pornit.
+### 4.3 Testare cu Jenkins
 
+A fost creat fisierul `Jenkinsfile`, care automatizeaza urmatoarele etape:
 
+- pregatirea proiectului;
+- crearea si activarea mediului virtual Python;
+- instalarea dependentelor;
+- verificarea codului cu Pylint;
+- rularea testelor unitare cu Pytest;
+- construirea imaginii Docker;
+- pornirea containerului Docker.
 
-# Pasi recomandati pentru proiect
+**Status Jenkins Pipeline:** SUCCESS
 
-1. `git clone https://github.com/raduionutgavrila/curs_scc_443D_tari.git` - pentru a copia local repository-ul
-2. `git checkout dev-template` - pentru a selecta ramura de dezvolatare cu template-ul
-3. `git checkout -b dev-nume-prenume` - pentru a crea o noua ramura de dezvoltare pornind de la template
-4. modifica `app/lib/biblioteca_tari.py`
-5. redenumeste `app/lib/biblioteca_belgia.py` in `app/lib/biblioteca_<tara_mea>.py` si modifica continutul functiilor
-6. adauga poza cu steagul in `static/` si adauga link catre acesta in functia din 'biblioteca_<tara_mea>.py'
-7. ruleaza cu `. ./activeaza_venv` si `./ruleaza_aplicatia`
-8. testeaza cu `pytest app/tests/test_lib_<tara_mea>.py -v`
+---
 
+## 5. Containerizare Docker
 
-# Ce mai trebuie adaugat
+Aplicatia a fost containerizata folosind un `Dockerfile` bazat pe imaginea `python:3.10-alpine`.
 
-- Creare Dockerfile
-- Creare Jenkinsfile
+### 5.1 Imagine Docker
 
-## Observatie finala
+Imaginea Docker a fost construita manual cu urmatoarea comanda:
 
-Scripturile din aceasta aplicatie sunt introduse dupa modelul aplicatiei `chrchende/sysinfo:simplu_main`.
+```bash
+docker build -t tari-elvetia-tecsan-calin:v1 .
+```
 
+Imaginea creata manual:
 
-  
+```text
+tari-elvetia-tecsan-calin:v1
+```
+
+Imaginea creata automat de Jenkins are formatul:
+
+```text
+tari-elvetia-tecsan-calin:v<BUILD_NUMBER>
+```
+
+Exemplu:
+
+```text
+tari-elvetia-tecsan-calin:v1
+```
+
+Verificarea imaginilor Docker:
+
+```bash
+docker images
+```
+
+### 5.2 Container Docker
+
+Containerul a fost creat si pornit folosind comanda:
+
+```bash
+docker run -d --name tari-elvetia-tecsan-calin -p 8020:5011 tari-elvetia-tecsan-calin:v1
+```
+
+Aplicatia ruleaza in container pe portul intern `5011`, iar pe masina locala este accesibila prin portul `8020`.
+
+Acces aplicatie:
+
+```text
+http://localhost:8020
+```
+
+Verificarea containerelor Docker:
+
+```bash
+docker ps -a
+```
+
+Verificarea containerelor active:
+
+```bash
+docker ps
+```
+
+Afisarea logurilor containerului:
+
+```bash
+docker logs tari-elvetia-tecsan-calin
+```
+
+---
+
+## 6. Integrare si review
+
+**Branch sursa:** `dev_tecsan_calin`  
+**Branch destinatie:** `main_tecsan_calin`  
+
+**Status integrare:** de completat dupa Pull Request  
+**Review:** de completat dupa review-ul primit de la coleg  
+
+### Pull Request-uri la care am facut review
+
+| PR ID | Autor | Descriere |
+|---|---|---|
+| de completat | de completat | de completat |
+
+---
+
+## 7. Comenzi utile
+
+### 7.1 Activare mediu virtual
+
+```bash
+. ./activeaza_venv
+```
+
+### 7.2 Pornire aplicatie local
+
+```bash
+./ruleaza_aplicatia
+```
+
+### 7.3 Rulare teste Pytest
+
+```bash
+pytest app/tests/test_lib_elvetia.py -v
+```
+
+### 7.4 Construire imagine Docker
+
+```bash
+docker build -t tari-elvetia-tecsan-calin:v1 .
+```
+
+### 7.5 Pornire container Docker
+
+```bash
+docker run -d --name tari-elvetia-tecsan-calin -p 8020:5011 tari-elvetia-tecsan-calin:v1
+```
+
+### 7.6 Oprire container
+
+```bash
+docker stop tari-elvetia-tecsan-calin
+```
+
+### 7.7 Repornire container existent
+
+```bash
+docker start tari-elvetia-tecsan-calin
+```
+
+### 7.8 Stergere container
+
+```bash
+docker rm -f tari-elvetia-tecsan-calin
+```
+
+### 7.9 Verificare imagini Docker
+
+```bash
+docker images
+```
+
+### 7.10 Verificare containere Docker
+
+```bash
+docker ps -a
+```
+
+### 7.11 Verificare loguri container
+
+```bash
+docker logs tari-elvetia-tecsan-calin
+```
+
+---
+
+## 8. Ce mai este de facut
+
+- [x] Implementarea bibliotecii pentru Elvetia.
+- [x] Actualizarea fisierului `biblioteca_tari.py`.
+- [x] Adaugarea testelor unitare pentru Elvetia.
+- [x] Adaugarea steagului in directorul `static/`.
+- [x] Crearea fisierului `Dockerfile`.
+- [x] Crearea fisierului `Jenkinsfile`.
+- [x] Rularea testelor cu Pytest.
+- [x] Rularea pipeline-ului Jenkins.
+- [x] Construirea imaginii Docker.
+- [x] Pornirea containerului Docker.
+- [x] Adaugarea capturilor de ecran in README.
+- [x] Crearea Pull Request-ului.
+- [x] Obtinerea review-ului de la un coleg.
+- [x] Integrarea finala in branch-ul principal.
+
+---
+
+## 8. Concluzie
+
+Functionalitatea pentru Elvetia a fost implementata in aplicatia web Flask a proiectului SCC - Tari. Codul a fost testat local cu Pytest, verificat prin pipeline Jenkins si containerizat folosind Docker. Aplicatia poate fi rulata local sau in container si poate fi accesata din browser.
