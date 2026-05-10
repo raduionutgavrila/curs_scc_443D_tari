@@ -32,11 +32,11 @@ Funcționalitatea include:
     │   │   └── test_lib_danemarca.py
     │   └── __init__.py
     ├── screenshots
-    │   ├── 1_build.jpeg
-    │   ├── 2_run.jpeg
-    │   ├── 3_browser.jpeg
-    │   ├── 4_ps.jpeg
-    │   └── 5_test.jpeg
+    │   ├── danemarca_1_build.jpeg
+    │   ├── danemarca_2_run.jpeg
+    │   ├── danemarca_3_browser.jpeg
+    │   ├── danemarca_4_ps.jpeg
+    │   └── danemarca_5_test.jpeg
     ├── Dockerfile
     ├── Jenkinsfile
     ├── requirements.txt
@@ -81,7 +81,7 @@ Rute verificate manual:
 ### Testare Automată
 Testele se află în folderul `app/tests/`.
 Testele au fost rulate local cu succes folosind `pytest`:
-![Testare Automata](screenshots/5_test.jpeg)
+![Testare Automata](screenshots/danemarca_5_test.jpeg)
 
 ## 8. Jenkins
 A fost adăugat fișierul `Jenkinsfile` pentru automatizarea procesului de CI/CD.
@@ -96,18 +96,18 @@ A fost adăugat fișierul `Dockerfile` pentru containerizarea aplicației.
 
 **Construirea imaginii Docker:**
 `docker build -t danemarca-app .`
-![Creare Imagine](screenshots/1_build.jpeg)
+![Creare Imagine](screenshots/danemarca_1_build.jpeg)
 
 **Rularea containerului:**
 `docker run -p 5000:5000 danemarca-app`
-![Rulare Container](screenshots/2_run.jpeg)
+![Rulare Container](screenshots/danemarca_2_run.jpeg)
 
 **Accesarea aplicației din container:**
-![Browser App](screenshots/3_browser.jpeg)
+![Browser App](screenshots/danemarca_3_browser.jpeg)
 
 **Verificare container activ:**
 `docker ps`
-![Docker PS](screenshots/4_ps.jpeg)
+![Docker PS](screenshots/danemarca_4_ps.jpeg)
 
 ## 10. Integrare și Review
 - [ ] Crearea Pull Request-ului din `dev_ivan_luca` către `main_ivan_luca`
