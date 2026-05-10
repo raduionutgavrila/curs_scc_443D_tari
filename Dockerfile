@@ -4,6 +4,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 FROM python:3.10-alpine
 
 ENV FLASK_APP tari
@@ -12,6 +13,11 @@ FROM python:3.10-alpine
 
 ENV FLASK_APP canada_app
 >>>>>>> origin/main_roseanu_vlad
+=======
+FROM python:3.10-alpine
+
+ENV FLASK_APP tari
+>>>>>>> origin/main_ghica_antonio
 #ENV FLASK_CONFIG = docker
 
 #3.8 booster
@@ -19,17 +25,21 @@ ENV FLASK_APP canada_app
 
 #3.8 alpine
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 FROM python:3.10-alpine
 
 ENV FLASK_APP=tari
 
 >>>>>>> origin/main_teodorescu_matei
+=======
+>>>>>>> origin/main_ghica_antonio
 RUN adduser -D tari
 
 USER tari
 
 WORKDIR /home/tari
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 RUN adduser -D canada
@@ -55,6 +65,9 @@ WORKDIR /home/mexic
 
 # Copiem folderele si fisierele necesare pe rand
 >>>>>>> origin/main_tudor_iulian
+=======
+
+>>>>>>> origin/main_ghica_antonio
 COPY app app
 COPY dockerstart.sh dockerstart.sh
 COPY pytest.ini pytest.ini
@@ -63,6 +76,7 @@ COPY templates templates
 COPY static static
 COPY tari.py tari.py
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 RUN python3 -m venv .venv
 <<<<<<< HEAD
@@ -75,10 +89,17 @@ RUN .venv/bin/pip install --no-cache-dir -r quickrequirements.txt
 
 #WORKDIR /home/canada/app
 >>>>>>> origin/main_roseanu_vlad
+=======
+RUN python3 -m venv .venv
+RUN .venv/bin/pip install -r quickrequirements.txt
+
+#WORKDIR /home/tari/app
+>>>>>>> origin/main_ghica_antonio
 
 # runtime configuration
 EXPOSE 5011
 ENTRYPOINT ["./dockerstart.sh"]
+<<<<<<< HEAD
 #CMD sh
 <<<<<<< HEAD
 =======
@@ -160,3 +181,6 @@ EXPOSE 5011
 
 CMD ["flask", "--app", "tari", "run", "--host=0.0.0.0", "--port=5011"]
 >>>>>>> origin/main_serban_albert
+=======
+#CMD sh
+>>>>>>> origin/main_ghica_antonio

@@ -4,6 +4,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 /*Jenkins*/
 =======
 /* Jenkins Pipeline testare si deployare aplicatie proiect SCC, Tara: Irlanda */
@@ -22,6 +23,9 @@
 >>>>>>> origin/main_tudor_iulian
 =======
 >>>>>>> origin/main_serban_albert
+=======
+/*Jenkins*/
+>>>>>>> origin/main_ghica_antonio
 pipeline {
     agent any
 
@@ -32,6 +36,9 @@ pipeline {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/main_ghica_antonio
         stage('Build') {
             agent any
             steps {
@@ -39,7 +46,11 @@ pipeline {
                 sh '''
                     pwd;
                     ls -l;
+<<<<<<< HEAD
                     . ./activeaza_venv;
+=======
+                    . ./activeaza_venv_jenkins;
+>>>>>>> origin/main_ghica_antonio
                     '''
             }
         }
@@ -61,6 +72,7 @@ pipeline {
 
                     echo '\n\nVerificare tari.py cu pylint';
                     pylint --exit-zero tari.py;
+<<<<<<< HEAD
 =======
         stage('Build and Prep') {
             steps {
@@ -114,10 +126,13 @@ pipeline {
                 . .venv/bin/activate
                 pip install -r quickrequirements.txt
 >>>>>>> origin/main_serban_albert
+=======
+>>>>>>> origin/main_ghica_antonio
                 '''
             }
         }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
         stage('pylint - calitate cod') {
@@ -147,6 +162,8 @@ pipeline {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+=======
+>>>>>>> origin/main_ghica_antonio
         stage('Unit Testing cu pytest') {
             agent any
             steps {
@@ -162,6 +179,7 @@ pipeline {
         
         stage('Deploy') {
             agent any
+<<<<<<< HEAD
 =======
         stage('Unit Testing cu pytest') {
             steps {
@@ -175,10 +193,13 @@ pipeline {
 
         stage('Deploy') {
 >>>>>>> origin/main_teodorescu_matei
+=======
+>>>>>>> origin/main_ghica_antonio
             steps {
                 echo "Build ID: ${BUILD_NUMBER}"
                 echo "Creare imagine docker"
                 sh '''
+<<<<<<< HEAD
 <<<<<<< HEAD
                     docker build -t tari:v${BUILD_NUMBER} .
                     docker create --name tari${BUILD_NUMBER} -p 8020:5011 tari:v${BUILD_NUMBER}
@@ -326,10 +347,15 @@ pipeline {
                     docker rm -f tari_container_${BUILD_NUMBER} || true
                     docker create --name tari_container_${BUILD_NUMBER} -p 5011:5011 mexic_app:v${BUILD_NUMBER}
 >>>>>>> origin/main_tudor_iulian
+=======
+                    docker build -t tari:v${BUILD_NUMBER} .
+                    docker create --name tari${BUILD_NUMBER} -p 8020:5011 tari:v${BUILD_NUMBER}
+>>>>>>> origin/main_ghica_antonio
                 '''
             }
         }
     }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -386,3 +412,6 @@ pipeline {
     }
 }
 >>>>>>> origin/main_serban_albert
+=======
+}
+>>>>>>> origin/main_ghica_antonio

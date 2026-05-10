@@ -19,7 +19,7 @@ from app.lib import biblioteca_canada as cana
 from app.lib import biblioteca_china as china
 from app.lib import biblioteca_mexic as mex
 from app.lib import biblioteca_spania as spania
-
+from app.lib import biblioteca_namibia as namb
 
 TARI = {
     'norvegia': {
@@ -37,6 +37,9 @@ TARI = {
 
     'brazilia': {
         'nume': 'Brazilia',
+
+    'namibia': {
+        'nume': 'Namibia',
     },
     
     "japonia": {
@@ -98,5 +101,6 @@ BIBLIOTECI = {
     'China': china,
     'mexic': mex,
     'spania': spania
-
+    'namibia': namb,
+     #adauga 'tara_mea': prescurtare_tara_mea
 }
