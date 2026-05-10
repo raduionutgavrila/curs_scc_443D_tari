@@ -1,9 +1,10 @@
 # Proiect SCC - Finlanda
 
 # 1. Dezvoltator
-Nume: Mihaela Grigore
-Grupă: 443D 
-Țară alocată: Finlanda
+
+- Nume: Mihaela Grigore  
+- Grupă: 443D  
+- Țară alocată: Finlanda
 
 # 2. Descrierea si scopul proiectului
 
@@ -148,7 +149,7 @@ app/tests/test_lib_finlanda.py::test_functie_limbi
 PASSED                                                                                   [100%]
 
 ====================================== 4 passed in 0.04s =======================================
-
+```
 
 # 8. Containerizare Docker
 
