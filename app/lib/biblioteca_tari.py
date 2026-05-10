@@ -15,6 +15,7 @@ from app.lib import biblioteca_italia as ita
 from app.lib import biblioteca_statele_unite as sua
 from app.lib import biblioteca_estonia as esto
 from app.lib import biblioteca_franta as franta
+from app.lib import biblioteca_finlanda as fin
 
 
 TARI = {
@@ -44,6 +45,11 @@ TARI = {
     'franta': {
         'nume': 'Republica Franceza',
     },
+    # Mapare tara -> biblioteca
+    finlanda': {
+        'nume': 'Finlanda',
+    },
+
     
 
 
@@ -62,5 +68,6 @@ BIBLIOTECI = {
     'sua': sua,
     'estonia': esto,
     'franta': franta,
+    'finlanda': fin,
      #adauga 'tara_mea': prescurtare_tara_mea
 }
