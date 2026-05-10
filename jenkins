@@ -1,0 +1,10 @@
+[0;1;38;5;185mWarning: The unit file, source configuration file or drop-ins of jenkins.service changed on disk. Run 'systemctl daemon-reload' to reload units.[0m
+[0;1;32m●[0m jenkins.service - Jenkins Continuous Integration Server
+     Loaded: loaded (]8;;file://Ubuntu2404/usr/lib/systemd/system/jenkins.service/usr/lib/systemd/system/jenkins.service]8;;; [0;1;38;5;185mdisabled[0m; preset: [0;1;32menabled[0m)
+     Active: [0;1;32mactive (running)[0m since Sat 2026-05-09 11:37:20 UTC; 11min ago
+   Main PID: 8457 (java)
+      Tasks: 54 (limit: 12487)
+     Memory: 736.8M (peak: 738.8M)
+        CPU: 13.112s
+     CGroup: /system.slice/jenkins.service
+             └─[0;38;5;245m8457 /usr/bin/java -Djava.awt.headless=true -jar /usr/share/java/jenkins.war --webroot=/var/cache/jenkins/war --httpPort=8080[0m
