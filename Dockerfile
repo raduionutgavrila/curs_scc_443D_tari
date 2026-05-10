@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 FROM python:3.10-alpine
 
 ENV FLASK_APP tari
@@ -28,3 +29,20 @@ RUN .venv/bin/pip install --no-cache-dir -r quickrequirements.txt
 # runtime configuration
 EXPOSE 5011
 ENTRYPOINT ["./dockerstart.sh"]
+=======
+FROM python:3.12-slim
+
+WORKDIR /app
+
+COPY quickrequirements.txt .
+
+RUN pip install --no-cache-dir -r quickrequirements.txt
+
+COPY . .
+
+RUN chmod 764 activeaza_venv ruleaza_aplicatia dockerstart.sh
+
+EXPOSE 5011
+
+CMD ["./dockerstart.sh"]
+>>>>>>> origin/main_ciobanu_andrei

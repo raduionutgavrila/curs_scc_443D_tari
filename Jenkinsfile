@@ -1,11 +1,16 @@
+<<<<<<< HEAD
 
 /*Jenkins*/
 
+=======
+/* Jenkins */
+>>>>>>> origin/main_ciobanu_andrei
 pipeline {
     agent any
 
     stages {
         stage('Build') {
+<<<<<<< HEAD
             agent any
             steps {
                 echo 'Building...'
@@ -34,11 +39,40 @@ pipeline {
 
                     echo '\n\nVerificare tari.py cu pylint';
                     pylint --exit-zero tari.py;
+=======
+            steps {
+                echo 'Building...'
+                sh '''
+                    pwd
+                    ls -l
+                    python3 --version
+                    rm -rf .venv
+                    python3 -m venv .venv
+                    . .venv/bin/activate && pip install --upgrade pip
+                    . .venv/bin/activate && pip install -r quickrequirements.txt
+                '''
+            }
+        }
+
+        stage('pylint - calitate cod') {
+            steps {
+                echo 'Verificare calitate cod cu pylint...'
+                sh '''
+                    . .venv/bin/activate && echo "\\n\\nVerificare app/lib/*.py cu pylint\\n"
+                    . .venv/bin/activate && pylint --exit-zero app/lib/*.py
+
+                    . .venv/bin/activate && echo "\\n\\nVerificare app/tests/*.py cu pylint\\n"
+                    . .venv/bin/activate && pylint --exit-zero app/tests/*.py
+
+                    . .venv/bin/activate && echo "\\n\\nVerificare tari.py cu pylint\\n"
+                    . .venv/bin/activate && pylint --exit-zero tari.py
+>>>>>>> origin/main_ciobanu_andrei
                 '''
             }
         }
 
         stage('Unit Testing cu pytest') {
+<<<<<<< HEAD
             agent any
             steps {
                 echo 'Unit testing with Pytest...'
@@ -51,6 +85,16 @@ pipeline {
             }
         }
         
+=======
+            steps {
+                echo 'Unit testing with Pytest...'
+                sh '''
+                    . .venv/bin/activate && pytest app/tests/*.py -v
+                '''
+            }
+        }
+
+>>>>>>> origin/main_ciobanu_andrei
         stage('Deploy') {
             agent any
             steps {
@@ -62,5 +106,9 @@ pipeline {
                 '''
             }
         }
+<<<<<<< HEAD
     }
+=======
+}
+>>>>>>> origin/main_ciobanu_andrei
 }
