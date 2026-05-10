@@ -14,6 +14,7 @@
 - [Validare cod cu pylint](#validare-cod-cu-pylint)
 - [Testare cu Docker](#testare-cu-docker)
 - [DevOps CI](#devops-ci)
+  - [Exemplu executie pipeline Jenkins](#exemplu-executie-pipeline-jenkins)
 - [Concluzii](#concluzii)
 - [Bibliografie](#bibliografie)
 
