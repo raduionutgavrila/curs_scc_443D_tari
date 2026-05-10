@@ -3,25 +3,29 @@
 #from app.lib import biblioteca_<tara_mea> as prescurtare_tara_mea 
 from app.lib import biblioteca_belgia as belg
 from app.lib import biblioteca_coreea as sk
+from app.lib import biblioteca_norvegia as nvg
 
 TARI = {
-    'belgia': {
-        'nume': 'Belgia',
+    'norvegia': {
+        'nume': 'Norvegia',
     },
     'coreea': {
         'nume': 'Coreea de Sud',
+    }
+
+    'belgia': {
+        'nume': 'Belgia',
     }
     #adauga  'tara_mea': { 'nume': 'Nume Tara Mea'}
 
 }
 
 
-# Mapare tara -> biblioteca
-
 BIBLIOTECI = {
     'belgia': belg,
     'coreea': sk
-     #adauga 'tara_mea': prescurtare_tara_mea
+    'norvegia': nvg,
+
 }
 
 
