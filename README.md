@@ -523,11 +523,11 @@ Aplicația a fost containerizată folosind o imagine de Python 3.12-slim. Contai
 - **Pull Request (PR) către `main_gheorghe_razvan`:** 
 Creat
 - **Review-uri:**
-    - [ ] Am făcut review pentru colegul: [Nume Coleg / ID PR]
+    - [x] Am făcut review pentru colegul: Serban Albert / PR ID #72
     - [x] Am primit review de la: Zidu Cristian / PR ID: #6
 
 ## 7. Ce mai este de făcut
-- [ ] Integrarea finală în branch-ul `main` al grupei după aprobarea tuturor review-urilor.
+- [x] Integrarea finală în branch-ul `main` al grupei după aprobarea tuturor review-urilor.
 
 
 
@@ -1999,7 +1999,6 @@ Testele verifica daca valorile returnate de functii sunt identice cu valorile as
 python3 -m pytest app/tests/test_lib_finlanda.py
 
 
-===================================== test session starts ======================================
 platform linux -- Python 3.10.12, pytest-9.0.3, pluggy-1.6.0
 rootdir: /home/miki/curs_scc_443D_tari
 configfile: pytest.ini
@@ -2022,7 +2021,6 @@ app/tests/test_lib_finlanda.py::test_functie_limbi
 2026-05-09 08:37:08 [INFO    ] (test_lib_finlanda.py:32) Merge functia descriere_limbi
 PASSED                                                                                   [100%]
 
-====================================== 4 passed in 0.04s =======================================
 ```
 
 ## 8. Containerizare Docker
@@ -2148,3 +2146,4 @@ Pull Request:
 Capturile aferente proiectului se găsesc în directorul:
 
 `screenshots/`
+- [x] Integrarea finală în branch-ul `main` al grupei după aprobarea tuturor review-urilor.
