@@ -1,6 +1,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 /*Jenkins*/
 =======
 /* Jenkins Pipeline testare si deployare aplicatie proiect SCC, Tara: Irlanda */
@@ -11,10 +12,14 @@
 =======
 /* Jenkins*/
 >>>>>>> origin/main_roseanu_vlad
+=======
+/*Jenkins*/
+>>>>>>> origin/main_teodorescu_matei
 pipeline {
     agent any
 
     stages {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -74,10 +79,37 @@ pipeline {
                     chmod +x activeaza_venv_jenkins activeaza_venv ruleaza_aplicatia dockerstart.sh
                     ./activeaza_venv_jenkins
 >>>>>>> origin/main_roseanu_vlad
+=======
+        stage('Build') {
+            steps {
+                echo 'Building...'
+                sh '''
+                    pwd
+                    ls -l
+                    python3 -m venv .venv
+                    . .venv/bin/activate
+                    pip install --upgrade pip
+                    pip install -r quickrequirements.txt
                 '''
             }
         }
 
+        stage('pylint - calitate cod') {
+            steps {
+                sh '''
+                    . .venv/bin/activate
+                    echo "Verificare app/lib/*.py cu pylint"
+                    pylint --exit-zero app/lib/*.py
+                    echo "Verificare app/tests/*.py cu pylint"
+                    pylint --exit-zero app/tests/*.py
+                    echo "Verificare tari.py cu pylint"
+                    pylint --exit-zero tari.py
+>>>>>>> origin/main_teodorescu_matei
+                '''
+            }
+        }
+
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -96,10 +128,24 @@ pipeline {
         
         stage('Deploy') {
             agent any
+=======
+        stage('Unit Testing cu pytest') {
+            steps {
+                echo 'Unit testing with Pytest...'
+                sh '''
+                    . .venv/bin/activate
+                    pytest app/tests/*.py -v
+                '''
+            }
+        }
+
+        stage('Deploy') {
+>>>>>>> origin/main_teodorescu_matei
             steps {
                 echo "Build ID: ${BUILD_NUMBER}"
                 echo "Creare imagine docker"
                 sh '''
+<<<<<<< HEAD
                     docker build -t tari:v${BUILD_NUMBER} .
                     docker create --name tari${BUILD_NUMBER} -p 8020:5011 tari:v${BUILD_NUMBER}
 =======
@@ -216,10 +262,16 @@ pipeline {
                     docker rm -f tari_container_${BUILD_NUMBER} || true
                     docker create --name tari_container_${BUILD_NUMBER} -p 5011:5011 canada_app:v${BUILD_NUMBER}
 >>>>>>> origin/main_roseanu_vlad
+=======
+                    docker rm -f tari${BUILD_NUMBER} 2>/dev/null || true
+                    docker build -t tari:v${BUILD_NUMBER} .
+                    docker create --name tari${BUILD_NUMBER} -p 8020:5011 tari:v${BUILD_NUMBER}
+>>>>>>> origin/main_teodorescu_matei
                 '''
             }
         }
     }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -252,3 +304,6 @@ pipeline {
     }
 }
 >>>>>>> origin/main_roseanu_vlad
+=======
+}
+>>>>>>> origin/main_teodorescu_matei
