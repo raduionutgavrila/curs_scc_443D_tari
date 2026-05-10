@@ -69,17 +69,11 @@ Aplicatia utilizeaza:
 
 In fisierul `app/lib/biblioteca_finlanda.py` au fost implementate urmatoarele functii:
 
-## `descriere_tara()` - returneaza o descriere generala a Finlandei.
-
-## `descriere_limbi()` - returneaza limbile oficiale vorbite in Finlanda.
-
-## `descriere_populatie()` - returneaza populatia aproximativa a Finlandei.
-
-## `descriere_capitala()` - returneaza capitala Finlandei.
-
-## `descriere_steag()` - afiseaza imaginea steagului Finlandei. 
-
----
+- `descriere_tara()` - returneaza o descriere generala a Finlandei.
+- `descriere_limbi()` - returneaza limbile oficiale vorbite in Finlanda.
+- `descriere_populatie()` - returneaza populatia aproximativa a Finlandei.
+- `descriere_capitala()` - returneaza capitala Finlandei.
+- `descriere_steag()` - afiseaza imaginea steagului Finlandei.
 
 
 # 5. Rute disponibile
@@ -228,7 +222,35 @@ Proiect SCC - Tari
  * Running on http://127.0.0.1:5011
  * Running on http://172.17.0.2:5011
 ```
-# 10. Integrare și Review
+
+# 10. Testare automata cu Jenkins
+
+Pentru automatizarea procesului de testare și verificare a aplicației a fost configurat un server Jenkins local pe Ubuntu.
+
+Pipeline-ul Jenkins a fost implementat utilizând un fișier `Jenkinsfile` aflat în branch-ul de dezvoltare `dev_grigore_mihaela`.
+## Etape executate în Jenkins
+
+| Etapă | Descriere |
+|---|---|
+| Checkout SCM | Descărcarea codului sursă din repository |
+| Build and Prep | Configurarea mediului și instalarea dependențelor |
+| Analiza Calitate Cod | Verificarea codului cu Pylint |
+| Testare Unitare | Rularea testelor Pytest |
+| Lansare Aplicatie in Docker | Construirea imaginii și crearea containerului Docker |
+
+Rezultatul execuției pipeline-ului a fost finalizat cu succes, toate etapele fiind executate fără erori.
+
+## Fișier Jenkins utilizat
+
+- `Jenkinsfile`
+
+## Captură Jenkins
+
+Captura aferentă rulării pipeline-ului Jenkins:
+
+`screenshots/Screenshot_jenkins.png`
+
+# 11. Integrare și Review
 
 Branch dezvoltare:
 - `dev_grigore_mihaela`
@@ -241,7 +263,7 @@ Pull Request:
 - aprobat
 - merge-uit cu succes
 
-# 11. Capturi de ecran
+# 12. Capturi de ecran
 
 Capturile aferente proiectului se găsesc în directorul:
 
