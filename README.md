@@ -58,8 +58,7 @@ Aplicația a fost containerizată folosind un Dockerfile bazat pe Python Alpine.
 ## 6. Integrare și Review
  - Branch sursa: `dev_esterabadeyan_hadi`
  - Branch destinatie: `main_esterabadeyan_hadi`
- - Status: *(de completat)*
- - Review: *(de completat cu numele colegului)*
+ - Status: complet si functional
 
 ## Pull Request-uri la care am făcut review
 
