@@ -92,7 +92,7 @@ Aplicația va putea fi accesată la: `http://172.17.0.2:5011/`
 
 ## 7. Review-uri:
 
-- [x] Am primit review de la: []
+- [ ] Am primit review de la: []
 
 ## 8. De făcut
  - [x] Finalizare cod și teste manuale.
