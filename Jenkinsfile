@@ -23,7 +23,7 @@ pipeline {
             agent any
             steps {
                 sh '''
-                    . ./activeaza_venv;
+                    . ./activeaza_venv_jenkins;
                     echo '\n\nVerificare app/lib/*.py cu pylint\n';
                     pylint --exit-zero app/lib/*.py;
 
