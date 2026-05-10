@@ -20,6 +20,7 @@ Au fost modificate/adaugate urmatoarele fisiere:
 - `Dockerfile`
 - `Jenkinsfile`
 
+
 ## Descriere functionalitate
 
 Pentru Japonia au fost implementate urmatoarele functii:
