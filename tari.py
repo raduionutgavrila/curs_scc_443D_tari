@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-
-=======
 from flask import Flask, render_template, abort
 
 from app.lib import biblioteca_header as header
@@ -66,4 +63,4 @@ def pagina_steag(tara):
 
 if __name__ == '__main__':
     app.run(debug=True)
->>>>>>> main_gavrila_radu
+
