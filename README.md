@@ -8,7 +8,7 @@
 ## 2. Funcționalitate Adăugată
 Am implementat logica pentru afișarea informațiilor despre Danemarca în aplicația web Flask.
 Funcționalitatea include:
-* crearea fișierului `app/lib/danemarca.py`;
+* crearea fișierelor `app/lib/biblioteca_danemarca.py`, `app/lib/biblioteca_header.py` și `app/lib/biblioteca_tari.py` conform template-ului de grup;
 * modificarea fișierului `tari.py` pentru integrarea Danemarcei;
 * adăugarea testelor automate în `app/tests/test_lib_danemarca.py`;
 * adăugarea fișierelor `Dockerfile` și `Jenkinsfile`.
@@ -26,12 +26,13 @@ Funcționalitatea include:
     .
     ├── app
     │   ├── lib
-    │   │   ├── danemarca.py
+    │   │   ├── biblioteca_danemarca.py
+    │   │   ├── biblioteca_header.py
+    │   │   ├── biblioteca_tari.py
     │   │   └── __init__.py
-    │   ├── tests
-    │   │   └── test_lib_danemarca.py
-    │   └── __init__.py
-    ├── screenshots
+    │   └── tests
+    │       ├── test_lib_danemarca.py
+    │       └── __init__.py    ├── screenshots
     │   ├── danemarca_1_build.jpeg
     │   ├── danemarca_2_run.jpeg
     │   ├── danemarca_3_browser.png
@@ -45,26 +46,34 @@ Funcționalitatea include:
 
 ## 5. Fișiere Modificate / Adăugate
 
-**`app/lib/danemarca.py`**
+**`app/lib/biblioteca_danemarca.py`**
 Conține funcțiile pentru afișarea informațiilor despre Danemarca:
-* `descriere_danemarca()`
-* `capitala_danemarca()`
+* `descriere_tara()`
+* `descriere_limbi()`
+* `descriere_populatie()`
+* `descriere_capitala()`
+* `descriere_steag()`
+
+**`app/lib/biblioteca_header.py`**
+Conține funcțiile standard pentru headerele paginilor.
+
+**`app/lib/biblioteca_tari.py`**
+Conține dicționarele TARI și BIBLIOTECI necesare pentru integrarea finală.
 
 **`tari.py`**
-A fost modificat pentru:
-* importarea bibliotecii Danemarcei;
-* definirea rutelor specifice în aplicația Flask.
+A fost refactorizat pentru a importa noile biblioteci și a adapta rutele aplicației Flask.
 
 **`app/tests/test_lib_danemarca.py`**
-Conține testele automate (unit tests) pentru funcțiile implementate în bibliotecă.
+Conține testele automate (unit tests) actualizate pentru noile funcții implementate.
 
 ## 6. Rute Disponibile
 | Rută | Descriere |
-|---|---|
+| :--- | :--- |
 | `/` | Pagina principală a proiectului |
 | `/danemarca` | Pagina principală pentru Danemarca |
-| `/danemarca/descriere` | Afișează descrierea generală a țării |
 | `/danemarca/capitala` | Afișează capitala Danemarcei |
+| `/danemarca/steag` | Afișează steagul Danemarcei |
+| `/danemarca/populatie` | Afișează populația Danemarcei |
 
 ## 7. Testare
 
@@ -72,12 +81,11 @@ Conține testele automate (unit tests) pentru funcțiile implementate în biblio
 Aplicația a fost verificată local rulând comanda:
 `python3 tari.py`
 
-Aplicația a fost accesată în browser la: `http://127.0.0.1:5000`
-
-Rute verificate manual:
-* `http://127.0.0.1:5000/danemarca`
-* `http://127.0.0.1:5000/danemarca/descriere`
-* `http://127.0.0.1:5000/danemarca/capitala`
+Aplicația poate fi verificată la următoarele adrese:
+* `http://127.0.0.1:5011/danemarca`
+* `http://127.0.0.1:5011/danemarca/capitala`
+* `http://127.0.0.1:5011/danemarca/steag`
+* `http://127.0.0.1:5011/danemarca/populatie`
 
 ### Testare Automată
 Testele se află în folderul `app/tests/`.

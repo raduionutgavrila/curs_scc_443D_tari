@@ -1,4 +1,7 @@
-from app.lib.danemarca import capitala_danemarca
+from app.lib.biblioteca_danemarca import descriere_tara, descriere_capitala
 
-def test_capitala():
-    assert "Copenhaga" in capitala_danemarca()
+def test_descriere_tara():
+    assert "Danemarca" in descriere_tara()
+
+def test_descriere_capitala():
+    assert "Copenhaga" in descriere_capitala()
