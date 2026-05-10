@@ -10,7 +10,7 @@ def test_functie_descriere_tara():
     logger.info("Merge functia descriere_tara")
 
 def test_functie_populatie():
-    expected_result = "Aproximativ 128 milioane de locuitori"
+    expected_result = "Aproximativ 133 milioane de locuitori"
     result = descriere_populatie()
     assert result == expected_result, f"Test esuat! Rezultatul functiei descriere_populatie() este: {result}"
     logger.info("Merge functia descriere_populatie")
