@@ -1,4 +1,4 @@
-Proiect SCC - Țări - Estonia`
+Proiect SCC - Țări - Estonia
 ===================================
 
 # Cuprins
