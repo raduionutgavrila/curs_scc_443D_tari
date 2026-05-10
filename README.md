@@ -105,9 +105,9 @@ docker start -ai <nume_container>
 - **Branch Sursa:** `dev_tudor_iulian`
 - **Branch Destinatie:** `main_tudor_iulian`
 - **Status:** Merged , Verificat
-- **Review realizat de:** Dumitrache Alexandru
+- **Review realizat de:** Dumitrache Alexandru (Dumitian - PR #29)
 
 ### Review-uri oferite de mine
 | PR ID | Autor | Descriere |
 | :--- | :--- | :--- |
-| #... | ... | ... |
+| #51 | Tecsan Calin (calinn24) | Verificare README |
