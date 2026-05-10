@@ -104,6 +104,7 @@ Aplicația accesată din container:
 
 
 ## De făcut
+
  - [x] Finalizare cod și teste manuale.
  - [x] Aplicație containerizată.
  - [x] Creare Pipeline Jenkins cu succes.  
