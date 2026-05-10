@@ -1,7 +1,6 @@
 # Configuratie globala a proiectului
 
 #from app.lib import biblioteca_<tara_mea> as prescurtare_tara_mea 
-<<<<<<< HEAD
 
 from app.lib import biblioteca_belgia as belg
 from app.lib import biblioteca_coreea as sk
@@ -11,6 +10,7 @@ from app.lib import biblioteca_brazilia as braz
 from app.lib import biblioteca_japonia as jp
 from app.lib import biblioteca_germania as germ
 from app.lib import biblioteca_italia as ita
+from app.lib import biblioteca_statele_unite as sua
 
 TARI = {
     'norvegia': {
@@ -30,13 +30,9 @@ TARI = {
         "nume": "Japonia",
     'italia': {
         'nume': 'Italia',
-=======
-from app.lib import biblioteca_statele_unite as sua
 
-TARI = {
     'sua': {
         'nume': 'Statele Unite ale Americii',
->>>>>>> origin/main_esterabadeyan_hadi
     },
     
 
@@ -45,7 +41,6 @@ TARI = {
 
 
 BIBLIOTECI = {
-<<<<<<< HEAD
     'belgia': belg,
     'coreea': sk,
     'norvegia': nvg,
@@ -54,8 +49,6 @@ BIBLIOTECI = {
     "japonia": jp,
     'italia': ita,
     'germania': germ,
-=======
     'sua': sua,
      #adauga 'tara_mea': prescurtare_tara_mea
->>>>>>> origin/main_esterabadeyan_hadi
 }
