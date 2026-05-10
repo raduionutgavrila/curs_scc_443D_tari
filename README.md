@@ -61,8 +61,8 @@ Aplicația a fost verificată local rulând `./ruleaza_aplicatia` și accesând 
 - **Rezultat:** PASS
 
 **Dovada Build Jenkins:**
-![Jenkins OK](screenshots/jenkinsok.png)
-![Jenkins Success](screenshots/jsuccess.png)
+![Jenkins OK](screenshots/italia_jenkinsok.png)
+![Jenkins Success](screenshots/italia_jsuccess.png)
 
 ### Teste unitare (4/4 PASS)
 - `test_functie_descriere_tara` – PASS
@@ -90,10 +90,10 @@ Aplicația poate fi accesată la: `http://localhost:5011/italia`
 ### Capturi de ecran
 
 *Terminal - docker images, docker ps, docker logs:*
-![Docker Terminal](screenshots/dockerterm.png)
+![Docker Terminal](screenshots/italia_dockerterm.png)
 
 *Browser - accesare aplicație din container:*
-![Docker Browser](screenshots/dockerbrowser.png)
+![Docker Browser](screenshots/italia_dockerbrowser.png)
 
 ---
 
@@ -101,8 +101,8 @@ Aplicația poate fi accesată la: `http://localhost:5011/italia`
 
 - Branch sursă: `dev_dumitrache_alexandru`
 - Branch destinație: `main_dumitrache_alexandru`
-- Status: *(de completat)*
-- Review de la: *(de completat cu numele colegului)*
+- Status: COMPLETAT
+- Review de la: `Teodorescu-Colciu Matei`
 
 ---
 
@@ -116,6 +116,6 @@ Aplicația poate fi accesată la: `http://localhost:5011/italia`
 
 ## Ce mai este de făcut
 
-- [ ] Obținere review de la un coleg
+- [x] Obținere review de la un coleg
 - [ ] Integrare README.md în branch-ul main
 - [ ] Review la PR-ul unui coleg
