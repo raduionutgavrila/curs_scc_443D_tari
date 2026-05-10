@@ -1,3 +1,4 @@
+
 # Proiect SCC - Țări - Franța
 
 ## Dezvoltator
@@ -30,11 +31,11 @@ Am adăugat funcționalitate referitoare la **Franța** în fișierul `app/lib/b
 | `/franta/steag` | Steagul Franței |
 
 ### Fișiere modificate/adăugate
-- `app/lib/biblioteca_franta.py` – **NOU** – biblioteca cu funcțiile pentru Franța
-- `app/lib/biblioteca_tari.py` – **MODIFICAT** – adăugat import și înregistrare Franța în TARI și BIBLIOTECI
-- `app/tests/test_lib_franta.py` – **NOU** – teste unitare pentru Franța
-- `Jenkinsfile` – **NOU** – pipeline declarativ pentru Jenkins
-- `Dockerfile` – **NOU** – containerizarea aplicației
+- `app/lib/biblioteca_franta.py` – biblioteca cu funcțiile pentru Franța
+- `app/lib/biblioteca_tari.py`  – adăugat import și înregistrare Franța în TARI și BIBLIOTECI
+- `app/tests/test_lib_franta.py` –  – teste unitare pentru Franța
+- `Jenkinsfile` – pipeline declarativ pentru Jenkins
+- `Dockerfile` – containerizarea aplicației
 
 ---
 
@@ -66,7 +67,9 @@ git push origin dev_tuturluta_fabian
 ## Testare
 
 ### Testare manuală
-Aplicația a fost verificată local rulând `./ruleaza_aplicatia` și accesând `http://localhost:5011`.
+Aplicația a fost verificată local rulând `. ./activeaza_venv`, urmat de `./ruleaza_aplicatia` și accesând `http://127.0.0.1:5011`.
+![Rulare local](screenshots/localrulare.png)
+![Test local](screenshots/testlocal.png)
 
 ### Testare cu Jenkins
 - Fișierul `Jenkinsfile` este configurat cu un pipeline declarativ
