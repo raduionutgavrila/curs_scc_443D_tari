@@ -1,153 +1,115 @@
-# PROIECT SCC - TEMPLATE WEB PENTRU PROIECT DE GRUPA
+# Proiect SCC - Țări
 
-Acest branch este template-ul de proiect pentru grupa. Scopul este ca fiecare student sa foloseasca aceeasi structura a site-ului si sa modifice ce este necesar pentru tara proprie. 
-
-## Ce se modifica in /app/lib/
-
-In acest director, trebuie modificat:
-
-- `app/lib/biblioteca_belgia.py`
-- `app/lib/biblioteca_tari.py`
-
-
-
-Redenumeste fisierul `app/lib/biblioteca_belgia.py` cu numele tarii alese `app/lib/biblioteca_<tara_mea>.py` (de exemplu `biblioteca_romania.py`).
-  
-- In `biblioteca_<tara_mea>.py`, adauga continut corespuzator tarii alease in functiile:
-  - `descriere_tara()`
-  - `descriere_limbi()`
-  - `descriere_populatie()`
-  - `descriere_capitala()`
-  - `descriere_steag()`
-    
-Trebuie adaugat importul bibliotecii tarii la inceputul fisierului 'biblioteca_tari.py', dupa modelul prezentat.
-
-Apoi trebuie adaugata:
-
-1. o pereche in `TARI` pentru numele tarii
-2. o intrare in `BIBLIOTECI` pentru biblioteca tarii alese 
-
-Obs: Eliminati intrarile cu Belgia; sunt doar de exemplu !
-
-### Exemplu de actualizare in `app/lib/biblioteca_tari.py`
-
-```python
-from app.lib import biblioteca_tara_mea as prescurtare_biblioteca_tara_mea
-
-TARI = {
-    'tara_mea': {
-        'nume': 'Numele complet al tarii mele',
-    },
-}
-
-BIBLIOTECI = {
-    'tara_mea': prescurtare_biblioteca_tara_mea,
-}
-```
-## Ce se modifica in /app/tests
-
-
-Fisierul test_lib_belgia.py este un test automatizat care verifică funcțiile din biblioteca țării . 
-El importă funcțiile principale (descriere_tara, descriere_capitala, descriere_limbi, descriere_populatie), definește valori așteptate pentru fiecare și folosește assert result == expected_result pentru a confirma că rezultatul funcțiilor corespunde exact cu ce trebuie. 
-
-1. Redenumeste `app/tests/test_lib_belgia.py` cu numele tarii alese `app/tests/test_lib_<tara_mea>.py` (de exemplu `test_romania.py`).
-2. Schimbă importul din `biblioteca_belgia` în `biblioteca_<tara_mea>` (asa cum este mentionat si comentariu)
-3. Actualizează fiecare `expected_result` cu valoarea aleasa pentru țara ta
+## Dezvoltator
+- **Nume:** Cucui Mihai-Cătălin
+- **Grupa:** 443D
+- **Țară alocată:** Laos
 
 
 
 
 
-## Ce se adauga in `static/`
-
-- Adauga poza cu steagul tarii tale in format `png` in directorul `static/` ( sterge apoi poza steag_belgia.png).
-- Adauga locatia pozei in functia desriere_steag() din  `biblioteca_<tara_mea>.py`, sub formatul '/static/<steag_tara>.png'.
-
-## Ce NU se modifica
-
-- `tari.py` - NU SE MODIFICA
-- `app/lib/biblioteca_header.py` - NU SE MODIFICA
-- `templates/base.html` - NU SE MODIFICA
-- `templates/pagina.html` - NU SE MODIFICA
-- `templates/steag.html` - NU SE MODIFICA
-- `templates/tara.html` - NU SE MODIFICA (este template generic pentru pagina de tara)
-
-
-## Structura de baza
-
-`app/lib/`
-- `biblioteca_tari.py` - fisier in care vor fi agregate numele si bibliotecile de la toate tarile din proiect ( agregarea se va face la final, cand se va face Pull Request in branch-ul main)
-- `biblioteca_<tara_mea>.py` - fisierul individual cu functiile pentru tara aleasa
-- `biblioteca_header.py` - header comun, nu se modifica
-
-`static/`
-- aici se pune poza steagului in format `png`
-
-`templates/`
-- `base.html` - scheletul proiectului - contine structura html + css statica
-- `home.html` - pagina de pornire unde sunt listate tarile
-- `tara.html` - template generic pentru pagina fiecarei tari, unde este afisat rezultatul functiei descriere_tara()
-- `pagina.html` - pagina folosita pentru a afisa rezultatul funtiilor descriere_capitala() / descriere_populatie() / descriere_limbi()
-- `steag.html` - pagina folosita pentru a afisa rezultatul functiei descriere_steag()
-  
-`tari.py` - fișierul principal al aplicației Flask care gestionează rutele web și afișează informații despre țări. Este intermediar între cererile web și bibliotecile fiecărei țări, oferind utilizatorului informații formatate despre acestea.
+## Funcționalitate
 
 
 
-## Scripturi de activare si rulare
+Aplicația este implementată utilizând framework-ul web Flask, fiind structurată pentru a gestiona și expune datele reprezentative ale țării Laos prin intermediul următoarelor funcții logice:
 
-### `activeaza_venv`
-
-Acest script activeaza mediul virtual Python din `.venv`. Comanda:  `. ./activeaza_venv`
-
-
-### `ruleaza_aplicatia`
-
-Acest script porneste aplicatia Flask local. Comanda: `./ruleaza_aplicatia`
+- **descriere_tara()** – Sintetizează principalele caracteristici ale țării Laos.
+- **descriere_capitala()** – Returnează capitala statului Laos.
+- **descriere_populatie()** – Returnează date demografice despre statul Laos.
+- **descriere_limbi()** – Enumeră limbile oficiale recunoscute pe teritoriul Laos.
+- **descriere_steag()** – Afișează steagul Laos.
 
 
-### `dockerstart.sh`
+## Stadiul dezvoltării
 
-Acest script face acelasi lucru, dar cu optiuni suplimentare. Este apelat in fisierul Dockerfile
 
-## Permisiuni de executie
+- Funcționalitățile aplicației au fost complet implementate.
 
-Pentru a rula scripturile, trebuie acordate permisiuni de executie:
+- Versiunea finală a codului încărcată pe branch-ul de lucru dedicat.
 
-```bash
-chmod 764 activeaza_venv ruleaza_aplicatia dockerstart.sh
-```
+- Dockerfile și Jenkinsfile sunt funcționale, urmând pipeline-ul de CI/CD.
 
-## Testare cu Pytest
 
-Pentru a rula testele, mergeți în directorul principal al proiectului și folosiți comanda:
+## Testare
 
-`pytest app/tests/*.py -v`
+### Testare inițială
 
-Aceasta verifica fiecare funcție din fișier și arata ce teste trec sau ce teste eșuează. Asigurati-va ca aveti venv-ul pornit.
+Activăm mediul virtual și testăm aplicația local rulând scripturile activeaza_venv și ruleaza_aplicatia.
+
+**Aplicația poate fi accesată la adresa `http://127.0.0.1:5011/`:**
+
+<img src="screenshots/laos-aplicatie.png" width="1200">
 
 
 
-# Pasi recomandati pentru proiect
-
-1. `git clone https://github.com/raduionutgavrila/curs_scc_443D_tari.git` - pentru a copia local repository-ul
-2. `git checkout dev-template` - pentru a selecta ramura de dezvolatare cu template-ul
-3. `git checkout -b dev-nume-prenume` - pentru a crea o noua ramura de dezvoltare pornind de la template
-4. modifica `app/lib/biblioteca_tari.py`
-5. redenumeste `app/lib/biblioteca_belgia.py` in `app/lib/biblioteca_<tara_mea>.py` si modifica continutul functiilor
-6. adauga poza cu steagul in `static/` si adauga link catre acesta in functia din 'biblioteca_<tara_mea>.py'
-7. ruleaza cu `. ./activeaza_venv` si `./ruleaza_aplicatia`
-8. testeaza cu `pytest app/tests/test_lib_<tara_mea>.py -v`
+Tot aici putem verifica cele 4 rute:
+- `/laos`
+- `/laos/capitala`
+- `/laos/populatie`
+- `/laos/steag`
 
 
-# Ce mai trebuie adaugat
+<img src="screenshots/laos-local.png" width="1200">
 
-- Creare Dockerfile
-- Creare Jenkinsfile
+### Testare cu Pytest
 
-## Observatie finala
+Am rulat comanda pytest app/tests/*.py -v pentru a valida funcționarea testelor local:
 
-Scripturile din aceasta aplicatie sunt introduse dupa modelul aplicatiei `chrchende/sysinfo:simplu_main`.
+<img src="screenshots/laos-teste-local.png" width="1200">
+
+
+### Testare cu Jenkins
+
+Am realizat un pipeline Jenkins care să testeze automat funcționalitatea aplicației:
+
+Build cu succes:
+
+<img src="screenshots/laos-jenkins.png" width="1200">
+
+Teste validate:
+
+<img src="screenshots/laos-jenkins-teste.png" width="1200">
+
+
+### Testare cu Docker
+
+- Aplicația a fost containerizată, utilizând o imagine Python 3.10-alpine.
+
+- Containerul este configurat să expună portul 5011.
+
+- Se poate accesa la adresa:`http://127.0.0.1:8020/`
+
+Creare imagine Docker:
+
+<img src="screenshots/laos-docker-build.png" width="1200">
+
+Pornire container:
+
+<img src="screenshots/laos-docker-run.png" width="1200">
+
+Aplicația accesată din container:
+
+<img src="screenshots/laos-docker-aplicatie.png" width="1200">
+
+## Integrare
+- **Branch dezvoltare:** `dev_cucui_mihai`
+
+
+## Review
+
+- [] Am făcut review pentru colegul: [Cucui Petrut-Gabriel (PetrutG)]
+- [] Am primit review de la: [Cucui Petrut-Gabriel (PetrutG)]
+
+
+## De făcut
+ - [x] Finalizare cod și teste manuale.
+ - [x] Aplicație containerizată și accesibilă.
+ - [x] Succes Pipeline Jenkins.
+ - [ ] Obținerea aprobării de la colegi pentru PR-ul final, în main.
+ - [ ] Integrarea finală în branch-ul main.
+
 
 
   
