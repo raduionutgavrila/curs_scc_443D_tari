@@ -37,6 +37,7 @@ Funcționalitatea include:
     │   ├── danemarca_3_browser.png
     │   ├── danemarca_4_ps.jpeg
     │   └── danemarca_5_test.jpeg
+    │   └── danemarca_6_jenkins.png
     ├── Dockerfile
     ├── Jenkinsfile
     ├── requirements.txt
