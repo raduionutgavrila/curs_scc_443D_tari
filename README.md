@@ -92,8 +92,8 @@ Aplicatia va putea fi accesata la: `http://172.17.0.2:5011/`
 
 ## 7. Review-uri:
 
-- [x] Am făcut review pentru colegul: [ Dumitrache Alexandru (Dumitian) / ]
-- [x] Am primit review de la: [ Dumitrache Alexandru (Dumitian) / ]
+- [x] Am făcut review pentru colegul: [ Dumitrache Alexandru (Dumitian) / #37 ]
+- [x] Am primit review de la: [ Dumitrache Alexandru (Dumitian) / #39 ]
 
 ## 8. De facut
  - [x] Finalizare cod și teste manuale.
