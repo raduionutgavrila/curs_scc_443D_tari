@@ -1,153 +1,332 @@
-# PROIECT SCC - TEMPLATE WEB PENTRU PROIECT DE GRUPA
+# Proiect SCC - Rusia
 
-Acest branch este template-ul de proiect pentru grupa. Scopul este ca fiecare student sa foloseasca aceeasi structura a site-ului si sa modifice ce este necesar pentru tara proprie. 
+## 1. Identificator Dezvoltator
 
-## Ce se modifica in /app/lib/
+**Nume:** Corina Ghenciu  
+**Grupă:** 443D  
+**Țară alocată:** Rusia  
 
-In acest director, trebuie modificat:
+---
 
-- `app/lib/biblioteca_belgia.py`
-- `app/lib/biblioteca_tari.py`
+## 2. Funcționalitate Adăugată
 
+Am implementat logica pentru afișarea informațiilor despre Rusia în aplicația web Flask.
 
+Funcționalitatea include:
 
-Redenumeste fisierul `app/lib/biblioteca_belgia.py` cu numele tarii alese `app/lib/biblioteca_<tara_mea>.py` (de exemplu `biblioteca_romania.py`).
-  
-- In `biblioteca_<tara_mea>.py`, adauga continut corespuzator tarii alease in functiile:
-  - `descriere_tara()`
-  - `descriere_limbi()`
-  - `descriere_populatie()`
-  - `descriere_capitala()`
-  - `descriere_steag()`
-    
-Trebuie adaugat importul bibliotecii tarii la inceputul fisierului 'biblioteca_tari.py', dupa modelul prezentat.
+- crearea fișierului `app/lib/biblioteca_rusia.py`;
+- modificarea fișierului `app/lib/biblioteca_tari.py` pentru integrarea Rusiei în aplicație;
+- adăugarea testelor automate în `app/tests/test_lib_rusia.py`;
+- adăugarea steagului Rusiei în folderul `static/`;
+- adăugarea fișierelor `Dockerfile` și `Jenkinsfile`.
 
-Apoi trebuie adaugata:
+Descrierea Rusiei include informații generale despre țară și atracții turistice reprezentative.
 
-1. o pereche in `TARI` pentru numele tarii
-2. o intrare in `BIBLIOTECI` pentru biblioteca tarii alese 
+Au fost incluse atracții precum:
 
-Obs: Eliminati intrarile cu Belgia; sunt doar de exemplu !
+- Kremlinul din Moscova;
+- Piața Roșie;
+- Muzeul Ermitaj din Sankt Petersburg;
+- Lacul Baikal;
+- Catedrala Sfântul Vasile;
+- Teatrul Bolșoi;
+- Piața Palatului din Sankt Petersburg;
+- Metroul din Moscova;
+- Munții Ural;
+- Palatul Peterhof.
 
-### Exemplu de actualizare in `app/lib/biblioteca_tari.py`
+De asemenea, descrierea menționează preparate tradiționale și elemente culturale cunoscute din Rusia, precum:
 
-```python
-from app.lib import biblioteca_tara_mea as prescurtare_biblioteca_tara_mea
+- borș;
+- pelmeni;
+- blini;
+- baletul rusesc;
+- literatura rusă clasică.
 
-TARI = {
-    'tara_mea': {
-        'nume': 'Numele complet al tarii mele',
-    },
-}
+---
 
-BIBLIOTECI = {
-    'tara_mea': prescurtare_biblioteca_tara_mea,
-}
+## 3. Stadiul Implementării
+
+- [x] Cod funcționalitate adăugat
+- [x] Teste automate adăugate
+- [x] Steag Rusia adăugat
+- [x] Dockerfile adăugat
+- [x] Jenkinsfile adăugat
+- [x] Aplicația a fost rulată local
+- [x] Testele au fost rulate local cu succes
+- [x] Aplicația a fost rulată în container Docker
+- [ ] Pipeline-ul Jenkins a fost rulat cu succes
+
+---
+
+## 4. Structura Proiectului
+
+```text
+.
+├── activeaza_venv
+├── activeaza_venv_jenkins
+├── app
+│   ├── lib
+│   │   ├── biblioteca_rusia.py
+│   │   ├── biblioteca_header.py
+│   │   └── biblioteca_tari.py
+│   └── tests
+│       └── test_lib_rusia.py
+├── dockerstart.sh
+├── Dockerfile
+├── Jenkinsfile
+├── pytest.ini
+├── quickrequirements.txt
+├── README.md
+├── ruleaza_aplicatia
+├── screenshots
+│   ├── rusia_docker_browser.png
+│   ├── rusia_docker_build.png
+│   ├── rusia_jenkins_build_pass.png
+│   ├── rusia_jenkins_console_output.png
+│   └── rusia_pytest.png
+├── static
+│   └── steag_rusia.png
+├── tari.py
+└── templates
+    ├── base.html
+    ├── home.html
+    ├── pagina.html
+    ├── steag.html
+    └── tara.html
 ```
-## Ce se modifica in /app/tests
 
+---
 
-Fisierul test_lib_belgia.py este un test automatizat care verifică funcțiile din biblioteca țării . 
-El importă funcțiile principale (descriere_tara, descriere_capitala, descriere_limbi, descriere_populatie), definește valori așteptate pentru fiecare și folosește assert result == expected_result pentru a confirma că rezultatul funcțiilor corespunde exact cu ce trebuie. 
+## 5. Fișiere Modificate / Adăugate
 
-1. Redenumeste `app/tests/test_lib_belgia.py` cu numele tarii alese `app/tests/test_lib_<tara_mea>.py` (de exemplu `test_romania.py`).
-2. Schimbă importul din `biblioteca_belgia` în `biblioteca_<tara_mea>` (asa cum este mentionat si comentariu)
-3. Actualizează fiecare `expected_result` cu valoarea aleasa pentru țara ta
+### `app/lib/biblioteca_rusia.py`
 
+Conține funcțiile pentru afișarea informațiilor despre Rusia:
 
+- `descriere_tara()`
+- `descriere_limbi()`
+- `descriere_populatie()`
+- `descriere_capitala()`
+- `descriere_steag()`
 
+Funcția `descriere_tara()` prezintă Rusia într-un mod general și include atracții importante, începând cu Kremlinul din Moscova, Piața Roșie și Muzeul Ermitaj.
 
+### `app/lib/biblioteca_tari.py`
 
-## Ce se adauga in `static/`
+A fost modificat pentru:
 
-- Adauga poza cu steagul tarii tale in format `png` in directorul `static/` ( sterge apoi poza steag_belgia.png).
-- Adauga locatia pozei in functia desriere_steag() din  `biblioteca_<tara_mea>.py`, sub formatul '/static/<steag_tara>.png'.
+- importarea bibliotecii Rusiei;
+- adăugarea țării în dicționarul `TARI`;
+- maparea bibliotecii în dicționarul `BIBLIOTECI`.
 
-## Ce NU se modifica
+### `app/tests/test_lib_rusia.py`
 
-- `tari.py` - NU SE MODIFICA
-- `app/lib/biblioteca_header.py` - NU SE MODIFICA
-- `templates/base.html` - NU SE MODIFICA
-- `templates/pagina.html` - NU SE MODIFICA
-- `templates/steag.html` - NU SE MODIFICA
-- `templates/tara.html` - NU SE MODIFICA (este template generic pentru pagina de tara)
+Conține testele automate pentru funcțiile implementate în biblioteca Rusiei.
 
+### `static/steag_rusia.png`
 
-## Structura de baza
+Conține imaginea steagului Rusiei.
 
-`app/lib/`
-- `biblioteca_tari.py` - fisier in care vor fi agregate numele si bibliotecile de la toate tarile din proiect ( agregarea se va face la final, cand se va face Pull Request in branch-ul main)
-- `biblioteca_<tara_mea>.py` - fisierul individual cu functiile pentru tara aleasa
-- `biblioteca_header.py` - header comun, nu se modifica
+### `Dockerfile`
 
-`static/`
-- aici se pune poza steagului in format `png`
+Folosit pentru containerizarea aplicației. Fișierul a fost adăugat după modelul existent în branch-ul `dev_gavrila_radu`.
 
-`templates/`
-- `base.html` - scheletul proiectului - contine structura html + css statica
-- `home.html` - pagina de pornire unde sunt listate tarile
-- `tara.html` - template generic pentru pagina fiecarei tari, unde este afisat rezultatul functiei descriere_tara()
-- `pagina.html` - pagina folosita pentru a afisa rezultatul funtiilor descriere_capitala() / descriere_populatie() / descriere_limbi()
-- `steag.html` - pagina folosita pentru a afisa rezultatul functiei descriere_steag()
-  
-`tari.py` - fișierul principal al aplicației Flask care gestionează rutele web și afișează informații despre țări. Este intermediar între cererile web și bibliotecile fiecărei țări, oferind utilizatorului informații formatate despre acestea.
+### `Jenkinsfile`
 
+Folosit pentru rularea pipeline-ului Jenkins. Fișierul a fost adăugat după modelul existent în branch-ul `dev_gavrila_radu`.
 
+### `screenshots/`
 
-## Scripturi de activare si rulare
+Conține dovezi pentru rularea testelor, Docker și Jenkins.
 
-### `activeaza_venv`
+---
 
-Acest script activeaza mediul virtual Python din `.venv`. Comanda:  `. ./activeaza_venv`
+## 6. Rute Disponibile
 
+| Rută | Descriere |
+|---|---|
+| `/` | Pagina principală |
+| `/rusia` | Pagina principală pentru Rusia |
+| `/rusia/capitala` | Afișează capitala Rusiei |
+| `/rusia/populatie` | Afișează populația Rusiei |
+| `/rusia/limbi` | Afișează limba principală |
+| `/rusia/steag` | Afișează steagul Rusiei |
 
-### `ruleaza_aplicatia`
+---
 
-Acest script porneste aplicatia Flask local. Comanda: `./ruleaza_aplicatia`
+## 7. Testare
 
+### Testare Manuală
 
-### `dockerstart.sh`
-
-Acest script face acelasi lucru, dar cu optiuni suplimentare. Este apelat in fisierul Dockerfile
-
-## Permisiuni de executie
-
-Pentru a rula scripturile, trebuie acordate permisiuni de executie:
+Aplicația a fost verificată local rulând:
 
 ```bash
-chmod 764 activeaza_venv ruleaza_aplicatia dockerstart.sh
+. ./activeaza_venv
+./ruleaza_aplicatia
 ```
 
-## Testare cu Pytest
+Aplicația a fost accesată în browser la:
 
-Pentru a rula testele, mergeți în directorul principal al proiectului și folosiți comanda:
+```text
+http://127.0.0.1:5011
+```
 
-`pytest app/tests/*.py -v`
+Rute verificate manual:
 
-Aceasta verifica fiecare funcție din fișier și arata ce teste trec sau ce teste eșuează. Asigurati-va ca aveti venv-ul pornit.
+```text
+http://127.0.0.1:5011/rusia
+http://127.0.0.1:5011/rusia/capitala
+http://127.0.0.1:5011/rusia/populatie
+http://127.0.0.1:5011/rusia/limbi
+http://127.0.0.1:5011/rusia/steag
+```
 
+### Testare Automată
 
+Testele se află în:
 
-# Pasi recomandati pentru proiect
+```text
+app/tests/test_lib_rusia.py
+```
 
-1. `git clone https://github.com/raduionutgavrila/curs_scc_443D_tari.git` - pentru a copia local repository-ul
-2. `git checkout dev-template` - pentru a selecta ramura de dezvolatare cu template-ul
-3. `git checkout -b dev-nume-prenume` - pentru a crea o noua ramura de dezvoltare pornind de la template
-4. modifica `app/lib/biblioteca_tari.py`
-5. redenumeste `app/lib/biblioteca_belgia.py` in `app/lib/biblioteca_<tara_mea>.py` si modifica continutul functiilor
-6. adauga poza cu steagul in `static/` si adauga link catre acesta in functia din 'biblioteca_<tara_mea>.py'
-7. ruleaza cu `. ./activeaza_venv` si `./ruleaza_aplicatia`
-8. testeaza cu `pytest app/tests/test_lib_<tara_mea>.py -v`
+Funcții testate:
 
+- `descriere_tara()`
+- `descriere_populatie()`
+- `descriere_capitala()`
+- `descriere_limbi()`
 
-# Ce mai trebuie adaugat
+Comanda utilizată pentru rularea testelor:
 
-- Creare Dockerfile
-- Creare Jenkinsfile
+```bash
+pytest app/tests/test_lib_rusia.py -v
+```
 
-## Observatie finala
+Rezultat obținut local:
 
-Scripturile din aceasta aplicatie sunt introduse dupa modelul aplicatiei `chrchende/sysinfo:simplu_main`.
+```text
+4 passed
+```
 
+Dovadă rulare teste:
 
-  
+![Teste Pytest Rusia](screenshots/rusia_pytest.png)
+
+---
+
+## 8. Jenkins
+
+A fost adăugat fișierul:
+
+```text
+Jenkinsfile
+```
+
+Pipeline-ul Jenkins include etape pentru:
+
+- build;
+- verificarea calității codului cu `pylint`;
+- rularea testelor automate cu `pytest`;
+- creare imagine Docker.
+
+Testarea automată cu Jenkins rulează testele din folderul:
+
+```text
+app/tests/
+```
+
+Job-ul Jenkins pentru proiectul Rusia a fost rulat cu succes.
+
+![Jenkins Build Pass](screenshots/rusia_jenkins_build_pass.png)
+
+În Console Output se observă rularea pipeline-ului Jenkins și finalizarea cu succes.
+
+![Jenkins Console Output](screenshots/rusia_jenkins_console_output.png)
+
+---
+
+## 9. Containerizare Docker
+
+A fost adăugat fișierul:
+
+```text
+Dockerfile
+```
+
+Aplicația poate fi containerizată folosind Docker.
+
+Construirea imaginii Docker:
+
+```bash
+sudo docker build -t rusia-app .
+```
+
+Dovadă construire imagine Docker:
+
+![Docker Build](screenshots/rusia_docker_build.png)
+
+Rularea containerului:
+
+```bash
+sudo docker run --rm -p 8020:5011 rusia-app
+```
+
+După rularea containerului, aplicația poate fi accesată la:
+
+```text
+http://127.0.0.1:8020/rusia
+```
+
+Dovadă rulare aplicație în container:
+
+![Aplicație Rusia în Docker](screenshots/rusia_docker_browser.png)
+
+---
+
+## 10. Integrare și Review
+
+Branch dezvoltare:
+
+```text
+dev_ghenciu_corina
+```
+
+Branch main personal:
+
+```text
+main_ghenciu_corina
+```
+
+Pull Request:
+
+```text
+dev_ghenciu_corina -> main_ghenciu_corina
+```
+
+Review-uri:
+
+- [ ] Am făcut review pentru colegul: ................................
+- [ ] Am primit review de la: ................................
+
+---
+
+## 11. Ce mai este de făcut
+
+- [ ] Integrarea finală în branch-ul principal al grupei, dacă este cerută de cadrul didactic
+
+---
+
+## 12. Concluzie
+
+Proiectul implementează țara Rusia în structura aplicației existente, respectând template-ul primit.
+
+Au fost adăugate:
+
+- biblioteca pentru Rusia;
+- testele automate;
+- steagul Rusiei;
+- Dockerfile;
+- Jenkinsfile;
+- screenshots cu dovezi de rulare;
+- documentația în README.
