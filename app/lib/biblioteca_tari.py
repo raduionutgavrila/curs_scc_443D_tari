@@ -1,11 +1,5 @@
 # Configuratie globala a proiectului
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-#from app.lib import biblioteca_<tara_mea> as prescurtare_tara_mea 
->>>>>>> 848735f0f1b7498f6758c47340b11e07e2b9e2b3
-
 
 from app.lib import biblioteca_belgia as belg
 from app.lib import biblioteca_coreea as sk
@@ -21,7 +15,7 @@ from app.lib import biblioteca_franta as franta
 from app.lib import biblioteca_finlanda as fin
 from app.lib import biblioteca_irlanda as irlanda
 from app.lib import biblioteca_elvetia as elv
-
+from app.lib import biblioteca_canada as cana
 
 TARI = {
     'norvegia': {
@@ -33,13 +27,13 @@ TARI = {
 
     'belgia': {
         'nume': 'Belgia',
-    },
+    'canada': {
+        'nume': 'Canada',
 
     'brazilia': {
         'nume': 'Brazilia',
     },
     
-
     "japonia": {
         "nume": "Japonia",
     },
@@ -58,8 +52,6 @@ TARI = {
     'franta': {
         'nume': 'Republica Franceza',
     },
-        
-    # Mapare tara -> biblioteca
     'finlanda': {
         'nume': 'Finlanda',
     },
@@ -74,7 +66,6 @@ TARI = {
 
 
 BIBLIOTECI = {
-
     'belgia': belg,
     'coreea': sk,
     'norvegia': nvg,
@@ -89,4 +80,6 @@ BIBLIOTECI = {
     'finlanda': fin,
     'irlanda': irlanda,
     'elvetia': elv,
+    'canada': cana,
+     #adauga 'tara_mea': prescurtare_tara_mea
 }

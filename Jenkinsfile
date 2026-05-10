@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 /*Jenkins*/
 =======
 /* Jenkins Pipeline testare si deployare aplicatie proiect SCC, Tara: Irlanda */
@@ -7,10 +8,14 @@
 >>>>>>> origin/main_pirjol_mara
 =======
 >>>>>>> origin/main_tecsan_calin
+=======
+/* Jenkins*/
+>>>>>>> origin/main_roseanu_vlad
 pipeline {
     agent any
 
     stages {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
         stage('Build') {
@@ -61,10 +66,19 @@ pipeline {
                     python --version
                     pip --version
 >>>>>>> origin/main_tecsan_calin
+=======
+        stage('Build & Prep') {
+            steps {
+                echo 'Pregatire mediu: Creare .venv si instalare dependinte...'
+                sh '''
+                    chmod +x activeaza_venv_jenkins activeaza_venv ruleaza_aplicatia dockerstart.sh
+                    ./activeaza_venv_jenkins
+>>>>>>> origin/main_roseanu_vlad
                 '''
             }
         }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
         stage('Unit Testing cu pytest') {
@@ -118,10 +132,22 @@ pipeline {
                     echo "\\nVerificare tari.py"
                     pylint --exit-zero tari.py
 >>>>>>> origin/main_tecsan_calin
+=======
+        stage('Calitate Cod (Pylint)') {
+            steps {
+                echo 'Analiza statica a codului...'
+                sh '''
+                    . .venv/bin/activate
+                    echo 'Verificare biblioteca Canada...'
+                    pylint --exit-zero app/lib/biblioteca_canada.py
+                    echo 'Verificare teste Canada...'
+                    pylint --exit-zero app/tests/test_lib_canada.py
+>>>>>>> origin/main_roseanu_vlad
                 '''
             }
         }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
         stage('Testare Unitare (Pytest)') {
             steps {
@@ -139,10 +165,19 @@ pipeline {
 
                     pytest app/tests/test_lib_elvetia.py -v
 >>>>>>> origin/main_tecsan_calin
+=======
+        stage('Unit Testing (Pytest)') {
+            steps {
+                echo 'Executie teste unitare automate...'
+                sh '''
+                    . .venv/bin/activate
+                    pytest app/tests/test_lib_canada.py -v
+>>>>>>> origin/main_roseanu_vlad
                 '''
             }
         }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
         stage('Lansare Aplicatie in Docker') {
             steps {
@@ -171,10 +206,21 @@ pipeline {
                     docker run -d --name tari-elvetia-tecsan-calin -p 8020:5011 tari-elvetia-tecsan-calin:v${BUILD_NUMBER}
                     docker ps | grep tari-elvetia-tecsan-calin
 >>>>>>> origin/main_tecsan_calin
+=======
+        stage('Docker (Livrare)') {
+            steps {
+                echo "Numar Build: ${BUILD_NUMBER}"
+                echo "Generare imagine si container Docker"
+                sh '''
+                    docker build -t canada_app:v${BUILD_NUMBER} .
+                    docker rm -f tari_container_${BUILD_NUMBER} || true
+                    docker create --name tari_container_${BUILD_NUMBER} -p 5011:5011 canada_app:v${BUILD_NUMBER}
+>>>>>>> origin/main_roseanu_vlad
                 '''
             }
         }
     }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 }
@@ -194,3 +240,15 @@ pipeline {
 =======
 }
 >>>>>>> origin/main_tecsan_calin
+=======
+
+    post {
+        success {
+            echo 'Pipeline finalizat cu succes (PASS)! '
+        }
+        failure {
+            echo 'Eroare in pipeline. Verifica log-urile de consola.'
+        }
+    }
+}
+>>>>>>> origin/main_roseanu_vlad
