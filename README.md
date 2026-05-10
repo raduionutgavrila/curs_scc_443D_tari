@@ -236,11 +236,11 @@ app/tests/
 
 Job-ul Jenkins pentru proiectul Germania a fost rulat cu succes.
 
-![Jenkins Build Pass](screenshots/germania_germania_germania_jenkins_build_pass.png)
+![Jenkins Build Pass](screenshots/germania_jenkins_build_pass.png)
 
 În Console Output se observă rularea pipeline-ului Jenkins și finalizarea cu succes.
 
-![Jenkins Console Output](screenshots/germania_germania_germania_jenkins_console_output.png)
+![Jenkins Console Output](screenshots/germania_jenkins_console_output.png)
 
 ---
 
@@ -262,7 +262,7 @@ sudo docker build -t germania-app .
 
 Dovadă construire imagine Docker:
 
-![Docker Build](screenshots/germania_germania_germania_docker_build.png)
+![Docker Build](screenshots/germania_docker_build.png)
 
 Rularea containerului:
 
