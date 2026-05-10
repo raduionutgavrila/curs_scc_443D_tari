@@ -10,10 +10,20 @@
 
 ## 2. Functionalitati Implementate
 Proiectul a constat in integrarea Mexicului in platforma SCC, adaugand urmatoarele componente:
-- **Biblioteca specifica:** `app/lib/biblioteca_mexic.py` , adaugarea datelor (capitala,populatie,limbi).
+- **Biblioteca specifica:** `app/lib/biblioteca_mexic.py` , adaugarea datelor (capitala,populatie,steag).
 - **Integrare:** Inregistrarea rutelor in `app/lib/biblioteca_tari.py` 
 - **Resurse:** Integrarea steagului in `static/steag_mexic.png`.
 - **Automatizare:** Configurarea fluxului de CI/CD prin `Jenkinsfile` si containerizarea prin `Dockerfile`.
+
+### Rute disponibile
+
+| Ruta | Descriere |
+| :--- | :--- |
+| `/` | Pagina principala – lista tuturor tarilor |
+| `/mexic` | Informatii generale despre Mexic |
+| `/mexic/capitala` | Capitala Mexicului – Ciudad de Mexico |
+| `/mexic/populatie` | Populatia Mexicului |
+| `/mexic/steag` | Steagul Mexicului |
 
 ## 3. 📁 Structura si Modificari
 | Componenta | Descriere |
