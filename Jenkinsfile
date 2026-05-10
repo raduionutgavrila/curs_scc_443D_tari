@@ -1,15 +1,22 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 /*Jenkins*/
 
 =======
 /* Jenkins Pipeline Declarativ - Grupa 443D - Subiect: Statele Unite */
 >>>>>>> origin/main_esterabadeyan_hadi
+=======
+/Jenkins/
+>>>>>>> origin/main_zidu_cristian
 pipeline {
     agent any
 
     stages {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/main_zidu_cristian
         stage('Build') {
             agent any
             steps {
@@ -17,7 +24,11 @@ pipeline {
                 sh '''
                     pwd;
                     ls -l;
+<<<<<<< HEAD
                     . ./activeaza_venv;
+=======
+                    . ./activeaza_venv_jenkins
+>>>>>>> origin/main_zidu_cristian
                     '''
             }
         }
@@ -39,6 +50,7 @@ pipeline {
 
                     echo '\n\nVerificare tari.py cu pylint';
                     pylint --exit-zero tari.py;
+<<<<<<< HEAD
 =======
         stage('Build & Prep') {
             steps {
@@ -47,19 +59,28 @@ pipeline {
                     chmod +x activeaza_venv_jenkins activeaza_venv ruleaza_aplicatia dockerstart.sh
                     ./activeaza_venv_jenkins
 >>>>>>> origin/main_esterabadeyan_hadi
+=======
+>>>>>>> origin/main_zidu_cristian
                 '''
             }
         }
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/main_zidu_cristian
         stage('Unit Testing cu pytest') {
             agent any
             steps {
                 echo 'Unit testing with Pytest...'
                 sh '''
                     . ./activeaza_venv;
+<<<<<<< HEAD
                     pytest app/tests/*.py -v
+=======
+                    pytest app/tests/test_lib_estonia.py -v
+>>>>>>> origin/main_zidu_cristian
 
                     
                 '''
@@ -74,6 +95,7 @@ pipeline {
                 sh '''
                     docker build -t tari:v${BUILD_NUMBER} .
                     docker create --name tari${BUILD_NUMBER} -p 8020:5011 tari:v${BUILD_NUMBER}
+<<<<<<< HEAD
 =======
         stage('Teste unitare - pytest') {
             agent any
@@ -122,10 +144,13 @@ pipeline {
                     # Cream containerul
                     docker create --name tari_container_${BUILD_NUMBER} -p 8020:5011 sua_app:v${BUILD_NUMBER}
 >>>>>>> origin/main_esterabadeyan_hadi
+=======
+>>>>>>> origin/main_zidu_cristian
                 '''
             }
         }
     }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 }
@@ -144,3 +169,6 @@ pipeline {
     }
 }
 >>>>>>> origin/main_esterabadeyan_hadi
+=======
+}
+>>>>>>> origin/main_zidu_cristian

@@ -1,6 +1,7 @@
 # Configuratie globala a proiectului
 
 #from app.lib import biblioteca_<tara_mea> as prescurtare_tara_mea 
+<<<<<<< HEAD
 
 from app.lib import biblioteca_belgia as belg
 from app.lib import biblioteca_coreea as sk
@@ -33,6 +34,13 @@ TARI = {
 
     'sua': {
         'nume': 'Statele Unite ale Americii',
+=======
+from app.lib import biblioteca_estonia as esto
+
+TARI = {
+    'estonia': {
+        'nume': 'Estonia',
+>>>>>>> origin/main_zidu_cristian
     },
     
 
@@ -41,6 +49,7 @@ TARI = {
 
 
 BIBLIOTECI = {
+<<<<<<< HEAD
     'belgia': belg,
     'coreea': sk,
     'norvegia': nvg,
@@ -50,5 +59,8 @@ BIBLIOTECI = {
     'italia': ita,
     'germania': germ,
     'sua': sua,
+=======
+    'estonia': esto,
+>>>>>>> origin/main_zidu_cristian
      #adauga 'tara_mea': prescurtare_tara_mea
 }
