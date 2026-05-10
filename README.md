@@ -58,14 +58,13 @@ Aplicația a fost containerizată folosind un Dockerfile bazat pe Python Alpine.
 ## 6. Integrare și Review
  - Branch sursa: `dev_esterabadeyan_hadi`
  - Branch destinatie: `main_esterabadeyan_hadi`
- - Status: *(de completat)*
- - Review: *(de completat cu numele colegului)*
+ - Status: complet si functional
 
 ## Pull Request-uri la care am făcut review
 
 | PR ID | Autor | Descriere |
 |-------|-------|-----------|
-| *(de completat)* | *(de completat)* | *(de completat)* |
+| 21 | Roseanu Vlad George (Vlad54689) | arata bine |
 
 ## 7. Comenzi necesare
  - Testare manuala cu pytest:
