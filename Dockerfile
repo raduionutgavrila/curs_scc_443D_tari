@@ -1,13 +1,13 @@
 FROM python:3.10-alpine
 
-ENV FLASK_APP sysinfo
+ENV FLASK_APP tari
 
 #3.8 alpine
-RUN adduser -D nvg_user
+RUN adduser -D tari
 
-USER nvg_user
+USER tari
 
-WORKDIR /home/nvg_user
+WORKDIR /home/tari
 
 COPY app app
 COPY templates templates
