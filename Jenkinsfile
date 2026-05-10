@@ -7,6 +7,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 /*Jenkins*/
 =======
 /* Jenkins Pipeline testare si deployare aplicatie proiect SCC, Tara: Irlanda */
@@ -28,6 +29,9 @@
 =======
 /*Jenkins*/
 >>>>>>> origin/main_ghica_antonio
+=======
+/*Jenkins*/
+>>>>>>> origin/main_ghenciu_corina
 pipeline {
     agent any
 
@@ -39,8 +43,11 @@ pipeline {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/main_ghica_antonio
+=======
+>>>>>>> origin/main_ghenciu_corina
         stage('Build') {
             agent any
             steps {
@@ -49,10 +56,14 @@ pipeline {
                     pwd;
                     ls -l;
 <<<<<<< HEAD
+<<<<<<< HEAD
                     . ./activeaza_venv;
 =======
                     . ./activeaza_venv_jenkins;
 >>>>>>> origin/main_ghica_antonio
+=======
+                    . ./activeaza_venv_jenkins;
+>>>>>>> origin/main_ghenciu_corina
                     '''
             }
         }
@@ -65,7 +76,11 @@ pipeline {
             agent any
             steps {
                 sh '''
+<<<<<<< HEAD
                     . ./activeaza_venv;
+=======
+                    . ./activeaza_venv_jenkins;
+>>>>>>> origin/main_ghenciu_corina
                     echo '\n\nVerificare app/lib/*.py cu pylint\n';
                     pylint --exit-zero app/lib/*.py;
 
@@ -74,6 +89,7 @@ pipeline {
 
                     echo '\n\nVerificare tari.py cu pylint';
                     pylint --exit-zero tari.py;
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
         stage('Build and Prep') {
@@ -130,10 +146,13 @@ pipeline {
 >>>>>>> origin/main_serban_albert
 =======
 >>>>>>> origin/main_ghica_antonio
+=======
+>>>>>>> origin/main_ghenciu_corina
                 '''
             }
         }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -166,12 +185,18 @@ pipeline {
 <<<<<<< HEAD
 =======
 >>>>>>> origin/main_ghica_antonio
+=======
+>>>>>>> origin/main_ghenciu_corina
         stage('Unit Testing cu pytest') {
             agent any
             steps {
                 echo 'Unit testing with Pytest...'
                 sh '''
+<<<<<<< HEAD
                     . ./activeaza_venv;
+=======
+                    . ./activeaza_venv_jenkins;
+>>>>>>> origin/main_ghenciu_corina
                     pytest app/tests/*.py -v
 
                     
@@ -181,6 +206,7 @@ pipeline {
         
         stage('Deploy') {
             agent any
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
         stage('Unit Testing cu pytest') {
@@ -197,10 +223,13 @@ pipeline {
 >>>>>>> origin/main_teodorescu_matei
 =======
 >>>>>>> origin/main_ghica_antonio
+=======
+>>>>>>> origin/main_ghenciu_corina
             steps {
                 echo "Build ID: ${BUILD_NUMBER}"
                 echo "Creare imagine docker"
                 sh '''
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                     docker build -t tari:v${BUILD_NUMBER} .
@@ -394,10 +423,15 @@ pipeline {
                     sudo docker rm -f danemarca-test-container || true
                     sudo docker run -d --name danemarca-test-container -p 5011:5000 danemarca-app || true
 >>>>>>> origin/main_ivan_luca
+=======
+                    docker build -t tari:v${BUILD_NUMBER} .
+                    docker create --name tari${BUILD_NUMBER} -p 8020:5011 tari:v${BUILD_NUMBER}
+>>>>>>> origin/main_ghenciu_corina
                 '''
             }
         }
     }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -479,3 +513,6 @@ pipeline {
     }
 }
 >>>>>>> origin/main_voicu_ioan_andrei
+=======
+}
+>>>>>>> origin/main_ghenciu_corina

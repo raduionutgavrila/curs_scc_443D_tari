@@ -22,6 +22,8 @@ from app.lib import biblioteca_spania as spania
 from app.lib import biblioteca_namibia as namb
 from app.lib import biblioteca_danemarca as dan
 from app.lib import biblioteca_scotia as prescurtare_biblioteca_scotia
+from app.lib import biblioteca_rusia as rus
+
 
 
 
@@ -34,13 +36,14 @@ TARI = {
     },
     'belgia': {
         'nume': 'Belgia',
-    }
+    },
     'canada': {
         'nume': 'Canada',
-    }
+    },
 
     'brazilia': {
         'nume': 'Brazilia',
+    },
 
     'namibia': {
         'nume': 'Namibia',
@@ -51,13 +54,13 @@ TARI = {
     },
     'italia': {
         'nume': 'Italia',
-    }
+    },
     'China': {
         'nume': 'China',
     },
     'sua': {
         'nume': 'Statele Unite ale Americii',
-    }
+    },
 
     'estonia': {
         'nume': 'Estonia',
@@ -71,7 +74,7 @@ TARI = {
     },
     'irlanda': {
         'nume': 'Irlanda',
-    }
+    },
     'elvetia': {
         'nume': 'Elvetia',
     },
@@ -84,12 +87,16 @@ TARI = {
 
     'danemarca': {
         'nume': 'Danemarca',
-    }
+    },
     'scotia': {
         'nume': 'Scotia',
     },
+
+    'rusia': {
+        'nume': 'Rusia',
+    },
     
-    }
+}
 
 
 BIBLIOTECI = {
@@ -110,10 +117,10 @@ BIBLIOTECI = {
     'canada': cana,
     'China': china,
     'mexic': mex,
-    'spania': spania
+    'spania': spania,
     'namibia': namb, 
-    'danemarca': dan
+    'danemarca': dan,
     'scotia': prescurtare_biblioteca_scotia,
-
+    'rusia': rus,
 }
 
