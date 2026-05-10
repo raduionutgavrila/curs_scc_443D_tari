@@ -1,153 +1,97 @@
-# PROIECT SCC - TEMPLATE WEB PENTRU PROIECT DE GRUPA
+# Proiect SCC - Țări
 
-Acest branch este template-ul de proiect pentru grupa. Scopul este ca fiecare student sa foloseasca aceeasi structura a site-ului si sa modifice ce este necesar pentru tara proprie. 
+## Dezvoltator
+- **Nume:** Cucui Petruț-Gabriel
+- **Grupa:** 443D
+- **Țară alocată:** Nepal
 
-## Ce se modifica in /app/lib/
+## Funcționalitate implementată
 
-In acest director, trebuie modificat:
+În acest branch au fost adăugate funcțiile:
+  - `descriere_capitala()` – returnează capitala Nepalului.
+  - `descriere_steag()` – returnează un png cu steagul Nepalului.
+  - `descriere_limbi()` – afișează limbile oficiale ale Nepalului.
+  - `descriere_tara()` – returnează o descriere generală a Nepalului.
+  - `descriere_populatie()` – afișează numărul de locuitori.
 
-- `app/lib/biblioteca_belgia.py`
-- `app/lib/biblioteca_tari.py`
+Rutele disponibile sunt: 
+  - `/nepal` – informații generale despre Nepal.
+  - `/nepal/capitala` – capitala Nepalului.
+  - `/nepal/populatie` – date demografice.
+  - `/nepal/steag` – png cu drapelul Nepalului.
 
+## Stadiul dezvoltării
+Codul a fost implementat.
 
-
-Redenumeste fisierul `app/lib/biblioteca_belgia.py` cu numele tarii alese `app/lib/biblioteca_<tara_mea>.py` (de exemplu `biblioteca_romania.py`).
-  
-- In `biblioteca_<tara_mea>.py`, adauga continut corespuzator tarii alease in functiile:
-  - `descriere_tara()`
-  - `descriere_limbi()`
-  - `descriere_populatie()`
-  - `descriere_capitala()`
-  - `descriere_steag()`
-    
-Trebuie adaugat importul bibliotecii tarii la inceputul fisierului 'biblioteca_tari.py', dupa modelul prezentat.
-
-Apoi trebuie adaugata:
-
-1. o pereche in `TARI` pentru numele tarii
-2. o intrare in `BIBLIOTECI` pentru biblioteca tarii alese 
-
-Obs: Eliminati intrarile cu Belgia; sunt doar de exemplu !
-
-### Exemplu de actualizare in `app/lib/biblioteca_tari.py`
-
-```python
-from app.lib import biblioteca_tara_mea as prescurtare_biblioteca_tara_mea
-
-TARI = {
-    'tara_mea': {
-        'nume': 'Numele complet al tarii mele',
-    },
-}
-
-BIBLIOTECI = {
-    'tara_mea': prescurtare_biblioteca_tara_mea,
-}
+## Testare manuală în browser
+Aplicația este testată local prin intermediul comenzii: 
 ```
-## Ce se modifica in /app/tests
-
-
-Fisierul test_lib_belgia.py este un test automatizat care verifică funcțiile din biblioteca țării . 
-El importă funcțiile principale (descriere_tara, descriere_capitala, descriere_limbi, descriere_populatie), definește valori așteptate pentru fiecare și folosește assert result == expected_result pentru a confirma că rezultatul funcțiilor corespunde exact cu ce trebuie. 
-
-1. Redenumeste `app/tests/test_lib_belgia.py` cu numele tarii alese `app/tests/test_lib_<tara_mea>.py` (de exemplu `test_romania.py`).
-2. Schimbă importul din `biblioteca_belgia` în `biblioteca_<tara_mea>` (asa cum este mentionat si comentariu)
-3. Actualizează fiecare `expected_result` cu valoarea aleasa pentru țara ta
-
-
-
-
-
-## Ce se adauga in `static/`
-
-- Adauga poza cu steagul tarii tale in format `png` in directorul `static/` ( sterge apoi poza steag_belgia.png).
-- Adauga locatia pozei in functia desriere_steag() din  `biblioteca_<tara_mea>.py`, sub formatul '/static/<steag_tara>.png'.
-
-## Ce NU se modifica
-
-- `tari.py` - NU SE MODIFICA
-- `app/lib/biblioteca_header.py` - NU SE MODIFICA
-- `templates/base.html` - NU SE MODIFICA
-- `templates/pagina.html` - NU SE MODIFICA
-- `templates/steag.html` - NU SE MODIFICA
-- `templates/tara.html` - NU SE MODIFICA (este template generic pentru pagina de tara)
-
-
-## Structura de baza
-
-`app/lib/`
-- `biblioteca_tari.py` - fisier in care vor fi agregate numele si bibliotecile de la toate tarile din proiect ( agregarea se va face la final, cand se va face Pull Request in branch-ul main)
-- `biblioteca_<tara_mea>.py` - fisierul individual cu functiile pentru tara aleasa
-- `biblioteca_header.py` - header comun, nu se modifica
-
-`static/`
-- aici se pune poza steagului in format `png`
-
-`templates/`
-- `base.html` - scheletul proiectului - contine structura html + css statica
-- `home.html` - pagina de pornire unde sunt listate tarile
-- `tara.html` - template generic pentru pagina fiecarei tari, unde este afisat rezultatul functiei descriere_tara()
-- `pagina.html` - pagina folosita pentru a afisa rezultatul funtiilor descriere_capitala() / descriere_populatie() / descriere_limbi()
-- `steag.html` - pagina folosita pentru a afisa rezultatul functiei descriere_steag()
-  
-`tari.py` - fișierul principal al aplicației Flask care gestionează rutele web și afișează informații despre țări. Este intermediar între cererile web și bibliotecile fiecărei țări, oferind utilizatorului informații formatate despre acestea.
-
-
-
-## Scripturi de activare si rulare
-
-### `activeaza_venv`
-
-Acest script activeaza mediul virtual Python din `.venv`. Comanda:  `. ./activeaza_venv`
-
-
-### `ruleaza_aplicatia`
-
-Acest script porneste aplicatia Flask local. Comanda: `./ruleaza_aplicatia`
-
-
-### `dockerstart.sh`
-
-Acest script face acelasi lucru, dar cu optiuni suplimentare. Este apelat in fisierul Dockerfile
-
-## Permisiuni de executie
-
-Pentru a rula scripturile, trebuie acordate permisiuni de executie:
-
-```bash
-chmod 764 activeaza_venv ruleaza_aplicatia dockerstart.sh
+./ruleaza_aplicatia
 ```
-
-## Testare cu Pytest
-
-Pentru a rula testele, mergeți în directorul principal al proiectului și folosiți comanda:
-
-`pytest app/tests/*.py -v`
-
-Aceasta verifica fiecare funcție din fișier și arata ce teste trec sau ce teste eșuează. Asigurati-va ca aveti venv-ul pornit.
+Pentru verificarea funcționalității se accesează în browser adresa: 
+http://127.0.0.1:5011/
 
 
+<img src="screenshots/nepal-rute.png" width="1200">
 
-# Pasi recomandati pentru proiect
+## Testare folosind pytest
+Testele au fost scrise în fișierul app/tests/test_lib_nepal.py. Se pornește venv-ul și se introduce în terminal comanda :
+```
+pytest app/tests/*.py -v
+```
+Testele au fost validate local, implementarea este funcțională.
 
-1. `git clone https://github.com/raduionutgavrila/curs_scc_443D_tari.git` - pentru a copia local repository-ul
-2. `git checkout dev-template` - pentru a selecta ramura de dezvolatare cu template-ul
-3. `git checkout -b dev-nume-prenume` - pentru a crea o noua ramura de dezvoltare pornind de la template
-4. modifica `app/lib/biblioteca_tari.py`
-5. redenumeste `app/lib/biblioteca_belgia.py` in `app/lib/biblioteca_<tara_mea>.py` si modifica continutul functiilor
-6. adauga poza cu steagul in `static/` si adauga link catre acesta in functia din 'biblioteca_<tara_mea>.py'
-7. ruleaza cu `. ./activeaza_venv` si `./ruleaza_aplicatia`
-8. testeaza cu `pytest app/tests/test_lib_<tara_mea>.py -v`
+<img src="screenshots/nepal-tests-passed.png" width="1200">
 
+## Testare folosind Docker
+S-a realizat containerizarea aplicației folosind un container Docker. Etapele creării și rulării aplicației sunt următoarele: 
 
-# Ce mai trebuie adaugat
+**1. Se construiește imaginea cu ajutorul comenzii:**
+```
+docker build -t tari:v01 .
+```
+<img src="screenshots/nepal-docker-build.png" width="1200">
 
-- Creare Dockerfile
-- Creare Jenkinsfile
+**2. Se rulează container-ul:**
+```
+docker run -d --name tari_nepal -p 8020:5011 tari:v01
+```
+<img src="screenshots/nepal-docker-run.png" width="1200">
 
-## Observatie finala
+**3. Pentru verificarea funcționalității se accesează în browser adresa: http://localhost:8020/**
 
-Scripturile din aceasta aplicatie sunt introduse dupa modelul aplicatiei `chrchende/sysinfo:simplu_main`.
+<img src="screenshots/nepal-interfata-docker.png" width="1200">
 
+## Testare folosind Jenkins
 
-  
+Se pornește Jenkins introducând în terminal comanda :
+
+```
+jenkins
+```
+## Pașii pentru a crea un Pipeline Jenkins care să realizeze automat testarea sunt următorii:
+
+**1. Integrarea repository-ului în instanța locală Jenkins (port 8080).**
+
+**2. Build-ul manual (Build Now).**
+
+**3. Verificarea statusului final și a log-urilor de execuție în Console Output pentru validare.**
+
+<img src="screenshots/nepal-jenkins-pipeline.png" width="1200">
+<img src="screenshots/nepal-jenkins-tests-passed.png" width="1200">
+
+# Integrare
+**- Branch-ul de dezvoltare: dev_cucui_petrut**  
+# Review
+**- Am primit review de la colegul: Cucui Mihai Cătălin (MihaiC03)**
+
+**- Am facut review pentru colegul: Cucui Mihai Cătălin (MihaiC03)**
+
+# Rămas de făcut
+**- [x] Implementarea codului și validarea testelor local.**
+
+**- [x] Containerizarea aplicației și rulare.**
+
+**- [x] Crearea Pipeline-ului Jenkins și validarea automată a testelor.**
+
+**- [ ] Finalizarea Pull Request-ului și obținerea aprobării pentru fuziunea în branch-ul main.**
