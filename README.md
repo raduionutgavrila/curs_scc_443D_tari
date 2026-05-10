@@ -36,7 +36,7 @@
 6. [Japonia - Ciobanu Andrei](#japonia---ciobanu-andrei)
 7. [Germania - Colan Bianca](#germania---colan-bianca)
 8. [Italia - Dumitrache Alexandru](#italia---dumitrache-alexandru)
-
+9. [Statele Unite - Esterabadeyan Hadi](#statele-unite---esterabadeyan-hadi)
 
 
 
@@ -1427,3 +1427,100 @@ Aplicația poate fi accesată la: `http://localhost:5011/italia`
 - [ ] Integrare README.md în branch-ul main
 
 
+# Statele Unite - Esterabadeyan Hadi
+[Tari Proiect](#index-țări)
+
+## 1. Dezvoltator
+- **Nume:** Esterabadeyan Hadi
+- **Grupa:** 443D
+- **Tara alocata:** Statele Unite
+
+## 2. Functionalitate Adaugata
+Am implementat funcționalitatea pentru Statele Unite ale Americii, incluzând:
+ - Biblioteca specifică: app/lib/biblioteca_statele_unite.py.
+ - Integrare: Actualizarea app/lib/biblioteca_tari.py pentru a include rutele și datele SUA.
+ - Rute Flask: Rutele pentru descriere, capitală, populație, limbi și steag sunt active și funcționale.
+
+## 3. Stadiul Implementarii
+ - Cod Aplicație: Finalizat și verificat local.
+ - Rute Web: Accesibile prin browser la portul 5011.
+ - Resurse Statice: Steagul SUA adăugat în static/steag_sua.png
+
+## 4. Testare
+### Testare Manuală
+ - Testare Manuală: Verificarea fiecărei rute în browser (Status: OK).
+ - Testare Unitara (Pytest): Toate testele din app/tests/test_lib_statele_unite.py trec cu succes.
+ - Configurare Jenkins: Creat Jenkinsfile cu etapele: Build, Linting, Unit Testing și Docker.
+ - Status Jenkins: PASS.
+
+**Test manual - Pytest**
+![Test manual - Pytest](screenshots/sua_pytest_manual.png)
+
+**Status Build Jenkins**
+![Status Build Jenkins](screenshots/sua_pipeline.png)
+
+
+## 5. Containerizare (Docker)
+Aplicația a fost containerizată folosind un Dockerfile bazat pe Python Alpine.
+
+**Dovezi Containerizare:**
+
+1. Imaginea Docker creata
+ - Imaginea creata manual este sua-app:latest
+ - Imaginea creata automat de Jenkins este sua_app:v3
+![Docker Images](screenshots/sua_docker_images.png)
+
+2. Containerul creat pe baza imaginii
+ - Containerul creat manual este docker_app
+ - Containerul creat manual este tari_container_3
+![Docker containers](screenshots/sua_docker_containers.png)
+
+3 Accesarea aplicatiei din container
+ - Rularea containerului
+![Rularea containerului](screenshots/sua_docker_terminal.png)
+ - Accesarea aplicatiei web
+![Accesarea aplicatiei web](screenshots/sua_docker_app.png)
+
+4 Log-uri consola docker
+![Docker Logs](screenshots/sua_docker_log.png)
+
+
+## 6. Integrare și Review
+ - Branch sursa: `dev_esterabadeyan_hadi`
+ - Branch destinatie: `main_esterabadeyan_hadi`
+ - Status: complet si functional
+
+## Pull Request-uri la care am făcut review
+
+| PR ID | Autor | Descriere |
+|-------|-------|-----------|
+| 21 | Roseanu Vlad George (Vlad54689) | arata bine |
+
+## 7. Comenzi necesare
+ - Testare manuala cu pytest:
+ ```bash
+pytest app/tests/test_lib_statele_unite.py -v
+ ```
+
+  - Construirea imaginii:
+```bash
+docker build -t <nume_img> <locatia_fisierului_dockerfile>
+```
+
+ - Creare si construire container:
+ ```bash
+docker run -it --name <nume_cont> -p <port_local>:<port_intern> <imagine>
+```
+
+ - Repornirea containerului existent in mod interactiv:
+ ```bash
+docker start -ai <nume_cont>
+```
+
+## 8. Ce mai este de făcut
+
+ - [x] Finalizare cod și teste manuale.
+ - [x] Aplicație containerizată și accesibilă.
+ - [x] Succes Pipeline Jenkins.
+ - [ ] Obținerea aprobării de la colegi pentru PR-ul final.
+ - [ ] Integrarea finală în branch-ul main.
