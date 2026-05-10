@@ -1,7 +1,5 @@
 # Configuratie globala a proiectului
 
-#from app.lib import biblioteca_<tara_mea> as prescurtare_tara_mea 
-
 
 from app.lib import biblioteca_belgia as belg
 from app.lib import biblioteca_coreea as sk
@@ -15,7 +13,13 @@ from app.lib import biblioteca_statele_unite as sua
 from app.lib import biblioteca_estonia as esto
 from app.lib import biblioteca_franta as franta
 from app.lib import biblioteca_finlanda as fin
-
+from app.lib import biblioteca_irlanda as irlanda
+from app.lib import biblioteca_elvetia as elv
+from app.lib import biblioteca_canada as cana
+from app.lib import biblioteca_china as china
+from app.lib import biblioteca_mexic as mex
+from app.lib import biblioteca_spania as spania
+from app.lib import biblioteca_namibia as namb
 
 TARI = {
     'norvegia': {
@@ -24,26 +28,32 @@ TARI = {
     'coreea': {
         'nume': 'Coreea de Sud',
     },
-
     'belgia': {
         'nume': 'Belgia',
-    },
+    }
+    'canada': {
+        'nume': 'Canada',
+    }
 
     'brazilia': {
         'nume': 'Brazilia',
+
+    'namibia': {
+        'nume': 'Namibia',
     },
     
-
     "japonia": {
         "nume": "Japonia",
     },
-        
     'italia': {
         'nume': 'Italia',
+    }
+    'China': {
+        'nume': 'China',
     },
-
     'sua': {
         'nume': 'Statele Unite ale Americii',
+    }
 
     'estonia': {
         'nume': 'Estonia',
@@ -52,16 +62,24 @@ TARI = {
     'franta': {
         'nume': 'Republica Franceza',
     },
-        
-    # Mapare tara -> biblioteca
     'finlanda': {
         'nume': 'Finlanda',
     },
+    'irlanda': {
+        'nume': 'Irlanda',
+    }
+    'elvetia': {
+        'nume': 'Elvetia',
+    },
+     'mexic': {
+        'nume': 'Mexic',
+    },
+    'spania': {
+        'nume': 'Spania',
+    },
 
     
-
-
-
+    }
 
 
 BIBLIOTECI = {
@@ -77,5 +95,12 @@ BIBLIOTECI = {
     'estonia': esto,
     'franta': franta,
     'finlanda': fin,
+    'irlanda': irlanda,
+    'elvetia': elv,
+    'canada': cana,
+    'China': china,
+    'mexic': mex,
+    'spania': spania
+    'namibia': namb,
      #adauga 'tara_mea': prescurtare_tara_mea
 }

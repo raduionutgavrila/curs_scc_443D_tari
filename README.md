@@ -38,8 +38,15 @@
 8. [Italia - Dumitrache Alexandru](#italia---dumitrache-alexandru)
 9. [Statele Unite - Esterabadeyan Hadi](#statele-unite---esterabadeyan-hadi)
 10. [Estonia - Zidu Cristian](#estonia---zidu-cristian)
-11. [Franța - Tuturluță Costi-Giani-Fabian](#franta---tuturluta-costi-giani-fabian)
+11. [Franța - Tuturluță Costi-Giani-Fabian](#franta---tuturluță-costi-giani-fabian)
 12. [Finlanda - Grigore Mihaela](#finlanda---grigore-mihaela)
+13. [Irlanda - Pirjol Mara](#irlanda---pirjol-mara)
+14. [Elveția - Tecșan Călin](#elvetia---tecșan-călin)
+15. [Canada - Roșeanu Vlad-George](#canada---roșeanu-vlad-george)
+16. [China - Teodorescu-Colciu Matei](#china---teodorescu-colciu-matei)
+17. [Mexic - Tudor Iulian](#mexic---tudor-iulian)
+18. [Spania - Serban Albert](#spania---serban-albert)
+19. [Namibia - Ghica Antonio-Stefan](#namibia---ghica-antonio-stefan)
 
 
 # Belgia - Gavrilă Radu-Ionuț
@@ -250,6 +257,7 @@ Acest proiect atinge cu succes atât obiectivele funcționale, cât și pe cele 
 [cuprins](#cuprins)
 
 https://github.com/crchende/sysinfo.git
+<<<<<<< HEAD
 
 
 # Coreea de Sud - Toacă Cristiana
@@ -2146,4 +2154,971 @@ Pull Request:
 Capturile aferente proiectului se găsesc în directorul:
 
 `screenshots/`
+<<<<<<< HEAD
+
+# Irlanda - Pirjol Mara
+[Tari Proiect](#index-țări)
+
+## 1. Identificator Dezvoltator
+- **Nume:** Pirjol Mara
+- **Grupă:** 443D
+- **Țară alocată:** Irlanda
+
+## 2. Funcționalitate Adăugată
+Am implementat logica pentru afișarea informațiilor despre Irlanda. Aceasta include:
+
+- **descriere_tara()** – Returnează o descriere generală a Irlandei.
+- **descriere_capitala()** – Returnează capitala Irlandei: Dublin.
+- **descriere_populatie()** – Returnează populația Irlandei.
+- **descriere_limbi()** – Returnează limbile oficiale ale Irlandei.
+- **descriere_steag()** – Returnează imaginea steagului Irlandei.
+
+### Rute accesibile
+
+| Rută | Descriere |
+|------|-----------|
+| `/` | Pagina principală – lista tuturor țărilor |
+| `/irlanda` | Informații generale despre Irlanda |
+| `/irlanda/capitala` | Capitala Irlandei |
+| `/irlanda/populatie` | Populația Irlandei |
+| `/irlanda/steag` | Steagul Irlandei |
+
+## 3. Stadiul Implementării
+- [x] Cod funcționalitate adăugat
+
+## 4. Testare
+
+### Testare Manuală
+Aplicația a fost verificată local rulând `./ruleaza_aplicatia` și accesând `http://127.0.0.1:5011/`.
+
+**Output Consolă Locală:**
+
+![Console Output Start App](screenshots/irlanda_terminal_local.jpeg)
+
+**Aplicația Accesată la `http://127.0.0.1:5011/`:**
+
+![Test local](screenshots/irlanda_local.jpeg)
+
+### Testare Locală folosind Pytest
+Mai întâi am verificat că testele funcționează local.
+
+**Testare Locală cu Pytest:**
+
+![Console Output Pytest](screenshots/irlanda_teste.jpeg)
+
+### Testare Automată folosind Jenkins
+Am configurat un Pipeline în Jenkins care rulează automat testele. Testul din `app/tests/` a trecut cu succes.
+![Status Build Jenkins](screenshots/irlanda_jenkins.jpeg)
+
+## 5. Containerizare (Docker)
+Aplicația a fost containerizată folosind Docker. Containerul expune portul 5011.
+
+**Dovezi Containerizare:**
+
+*1. Creare imagine Docker:*
+
+![Docker build](screenshots/irlanda_docker_build.jpeg)
+
+*2. Interacțiune / rulare container Docker:*
+
+![Docker interaction](screenshots/irlanda_docker_interaction.jpeg)
+
+*3. Accesare aplicație din container în browser:*
+
+![Browser Docker](screenshots/irlanda_docker_page.jpeg)
+=======
 - [x] Integrarea finală în branch-ul `main` al grupei după aprobarea tuturor review-urilor.
+
+
+# Elveția - Tecșan Călin 
+[Tari Proiect](#index-țări)
+
+## 1. Dezvoltator
+
+**Nume:** Tecșan Călin  
+**Grupa:** 443D  
+**Tara aleasa:** Elveția  
+
+---
+
+## 2. Functionalitate adaugata
+
+In cadrul proiectului am implementat functionalitatea pentru tara **Elvetia**.
+
+Au fost adaugate/modificate urmatoarele componente:
+
+- biblioteca individuala pentru tara: `app/lib/biblioteca_elvetia.py`;
+- actualizarea fisierului `app/lib/biblioteca_tari.py` pentru includerea tarii Elvetia in aplicatie;
+- test automat pentru biblioteca tarii: `app/tests/test_lib_elvetia.py`;
+- imaginea steagului Elvetiei in directorul `static/`;
+- fisier `Dockerfile` pentru containerizarea aplicatiei;
+- fisier `Jenkinsfile` pentru automatizarea etapelor de testare si build.
+
+Functionalitatile disponibile pentru Elvetia sunt:
+
+- descrierea tarii;
+- capitala;
+- populatia;
+- limbile oficiale;
+- afisarea steagului.
+
+---
+
+## 3. Stadiul implementarii
+
+**Cod aplicatie:** finalizat pentru tara Elvetia.  
+**Integrare in biblioteca generala:** realizata in `biblioteca_tari.py`.  
+**Rute web:** accesibile prin browser la portul 5011  
+**Resurse statice:** steagul Elvetiei a fost adaugat in `static/steag_elvetia.png`.  
+**Testare locala:** realizata cu Pytest.  
+**Containerizare:** imaginea Docker a fost construita, iar containerul a fost pornit cu succes.
+**Pipeline Jenkins:** creat si rulat cu succes.  
+
+
+---
+
+## 4. Testare
+
+### 4.1 Testare manuala
+
+Aplicatia a fost pornita local si au fost verificate paginile corespunzatoare tarii Elvetia in browser.
+
+Au fost testate manual urmatoarele informatii:
+
+- descrierea tarii;
+- capitala;
+- populatia;
+- limbile oficiale;
+- steagul.
+
+**Status testare manuala:** OK
+
+### 4.2 Testare unitara cu Pytest
+
+Testele unitare au fost definite in fisierul:
+
+```bash
+app/tests/test_lib_elvetia.py
+```
+
+Comanda folosita pentru rularea testelor:
+
+```bash
+pytest app/tests/test_lib_elvetia.py -v
+```
+
+**Status Pytest:** PASS
+
+![Testare - Pytest](screenshots/elvetia1_pytest.png)
+
+### 4.3 Testare cu Jenkins
+
+A fost creat fisierul `Jenkinsfile`, care automatizeaza urmatoarele etape:
+
+- pregatirea proiectului;
+- crearea si activarea mediului virtual Python;
+- instalarea dependentelor;
+- verificarea codului cu Pylint;
+- rularea testelor unitare cu Pytest;
+- construirea imaginii Docker;
+- pornirea containerului Docker.
+
+**Status Jenkins Pipeline:** SUCCESS
+
+![Testare - Build Jenkins](screenshots/elvetia2_jenkins1.png)
+
+![Testare - Build Jenkins](screenshots/elvetia3_jenkins2.png)
+
+---
+
+## 5. Containerizare Docker
+
+Aplicatia a fost containerizata folosind un `Dockerfile` bazat pe imaginea `python:3.10-alpine`.
+
+### 5.1 Imagine Docker
+
+Imaginea Docker a fost construita manual cu urmatoarea comanda:
+
+```bash
+docker build -t tari-elvetia-tecsan-calin:v1 .
+```
+
+Imaginea creata manual:
+
+```text
+tari-elvetia-tecsan-calin:v1
+```
+
+Imaginea creata automat de Jenkins are formatul:
+
+```text
+tari-elvetia-tecsan-calin:v<BUILD_NUMBER>
+```
+
+Exemplu:
+
+```text
+tari-elvetia-tecsan-calin:v1
+```
+
+Verificarea imaginilor Docker:
+
+```bash
+docker images
+```
+
+![Testare - Build Jenkins](screenshots/elvetia4_docker.png)
+
+### 5.2 Container Docker
+
+Containerul a fost creat si pornit folosind comanda:
+
+```bash
+docker run -d --name tari-elvetia-tecsan-calin -p 8020:5011 tari-elvetia-tecsan-calin:v1
+```
+
+Aplicatia ruleaza in container pe portul intern `5011`, iar pe masina locala este accesibila prin portul `8020`.
+
+![Testare - Build Jenkins](screenshots/elvetia6_rulare.png)
+
+Acces aplicatie:
+
+```text
+http://localhost:8020
+```
+
+![Testare - Build Jenkins](screenshots/elvetia7_pagina.png)
+
+Verificarea containerelor Docker:
+
+```bash
+docker ps -a
+```
+
+![Testare - Build Jenkins](screenshots/elvetia5_containere.png)
+
+---
+
+## 6. Integrare si review
+
+**Branch sursa:** `dev_tecsan_calin`  
+**Branch destinatie:** `main_tecsan_calin`  
+
+**Status integrare:** Pull Request creat din `dev_tecsan_calin` catre `main_tecsan_calin`.   
+**Review:** aprobat de colegul `etuzorr` (PR ID 50).
+
+### Pull Request-uri la care am facut review
+
+| PR ID | Autor | Descriere |
+|---|---|---|
+| 45 | etuzorr | Review pentru modificarile adaugate in proiectul SCC - Tari. |
+
+---
+
+## 7. Comenzi utile
+
+### 7.1 Activare mediu virtual
+
+```bash
+. ./activeaza_venv
+```
+
+### 7.2 Pornire aplicatie local
+
+```bash
+./ruleaza_aplicatia
+```
+
+### 7.3 Rulare teste Pytest
+
+```bash
+pytest app/tests/test_lib_elvetia.py -v
+```
+
+### 7.4 Construire imagine Docker
+
+```bash
+docker build -t tari-elvetia-tecsan-calin:v1 .
+```
+
+### 7.5 Pornire container Docker
+
+```bash
+docker run -d --name tari-elvetia-tecsan-calin -p 8020:5011 tari-elvetia-tecsan-calin:v1
+```
+
+### 7.6 Oprire container
+
+```bash
+docker stop tari-elvetia-tecsan-calin
+```
+
+### 7.7 Repornire container existent
+
+```bash
+docker start tari-elvetia-tecsan-calin
+```
+
+### 7.8 Stergere container
+
+```bash
+docker rm -f tari-elvetia-tecsan-calin
+```
+
+### 7.9 Verificare imagini Docker
+
+```bash
+docker images
+```
+
+### 7.10 Verificare containere Docker
+
+```bash
+docker ps -a
+```
+
+### 7.11 Verificare loguri container
+
+```bash
+docker logs tari-elvetia-tecsan-calin
+```
+
+---
+
+## 8. Ce mai este de facut
+
+- [x] Implementarea bibliotecii pentru Elvetia.
+- [x] Actualizarea fisierului `biblioteca_tari.py`.
+- [x] Adaugarea testelor unitare pentru Elvetia.
+- [x] Adaugarea steagului in directorul `static/`.
+- [x] Crearea fisierului `Dockerfile`.
+- [x] Crearea fisierului `Jenkinsfile`.
+- [x] Rularea testelor cu Pytest.
+- [x] Rularea pipeline-ului Jenkins.
+- [x] Construirea imaginii Docker.
+- [x] Pornirea containerului Docker.
+- [x] Adaugarea capturilor de ecran in README.
+- [x] Crearea Pull Request-ului.
+- [x] Obtinerea review-ului de la un coleg.
+- [x] Integrarea finala in branch-ul principal.
+
+---
+
+## 9. Concluzie
+
+Functionalitatea pentru Elvetia a fost implementata in aplicatia web Flask a proiectului SCC - Tari. Codul a fost testat local cu Pytest, verificat prin pipeline Jenkins si containerizat folosind Docker. Aplicatia poate fi rulata local sau in container si poate fi accesata din browser.
+
+# Canada - Roșeanu Vlad-George
+[Tari Proiect](#index-țări)
+
+## Dezvoltator
+- **Nume:** Roșeanu Vlad-George
+- **Grupă:** 443D
+- **Țară alocată:** Canada 🇨🇦
+- **Branch de dezvoltare:** `dev_roseanu_vlad`
+
+## Funcționalitate Adăugată
+Am adaugat funcționalitatea pentru **Canada** în fișierul `app/lib/biblioteca_canada.py`:
+- **descriere_tara()** – Returnează o descriere generală a Canadei
+- **descriere_capitala()** – Returnează capitala Canadei
+- **descriere_populatie()** – Returnează populația Canadei
+- **descriere_limbi()** – Returnează limbile oficiale ale Canadei
+- **descriere_steag()** – Returnează imaginea steagului Canadei
+
+## Rute accesibile
+
+| Ruta | Descriere |
+|------|-----------|
+| `/` | Pagina principală – lista tuturor țărilor |
+| `/canada` | Informații generale despre Canada |
+| `/canada/capitala` | Capitala Canadei – Ottawa |
+| `/canada/populatie` | Populația Canadei |
+| `/canada/steag` | Steagul Canadei |
+
+## Modificări
+
+🇨🇦 `app/lib/biblioteca_canada.py` – biblioteca cu funcțiile pentru Canada
+
+🔗 `app/lib/biblioteca_tari.py` – adăugat import și înregistrare Canada în TARI și BIBLIOTECI
+
+🛠️ `app/tests/test_lib_canada.py` – teste unitare pentru Canada
+
+⚙️ `Jenkinsfile` – pipeline declarativ pentru Jenkins
+
+🐳 `Dockerfile` – containerizarea aplicației
+
+## Testare Manuală
+Aplicația a fost verificată local rulând:
+
+```bash
+python3 tari.py
+```
+
+și accesând:
+
+```text
+http://localhost:5000
+```
+![Rulare script](screenshots/canada_rulare_script.png)
+![Test local](screenshots/canada_accesare_rulare.png)
+
+## Testare Automatizată (Jenkins)
+Am configurat un Pipeline în Jenkins care rulează automat testele. Testul din `app/tests/` a trecut cu succes (PASS).
+
+**Dovada Build Jenkins:**
+![Status Build Jenkins](screenshots/canada_pipeline_jenkins.png)
+![Console Output Pytest](screenshots/canada_pytest_jenkins.png)
+
+## Containerizare (Docker)
+Aplicația a fost containerizată folosind o imagine de Python 3.10-alpine. Containerul expune portul 5011.
+
+**Dovezi Containerizare:**
+
+*1. Imaginea Docker creată:*
+![Docker Images](screenshots/canada_imagine_docker.png)
+
+*2. Toate containerele Docker:*
+![Docker Images](screenshots/canada_containere_docker.png)
+
+*3. Containerul rulând activ:*
+![Docker PS](screenshots/canada_rulare_docker_terminal.png)
+
+*4. Accesare aplicație din container (Browser):*
+![Browser Docker](screenshots/canada_docker_app.png)
+
+*5. Log-uri consolă (interacțiune browser-container):*
+![Docker Logs](screenshots/canada_docker_log.png)
+
+## Comenzi folosite:
+🧪 Rulare manuala pytest:
+```bash
+pytest app/tests/test_lib_canada.py -v
+```
+🐳 Construirea imaginii:
+```bash
+docker build -t <nume_img> <locatia_fisierului_dockerfile>
+```
+🚀 Crearea și construirea:
+```bash
+docker run -it --name <nume_cont> -p <port_local>:<port_intern> <imagine>
+```
+🔄 Repornirea containerului in mod interactiv:
+```bash
+docker start -ai <nume_cont>
+```
+
+
+## Integrare și Review
+🌿 Branch sursa: `dev_roseanu_vlad`
+
+🎯 Branch destinatie: `main_roseanu_vlad`
+
+📊 Status: *Verificat*
+
+👀 Review: *Esterabadeyan Hadi*
+
+## Pull Request-uri la care am făcut review
+
+| PR ID | Autor | Descriere |
+| :---: | :---: | :---: |
+| #44 | Esterabadeyan Hadi - Etuzrorr | Am verificat schimbarea numelor de poze din screenshots/ |
+
+## Ce mai este de făcut
+
+ - [x] Finalizare cod și teste manuale.
+ - [x] Aplicație containerizată și accesibilă.
+ - [x] Succes Pipeline Jenkins.
+ - [ ] Obținerea aprobării de la colegi pentru PR-ul final.
+ - [ ] Integrarea finală în branch-ul main.
+
+
+# China - Teodorescu-Colciu Matei
+[Tari Proiect](#index-țări)
+
+## 1. Identificator Dezvoltator
+- **Nume:** Teodorescu-Colciu Matei
+- **Grupă:** 443D
+- **Țară alocată:** China
+
+## 2. Funcționalitate Adăugată
+Am implementat logica pentru afișarea informațiilor despre China. Aceasta include:
+
+- **descriere_tara()** – Returnează o descriere generală a Chinei
+- **descriere_capitala()** – Returnează capitala Chinei
+- **descriere_populatie()** – Returnează populația Chinei
+- **descriere_limbi()** – Returnează limbile oficiale ale Chinei
+- **descriere_steag()** – Returnează imaginea steagului Chinei
+
+### Rute accesibile
+
+| Ruta | Descriere |
+|------|-----------|
+| `/` | Pagina principală – lista tuturor țărilor |
+| `/china` | Informații generale despre China |
+| `/china/capitala` | Capitala Chinei |
+| `/china/populatie` | Populația Chinei |
+| `/china/steag` | Steagul Chinei |
+
+## 3. Stadiul Implementării
+- [x] Cod funcționalitate adăugat
+
+## 4. Testare
+### Testare Manuală
+Aplicația a fost verificată local rulând `.\ruleaza_aplicatia` și accesând `http://127.0.0.1:5011/`.
+
+**Output Consola Locala:**
+
+![Console Output Start App](screenshots/china-terminal-local.png)
+
+**Apliactia Accesata la `http://127.0.0.1:5011/`:**
+
+![Test local](screenshots/china-local.png)
+
+### Testare Locala Folosind Pytest
+Mai intai am verificat ca testele functioneaza local.
+
+**Testare Locala cu Pytest:**
+
+![Console Output Pytest](screenshots/china-teste.png)
+
+
+### Testare Automata folosind Jenkins
+
+Am configurat un Pipeline în Jenkins care rulează automat testele. Testul din `app/tests/` a trecut cu succes (PASS).
+
+**Dovada Build Jenkins:**
+
+![Status Build Jenkins](screenshots/china-jenkins.png)
+
+**Dovada Teste Pytest in Jenkins:**
+
+![Output Tests Jenkins](screenshots/china-jenkins-teste.png)
+
+## 5. Containerizare (Docker)
+Aplicația a fost containerizată folosind o imagine de Python 3.10-alpine. Containerul expune portul 5011 si poate fi accesat la `http://172.17.0.2:5011/`.
+
+**Dovezi Containerizare:**
+
+*1. Creare imagine Docker:*
+
+![Docker build](screenshots/china-docker-build.png)
+
+*2. Start container creat:*
+
+![Docker run](screenshots/china-docker-run.png)
+
+*3. Verificare a rularii containerului:*
+
+![Docker ps](screenshots/china-docker-ps.png)
+
+*4. Accesare aplicație din container (Browser):*
+
+Aplicatia va putea fi accesata la: `http://172.17.0.2:5011/`
+
+![Browser-Docker](screenshots/china-docker-page.png)
+
+*5. Log-uri consolă (interacțiune browser-container):*
+
+![Docker Logs](screenshots/china-docker-interaction.png)
+
+## 6. Integrare și Review
+- **Branch dezvoltare: `dev_teodorescu_matei`**
+- **Pull Request (PR) către `main_teodorescu_matei`:** 
+
+## 7. Review-uri:
+
+- [x] Am făcut review pentru colegul: [ Dumitrache Alexandru (Dumitian) / #37 ]
+- [x] Am primit review de la: [ Dumitrache Alexandru (Dumitian) / #39 ]
+
+## 8. De facut
+ - [x] Finalizare cod și teste manuale.
+ - [x] Aplicație containerizată și accesibilă.
+ - [x] Succes Pipeline Jenkins.
+ - [x] Obținerea aprobării de la colegi pentru PR-ul final, in main.
+ - [x] Integrarea finală în branch-ul main.
+
+
+ # Mexic - Tudor Iulian
+[Tari Proiect](#index-țări)
+
+
+## 1. Detalii Dezvoltator
+- **Nume:** Tudor Iulian
+- **Grupa:** 443D
+- **Tara:** Mexic 🇲🇽
+- **Branch lucru:** `dev_tudor_iulian`
+
+---
+
+## 2. Functionalitati Implementate
+Proiectul a constat in integrarea Mexicului in platforma SCC, adaugand urmatoarele componente:
+- **Biblioteca specifica:** `app/lib/biblioteca_mexic.py` , adaugarea datelor (capitala,populatie,steag).
+- **Integrare:** Inregistrarea rutelor in `app/lib/biblioteca_tari.py` 
+- **Resurse:** Integrarea steagului in `static/steag_mexic.png`.
+- **Automatizare:** Configurarea fluxului de CI/CD prin `Jenkinsfile` si containerizarea prin `Dockerfile`.
+
+### Rute disponibile
+
+| Ruta | Descriere |
+| :--- | :--- |
+| `/` | Pagina principala – lista tuturor tarilor |
+| `/mexic` | Informatii generale despre Mexic |
+| `/mexic/capitala` | Capitala Mexicului – Ciudad de Mexico |
+| `/mexic/populatie` | Populatia Mexicului |
+| `/mexic/steag` | Steagul Mexicului |
+
+## 3. 📁 Structura si Modificari
+| Componenta | Descriere |
+| :--- | :--- |
+| `app/lib/biblioteca_mexic.py` | Functiile core pentru datele despre Mexic |
+| `app/tests/test_lib_mexic.py` | Testele unitare pentru validarea corectitudinii |
+| `static/steag_mexic.png` | Imaginea statica a steagului |
+| `Dockerfile` | Reteta pentru crearea imaginii de container |
+| `Jenkinsfile` | Pipeline-ul pentru automatizarea build-ului si testarii |
+
+---
+
+## 4. 🛠️ Verificare si Testare
+
+### 4.1. Testare Manuala (Local)
+Aplicatia a fost rulata initial in mediul local pentru a verifica integritatea rutelor Flask.
+![Rulare Aplicatie Locala](screenshots/Mexic_rulare_aplicatie.png)
+
+### 4.2. Testare Automatizata (Jenkins)
+Am configurat un server Jenkins care monitorizeaza codul. Acesta ruleaza automat testele Pytest si verifica calitatea codului.
+
+**Status Pipeline Jenkins:**
+![Status Pipeline](screenshots/Mexic_pipeline_jenkins.png)
+
+**Rezultate Teste Unitare (Pytest):**
+![Pytest Jenkins](screenshots/Mexic_pytest_jenkins.png)
+
+---
+
+## 5. 🐳 Containerizare cu Docker
+Pentru a asigura portabilitatea, am creat o imagine Docker bazata pe Python Alpine, optimizata pentru dimensiune si securitate.
+
+### Dovezi Containerizare:
+
+**1. Imaginile Docker (Manuala vs Automata):**
+Se pot observa atat imaginea creata manual, cat si cea generata automat de Jenkins (v1).
+![Docker Images](screenshots/Mexic_imagine_docker.png)
+
+**2. Status Containere:**
+Lista containerelor create si porturile mapate (5011).
+![Docker Containers](screenshots/Mexic_containere_docker.png)
+
+**3. Rularea in Terminal:**
+Pornirea containerului si vizualizarea procesului activ.
+![Terminal Docker](screenshots/Mexic_rulare_docker_terminal.png)
+
+**4. Interfata Web (Browser):**
+Accesarea aplicatiei containerizate la adresa `http://localhost:5011/mexic`.
+![App in Browser](screenshots/Mexic_docker_app.png)
+
+**5. Jurnal de Log-uri:**
+Interactiunea dintre utilizator si aplicatie capturata in log-urile Docker.
+![Docker Logs](screenshots/Mexic_docker_log.png)
+
+---
+
+## 6. Comenzi Utile
+
+### Testare
+```bash
+pytest app/tests/test_lib_mexic.py -v
+```
+
+### Docker
+```bash
+# Build imagine
+docker build -t <imagine> <locatie_fisier_dockerfile>
+
+# Rulare container
+docker run -d -p 5011:5011 --name <nume_container> <imagine>
+
+# Repornire container
+docker start -ai <nume_container>
+```
+
+---
+
+## 7. Status Integrare
+- **Branch Sursa:** `dev_tudor_iulian`
+- **Branch Destinatie:** `main_tudor_iulian`
+- **Status:** Merged , Verificat
+- **Review realizat de:** Dumitrache Alexandru (Dumitian - PR #29)
+
+### Review-uri oferite de mine
+| PR ID | Autor | Descriere |
+| :--- | :--- | :--- |
+| #51 | Tecsan Calin (calinn24) | Verificare README |
+
+
+# Spania - Serban Albert
+[Tari Proiect](#index-țări)
+
+## 1. Identificator Dezvoltator
+- **Nume:** Serban Albert
+- **Grupă:** 443D
+- **Țară alocată:** Spania
+
+## 2. Funcționalitate Adăugată
+Am implementat logica pentru afișarea informațiilor despre Spania. Aceasta include:
+- Definirea rutelor în `app/lib/biblioteca_spania.py`.
+- Adăugarea datelor specifice (populație, capitală, vecini) în dicționarul de țări.
+- Integrarea steagului în folderul `static/`.
+
+## 3. Stadiul Implementării
+- [x] Cod funcționalitate adăugat
+
+## 4. Testare
+### Testare Manuală
+Aplicația a fost verificată local rulând `./ruleaza_aplicatia` și accesând `http://localhost:5011`.
+
+### Testare Automatizată (Jenkins)
+Am configurat un Pipeline în Jenkins care rulează automat testele. Testul din `app/tests/` a trecut cu succes (PASS).
+
+**Dovada Build Jenkins:**
+![Status Build Jenkins](screenshots/spania_tests_passed_1.png)
+![Console Output Pytest](screenshots/spania_tests_passed_2.png)
+
+## 5. Containerizare (Docker)
+Aplicația a fost containerizată folosind o imagine de Python 3.12-slim. Containerul expune portul 5011.
+
+**Dovezi Containerizare:**
+
+*1. Imaginea Docker creată:*
+![Docker Images](screenshots/spania_docker_images.png)
+
+*2. Containerul rulând activ:*
+![Docker PS](screenshots/spania_docker_ps.png)
+
+*3. Accesare aplicație din container (Browser):*
+![Browser Docker](screenshots/spania_running_browser.png)
+
+*4. Log-uri consolă (interacțiune browser-container):*
+![Docker Logs](screenshots/spania_running_console.png)
+
+## 6. Integrare și Review
+- **Branch dezvoltare: `dev_serban_albert`**
+- **Pull Request (PR) către `main_serban_albert`:** 
+Creat
+- **Review-uri:**
+    - [x] Am făcut review pentru colegul: [Gheorghe Costin-Razvan / PR ID: #73]
+    - [x] Am primit review de la: Gheorghe Costin-Razvan / PR ID: #72
+
+## 7. Ce mai este de făcut
+- [ ] Integrarea finală în branch-ul `main` al grupei după aprobarea tuturor review-urilor.
+=======
+
+
+
+# Namibia - Ghica Antonio-Stefan
+[Tari Proiect](#index-țări)
+
+## Dezvoltator
+- **Nume:** Ghica Antonio-Stefan
+- **Grupa:** 443D
+- **Țară alocată:** Namibia
+
+## Cuprins
+- [Descriere generală](#descriere-generală)
+- [Funcționalitate implementată](#funcționalitate-implementată)
+- [Stadiu dezvoltare](#stadiu-dezvoltare)
+- [Testare manuală în browser](#testare-manuală-în-browser)
+- [Testare automată cu pytest](#testare-automată-cu-pytest)
+- [Validare cod cu pylint](#validare-cod-cu-pylint)
+- [Testare cu Docker](#testare-cu-docker)
+- [DevOps CI](#devops-ci)
+  - [Exemplu executie pipeline Jenkins](#exemplu-executie-pipeline-jenkins)
+- [Concluzii](#concluzii)
+- [Bibliografie](#bibliografie)
+
+## Descriere generală
+[cuprins](#cuprins)
+
+Acest proiect se înscrie în tema comună a grupei 443D, „Țări”, scopul modulului fiind dezvoltarea și integrarea unui set de funcționalități dedicate țării **Namibia**.
+ 
+Aplicația la bază este implementată utilizând framework-ul web Flask, fiind proiectată pentru a furniza date esențiale și formatate despre țara accesata. În vederea respectării practicilor moderne de inginerie software (DevOps), soluția a fost supusă testării automate (Pytest), validată static (Pylint), containerizată prin intermediul Docker și orchestrată într-un pipeline de integrare continuă (CI/CD) folosind Jenkins.
+
+## Funcționalitate implementată
+[cuprins](#cuprins)
+
+În acest branch am adăugat și personalizat:
+
+- Fișierul `app/lib/biblioteca_namibia.py` cu funcțiile:
+  - `descriere_capitala()` – returnează capitala Namibiei.
+  - `descriere_steag()` – returnează codul HTML pentru afișarea steagului Namibiei.
+  - `descriere_tara()` – oferă o descriere generală a țării.
+  - `descriere_limbi()` – afișează limbile oficiale (Engleza, Germana, Afrikaans).
+  - `descriere_populatie()` – afișează numărul de locuitori.
+
+- Integrarea în fișierul de configurare globală `app/lib/biblioteca_tari.py`:
+  - Declararea țării în dicționarul global `TARI`.
+  - Maparea modulului aferent în dicționarul `BIBLIOTECI`.
+  - Această configurare permite fișierului principal de rutare (`tari.py`) să expună dinamic următoarele endpoint-uri pentru Namibia, respectând tiparul arhitectural al proiectului:
+    - `/namibia` – pagina principală a țării.
+    - `/namibia/capitala` – date despre capitală.
+    - `/namibia/populatie` – date demografice.
+    - `/namibia/steag` – reprezentarea grafică a drapelului.
+
+- Fișierul `app/tests/test_lib_namibia.py` care conține testele automate pentru funcțiile definite.
+
+## Stadiu dezvoltare
+[cuprins](#cuprins)
+
+- Funcționalitate complet implementată.
+- Cod adăugat în branch-ul de lucru.
+- Dockerfile și Jenkinsfile sunt funcționale, urmând pipeline-ul de CI/CD.
+- Testare locală, automată și containerizată realizată cu succes.
+
+## Testare manuală în browser
+[cuprins](#cuprins)
+
+Clonarea repository-ului si selectarea ramurii de dezvoltare pentru 'Belgia':
+
+```bash
+mkdir scc
+cd scc
+git clone https://github.com/raduionutgavrila/curs_scc_443D_tari.git
+cd curs_scc_443D_tari
+git checkout dev_ghica_antonio
+```
+
+Se activează mediul virtual și se pornește aplicația cu scripturile bash existente (din rădăcina proiectului):
+
+```bash
+. ./activeaza_venv
+./ruleaza_aplicatia
+```
+
+
+
+Daca apar erori de permisiuni se introduce comada:
+
+```bash
+sudo chmod 764 ./activeaza_venv ./ruleaza_aplicatia
+```
+
+Aplicația poate fi accesată în browser la adresa:
+
+```
+http://127.0.0.1:5011/
+```
+
+<img width="840" height="606" alt="Screenshot 2026-05-10 142103" src="https://github.com/user-attachments/assets/072a75c7-da95-4cd1-bf5a-a34a3005501c" />
+
+
+De asemenea, se pot verifica următoarele rute:
+- `/namibia`
+- `/namibia/capitala`
+- `/namibia/populatie`
+- `/namibia/steag`
+
+<img width="1852" height="670" alt="Screenshot 2026-05-10 143213" src="https://github.com/user-attachments/assets/7f5cbf6e-79b7-4b1d-b3b4-7cd3499ae1dd" />
+
+## Testare automată cu `pytest`
+[cuprins](#cuprins)
+
+Testele au fost scrise în fișierul `app/tests/test_lib_namibia.py`. Cu mediul virtual activ, rularea testelor se face astfel:
+
+```bash
+pytest app/tests/test_lib_namibia.py -v
+```
+
+Toate testele au fost executate cu succes, validând corectitudinea funcțiilor definite.
+
+<img width="1468" height="572" alt="Screenshot 2026-05-10 142457" src="https://github.com/user-attachments/assets/b2c3e590-02d6-4ea8-bc38-dcf692b3ede1" />
+
+## Validare cod cu `pylint`
+[cuprins](#cuprins)
+
+Pentru verificarea calității codului sursă se utilizează pachetul **pylint**. Acesta analizează conformitatea codului cu standardele Python (verifică spații, convenții de numire a variabilelor, variabile neutilizate etc.).
+
+În cadrul acestui proiect, problemele raportate de **pylint** sunt doar afișate pentru monitorizare, nu sunt considerate erori.
+
+```bash
+pylint --exit-zero app/lib/biblioteca_namibia.py
+pylint --exit-zero app/tests/test_lib_namibia.py
+pylint --exit-zero tari.py
+```
+
+
+## Testare cu Docker
+[cuprins](#cuprins)
+
+Pentru asigurarea portabilității aplicației, am creat un container Docker. Pașii efectuați au fost:
+
+1. Construirea imaginii:
+```bash
+docker build -t tari:v01 .
+```
+
+<img width="942" height="310" alt="Screenshot 2026-05-10 142655" src="https://github.com/user-attachments/assets/96084802-3a98-471e-92e1-eacb68ebd401" />
+
+
+2. Rularea containerului:
+```bash
+docker run -d --name tari_namibia -p 8020:5011 tari:v01
+```
+
+<img width="1166" height="47" alt="Screenshot 2026-05-10 142720" src="https://github.com/user-attachments/assets/75538965-3295-44b8-8521-1a51fec53353" />
+
+
+3. Accesarea aplicației în browser:
+```
+http://localhost:8020/
+```
+
+<img width="1847" height="696" alt="Screenshot 2026-05-10 142815" src="https://github.com/user-attachments/assets/df2303dd-a3d6-4764-958f-4573fc83d979" />
+
+
+# DevOps CI
+[cuprins](#cuprins)
+
+- **CI** = Continuous Integration (Integrare Continuă)
+
+Proiectul utilizează un flux de automatizare definit în `Jenkinsfile`, care asigură validarea codului și livrarea aplicației.
+
+## Exemplu executie pipeline Jenkins
+
+Pentru a se putea executa cu succes ultimul pas din pipeline-ul de Jenkins (crearea și lansarea containerului Docker), este necesar ca utilizatorul `jenkins` să aibă permisiuni de rulare a comenzilor Docker fără `sudo`.
+
+Puteti gasi pasii de configurare pe [docs.docker.com - linux-postinstall](https://docs.docker.com/engine/install/linux-postinstall/).
+Daca folositi masina virtuala linux, restartati masina dupa ce faceti configuratia.
+
+**Etapele Pipeline-ului:**
+1. **Build**: Crearea mediului virtual și instalarea dependințelor.
+2. **Linter**: Verificarea stilului codului cu `pylint`.
+3. **Unit Tests**: Rularea testelor cu `pytest`.
+4. **Deploy**: Construirea imaginii Docker și pornirea containerului pe portul **8020**.
+
+
+Pentru a porni serviciul, se rulează în terminal comanda:
+```bash
+jenkins
+```
+Se creează pipeline-ul în Jenkins, care este accesat local pe portul 8080 și se conectează cu repository-ul. 
+Odată creat, se verifică funcționalitatea cu **Build Now**, urmat de confirmarea execuției cu succes în Console Output (log-uri).
+
+<img width="1828" height="780" alt="Screenshot 2026-05-10 140838" src="https://github.com/user-attachments/assets/92b5aad0-84e8-4d2c-a98c-dfd845f9ddea" />
+
+<img width="1852" height="872" alt="Screenshot 2026-05-10 140934" src="https://github.com/user-attachments/assets/8818ccbf-10c5-46da-aac5-1538fcb2c3cd" />
+
+
+## Concluzii
+[cuprins](#cuprins)
+
+Acest proiect atinge cu succes atât obiectivele funcționale, cât și pe cele tehnice, evidențiind următoarele aspecte:
+
+- **Dezvoltare modulară:** Implementarea unei aplicații web folosind framework-ul Flask, integrând bune practici de inginerie software.
+- **Arhitectură extensibilă:** Integrarea datelor pentru Namibia a confirmat fiabilitatea separării datelor în biblioteci individuale și agregarea lor dinamică.
+- **Portabilitate:** Containerizarea prin Docker a asigurat un mediu de rulare izolată, rapidă și consistentă pe diverse platforme.
+- **Automatizare (CI/CD):** Pipeline-ul configurat în Jenkins a optimizat procesul de dezvoltare prin integrare și livrare continuă.
+- **Asigurarea calității:** Testarea automată cu `pytest` și analiza statică a codului cu `pylint` au garantat stabilitatea aplicației la fiecare modificare a codului sursă.
+
+## Bibliografie
+[cuprins](#cuprins)
+
+https://github.com/crchende/sysinfo.git
