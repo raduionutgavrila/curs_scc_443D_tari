@@ -1,3 +1,9 @@
+<img width="957" height="550" alt="rusia_browser" src="https://github.com/user-attachments/assets/bb33ee39-fb38-4c38-979d-6cce3a003e07" />
+<img width="1708" height="688" alt="rusia_docker_browser" src="https://github.com/user-attachments/assets/34156f1b-1dd3-47ac-b576-edbfa0f486d9" />
+<img width="685" height="127" alt="rusia_docker_build" src="https://github.com/user-attachments/assets/d89a113f-f3b4-4723-b0c2-a30c49e3447d" />
+<img width="685" height="127" alt="rusia_docker_build" src="https://github.com/user-attachments/assets/8690cd30-3424-43e9-b3f6-0f4c67f2d56e" />
+<img width="1053" height="625" alt="rusia_jenkins_build_pass" src="https://github.com/user-attachments/assets/9e3ea47a-5611-4ad2-812c-4cb87a3cd49a" />
+<img width="954" height="605" alt="rusia_pytest" src="https://github.com/user-attachments/assets/9d1edacd-8073-4bdb-ac53-6c068c56ede8" />
 # Proiect SCC - Rusia
 
 ## 1. Identificator Dezvoltator
