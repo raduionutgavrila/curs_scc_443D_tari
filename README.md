@@ -4,6 +4,8 @@
 - Balaban Razvan-Marian -	Brazilia
 - Ciobanu Andrei -Japonia
 - Colan Bianca - Germania
+- Cucui Mihai-Catalin - Laos
+- Cucui Petrut-Gabriel - Nepal
 - Dumitrache Alexandru - Italia
 - Enache Bogdan - Norvegia 
 - Esterabadeyan Hadi - Statele Unite
@@ -13,6 +15,7 @@
 - Ghica Antonio - Namibia 
 - Grigore Mihaela -	Finlanda 
 - Ivan Luca - Danemarca
+- Petcu Stefan-Ciprian - Serbia
 - Pîrjol Mara-Olivia - Irlanda
 - Roșeanu Vlad-George - Canada
 - Serban Albert - Spania
