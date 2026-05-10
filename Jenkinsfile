@@ -8,17 +8,14 @@ pipeline {
             steps {
                 echo 'Building...'
                 sh '''
-                    pwd;
-                    ls -l;
+                    python3 -m venv .venv
                     . ./activeaza_venv;
+                    pip install -r quickrequirements.txt
                     '''
             }
         }
         
-        /*stage('Testare') {
-            problema rulare in paralel, al doilea stage nu mai poate porni venv-ul
-            parallel {
-         */
+      
         stage('pylint - calitate cod') {
             agent any
             steps {
