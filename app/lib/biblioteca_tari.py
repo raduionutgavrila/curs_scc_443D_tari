@@ -8,7 +8,7 @@ from app.lib import biblioteca_norvegia as nvg
 from app.lib import biblioteca_romania as rou
 from app.lib import biblioteca_brazilia as braz
 from app.lib import biblioteca_japonia as jp
-
+from app.lib import biblioteca_germania as germ
 
 TARI = {
     'norvegia': {
@@ -30,10 +30,13 @@ TARI = {
     'romania': {
         'nume': 'România',
     }
+    'germania': {
+        'nume': 'Germania',
+    }
     #adauga  'tara_mea': { 'nume': 'Nume Tara Mea'}
 
 
-}
+
 
 
 BIBLIOTECI = {
@@ -44,6 +47,5 @@ BIBLIOTECI = {
     'brazilia': braz,
     "japonia": jp,
      #adauga 'tara_mea': prescurtare_tara_mea
+    'germania': germ,
 }
-
-
