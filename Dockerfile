@@ -6,6 +6,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 FROM python:3.10-alpine
 
 ENV FLASK_APP tari
@@ -105,11 +106,15 @@ ENTRYPOINT ["./dockerstart.sh"]
 <<<<<<< HEAD
 =======
 FROM python:3.8-slim
+=======
+FROM python:3.10-slim
+>>>>>>> origin/main_voicu_ioan_andrei
 
 WORKDIR /app
 
 COPY . .
 
+<<<<<<< HEAD
 RUN pip install -r quickrequirements.txt
 
 RUN chmod +x dockerstart.sh
@@ -206,3 +211,14 @@ EXPOSE 5011
 # Comanda de pornire
 CMD ["python3", "tari.py"]
 >>>>>>> origin/main_ivan_luca
+=======
+RUN pip install --no-cache-dir -r quickrequirements.txt
+RUN pip install flask
+
+RUN chmod +x dockerstart.sh
+
+ENV FLASK_RUN_HOST=0.0.0.0
+EXPOSE 5000
+
+CMD ["./dockerstart.sh"]
+>>>>>>> origin/main_voicu_ioan_andrei

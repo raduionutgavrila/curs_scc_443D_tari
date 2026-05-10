@@ -11,6 +11,7 @@ echo "CONTINUT DIRECTOR: " $lsdir
 echo "Start server:"
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 exec flask run -h 0.0.0.0 -p 5011 --reload
 =======
 exec flask run -h 0.0.0.0 -p 5011 --reload
@@ -18,3 +19,6 @@ exec flask run -h 0.0.0.0 -p 5011 --reload
 =======
 exec flask run -h 0.0.0.0 -p 5011 --reload
 >>>>>>> origin/main_ivan_luca
+=======
+exec flask run -h 0.0.0.0 -p 5011 --reload
+>>>>>>> origin/main_voicu_ioan_andrei

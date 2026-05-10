@@ -1,6 +1,10 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 from flask import Flask, render_template, abort
 <<<<<<< HEAD
+=======
+from flask import Flask, render_template, abort
+>>>>>>> origin/main_voicu_ioan_andrei
 
 from app.lib import biblioteca_header as header
 from app.lib.biblioteca_tari import TARI, BIBLIOTECI
@@ -65,6 +69,7 @@ def pagina_steag(tara):
 
 if __name__ == '__main__':
     app.run(debug=True)
+<<<<<<< HEAD
 =======
 >>>>>>> origin/main_pirjol_mara
 
@@ -180,3 +185,5 @@ def feature_populatie():
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5011)
 >>>>>>> origin/main_ivan_luca
+=======
+>>>>>>> origin/main_voicu_ioan_andrei

@@ -21,6 +21,8 @@ from app.lib import biblioteca_mexic as mex
 from app.lib import biblioteca_spania as spania
 from app.lib import biblioteca_namibia as namb
 from app.lib import biblioteca_danemarca as dan
+from app.lib import biblioteca_scotia as prescurtare_biblioteca_scotia
+
 
 
 TARI = {
@@ -83,7 +85,9 @@ TARI = {
     'danemarca': {
         'nume': 'Danemarca',
     }
-
+    'scotia': {
+        'nume': 'Scotia',
+    },
     
     }
 
@@ -109,6 +113,7 @@ BIBLIOTECI = {
     'spania': spania
     'namibia': namb, 
     'danemarca': dan
+    'scotia': prescurtare_biblioteca_scotia,
+
 }
 
-# Mapare tara -> biblioteca

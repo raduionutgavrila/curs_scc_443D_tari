@@ -6,6 +6,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 /*Jenkins*/
 =======
 /* Jenkins Pipeline testare si deployare aplicatie proiect SCC, Tara: Irlanda */
@@ -466,3 +467,15 @@ pipeline {
     }
 }
 >>>>>>> origin/main_ivan_luca
+=======
+pipeline {
+    agent any
+    stages {
+        stage('Testare Scotia') {
+            steps {
+                sh 'export PYTHONPATH=$PYTHONPATH:. && python3 app/tests/test_lib_scotia.py'
+            }
+        }
+    }
+}
+>>>>>>> origin/main_voicu_ioan_andrei
