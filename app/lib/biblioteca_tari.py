@@ -1,6 +1,7 @@
 # Configuratie globala a proiectului
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 #from app.lib import biblioteca_<tara_mea> as prescurtare_tara_mea 
 >>>>>>> 848735f0f1b7498f6758c47340b11e07e2b9e2b3
@@ -19,6 +20,7 @@ from app.lib import biblioteca_estonia as esto
 from app.lib import biblioteca_franta as franta
 from app.lib import biblioteca_finlanda as fin
 from app.lib import biblioteca_irlanda as irlanda
+from app.lib import biblioteca_elvetia as elv
 
 
 TARI = {
@@ -64,14 +66,15 @@ TARI = {
     'irlanda': {
         'nume': 'Irlanda',
     }
+    'elvetia': {
+        'nume': 'Elvetia',
+    },
 
     
 
 
-
-
-
 BIBLIOTECI = {
+
     'belgia': belg,
     'coreea': sk,
     'norvegia': nvg,
@@ -85,7 +88,5 @@ BIBLIOTECI = {
     'franta': franta,
     'finlanda': fin,
     'irlanda': irlanda,
+    'elvetia': elv,
 }
-
-
-
