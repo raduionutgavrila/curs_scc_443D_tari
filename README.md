@@ -1,9 +1,8 @@
-<<<<<<< HEAD
 # curs_scc_443D_tari
 
 # Studenti - Tara
 - Balaban Razvan-Marian -	Brazilia
-- Ciobanu Andrei -Japonia
+- Ciobanu Andrei - Japonia
 - Colan Bianca - Germania
 - Cucui Mihai-Catalin - Laos
 - Cucui Petrut-Gabriel - Nepal
@@ -26,7 +25,8 @@
 - Tudor Iulian - Mexic
 - Tuturluta Costi-Giani-Fabian - Franta
 - Voicu Ioan-Andrei - Scoția 
-- Zidu Cristian 	Estonia
+- Zidu Cristian -	Estonia
+
 =======
 # Belgia - Gavrilă Radu-Ionuț
 
@@ -234,4 +234,3 @@ Acest proiect atinge cu succes atât obiectivele funcționale, cât și pe cele 
 [cuprins](#cuprins)
 
 https://github.com/crchende/sysinfo.git
->>>>>>> main_gavrila_radu
