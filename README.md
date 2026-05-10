@@ -55,7 +55,7 @@ De asemenea, descrierea menționează preparate tradiționale și elemente cultu
 - [x] Aplicația a fost rulată local
 - [x] Testele au fost rulate local cu succes
 - [x] Aplicația a fost rulată în container Docker
-- [ ] Pipeline-ul Jenkins a fost rulat cu succes
+- [x] Pipeline-ul Jenkins a fost rulat cu succes
 
 ---
 
@@ -80,6 +80,7 @@ De asemenea, descrierea menționează preparate tradiționale și elemente cultu
 ├── README.md
 ├── ruleaza_aplicatia
 ├── screenshots
+│   ├── rusia_browser.png
 │   ├── rusia_docker_browser.png
 │   ├── rusia_docker_build.png
 │   ├── rusia_jenkins_build_pass.png
@@ -156,6 +157,28 @@ Conține dovezi pentru rularea testelor, Docker și Jenkins.
 ---
 
 ## 7. Testare
+
+### Testare Manuală
+
+Aplicația a fost verificată local rulând:
+
+```bash
+. ./activeaza_venv
+./ruleaza_aplicatia
+```
+
+Aplicația a fost accesată în browser la:
+
+```text
+http://127.0.0.1:5011/rusia
+```
+
+Dovadă rulare aplicație:
+
+![Aplicație Rusia](screenshots/rusia_browser.png)
+
+---
+
 ### Testare Automată
 
 Testele se află în:
@@ -212,6 +235,8 @@ app/tests/
 
 Job-ul Jenkins pentru proiectul Rusia a fost rulat cu succes.
 
+Dovadă rulare pipeline Jenkins:
+
 ![Jenkins Build Pass](screenshots/rusia_jenkins_build_pass.png)
 
 În Console Output se observă rularea pipeline-ului Jenkins și finalizarea cu succes.
@@ -255,12 +280,12 @@ http://127.0.0.1:8020/rusia
 Dovadă rulare aplicație în container:
 
 ![Aplicație Rusia în Docker](screenshots/rusia_docker_browser.png)
+
 ---
 
 ## 10. Integrare și Review
 
 Branch dezvoltare:
-
 ```text
 dev_ghenciu_corina
 ```
