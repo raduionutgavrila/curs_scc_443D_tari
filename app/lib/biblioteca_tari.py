@@ -1,8 +1,7 @@
 # Configuratie globala a proiectului
 
 #from app.lib import biblioteca_<tara_mea> as prescurtare_tara_mea 
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 
 from app.lib import biblioteca_belgia as belg
 from app.lib import biblioteca_coreea as sk
@@ -28,25 +27,34 @@ TARI = {
 
     'belgia': {
         'nume': 'Belgia',
+    },
 
     'brazilia': {
         'nume': 'Brazilia',
+    },
+    
 
     "japonia": {
         "nume": "Japonia",
+    },
+        
     'italia': {
         'nume': 'Italia',
+    },
 
     'sua': {
         'nume': 'Statele Unite ale Americii',
 
     'estonia': {
         'nume': 'Estonia',
+    },
+        
     'franta': {
         'nume': 'Republica Franceza',
     },
+        
     # Mapare tara -> biblioteca
-    finlanda': {
+    'finlanda': {
         'nume': 'Finlanda',
     },
 
