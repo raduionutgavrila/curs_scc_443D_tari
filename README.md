@@ -89,6 +89,7 @@ Pipeline-ul Jenkins include etape pentru:
 * **build**: pregătirea mediului;
 * **test**: rularea testelor automate cu `pytest`.
 
+![Jenkins Success](screenshots/danemarca_6_jenkins.png)
 Testarea automată cu Jenkins rulează testele din folderul: `app/tests/`
 
 ## 9. Containerizare Docker
