@@ -106,12 +106,6 @@ docker start -ai <nume_cont>
 
 👀 Review: *Esterabadeyan Hadi*
 
-## Pull Request-uri la care am făcut review
-
-| 🆔 PR ID | 👤 Autor | 📝 Descriere |
-| :---: | :--- | :--- |
-| *(de completat)* | *(de completat)* | *(de completat)* |
-
 ## 8. Ce mai este de făcut
 
  - [x] Finalizare cod și teste manuale.
