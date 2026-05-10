@@ -11,4 +11,4 @@ def descriere_capitala():
     return "Capitala Scotiei este Edinburgh."
 
 def descriere_steag():
-    return "/static/steag_scotia.png"
+    return "<img src='/static/steag_scotia.png' alt='Steag Scotia' style='max-width: 500px;'>"

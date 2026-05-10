@@ -25,7 +25,7 @@ class TestLibScotia(unittest.TestCase):
 
     def test_descriere_steag(self):
         result = descriere_steag()
-        expected_result = "/static/steag_scotia.png"
+        expected_result = "<img src='/static/steag_scotia.png' alt='Steag Scotia' style='max-width: 500px;'>"
         self.assertEqual(result, expected_result)
 
 if __name__ == '__main__':
