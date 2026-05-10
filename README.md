@@ -98,25 +98,25 @@ In directorul radacina `curs_scc_443D_tari` rulati comenzile:
     * Restarting with stat
     Proiect SCC - Tari
 
-![image](static/activare_venv_ss.png)
+![image](screenshots/brazilia_activare_venv_ss.png)
 
 # Exemple pagina web
 [cuprins](#cuprins)
 
 ## Pagina principala
-![image](static/pagina_principala_ss.png)
+![image](screenshots/brazilia_pagina_principala_ss.png)
 
 ## Pagina specifica tarii
-![image](static/pagina_tara_ss.png)
+![image](screenshots/brazilia_pagina_tara_ss.png)
 
 ## Pagina - Capitala
-![image](static/capitala_ss.png)
+![image](screenshots/brazilia_capitala_ss.png)
 
 ## Pagina - Steag
-![image](static/steag_ss.png)
+![image](screenshots/brazilia_steag_ss.png)
 
 ## Pagina - Populatie
-![image](static/populatie_ss.png)
+![image](screenshots/brazilia_populatie_ss.png)
 
 
 
@@ -133,7 +133,7 @@ Execuția testelor se face din directorul rădăcină al aplicației (`curs_scc_
 (.venv) razvan@razvan-VirtualBox:~/Desktop/proiect/curs_scc_443D_tari$ pytest app/tests/test_lib_brazilia.py -v
 ```
 Testele au fost rulate local cu succes folosind pytest:
-![image](static/pytest_ss.png)
+![image](screenshots/brazilia_pytest_ss.png)
 
 # Verificare statica cu pylint
 [cuprins](#cuprins)
@@ -154,17 +154,17 @@ Pentru verificarea calității codului sursă se utilizează pachetul **pylint**
 Aplicația a fost containerizată folosind o imagine de Python 3.10-alpine. Containerul este configurat să ruleze procesul Flask pe portul intern **5011**.
 
 ## Creare imagine
-![image](static/docker_build_ss.png)
+![image](screenshots/brazilia_docker_build_ss.png)
 
 ## Rulare container si vizualizare
-![image](static/docker_run_ss.png)
+![image](screenshots/brazilia_docker_run_ss.png)
 
 ## Docker logs
-![image](static/docker_logs_ss.png)
+![image](screenshots/brazilia_docker_logs_ss.png)
 
 ## Accesare aplicație din browser:
 Aplicația poate fi accesată local la adresa http://localhost:8020 sau direct prin IP-ul intern alocat de Docker http://172.17.0.2:5011.
-![image](static/docker_aplicatie_ss.png)
+![image](screenshots/brazilia_docker_aplicatie_ss.png)
 
 Pentru oprirea și eliminarea containerului, se utilizează următoarele comenzi:
  * **Oprire**: `docker stop test-brazilia`
@@ -190,8 +190,8 @@ Daca folositi masina virtuala linux, restartati masina dupa ce faceti configurat
 3. **Unit Tests**: Rularea testelor cu `pytest`.
 4. **Deploy**: Construirea imaginii Docker și pornirea containerului pe portul **8020**.
 
-![image](static/jenkins_ss1.png)
-![image](static/jenkins_ss2.png)
+![image](screenshots/brazilia_jenkins_ss1.png)
+![image](screenshots/brazilia_jenkins_ss2.png)
 
 Aplicația poate fi accesată după finalizarea pipeline-ului la adresa: `http://localhost:8020/`
 
