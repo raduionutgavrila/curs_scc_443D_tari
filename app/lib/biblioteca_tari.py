@@ -20,6 +20,8 @@ from app.lib import biblioteca_china as china
 from app.lib import biblioteca_mexic as mex
 from app.lib import biblioteca_spania as spania
 from app.lib import biblioteca_namibia as namb
+from app.lib import biblioteca_danemarca as dan
+
 
 TARI = {
     'norvegia': {
@@ -78,6 +80,10 @@ TARI = {
         'nume': 'Spania',
     },
 
+    'danemarca': {
+        'nume': 'Danemarca',
+    }
+
     
     }
 
@@ -101,6 +107,8 @@ BIBLIOTECI = {
     'China': china,
     'mexic': mex,
     'spania': spania
-    'namibia': namb,
-     #adauga 'tara_mea': prescurtare_tara_mea
+    'namibia': namb, 
+    'danemarca': dan
 }
+
+# Mapare tara -> biblioteca

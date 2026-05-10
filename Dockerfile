@@ -5,6 +5,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 FROM python:3.10-alpine
 
 ENV FLASK_APP tari
@@ -184,3 +185,24 @@ CMD ["flask", "--app", "tari", "run", "--host=0.0.0.0", "--port=5011"]
 =======
 #CMD sh
 >>>>>>> origin/main_ghica_antonio
+=======
+FROM python:3.12-slim
+
+WORKDIR /app
+
+# Copiem fișierul de dependințe
+COPY quickrequirements.txt quickrequirements.txt
+RUN pip install --no-cache-dir -r quickrequirements.txt
+
+# Copiem restul fișierelor
+COPY . .
+
+# Setăm variabila de mediu necesară pentru Flask
+ENV FLASK_APP=tari
+
+# Portul impus de grup
+EXPOSE 5011
+
+# Comanda de pornire
+CMD ["python3", "tari.py"]
+>>>>>>> origin/main_ivan_luca

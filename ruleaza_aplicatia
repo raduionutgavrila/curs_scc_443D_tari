@@ -6,7 +6,11 @@ export FLASK_APP=tari
 #set FLASK_APP=tari
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 flask run -p 5011 --reload
 =======
 flask run -p 5011 --reload
 >>>>>>> origin/main_pirjol_mara
+=======
+flask run -p 5011 --reload
+>>>>>>> origin/main_ivan_luca
