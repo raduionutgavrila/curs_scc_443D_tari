@@ -1,31 +1,34 @@
-# curs_scc_443D_tari
+# Proiect SCC - Țări
 
-# Studenti - Tara
-- Balaban Razvan-Marian -	Brazilia
-- Ciobanu Andrei - Japonia
-- Colan Bianca - Germania
-- Cucui Mihai-Catalin - Laos
-- Cucui Petrut-Gabriel - Nepal
-- Dumitrache Alexandru - Italia
-- Enache Bogdan - Norvegia 
-- Esterabadeyan Hadi - Statele Unite
-- Gavrilă Radu-Ionuț - Belgia
-- Ghenciu Corina - Rusia
-- Gheorghe Razvan - Romania
-- Ghica Antonio - Namibia 
-- Grigore Mihaela -	Finlanda 
-- Ivan Luca - Danemarca
-- Petcu Stefan-Ciprian - Serbia
-- Pîrjol Mara-Olivia - Irlanda
-- Roșeanu Vlad-George - Canada
-- Serban Albert - Spania
-- Tecșan Călin - Elveția
-- Teodorescu Matei - China
-- Toaca Cristiana - Corea de Sud 
-- Tudor Iulian - Mexic
-- Tuturluta Costi-Giani-Fabian - Franta
-- Voicu Ioan-Andrei - Scoția 
-- Zidu Cristian -	Estonia
+Aplicatia **Țări** gestioneaza si afiseaza informatii detaliate despre geografia, demografia si cultura a mai multor țări intr-o interfata web intuitiva.
+Sistemul de operare tinta este Linux, aplicatia fiind dezvoltata si testata pe distributia `Ubuntu 24.04`.
+Componenta WEB a proiectului utilizeaza framework-ul `Flask`.
+
+Arhitectura este una modulara: datele sunt procesate si extrase prin functii dedicate localizate in pachetul app/lib/, fiind ulterior preluate si returnate cu ajutorul functiilor view (localizate in `tari.py`) catre client sub forma de pagini HTML.
+
+Pentru o experienta de utilizare facila, interfata include un sistem de navigare intre pagini:
+
+* Pagina principala: Contine link-uri/butoane catre tarile alocate fiecarui student.
+* Pagina specifica tarii: Odata selectata tara, se afiseaza o descriere scurta a acesteia si un meniu cu inca 3 butoane:
+
+    * Capitala: Afiseaza capitala.
+    * Steag: Afiseaza o imagine drapelului oficial
+    * Populatie: Afiseaza numarul actualizat de locuitori.
+
+* Sistemul de retur: Fiecare pagina contine link-uri de navigare inapoi pentru a asigura fluiditatea navigarii.
+
+Aplicatia include suport pentru containerizare in fisierul `Dockerfile` din directorul principal al aplicatiei.
+
+Din punct de vedere al verificarii calitatii, aplicatia include:
+
+*    Unit testing: Realizat cu pytest pentru functiile din app/lib/, testele fiind organizate in directorul app/tests/.
+
+*    Analiza statica: Verificarea conformitatii codului utilizand pylint.
+
+`DevOps CI`.
+Pipeline-ul pentru Jenkins este definint in fisierul `Jenkinsfile`.
+Acesta asigura parcurgerea automata a etapelor de Build (creare venv), Linter (verificare calitate), Testare (pytest) si Deploy (lansarea containerului Docker pe portul 8020).
+
 
 ## Țări Integrate în README.md
 1. [Belgia - Gavrilă Radu-Ionuț](#belgia---gavrilă-radu-ionuț)
