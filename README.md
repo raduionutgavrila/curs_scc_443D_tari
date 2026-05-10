@@ -21,8 +21,8 @@ Am adaugat funcționalitatea pentru **Canada** în fișierul `app/lib/biblioteca
 | `/` | Pagina principală – lista tuturor țărilor |
 | `/canada` | Informații generale despre Canada |
 | `/canada/capitala` | Capitala Canadei – Ottawa |
-| `/canada/populatie` | Populația Canada |
-| `/canada/steag` | Steagul Canada |
+| `/canada/populatie` | Populația Canadei |
+| `/canada/steag` | Steagul Canadei |
 
 ## Modificări
 
@@ -48,15 +48,15 @@ python3 tari.py
 ```text
 http://localhost:5000
 ```
-![Rulare script](screenshots/rulare_script.png)
-![Test local](screenshots/accesare_rulare.png)
+![Rulare script](screenshots/canada_rulare_script.png)
+![Test local](screenshots/canada_accesare_rulare.png)
 
 ## Testare Automatizată (Jenkins)
 Am configurat un Pipeline în Jenkins care rulează automat testele. Testul din `app/tests/` a trecut cu succes (PASS).
 
 **Dovada Build Jenkins:**
-![Status Build Jenkins](screenshots/pipeline_jenkins.png)
-![Console Output Pytest](screenshots/pytest_jenkins.png)
+![Status Build Jenkins](screenshots/canada_pipeline_jenkins.png)
+![Console Output Pytest](screenshots/canada_pytest_jenkins.png)
 
 ## Containerizare (Docker)
 Aplicația a fost containerizată folosind o imagine de Python 3.10-alpine. Containerul expune portul 5011.
@@ -64,21 +64,21 @@ Aplicația a fost containerizată folosind o imagine de Python 3.10-alpine. Cont
 **Dovezi Containerizare:**
 
 *1. Imaginea Docker creată:*
-![Docker Images](screenshots/imagine_docker.png)
+![Docker Images](screenshots/canada_imagine_docker.png)
 
 *2. Toate containerele Docker:*
-![Docker Images](screenshots/containere_docker.png)
+![Docker Images](screenshots/canada_containere_docker.png)
 
 *3. Containerul rulând activ:*
-![Docker PS](screenshots/rulare_docker_terminal.png)
+![Docker PS](screenshots/canada_rulare_docker_terminal.png)
 
 *4. Accesare aplicație din container (Browser):*
-![Browser Docker](screenshots/docker_app.png)
+![Browser Docker](screenshots/canada_docker_app.png)
 
-*4. Log-uri consolă (interacțiune browser-container):*
-![Docker Logs](screenshots/docker_log.png)
+*5. Log-uri consolă (interacțiune browser-container):*
+![Docker Logs](screenshots/canada_docker_log.png)
 
-## 6. Comenzi folosite:
+## Comenzi folosite:
 🧪 Rulare manuala pytest:
 ```bash
 pytest app/tests/test_lib_canada.py -v
@@ -97,7 +97,7 @@ docker start -ai <nume_cont>
 ```
 
 
-## 7. Integrare și Review
+## Integrare și Review
 🌿 Branch sursa: `dev_roseanu_vlad`
 
 🎯 Branch destinatie: `main_roseanu_vlad`
@@ -106,13 +106,8 @@ docker start -ai <nume_cont>
 
 👀 Review: *Esterabadeyan Hadi*
 
-## Pull Request-uri la care am făcut review
 
-| 🆔 PR ID | 👤 Autor | 📝 Descriere |
-| :---: | :--- | :--- |
-| *(de completat)* | *(de completat)* | *(de completat)* |
-
-## 8. Ce mai este de făcut
+## Ce mai este de făcut
 
  - [x] Finalizare cod și teste manuale.
  - [x] Aplicație containerizată și accesibilă.
