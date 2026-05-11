@@ -22,11 +22,11 @@ pipeline {
         stage('Deploy') {
             steps {
                 sh '''
-                sudo docker rm -f container_romania || true
-                
-                sudo docker build -t imagine_romania .
-                
-                sudo docker run -d -p 5011:5011 --name container_romania imagine_romania
+                docker rm -f container_romania || true
+
+                docker build -t imagine_romania .
+
+                docker run -d -p 5011:5011 --name container_romania imagine_romania
                 '''
             }
         }
