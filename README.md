@@ -95,7 +95,7 @@ sudo docker build -t proiect-scc-japonia .
 
 Imaginea a fost creata cu succes si apare in lista de imagini Docker:
 
-![Docker images](docs/screenshots/docker_images.png)
+![Docker images](screenshots/japonia_docker_images.png)
 
 Containerul a fost pornit cu urmatoarea comanda:
 
@@ -105,11 +105,11 @@ sudo docker run --rm -p 5011:5011 proiect-scc-japonia
 
 Containerul pornit poate fi vazut cu `docker ps`:
 
-![Docker ps](docs/screenshots/docker_ps.png)
+![Docker ps](screenshots/japonia_docker_ps.png)
 
 In consola de rulare a containerului se observa ca aplicatia Flask porneste corect si ca browserul acceseaza rutele aplicatiei. Apar request-uri cu status `200` pentru paginile Japoniei:
 
-![Docker run](docs/screenshots/docker_run.png)
+![Docker run](screenshots/japonia_docker_run.png)
 
 Aplicatia rulata in container a fost accesata din browser la adresa:
 
@@ -117,7 +117,7 @@ Aplicatia rulata in container a fost accesata din browser la adresa:
 http://127.0.0.1:5011/japonia
 ```
 
-![Docker site](docs/screenshots/docker_site.png)
+![Docker site](screenshots/japonia_docker_site.png)
 
 Prin acest test am verificat ca aplicatia a fost containerizata corect si ca functionalitatea pentru Japonia poate fi accesata din browser din container.
 
@@ -145,7 +145,7 @@ Configurarea folosita:
 
 Job-ul Jenkins a rulat cu succes, avand status verde:
 
-![Jenkins job](docs/screenshots/jenkins_job.png)
+![Jenkins job](screenshots/japonia_jenkins_job.png)
 
 Pipeline-ul Jenkins pregateste mediul Python, instaleaza dependintele si ruleaza testele unitare cu pytest:
 
@@ -165,7 +165,7 @@ La finalul executiei, Jenkins a afisat:
 Finished: SUCCESS
 ```
 
-![Jenkins test success](docs/screenshots/jenkins_test_success.png)
+![Jenkins test success](screenshots/japonia_jenkins_test_success.png)
 
 Prin acest test am verificat ca functionalitatea pentru Japonia este testata automat cu Jenkins si ca toate testele trec cu succes.
 
@@ -182,7 +182,7 @@ In aceasta pagina se vad etapele pipeline-ului:
 
 Toate etapele au rulat cu succes, iar pipeline-ul a avut status final SUCCESS.
 
-![Jenkins stages](docs/screenshots/jenkins_stages.png)
+![Jenkins stages](screenshots/japonia_jenkins_stages.png)
 
 ### Vizualizare pipeline in Blue Ocean
 
@@ -190,7 +190,7 @@ Pentru o vizualizare mai clara a pipeline-ului, am folosit si interfata Blue Oce
 
 In Blue Ocean se poate observa executia etapelor pipeline-ului si faptul ca acestea au fost finalizate cu succes.
 
-![Blue Ocean Jenkins](docs/screenshots/blue_ocean_jenkins.png)
+![Blue Ocean Jenkins](screenshots/japonia_blue_ocean_jenkins.png)
 
 ---
 
