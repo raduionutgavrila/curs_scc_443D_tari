@@ -304,8 +304,8 @@ dev_ghenciu_corina -> main_ghenciu_corina
 
 Review-uri:
 
-- [ ] Am făcut review pentru colegul: ................................
-- [ ] Am primit review de la: ................................
+- [ ] Am făcut review pentru colegul: Colan Bianca
+- [ ] Am primit review de la: Colan Bianca
 
 ---
 
