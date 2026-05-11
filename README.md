@@ -33,7 +33,6 @@ Am implementat logica pentru afișarea informațiilor despre Irlanda. Aceasta in
 Aplicația a fost verificată local rulând `./ruleaza_aplicatia` și accesând `http://127.0.0.1:5011/`.
 
 **Output Consolă Locală:**
-
 ![Console Output Start App](screenshot/irlanda_terminal_local.jpeg)
 
 **Aplicația Accesată la `http://127.0.0.1:5011/`:**
