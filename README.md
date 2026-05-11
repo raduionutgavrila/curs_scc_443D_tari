@@ -3,7 +3,7 @@
 ## Dezvoltator
 - **Nume:** Ghica Antonio-Stefan
 - **Grupa:** 443D
-- **Țară alocată:** Namibia
+- **Țară alocată:** Namibi
 
 ## Cuprins
 - [Descriere generală](#descriere-generală)
