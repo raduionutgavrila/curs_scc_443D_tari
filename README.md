@@ -48,7 +48,7 @@ python3 tari.py
 ```text
 http://localhost:5000
 ```
-![Rulare script](screenshots/canada_rulare_script.png)
+![Rulare script](screenshots/canada_script.png)
 ![Test local](screenshots/canada_accesare_rulare.png)
 
 ## Testare Automatizată (Jenkins)
@@ -117,5 +117,5 @@ docker start -ai <nume_cont>
  - [x] Finalizare cod și teste manuale.
  - [x] Aplicație containerizată și accesibilă.
  - [x] Succes Pipeline Jenkins.
- - [ ] Obținerea aprobării de la colegi pentru PR-ul final.
- - [ ] Integrarea finală în branch-ul main.
+ - [x] Obținerea aprobării de la colegi pentru PR-ul final.
+ - [x] Integrarea finală în branch-ul main.
