@@ -1,4 +1,3 @@
-# Configuratie globala a proiectului
 
 
 from app.lib import biblioteca_belgia as belg
@@ -20,6 +19,15 @@ from app.lib import biblioteca_china as china
 from app.lib import biblioteca_mexic as mex
 from app.lib import biblioteca_spania as spania
 from app.lib import biblioteca_namibia as namb
+from app.lib import biblioteca_danemarca as dan
+from app.lib import biblioteca_scotia as prescurtare_biblioteca_scotia
+from app.lib import biblioteca_rusia as rus
+from app.lib import biblioteca_nepal as nepa
+from app.lib import biblioteca_laos as lao
+
+
+
+
 
 TARI = {
     'norvegia': {
@@ -30,13 +38,23 @@ TARI = {
     },
     'belgia': {
         'nume': 'Belgia',
-    }
+    },
     'canada': {
         'nume': 'Canada',
-    }
+    },
+ 
+    'nepal': {
+        'nume': 'Nepal',
+    },
+
+    'laos': {
+        'nume': 'Laos',
+    },
+    
 
     'brazilia': {
         'nume': 'Brazilia',
+    },
 
     'namibia': {
         'nume': 'Namibia',
@@ -47,13 +65,13 @@ TARI = {
     },
     'italia': {
         'nume': 'Italia',
-    }
+    },
     'China': {
         'nume': 'China',
     },
     'sua': {
         'nume': 'Statele Unite ale Americii',
-    }
+    },
 
     'estonia': {
         'nume': 'Estonia',
@@ -67,7 +85,7 @@ TARI = {
     },
     'irlanda': {
         'nume': 'Irlanda',
-    }
+    },
     'elvetia': {
         'nume': 'Elvetia',
     },
@@ -78,8 +96,18 @@ TARI = {
         'nume': 'Spania',
     },
 
+    'danemarca': {
+        'nume': 'Danemarca',
+    },
+    'scotia': {
+        'nume': 'Scotia',
+    },
+
+    'rusia': {
+        'nume': 'Rusia',
+    },
     
-    }
+}
 
 
 BIBLIOTECI = {
@@ -100,7 +128,13 @@ BIBLIOTECI = {
     'canada': cana,
     'China': china,
     'mexic': mex,
-    'spania': spania
-    'namibia': namb,
-     #adauga 'tara_mea': prescurtare_tara_mea
+    'spania': spania,
+    'namibia': namb, 
+    'danemarca': dan,
+    'scotia': prescurtare_biblioteca_scotia,
+    'rusia': rus,
+    'nepal': nepa, 
+    'laos': lao,
+     
 }
+

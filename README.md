@@ -1,31 +1,34 @@
-# curs_scc_443D_tari
+# Proiect SCC - Țări
 
-# Studenti - Tara
-- Balaban Razvan-Marian -	Brazilia
-- Ciobanu Andrei - Japonia
-- Colan Bianca - Germania
-- Cucui Mihai-Catalin - Laos
-- Cucui Petrut-Gabriel - Nepal
-- Dumitrache Alexandru - Italia
-- Enache Bogdan - Norvegia 
-- Esterabadeyan Hadi - Statele Unite
-- Gavrilă Radu-Ionuț - Belgia
-- Ghenciu Corina - Rusia
-- Gheorghe Razvan - Romania
-- Ghica Antonio - Namibia 
-- Grigore Mihaela -	Finlanda 
-- Ivan Luca - Danemarca
-- Petcu Stefan-Ciprian - Serbia
-- Pîrjol Mara-Olivia - Irlanda
-- Roșeanu Vlad-George - Canada
-- Serban Albert - Spania
-- Tecșan Călin - Elveția
-- Teodorescu Matei - China
-- Toaca Cristiana - Corea de Sud 
-- Tudor Iulian - Mexic
-- Tuturluta Costi-Giani-Fabian - Franta
-- Voicu Ioan-Andrei - Scoția 
-- Zidu Cristian -	Estonia
+Aplicatia **Țări** gestioneaza si afiseaza informatii detaliate despre geografia, demografia si cultura a mai multor țări intr-o interfata web intuitiva.
+Sistemul de operare tinta este Linux, aplicatia fiind dezvoltata si testata pe distributia `Ubuntu 24.04`.
+Componenta WEB a proiectului utilizeaza framework-ul `Flask`.
+
+Arhitectura este una modulara: datele sunt procesate si extrase prin functii dedicate localizate in pachetul app/lib/, fiind ulterior preluate si returnate cu ajutorul functiilor view (localizate in `tari.py`) catre client sub forma de pagini HTML.
+
+Pentru o experienta de utilizare facila, interfata include un sistem de navigare intre pagini:
+
+* Pagina principala: Contine link-uri/butoane catre tarile alocate fiecarui student.
+* Pagina specifica tarii: Odata selectata tara, se afiseaza o descriere scurta a acesteia si un meniu cu inca 3 butoane:
+
+    * Capitala: Afiseaza capitala.
+    * Steag: Afiseaza o imagine drapelului oficial
+    * Populatie: Afiseaza numarul actualizat de locuitori.
+
+* Sistemul de retur: Fiecare pagina contine link-uri de navigare inapoi pentru a asigura fluiditatea navigarii.
+
+Aplicatia include suport pentru containerizare in fisierul `Dockerfile` din directorul principal al aplicatiei.
+
+Din punct de vedere al verificarii calitatii, aplicatia include:
+
+*    Unit testing: Realizat cu pytest pentru functiile din app/lib/, testele fiind organizate in directorul app/tests/.
+
+*    Analiza statica: Verificarea conformitatii codului utilizand pylint.
+
+`DevOps CI`.
+Pipeline-ul pentru Jenkins este definint in fisierul `Jenkinsfile`.
+Acesta asigura parcurgerea automata a etapelor de Build (creare venv), Linter (verificare calitate), Testare (pytest) si Deploy (lansarea containerului Docker pe portul 8020).
+
 
 ## Țări Integrate în README.md
 1. [Belgia - Gavrilă Radu-Ionuț](#belgia---gavrilă-radu-ionuț)
@@ -47,6 +50,11 @@
 17. [Mexic - Tudor Iulian](#mexic---tudor-iulian)
 18. [Spania - Serban Albert](#spania---serban-albert)
 19. [Namibia - Ghica Antonio-Stefan](#namibia---ghica-antonio-stefan)
+20. [Danemarca - Ivan Luca](#danemarca---ivan-luca)
+21. [Scoția - Voicu Ioan-Andrei](#scoția---voicu-ioan-andrei)
+22. [Rusia - Corina Ghenciu](#rusia---corina-ghenciu)   
+23. [Nepal - Cucui Petruț-Gabriel](#nepal---cucui-petruț-gabriel)   
+24. [Laos - Cucui Mihai-Cătălin](#laos---cucui-mihai-cătălin) 
 
 
 # Belgia - Gavrilă Radu-Ionuț
@@ -3122,3 +3130,798 @@ Acest proiect atinge cu succes atât obiectivele funcționale, cât și pe cele 
 [cuprins](#cuprins)
 
 https://github.com/crchende/sysinfo.git
+
+
+# Danemarca - Ivan Luca
+[Tari Proiect](#index-țări)
+
+## 1. Identificator Dezvoltator
+**Nume:** Ivan Luca  
+**Grupă:** 443D  
+**Țară alocată:** Danemarca  
+
+## 2. Funcționalitate Adăugată
+Am implementat logica pentru afișarea informațiilor despre Danemarca în aplicația web Flask.
+Funcționalitatea include:
+* crearea fișierelor `app/lib/biblioteca_danemarca.py`, `app/lib/biblioteca_header.py` și `app/lib/biblioteca_tari.py` conform template-ului de grup;
+* modificarea fișierului `tari.py` pentru integrarea Danemarcei;
+* adăugarea testelor automate în `app/tests/test_lib_danemarca.py`;
+* adăugarea fișierelor `Dockerfile` și `Jenkinsfile`.
+
+## 3. Stadiul Implementării
+- [x] Cod funcționalitate adăugat
+- [x] Teste automate adăugate
+- [x] Dockerfile adăugat
+- [x] Jenkinsfile adăugat
+- [x] Aplicația a fost rulată local
+- [x] Testele au fost rulate local cu succes
+
+## 4. Structura Proiectului
+
+    .
+    ├── app
+    │   ├── lib
+    │   │   ├── biblioteca_danemarca.py
+    │   │   ├── biblioteca_header.py
+    │   │   ├── biblioteca_tari.py
+    │   │   └── __init__.py
+    │   └── tests
+    │       ├── test_lib_danemarca.py
+    │       └── __init__.py    ├── screenshots
+    │   ├── danemarca_1_build.jpeg
+    │   ├── danemarca_2_run.jpeg
+    │   ├── danemarca_3_browser.png
+    │   ├── danemarca_4_ps.jpeg
+    │   └── danemarca_5_test.jpeg
+    │   └── danemarca_6_jenkins.png
+    ├── Dockerfile
+    ├── Jenkinsfile
+    ├── requirements.txt
+    └── tari.py
+
+## 5. Fișiere Modificate / Adăugate
+
+**`app/lib/biblioteca_danemarca.py`**
+Conține funcțiile pentru afișarea informațiilor despre Danemarca:
+* `descriere_tara()`
+* `descriere_limbi()`
+* `descriere_populatie()`
+* `descriere_capitala()`
+* `descriere_steag()`
+
+**`app/lib/biblioteca_header.py`**
+Conține funcțiile standard pentru headerele paginilor.
+
+**`app/lib/biblioteca_tari.py`**
+Conține dicționarele TARI și BIBLIOTECI necesare pentru integrarea finală.
+
+**`tari.py`**
+A fost refactorizat pentru a importa noile biblioteci și a adapta rutele aplicației Flask.
+
+**`app/tests/test_lib_danemarca.py`**
+Conține testele automate (unit tests) actualizate pentru noile funcții implementate.
+
+## 6. Rute Disponibile
+| Rută | Descriere |
+| :--- | :--- |
+| `/` | Pagina principală a proiectului |
+| `/danemarca` | Pagina principală pentru Danemarca |
+| `/danemarca/capitala` | Afișează capitala Danemarcei |
+| `/danemarca/steag` | Afișează steagul Danemarcei |
+| `/danemarca/populatie` | Afișează populația Danemarcei |
+
+## 7. Testare
+
+### Testare Manuală
+Aplicația a fost verificată local rulând comanda:
+`python3 tari.py`
+
+Aplicația poate fi verificată la următoarele adrese:
+* `http://127.0.0.1:5011/danemarca`
+* `http://127.0.0.1:5011/danemarca/capitala`
+* `http://127.0.0.1:5011/danemarca/steag`
+* `http://127.0.0.1:5011/danemarca/populatie`
+
+### Testare Automată
+Testele se află în folderul `app/tests/`.
+Testele au fost rulate local cu succes folosind `pytest`:
+![Testare Automata](screenshots/danemarca_5_test.jpeg)
+
+## 8. Jenkins
+A fost adăugat fișierul `Jenkinsfile` pentru automatizarea procesului de CI/CD.
+Pipeline-ul Jenkins include etape pentru:
+* **build**: pregătirea mediului;
+* **test**: rularea testelor automate cu `pytest`.
+
+![Jenkins Success](screenshots/danemarca_6_jenkins.png)
+Testarea automată cu Jenkins rulează testele din folderul: `app/tests/`
+
+## 9. Containerizare Docker
+A fost adăugat fișierul `Dockerfile` pentru containerizarea aplicației.
+
+**Construirea imaginii Docker:**
+`docker build -t danemarca-app .`
+![Creare Imagine](screenshots/danemarca_1_build.jpeg)
+
+**Rularea containerului:**
+`docker run -p 5000:5000 danemarca-app`
+![Rulare Container](screenshots/danemarca_2_run.jpeg)
+
+**Accesarea aplicației din container:**
+![Browser App](screenshots/danemarca_3_browser.png)
+
+**Verificare container activ:**
+`docker ps`
+![Docker PS](screenshots/danemarca_4_ps.jpeg)
+
+## 10. Integrare și Review
+- [ ] Crearea Pull Request-ului din `dev_ivan_luca` către `main_ivan_luca`
+- [ ] Review din partea unui coleg de grupă
+- [ ] Merge în branch-ul principal de documentare al grupei
+
+## 11. Ce mai este de făcut
+- [ ] Finalizarea documentației în fișierul principal README.md al repository-ului.
+- [ ] Obținerea aprobării (review) pentru Pull Request.
+
+## 12. Concluzie
+Proiectul implementează funcționalitatea pentru țara Danemarca într-o structură modulară, respectând cerințele cursului SCC. Aplicația este pregătită pentru livrare prin containerizare Docker și testare automată via Jenkins.
+
+# Scoția - Voicu Ioan-Andrei
+[Tari Proiect](#index-țări)
+
+## 1. Identificator Dezvoltator
+* **Nume:** Voicu Ioan-Andrei
+* **Grupă:** 443D
+* **Țară alocată:** Scoția
+
+## 2. Funcționalitate Adăugată
+Am implementat logica pentru afișarea informațiilor despre Scoția în aplicația web Flask.
+Funcționalitatea include:
+* crearea fișierului `app/lib/scotia.py`;
+* modificarea fișierului `tari.py` pentru integrarea Scoției;
+* adăugarea testelor automate în `app/tests/test_lib_scotia.py`;
+* adăugarea fișierelor `Dockerfile` și `Jenkinsfile`.
+
+## 3. Stadiul Implementării
+- [x] Cod funcționalitate adăugat
+- [x] Teste automate adăugate
+- [x] Dockerfile adăugat
+- [x] Jenkinsfile adăugat
+- [x] Aplicația a fost rulată local
+- [x] Testele au fost rulate local cu succes
+
+## 4. Structura Proiectului
+```text
+.
+├── app
+│   ├── lib
+│   │   ├── scotia.py
+│   │   └── __init__.py
+│   ├── tests
+│   │   └── test_lib_scotia.py
+│   └── __init__.py
+├── screenshots
+│   ├── scotia-teste.png
+│   ├── scotia-terminal-local.png
+│   ├── scotia-local.png
+│   ├── scotia-jenkins.png
+│   ├── scotia-jenkins-teste.png
+│   ├── scotia-docker-build.png
+│   ├── scotia-docker-run.png
+│   ├── scotia-docker-ps.png
+│   └── scotia-docker-page.png
+├── Dockerfile
+├── Jenkinsfile
+├── requirements.txt
+├── quickrequirements.txt
+└── tari.py
+```
+## 5. Fișiere Modificate / Adăugate
+**`app/lib/scotia.py`**
+Conține funcțiile pentru afișarea informațiilor despre Scoția:
+* `descriere_tara()`
+* `capitala_tara()`
+* `steag_tara()`
+* `populatie_tara()`
+
+**`tari.py`**
+A fost modificat pentru:
+* importarea bibliotecii Scoției;
+* definirea rutelor specifice în aplicația Flask.
+
+**`app/tests/test_lib_scotia.py`**
+Conține testele automate (unit tests) pentru funcțiile implementate în bibliotecă (capitală, limbi, populație, steag, țară).
+
+## 6. Rute Disponibile
+| Rută | Descriere |
+|---|---|
+| `/` | Pagina principală a proiectului |
+| `/scotia` | Pagina principală pentru Scoția |
+| `/scotia/capitala` | Afișează capitala Scoției |
+| `/scotia/steag` | Afișează steagul Scoției |
+| `/scotia/populatie` | Afișează populația Scoției |
+
+## 7. Testare
+**Testare Manuală**
+Aplicația a fost verificată local activând mediul virtual și rulând scriptul:
+```bash
+. ./activeaza_venv
+./ruleaza_aplicatia
+Aplicația a fost accesată în browser la adresa: http://127.0.0.1:5011
+
+Testare Automată
+Testele se află în folderul app/tests/.
+Testele au fost rulate local cu succes (100% Passed) folosind comanda:
+python3 -m pytest app/tests/test_lib_scotia.py -v
+```
+
+## 8. Jenkins
+
+A fost adăugat/modificat fișierul Jenkinsfile pentru automatizarea procesului de CI/CD.
+Pipeline-ul Jenkins include etape pentru:
+
+    build: pregătirea mediului;
+
+    test: rularea testelor automate cu comanda python3.
+    Testarea automată cu Jenkins rulează testele din locația: app/tests/test_lib_scotia.py
+
+## 9. Containerizare Docker
+
+A fost adăugat fișierul Dockerfile pentru containerizarea aplicației (folosind imaginea de bază python:3.10-slim).
+Construirea imaginii Docker:
+sudo docker build -t proiect-scotia .
+Rularea containerului (pe portul 5011):
+sudo docker run -d -p 5011:5011 --name scotia-app proiect-scotia
+Accesarea aplicației din container s-a făcut din browser la adresa: http://127.0.0.1:5011/scotia
+
+# Rusia - Corina Ghenciu
+[Tari Proiect](#index-țări)
+
+## 1. Identificator Dezvoltator
+
+**Nume:** Corina Ghenciu  
+**Grupă:** 443D  
+**Țară alocată:** Rusia  
+
+---
+
+## 2. Funcționalitate Adăugată
+
+Am implementat logica pentru afișarea informațiilor despre Rusia în aplicația web Flask.
+
+Funcționalitatea include:
+
+- crearea fișierului `app/lib/biblioteca_rusia.py`;
+- modificarea fișierului `app/lib/biblioteca_tari.py` pentru integrarea Rusiei în aplicație;
+- adăugarea testelor automate în `app/tests/test_lib_rusia.py`;
+- adăugarea steagului Rusiei în folderul `static/`;
+- adăugarea fișierelor `Dockerfile` și `Jenkinsfile`.
+
+Descrierea Rusiei include informații generale despre țară și atracții turistice reprezentative.
+
+Au fost incluse atracții precum:
+
+- Kremlinul din Moscova;
+- Piața Roșie;
+- Muzeul Ermitaj din Sankt Petersburg;
+- Lacul Baikal;
+- Catedrala Sfântul Vasile;
+- Teatrul Bolșoi;
+- Piața Palatului din Sankt Petersburg;
+- Metroul din Moscova;
+- Munții Ural;
+- Palatul Peterhof.
+
+De asemenea, descrierea menționează preparate tradiționale și elemente culturale cunoscute din Rusia, precum:
+
+- borș;
+- pelmeni;
+- blini;
+- baletul rusesc;
+- literatura rusă clasică.
+
+---
+
+## 3. Stadiul Implementării
+
+- [x] Cod funcționalitate adăugat
+- [x] Teste automate adăugate
+- [x] Steag Rusia adăugat
+- [x] Dockerfile adăugat
+- [x] Jenkinsfile adăugat
+- [x] Aplicația a fost rulată local
+- [x] Testele au fost rulate local cu succes
+- [x] Aplicația a fost rulată în container Docker
+- [x] Pipeline-ul Jenkins a fost rulat cu succes
+
+---
+
+## 4. Structura Proiectului
+
+```text
+.
+├── activeaza_venv
+├── activeaza_venv_jenkins
+├── app
+│   ├── lib
+│   │   ├── biblioteca_rusia.py
+│   │   ├── biblioteca_header.py
+│   │   └── biblioteca_tari.py
+│   └── tests
+│       └── test_lib_rusia.py
+├── dockerstart.sh
+├── Dockerfile
+├── Jenkinsfile
+├── pytest.ini
+├── quickrequirements.txt
+├── README.md
+├── ruleaza_aplicatia
+├── screenshots
+│   ├── rusia_browser.png
+│   ├── rusia_docker_browser.png
+│   ├── rusia_docker_build.png
+│   ├── rusia_jenkins_build_pass.png
+│   ├── rusia_jenkins_console_output.png
+│   └── rusia_pytest.png
+├── static
+│   └── steag_rusia.png
+├── tari.py
+└── templates
+    ├── base.html
+    ├── home.html
+    ├── pagina.html
+    ├── steag.html
+    └── tara.html
+```
+
+---
+
+## 5. Fișiere Modificate / Adăugate
+
+### `app/lib/biblioteca_rusia.py`
+
+Conține funcțiile pentru afișarea informațiilor despre Rusia:
+
+- `descriere_tara()`
+- `descriere_limbi()`
+- `descriere_populatie()`
+- `descriere_capitala()`
+- `descriere_steag()`
+
+Funcția `descriere_tara()` prezintă Rusia într-un mod general și include atracții importante, începând cu Kremlinul din Moscova, Piața Roșie și Muzeul Ermitaj.
+
+### `app/lib/biblioteca_tari.py`
+
+A fost modificat pentru:
+
+- importarea bibliotecii Rusiei;
+- adăugarea țării în dicționarul `TARI`;
+- maparea bibliotecii în dicționarul `BIBLIOTECI`.
+
+### `app/tests/test_lib_rusia.py`
+
+Conține testele automate pentru funcțiile implementate în biblioteca Rusiei.
+
+### `static/steag_rusia.png`
+
+Conține imaginea steagului Rusiei.
+
+### `Dockerfile`
+
+Folosit pentru containerizarea aplicației. Fișierul a fost adăugat după modelul existent în branch-ul `dev_gavrila_radu`.
+
+### `Jenkinsfile`
+
+Folosit pentru rularea pipeline-ului Jenkins. Fișierul a fost adăugat după modelul existent în branch-ul `dev_gavrila_radu`.
+
+### `screenshots/`
+
+Conține dovezi pentru rularea testelor, Docker și Jenkins.
+
+---
+
+## 6. Rute Disponibile
+
+| Rută | Descriere |
+|---|---|
+| `/` | Pagina principală |
+| `/rusia` | Pagina principală pentru Rusia |
+| `/rusia/capitala` | Afișează capitala Rusiei |
+| `/rusia/populatie` | Afișează populația Rusiei |
+| `/rusia/limbi` | Afișează limba principală |
+| `/rusia/steag` | Afișează steagul Rusiei |
+
+---
+
+## 7. Testare
+
+### Testare Manuală
+
+Aplicația a fost verificată local rulând:
+
+```bash
+. ./activeaza_venv
+./ruleaza_aplicatia
+```
+
+Aplicația a fost accesată în browser la:
+
+```text
+http://127.0.0.1:5011/rusia
+```
+
+Dovadă rulare aplicație:
+
+![Aplicație Rusia](screenshots/rusia_browser.png)
+
+---
+
+### Testare Automată
+
+Testele se află în:
+
+```text
+app/tests/test_lib_rusia.py
+```
+
+Funcții testate:
+
+- `descriere_tara()`
+- `descriere_populatie()`
+- `descriere_capitala()`
+- `descriere_limbi()`
+
+Comanda utilizată pentru rularea testelor:
+
+```bash
+pytest app/tests/test_lib_rusia.py -v
+```
+
+Rezultat obținut local:
+
+```text
+4 passed
+```
+
+Dovadă rulare teste:
+
+![Teste Pytest Rusia](screenshots/rusia_pytest.png)
+
+---
+
+## 8. Jenkins
+
+A fost adăugat fișierul:
+
+```text
+Jenkinsfile
+```
+
+Pipeline-ul Jenkins include etape pentru:
+
+- build;
+- verificarea calității codului cu `pylint`;
+- rularea testelor automate cu `pytest`;
+- creare imagine Docker.
+
+Testarea automată cu Jenkins rulează testele din folderul:
+
+```text
+app/tests/
+```
+
+Job-ul Jenkins pentru proiectul Rusia a fost rulat cu succes.
+
+Dovadă rulare pipeline Jenkins:
+
+![Jenkins Build Pass](screenshots/rusia_jenkins_build_pass.png)
+
+În Console Output se observă rularea pipeline-ului Jenkins și finalizarea cu succes.
+
+![Jenkins Console Output](screenshots/rusia_jenkins_console_output.png)
+
+---
+
+## 9. Containerizare Docker
+
+A fost adăugat fișierul:
+
+```text
+Dockerfile
+```
+
+Aplicația poate fi containerizată folosind Docker.
+
+Construirea imaginii Docker:
+
+```bash
+sudo docker build -t rusia-app .
+```
+
+Dovadă construire imagine Docker:
+
+![Docker Build](screenshots/rusia_docker_build.png)
+
+Rularea containerului:
+
+```bash
+sudo docker run --rm -p 8020:5011 rusia-app
+```
+
+După rularea containerului, aplicația poate fi accesată la:
+
+```text
+http://127.0.0.1:8020/rusia
+```
+
+Dovadă rulare aplicație în container:
+
+![Aplicație Rusia în Docker](screenshots/rusia_docker_browser.png)
+
+---
+
+## 10. Integrare și Review
+
+Branch dezvoltare:
+```text
+dev_ghenciu_corina
+```
+
+Branch main personal:
+
+```text
+main_ghenciu_corina
+```
+
+Pull Request:
+
+```text
+dev_ghenciu_corina -> main_ghenciu_corina
+```
+
+Review-uri:
+
+- [ ] Am făcut review pentru colegul: ................................
+- [ ] Am primit review de la: ................................
+
+---
+
+## 11. Ce mai este de făcut
+
+- [ ] Integrarea finală în branch-ul principal al grupei, dacă este cerută de cadrul didactic
+
+---
+
+## 12. Concluzie
+
+Proiectul implementează țara Rusia în structura aplicației existente, respectând template-ul primit.
+
+Au fost adăugate:
+
+- biblioteca pentru Rusia;
+- testele automate;
+- steagul Rusiei;
+- Dockerfile;
+- Jenkinsfile;
+- screenshots cu dovezi de rulare;
+- documentația în README.
+
+# Nepal - Cucui Petruț-Gabriel
+[Tari Proiect](#index-țări)
+
+
+## Dezvoltator
+- **Nume:** Cucui Petruț-Gabriel
+- **Grupa:** 443D
+- **Țară alocată:** Nepal
+
+## Funcționalitate implementată
+
+În acest branch au fost adăugate funcțiile:
+  - `descriere_capitala()` – returnează capitala Nepalului.
+  - `descriere_steag()` – returnează un png cu steagul Nepalului.
+  - `descriere_limbi()` – afișează limbile oficiale ale Nepalului.
+  - `descriere_tara()` – returnează o descriere generală a Nepalului.
+  - `descriere_populatie()` – afișează numărul de locuitori.
+
+Rutele disponibile sunt: 
+  - `/nepal` – informații generale despre Nepal.
+  - `/nepal/capitala` – capitala Nepalului.
+  - `/nepal/populatie` – date demografice.
+  - `/nepal/steag` – png cu drapelul Nepalului.
+
+## Stadiul dezvoltării
+Codul a fost implementat.
+
+## Testare manuală în browser
+Aplicația este testată local prin intermediul comenzii: 
+```
+./ruleaza_aplicatia
+```
+Pentru verificarea funcționalității se accesează în browser adresa: 
+http://127.0.0.1:5011/
+
+
+<img src="screenshots/nepal-rute.png" width="1200">
+
+## Testare folosind pytest
+Testele au fost scrise în fișierul app/tests/test_lib_nepal.py. Se pornește venv-ul și se introduce în terminal comanda :
+```
+pytest app/tests/*.py -v
+```
+Testele au fost validate local, implementarea este funcțională.
+
+<img src="screenshots/nepal-tests-passed.png" width="1200">
+
+## Testare folosind Docker
+S-a realizat containerizarea aplicației folosind un container Docker. Etapele creării și rulării aplicației sunt următoarele: 
+
+**1. Se construiește imaginea cu ajutorul comenzii:**
+```
+docker build -t tari:v01 .
+```
+<img src="screenshots/nepal-docker-build.png" width="1200">
+
+**2. Se rulează container-ul:**
+```
+docker run -d --name tari_nepal -p 8020:5011 tari:v01
+```
+<img src="screenshots/nepal-docker-run.png" width="1200">
+
+**3. Pentru verificarea funcționalității se accesează în browser adresa: http://localhost:8020/**
+
+<img src="screenshots/nepal-interfata-docker.png" width="1200">
+
+## Testare folosind Jenkins
+
+Se pornește Jenkins introducând în terminal comanda :
+
+```
+jenkins
+```
+## Pașii pentru a crea un Pipeline Jenkins care să realizeze automat testarea sunt următorii:
+
+**1. Integrarea repository-ului în instanța locală Jenkins (port 8080).**
+
+**2. Build-ul manual (Build Now).**
+
+**3. Verificarea statusului final și a log-urilor de execuție în Console Output pentru validare.**
+
+<img src="screenshots/nepal-jenkins-pipeline.png" width="1200">
+<img src="screenshots/nepal-jenkins-tests-passed.png" width="1200">
+
+## Integrare
+**- Branch-ul de dezvoltare: dev_cucui_petrut**  
+## Review
+**- Am primit review de la colegul: Cucui Mihai Cătălin (MihaiC03)**
+
+**- Am facut review pentru colegul: Cucui Mihai Cătălin (MihaiC03)**
+
+## Rămas de făcut
+**- [x] Implementarea codului și validarea testelor local.**
+
+**- [x] Containerizarea aplicației și rulare.**
+
+**- [x] Crearea Pipeline-ului Jenkins și validarea automată a testelor.**
+
+**- [x] Finalizarea Pull Request-ului și obținerea aprobării pentru fuziunea în branch-ul main.**
+
+
+# Laos - Cucui Mihai-Cătălin
+[Tari Proiect](#index-țări)
+
+
+## Dezvoltator
+- **Nume:** Cucui Mihai-Cătălin
+- **Grupa:** 443D
+- **Țară alocată:** Laos
+
+
+
+
+
+## Funcționalitate
+
+
+
+Aplicația este implementată utilizând framework-ul web Flask, fiind structurată pentru a gestiona și expune datele reprezentative ale țării Laos prin intermediul următoarelor funcții logice:
+
+- **descriere_tara()** – Sintetizează principalele caracteristici ale țării Laos.
+- **descriere_capitala()** – Returnează capitala statului Laos.
+- **descriere_populatie()** – Returnează date demografice despre statul Laos.
+- **descriere_limbi()** – Enumeră limbile oficiale recunoscute pe teritoriul Laos.
+- **descriere_steag()** – Afișează steagul Laos.
+
+
+## Stadiul dezvoltării
+
+
+- Funcționalitățile aplicației au fost complet implementate.
+
+- Versiunea finală a codului încărcată pe branch-ul de lucru dedicat.
+
+- Dockerfile și Jenkinsfile sunt funcționale, urmând pipeline-ul de CI/CD.
+
+
+## Testare
+
+### Testare inițială
+
+Activăm mediul virtual și testăm aplicația local rulând scripturile activeaza_venv și ruleaza_aplicatia.
+
+**Aplicația poate fi accesată la adresa `http://127.0.0.1:5011/`:**
+
+<img src="screenshots/laos-aplicatie.png" width="1200">
+
+
+
+Tot aici putem verifica cele 4 rute:
+- `/laos`
+- `/laos/capitala`
+- `/laos/populatie`
+- `/laos/steag`
+
+
+<img src="screenshots/laos-local.png" width="1200">
+
+### Testare cu Pytest
+
+Am rulat comanda pytest app/tests/*.py -v pentru a valida funcționarea testelor local:
+
+<img src="screenshots/laos-teste-local.png" width="1200">
+
+
+### Testare cu Jenkins
+
+Am realizat un pipeline Jenkins care să testeze automat funcționalitatea aplicației:
+
+Build cu succes:
+
+<img src="screenshots/laos-jenkins.png" width="1200">
+
+Teste validate:
+
+<img src="screenshots/laos-jenkins-teste.png" width="1200">
+
+
+### Testare cu Docker
+
+- Aplicația a fost containerizată, utilizând o imagine Python 3.10-alpine.
+
+- Containerul este configurat să expună portul 5011.
+
+- Se poate accesa la adresa:`http://127.0.0.1:8020/`
+
+Creare imagine Docker:
+
+<img src="screenshots/laos-docker-build.png" width="1200">
+
+Pornire container:
+
+<img src="screenshots/laos-docker-run.png" width="1200">
+
+Aplicația accesată din container:
+
+<img src="screenshots/laos-docker-aplicatie.png" width="1200">
+
+## Integrare
+- **Branch dezvoltare:** `dev_cucui_mihai`
+
+
+## Review
+
+- Am făcut review pentru colegul: [Cucui Petruț-Gabriel (PetrutG)]
+- Am primit review de la: [Cucui Petruț-Gabriel (PetrutG)]
+
+
+## De făcut
+
+ - [x] Finalizare cod și teste manuale.
+ - [x] Aplicație containerizată.
+ - [x] Creare Pipeline Jenkins cu succes.  
+ - [x] Obținerea aprobării de la colegi pentru PR-ul final, în main.
+ - [x] Integrarea finală în branch-ul main.
+
+
+
+  
